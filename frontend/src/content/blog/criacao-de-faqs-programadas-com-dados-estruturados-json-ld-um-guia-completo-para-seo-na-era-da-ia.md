@@ -2,7 +2,7 @@
 title: "Criação de FAQs programadas com dados estruturados JSON-LD: Um guia completo para SEO na era da IA"
 date: 2025-04-14
 description: "Aumente o tráfego com FAQs em JSON-LD e destaque seu site com rich results no Google. Veja como aplicar."
-image: "/images/2025/04/dados-estrutiras-em-paginas-de-FAQ-com-jason.jpg"
+image: "/images/dados-estrutiras-em-paginas-de-FAQ-com-jason.webp"
 ---
 
 Neste artigo, você descobrirá como utilizar dados estruturados JSON-LD para criar FAQs otimizadas que têm maior probabilidade de aparecer como rich results no Google. Abordaremos desde o conceito básico de schema markup até técnicas avançadas usando IA para gerar FAQs eficientes que impulsionam seu tráfego orgânico e melhoram a visibilidade do seu site.

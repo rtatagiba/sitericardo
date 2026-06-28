@@ -2,7 +2,7 @@
 title: "Por que seo local é fundamental para pequenos negócios"
 date: 2025-04-10
 description: "SEO local é fundamental para pequenos negócios que atendem a uma região específica. Quase 46% de todas as buscas no Google já têm intenção local, e 72% dos"
-image: "/images/2025/04/Design-sem-nome-3.jpg"
+image: "/images/Design-sem-nome-3.webp"
 ---
 
 **SEO local é fundamental para pequenos negócios que atendem a uma região específica.** Quase 46% de todas as buscas no Google já têm intenção local, e 72% dos consumidores que realizam uma pesquisa local visitam uma loja física próxima em pouco tempo.

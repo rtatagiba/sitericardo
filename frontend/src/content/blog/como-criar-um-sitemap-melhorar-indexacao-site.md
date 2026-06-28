@@ -2,7 +2,7 @@
 title: "Como Criar um Sitemap e Melhorar a Indexação do Seu Site"
 date: 2025-04-01
 description: "Um sitemap é como o mapa do tesouro que guia os motores de busca pelo seu site, assegurando que cada página valiosa seja descoberta, indexada e apresentada aos usuários certos"
-image: "/images/2025/04/sitemap-xml.jpg"
+image: "/images/sitemap-xml.webp"
 ---
 
 Imagine construir uma casa magnífica em uma localização remota, mas esquecer de colocar o endereço no GPS. Por mais impressionante que seja a construção, poucos a encontrarão. Este é precisamente o desafio enfrentado por muitos sites hoje: excelente conteúdo que permanece invisível para os mecanismos de busca.

@@ -2,7 +2,7 @@
 title: "A Mudança para o SEO Semântico: O que os Vetores Significam para sua Estratégia"
 date: 2025-03-10
 description: "O SEO sempre foi sobre palavras-chave. Durante anos, os profissionais de marketing digital concentraram seus esforços em identificar e implementar termos"
-image: "/images/2025/03/Firefly-palavras-flutuando-no-ar-num-ambiente-tecnologico.jpg"
+image: "/images/Firefly-palavras-flutuando-no-ar-num-ambiente-tecnologico.webp"
 ---
 
 ## O SEO está evoluindo: Do texto para os vetores

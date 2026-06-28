@@ -2,7 +2,7 @@
 title: "Como Calcular seu Orçamento de SEO: Um Guia Completo para Empresas Brasileiras"
 date: 2025-03-17
 description: "O digital é o principal canal de marketing para muitas empresas hoje em dia."
-image: "/images/2025/03/A-couple-looking-stressed-over-financial-documents-minimalist-style-limited-neutral-color-palette-clean-lines-focus-on-essential-forms-ample-negative-space-soft-lighting.jpg"
+image: "/images/Como fazer calculo.webp"
 ---
 
 ## Como Calcular seu Orçamento de SEO: Um Guia Completo para Empresas Brasileiras
@@ -155,35 +155,17 @@ Outra opção é tornar-se um especialista e fazer você mesmo.
 
 ### Cálculo de ROI de Busca Orgânica
 
-Exemplo: vendendo Celular
+**Exemplo: vendendo Celular**
 
-body {<br /> font-family: Arial, sans-serif;<br /> background-color: #f4f4f4;<br /> text-align: center;<br /> margin: 20px;<br /> }<br /> .container {<br /> max-width: 600px;<br /> margin: auto;<br /> background: white;<br /> padding: 20px;<br /> border-radius: 10px;<br /> box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);<br /> }<br /> table {<br /> width: 100%;<br /> border-collapse: collapse;<br /> margin-top: 10px;<br /> }<br /> th, td {<br /> border: 1px solid #ddd;<br /> padding: 10px;<br /> text-align: left;<br /> }<br /> th {<br /> background-color: #007BFF;<br /> color: white;<br /> }<br /> tr:nth-child(even) {<br /> background-color: #f9f9f9;<br /> }<br />
+**Relatório de ROI**
 
-Relatório de ROI
-
-Métrica
-
-Valor
-
-Número de novos clientes adquiridos via busca orgânica (mês)
-
-10
-
-Renda líquida média (lucro) por pedido
-
-R$500
-
-Lucros totais de novos clientes de busca orgânica (mês)
-
-R$5.000
-
-Orçamento mensal de marketing (despesa)
-
-R$12.500
-
-ROI (Lucros ÷ Gastos – 1)
-
-\-60%
+| Métrica | Valor |
+|---|---|
+| Número de novos clientes adquiridos via busca orgânica (mês) | 10 |
+| Renda líquida média (lucro) por pedido | R$500 |
+| Lucros totais de novos clientes de busca orgânica (mês) | R$5.000 |
+| Orçamento mensal de marketing (despesa) | R$12.500 |
+| **ROI (Lucros ÷ Gastos – 1)** | **-60%** |
 
 A falha na calculadora acima é que não leva em consideração o valor vitalício de um novo cliente.
 
@@ -197,43 +179,19 @@ Lucros vitalícios médios de novos clientes adquiridos em um mês divididos por
 
 ### Cálculo de ROI de SEO de Busca Orgânica Assumindo Valor Vitalício
 
-Mesmo exemplo: vendendo celular
+**Mesmo exemplo: vendendo celular**
 
-body {<br /> font-family: Arial, sans-serif;<br /> background-color: #f4f4f4;<br /> text-align: center;<br /> margin: 20px;<br /> }<br /> .container {<br /> max-width: 600px;<br /> margin: auto;<br /> background: white;<br /> padding: 20px;<br /> border-radius: 10px;<br /> box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);<br /> }<br /> table {<br /> width: 100%;<br /> border-collapse: collapse;<br /> margin-top: 10px;<br /> }<br /> th, td {<br /> border: 1px solid #ddd;<br /> padding: 10px;<br /> text-align: left;<br /> }<br /> th {<br /> background-color: #007BFF;<br /> color: white;<br /> }<br /> tr:nth-child(even) {<br /> background-color: #f9f9f9;<br /> }<br />
+**Relatório de ROI Vitalício**
 
-Relatório de ROI Vitalício
-
-Métrica
-
-Valor
-
-Número de novos clientes adquiridos via busca orgânica (mês)
-
-10
-
-Renda líquida média (lucro) por pedido
-
-R$500
-
-Lucros totais de novos clientes de busca orgânica (mês)
-
-R$5.000
-
-Número médio de pedidos por cliente ao longo de uma “vida útil”
-
-5
-
-Lucro vitalício médio total
-
-R$25.000
-
-Orçamento mensal de marketing (despesa)
-
-R$12.500
-
-ROI (Lucros vitalícios ÷ Gastos – 1)
-
-200%
+| Métrica | Valor |
+|---|---|
+| Número de novos clientes adquiridos via busca orgânica (mês) | 10 |
+| Renda líquida média (lucro) por pedido | R$500 |
+| Lucros totais de novos clientes de busca orgânica (mês) | R$5.000 |
+| Número médio de pedidos por cliente ao longo de uma “vida útil” | 5 |
+| Lucro vitalício médio total | R$25.000 |
+| Orçamento mensal de marketing (despesa) | R$12.500 |
+| **ROI (Lucros vitalícios ÷ Gastos – 1)** | **200%** |
 
 Como você pode ver, essa única variável faz uma enorme diferença na forma como o ROI é declarado.
 

@@ -2,7 +2,7 @@
 title: "O Impacto dos Core Web Vitals no SEO: Um Guia Completo"
 date: 2025-03-09
 description: "Existe uma verdade inconveniente que muitos especialistas em SEO preferem ignorar: não importa quão brilhante seja sua estratégia de palavras-chave ou quantos"
-image: "/images/2025/03/3.jpg"
+image: "/images/3.webp"
 ---
 
 Existe uma verdade inconveniente que muitos especialistas em SEO preferem ignorar: não importa quão brilhante seja sua estratégia de palavras-chave ou quantos backlinks você conquistou, se seu site oferece uma experiência lamentável, o Google irá penalizá-lo.

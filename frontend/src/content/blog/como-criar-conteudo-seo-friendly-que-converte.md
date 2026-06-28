@@ -2,7 +2,7 @@
 title: "Como Criar Conteúdo SEO-Friendly que Converte"
 date: 2025-03-17
 description: "O conteúdo reina supremo no mundo digital. Porém, criar um texto que não apenas agrade aos algoritmos de busca, mas também transforme visitantes em clientes,"
-image: "/images/2025/03/Como-Criar-Conteudo-SEO-Friendly-que-Converte.jpg"
+image: "/images/Como-Criar-Conteudo-SEO-Friendly-que-Converte.webp"
 ---
 
 O conteúdo reina supremo no mundo digital. Porém, criar um texto que não apenas agrade aos algoritmos de busca, mas também transforme visitantes em clientes, é uma arte que poucos dominam. Você já se perguntou por que alguns sites parecem monopolizar os primeiros resultados do Google enquanto outros lutam para serem notados? A resposta está no conteúdo SEO-friendly que converte.
