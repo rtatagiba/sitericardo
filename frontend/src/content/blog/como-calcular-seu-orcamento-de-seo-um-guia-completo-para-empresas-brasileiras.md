@@ -1,9 +1,9 @@
 ---
+
 title: "Como Calcular seu Orçamento de SEO: Um Guia Completo para Empresas Brasileiras"
 date: 2025-03-17
 description: "O digital é o principal canal de marketing para muitas empresas hoje em dia."
 image: "/images/Como fazer calculo.webp"
----
 
 ## Como Calcular seu Orçamento de SEO: Um Guia Completo para Empresas Brasileiras
 
@@ -61,36 +61,33 @@ Aqui está o que você precisa prestar atenção:
 
 Seu site deve:
 
--   Ser rastreável e acessível para mecanismos de busca.
-    
--   Seguir as [Diretrizes para Webmasters do Google](https://developers.google.com/search/docs/essentials?hl=pt-br) para melhores práticas de SEO.
-    
--   Ser otimizado para uma experiência de usuário de alta qualidade (prestando atenção cuidadosa aos Core Web Vitals).
-    
--   Renderizar claramente em dispositivos móveis, tablets e desktops.
-    
+- Ser rastreável e acessível para mecanismos de busca.
+
+- Seguir as [Diretrizes para Webmasters do Google](https://developers.google.com/search/docs/essentials?hl=pt-br) para melhores práticas de SEO.
+
+- Ser otimizado para uma experiência de usuário de alta qualidade (prestando atenção cuidadosa aos Core Web Vitals).
+
+- Renderizar claramente em dispositivos móveis, tablets e desktops.
 
 **Conteúdo**
 
 O conteúdo do seu site deve estar em conformidade com as melhores práticas divulgadas nas Diretrizes de Avaliação de Qualidade de Pesquisa, com ênfase em:
 
--   Ser único e oferecer valor.
-    
--   Corresponder às consultas de pesquisa.
-    
--   Satisfazer a intenção do usuário.
-    
--   Ser de alta qualidade.
-    
--   Satisfazer o algoritmo de conteúdo atualizado.
-    
+- Ser único e oferecer valor.
+
+- Corresponder às consultas de pesquisa.
+
+- Satisfazer a intenção do usuário.
+
+- Ser de alta qualidade.
+
+- Satisfazer o algoritmo de conteúdo atualizado.
 
 **Backlinks**
 
--   Deve ser natural. Evite esquemas de links populares como redes de blogs privados (PBNs) e posts de convidados pagos. Em vez disso, concentre-se em construir links reais de sites tematicamente relevantes com conteúdo de alta qualidade.
-    
--   A qualidade é fundamental: Um número menor de [links relevantes de alta confiança](/como-melhorar-o-ranking-do-seu-site-no-google-dicas-praticas/)/alta autoridade pode superar uma grande quantidade de links de qualidade inferior.
-    
+- Deve ser natural. Evite esquemas de links populares como redes de blogs privados (PBNs) e posts de convidados pagos. Em vez disso, concentre-se em construir links reais de sites tematicamente relevantes com conteúdo de alta qualidade.
+
+- A qualidade é fundamental: Um número menor de [links relevantes de alta confiança](/como-melhorar-o-ranking-do-seu-site-no-google-dicas-praticas/)/alta autoridade pode superar uma grande quantidade de links de qualidade inferior.
 
 ### Você Gerencia O Que Você Mede – Defina Metas
 
@@ -120,12 +117,11 @@ Suas metas determinarão quais táticas são necessárias para o sucesso. Isso, 
 
 Isso nos traz de volta ao posicionamento e à atenção àqueles fatores que movem o ponteiro.
 
--   Como sua arquitetura de informação se compara à dos concorrentes?
-    
--   Como sua estratégia de conteúdo se compara à concorrência?
-    
--   Como seu perfil de backlinks se compara aos sites melhor classificados?
-    
+- Como sua arquitetura de informação se compara à dos concorrentes?
+
+- Como sua estratégia de conteúdo se compara à concorrência?
+
+- Como seu perfil de backlinks se compara aos sites melhor classificados?
 
 As respostas a essas perguntas determinarão prioridades e o volume de trabalho necessário para atingir suas metas.
 
@@ -159,13 +155,13 @@ Outra opção é tornar-se um especialista e fazer você mesmo.
 
 **Relatório de ROI**
 
-| Métrica | Valor |
-|---|---|
-| Número de novos clientes adquiridos via busca orgânica (mês) | 10 |
-| Renda líquida média (lucro) por pedido | R$500 |
-| Lucros totais de novos clientes de busca orgânica (mês) | R$5.000 |
-| Orçamento mensal de marketing (despesa) | R$12.500 |
-| **ROI (Lucros ÷ Gastos – 1)** | **-60%** |
+| Métrica                                                      | Valor    |
+| ------------------------------------------------------------ | -------- |
+| Número de novos clientes adquiridos via busca orgânica (mês) | 10       |
+| Renda líquida média (lucro) por pedido                       | R$500    |
+| Lucros totais de novos clientes de busca orgânica (mês)      | R$5.000  |
+| Orçamento mensal de marketing (despesa)                      | R$12.500 |
+| **ROI (Lucros ÷ Gastos – 1)**                                | **-60%** |
 
 A falha na calculadora acima é que não leva em consideração o valor vitalício de um novo cliente.
 
@@ -183,15 +179,15 @@ Lucros vitalícios médios de novos clientes adquiridos em um mês divididos por
 
 **Relatório de ROI Vitalício**
 
-| Métrica | Valor |
-|---|---|
-| Número de novos clientes adquiridos via busca orgânica (mês) | 10 |
-| Renda líquida média (lucro) por pedido | R$500 |
-| Lucros totais de novos clientes de busca orgânica (mês) | R$5.000 |
-| Número médio de pedidos por cliente ao longo de uma “vida útil” | 5 |
-| Lucro vitalício médio total | R$25.000 |
-| Orçamento mensal de marketing (despesa) | R$12.500 |
-| **ROI (Lucros vitalícios ÷ Gastos – 1)** | **200%** |
+| Métrica                                                         | Valor    |
+| --------------------------------------------------------------- | -------- |
+| Número de novos clientes adquiridos via busca orgânica (mês)    | 10       |
+| Renda líquida média (lucro) por pedido                          | R$500    |
+| Lucros totais de novos clientes de busca orgânica (mês)         | R$5.000  |
+| Número médio de pedidos por cliente ao longo de uma “vida útil” | 5        |
+| Lucro vitalício médio total                                     | R$25.000 |
+| Orçamento mensal de marketing (despesa)                         | R$12.500 |
+| **ROI (Lucros vitalícios ÷ Gastos – 1)**                        | **200%** |
 
 Como você pode ver, essa única variável faz uma enorme diferença na forma como o ROI é declarado.
 
