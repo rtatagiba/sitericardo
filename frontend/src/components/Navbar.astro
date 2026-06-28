@@ -1,0 +1,68 @@
+---
+const { pathname } = Astro.url;
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/sobre', label: 'Sobre' },
+  { href: '/servicos', label: 'Serviços' },
+  { href: '/portfolio', label: 'Portfolio' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/contato', label: 'Contato' },
+];
+---
+
+<header class="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="/" class="font-bold text-xl text-primary hover:text-accent transition-colors">
+        Ricardo Tatagiba
+      </a>
+
+      <button id="menu-toggle" class="sm:hidden p-2 rounded-md text-gray-600 hover:text-primary" aria-label="Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <ul class="hidden sm:flex items-center gap-6">
+        {navLinks.map(({ href, label }) => (
+          <li>
+            <a
+              href={href}
+              class={`text-sm font-medium transition-colors hover:text-accent ${
+                pathname === href || (href !== '/' && pathname.startsWith(href))
+                  ? 'text-accent'
+                  : 'text-gray-600'
+              }`}
+            >
+              {label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <ul id="mobile-menu" class="hidden sm:hidden flex-col gap-3 pb-4">
+      {navLinks.map(({ href, label }) => (
+        <li>
+          <a
+            href={href}
+            class={`block text-sm font-medium py-1 transition-colors hover:text-accent ${
+              pathname === href ? 'text-accent' : 'text-gray-600'
+            }`}
+          >
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  toggle?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+    menu?.classList.toggle('flex');
+  });
+</script>

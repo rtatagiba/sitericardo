@@ -1,0 +1,97 @@
+User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /my-account/
+Disallow: /thank-you/
+Disallow: /?s=
+Disallow: /*?orderby=
+Disallow: /*?add-to-cart=
+Disallow: /*add-to-cart=*
+Disallow: */trackback/
+Disallow: */feed/
+Disallow: */comments/
+Disallow: /?attachment_id=*
+Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content
+
+Sitemap: https:https://ricardotatagiba.com.br/sitemap_index.xml
+Host: ricardotatagiba.com.br
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: GoogleOther-Image
+Allow: /
+
+User-agent: GoogleOther-Video
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ICC-Crawler
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: SemrushBot-OCOB
+Allow: /
+
+User-agent: SemrushBot-SWA
+Allow: /
+
+User-agent: Slurp
+Allow: /

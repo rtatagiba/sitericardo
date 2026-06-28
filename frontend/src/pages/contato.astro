@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contato — Ricardo Tatagiba"
+  description="Entre em contato com Ricardo Tatagiba para discutir seu projeto de SEO. Consultor SEO Freelancer disponível para projetos em todo o Brasil."
+>
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+      <div>
+        <h1 class="text-4xl font-bold text-primary mb-4">Vamos conversar?</h1>
+        <p class="text-gray-600 leading-relaxed mb-8">
+          Se você quer aumentar a visibilidade do seu negócio no Google e atrair mais clientes
+          de forma orgânica, estou aqui para ajudar. Preencha o formulário ao lado ou me contate
+          diretamente.
+        </p>
+
+        <div class="space-y-4">
+          <div class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="text-accent mt-0.5 shrink-0">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <div>
+              <div class="text-xs text-gray-500 mb-1">Email</div>
+              <a href="mailto:contato@ricardotatagiba.com.br" class="text-primary font-medium hover:text-accent transition-colors">
+                contato@ricardotatagiba.com.br
+              </a>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="text-accent mt-0.5 shrink-0">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            <div>
+              <div class="text-xs text-gray-500 mb-1">Localização</div>
+              <span class="text-primary font-medium">Brasil — atendimento remoto</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <form
+          method="POST"
+          action="https://formspree.io/f/YOUR_FORM_ID"
+          class="space-y-4"
+        >
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nome</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-primary placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+              placeholder="Seu nome"
+            />
+          </div>
+
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-primary placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+              placeholder="seu@email.com"
+            />
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensagem</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-primary placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent resize-none"
+              placeholder="Fale sobre o seu projeto..."
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-accent text-primary font-semibold py-3 rounded-lg hover:bg-accent-dark transition-colors"
+          >
+            Enviar mensagem
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

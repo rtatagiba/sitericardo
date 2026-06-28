@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const services = [
+  {
+    title: 'SEO Estratégico',
+    description: 'Auditoria completa + plano de ação personalizado. Análise técnica, de conteúdo e de autoridade para identificar oportunidades e eliminar bloqueios que impedem seu site de ranquear.',
+  },
+  {
+    title: 'SEO Local',
+    description: 'Domine a sua região. Otimização do Google My Business, criação de sinais locais e estratégia de palavras-chave geo-específicas para aparecer quando seus clientes pesquisam perto de você.',
+  },
+  {
+    title: 'Google Ads',
+    description: 'Campanhas pagas que convertem. O Google Ads é uma ferramenta de vital importância na estratégia de visibilidade — através dela, potenciais clientes têm acesso rápido ao seu site no momento certo.',
+  },
+  {
+    title: 'Google My Business',
+    description: 'Fundamental para dominar sua região. O GMB é uma importante aliada para ganhar mais visitas de todos que pesquisam por um serviço na sua zona de alcance.',
+  },
+  {
+    title: 'Criação de Conteúdo SEO',
+    description: 'Conteúdo que ranqueia e converte. Artigos, páginas de serviço e landing pages otimizados para palavras-chave com intenção de compra, escritos para humanos mas amados pelo Google.',
+  },
+  {
+    title: 'Automação com IA',
+    description: 'Escale sem aumentar custos. Criação de fluxos automatizados com IA para atendimento, qualificação de leads e distribuição de conteúdo — sua empresa pode funcionar mesmo quando você não está disponível.',
+  },
+  {
+    title: 'Redes Sociais',
+    description: 'Apareça para quem importa. Estratégia de presença social focada em segmentação precisa — desde pessoas que trabalham ou moram perto de você até aquelas que precisam saber que você tem a solução.',
+  },
+  {
+    title: 'Full-Stack Marketing',
+    description: 'Coloque mais de 10 anos de experiência em SEO e desenvolvimento full stack a favor do seu negócio. Otimize processos internos, acelere seus testes e reduza custos — tudo isso enquanto escala seus resultados.',
+  },
+];
+---
+
+<BaseLayout
+  title="Serviços de SEO — Ricardo Tatagiba"
+  description="Coloque mais de 10 anos de experiência em SEO e desenvolvimento full stack a favor do seu negócio. SEO estratégico, local, Google Ads, conteúdo e automação com IA."
+>
+  <section class="bg-primary text-white py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl font-bold mb-4">Full-Stack Marketing</h1>
+      <p class="text-gray-300 text-lg max-w-2xl leading-relaxed">
+        Coloque mais de 10 anos de experiência em SEO e desenvolvimento full stack a favor do seu negócio.
+        Otimize processos internos, acelere seus testes e reduza custos — tudo isso enquanto escala
+        seus resultados de forma sustentável.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4">Especialidades</h2>
+      <p class="text-gray-600 mb-12">As ferramentas mais importantes, tudo enxuto e direto ao ponto.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {services.map(({ title, description }) => (
+          <div class="border border-gray-100 rounded-xl p-8 hover:shadow-md transition-shadow hover:border-accent group">
+            <h3 class="text-xl font-bold mb-3 text-primary group-hover:text-accent transition-colors">{title}</h3>
+            <p class="text-gray-600 leading-relaxed">{description}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-16 bg-accent rounded-2xl p-10 text-center">
+        <h2 class="text-2xl font-bold text-primary mb-4">Pronto para começar?</h2>
+        <p class="text-primary/80 mb-8 max-w-lg mx-auto">
+          Cada projeto é único. Vamos conversar sobre os seus objetivos e criar uma estratégia personalizada.
+        </p>
+        <a
+          href="/contato"
+          class="inline-block bg-primary text-white font-semibold px-10 py-3 rounded-lg hover:bg-gray-800 transition-colors"
+        >
+          Solicitar proposta
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

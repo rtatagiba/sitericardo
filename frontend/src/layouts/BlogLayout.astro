@@ -1,0 +1,95 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  date: Date;
+  image?: string;
+  slug: string; // post.id in Astro v6
+}
+
+const { title, description, date, image, slug } = Astro.props;
+
+const siteUrl = 'https://ricardotatagiba.com.br';
+const postUrl = `${siteUrl}/blog/${slug}`;
+const dateIso = date.toISOString();
+const dateFormatted = date.toLocaleDateString('pt-BR', {
+  day: '2-digit',
+  month: 'long',
+  year: 'numeric',
+});
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: title,
+  description,
+  datePublished: dateIso,
+  dateModified: dateIso,
+  url: postUrl,
+  author: {
+    '@type': 'Person',
+    name: 'Ricardo Tatagiba',
+    url: siteUrl,
+  },
+  publisher: {
+    '@type': 'Person',
+    name: 'Ricardo Tatagiba',
+    url: siteUrl,
+  },
+  ...(image ? { image: image.startsWith('http') ? image : `${siteUrl}${image}` } : {}),
+};
+---
+
+<BaseLayout title={title} description={description} image={image} canonical={postUrl}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <nav class="text-sm text-gray-500 mb-8" aria-label="Breadcrumb">
+      <ol class="flex items-center gap-2">
+        <li><a href="/" class="hover:text-accent transition-colors">Home</a></li>
+        <li class="text-gray-300">/</li>
+        <li><a href="/blog" class="hover:text-accent transition-colors">Blog</a></li>
+        <li class="text-gray-300">/</li>
+        <li class="text-primary font-medium truncate max-w-xs">{title}</li>
+      </ol>
+    </nav>
+
+    <article>
+      <header class="mb-8">
+        <h1 class="text-3xl sm:text-4xl font-bold text-primary leading-tight mb-4">
+          {title}
+        </h1>
+        <time datetime={dateIso} class="text-gray-500 text-sm">
+          {dateFormatted}
+        </time>
+      </header>
+
+      {image && (
+        <img
+          src={image}
+          alt={title}
+          class="w-full rounded-xl mb-10 object-cover max-h-96"
+          loading="eager"
+        />
+      )}
+
+      <div class="prose max-w-none">
+        <slot />
+      </div>
+    </article>
+
+    <div class="mt-12 pt-8 border-t border-gray-100">
+      <a
+        href="/blog"
+        class="inline-flex items-center gap-2 text-accent font-medium hover:text-accent-dark transition-colors"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Voltar ao Blog
+      </a>
+    </div>
+  </div>
+</BaseLayout>
