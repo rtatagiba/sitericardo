@@ -2,7 +2,7 @@
 title: "Análise de Concorrentes em SEO: Como Identificar e Superar seus Competidores nos Resultados de Busca"
 date: 2025-03-09
 description: "Seu concorrente acaba de ultrapassá-lo nas buscas do Google. Novamente."
-image: "/images/2025/03/1.jpg"
+image: "/images/1.webp"
 ---
 
 Seu concorrente acaba de ultrapassá-lo nas buscas do Google. Novamente.

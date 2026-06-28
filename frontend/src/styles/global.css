@@ -86,3 +86,52 @@ body {
   font-style: italic;
   color: #4b5563;
 }
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 0.95rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.prose thead {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.prose th {
+  padding: 0.875rem 1.25rem;
+  text-align: left;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.prose td {
+  padding: 0.875rem 1.25rem;
+  border-bottom: 1px solid #e5e7eb;
+  color: #374151;
+  vertical-align: middle;
+}
+
+.prose tbody tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.prose tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.prose tbody tr:hover {
+  background-color: #fef3c7;
+  transition: background-color 0.15s ease;
+}
+
+.prose tbody tr:last-child {
+  font-weight: 600;
+  color: #1a1a1a;
+}

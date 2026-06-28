@@ -2,7 +2,7 @@
 title: "Meta Revoluciona a Comunicação com IA que Converte Pensamentos em Texto"
 date: 2025-02-16
 description: "A Meta revelou um sistema inovador de inteligência artificial capaz de transformar pensamentos em texto digitado com até 80% de precisão. Essa tecnologia, no"
-image: "/images/2025/02/meta-cria-AI-para-conectar-cerebro-ao-computador.jpg"
+image: "/images/meta-cria-AI-para-conectar-cerebro-ao-computador.webp"
 ---
 
 A Meta revelou um sistema inovador de inteligência artificial capaz de transformar pensamentos em texto digitado com até 80% de precisão. Essa tecnologia, no entanto, ainda depende de um scanner cerebral volumoso e não portátil, além de operar apenas em condições laboratoriais controladas.

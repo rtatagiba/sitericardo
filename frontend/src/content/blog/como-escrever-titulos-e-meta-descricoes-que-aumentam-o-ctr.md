@@ -2,7 +2,7 @@
 title: "Como Escrever Títulos e Meta Descrições que Aumentam o CTR"
 date: 2025-03-17
 description: "Em um oceano de resultados de busca, sua página é apenas mais um barco esperando ser descoberto. O farol que guia os navegantes até você? Seus títulos e meta"
-image: "/images/2025/03/Como-criar-titulos-em-meta-descricao-otimizada-para-SEO.jpg"
+image: "/images/Como-criar-titulos-em-meta-descricao-otimizada-para-SEO.webp"
 ---
 
 Em um oceano de resultados de busca, sua página é apenas mais um barco esperando ser descoberto. O farol que guia os navegantes até você? Seus títulos e meta descrições. Estas pequenas porções de texto são, muitas vezes, o primeiro (e talvez único) contato entre seu conteúdo e um potencial visitante.

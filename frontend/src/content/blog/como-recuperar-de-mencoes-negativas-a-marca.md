@@ -2,7 +2,7 @@
 title: "Como Reparar e Recuperar de Menções Negativas à Marca: Guia Completo de SEO"
 date: 2025-03-10
 description: "Aprenda a recuperar menções negativas à marca e fortaleça seu SEO. Implemente estratégias eficazes de gestão de reputação hoje!"
-image: "/images/2025/03/pessoa-fazendo-um-comentario-num-produto-pelo-google-e-3-estrelas-de-avaliacao-em-sequencia.jpg"
+image: "/images/pessoa-fazendo-um-comentario-num-produto-pelo-google-e-3-estrelas-de-avaliacao-em-sequencia.webp"
 ---
 
 Quando se trata de presença online, a reputação da sua marca pode ser seu maior ativo ou seu maior obstáculo. Menções negativas à marca podem impactar significativamente a percepção dos clientes e, consequentemente, seus resultados de negócio.

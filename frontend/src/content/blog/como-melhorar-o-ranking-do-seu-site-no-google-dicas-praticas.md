@@ -2,7 +2,7 @@
 title: "Como Melhorar o Ranking do Seu Site no Google: Dicas Práticas"
 date: 2025-03-09
 description: "O Google processa mais de 90% das buscas na internet mundial, tornando-o o principal canal de tráfego orgânico para a maioria dos sites. Aparecer nas"
-image: "/images/2025/03/2.jpg"
+image: "/images/2.webp"
 ---
 
 O Google processa mais de 90% das buscas na internet mundial, tornando-o o principal canal de tráfego orgânico para a maioria dos sites. Aparecer nas primeiras posições dos resultados de busca é fundamental para obter visibilidade, aumentar o tráfego qualificado e, consequentemente, as conversões do seu negócio online. Este artigo apresenta estratégias e técnicas eficazes para melhorar o posicionamento do seu site nos resultados de pesquisa do Google.

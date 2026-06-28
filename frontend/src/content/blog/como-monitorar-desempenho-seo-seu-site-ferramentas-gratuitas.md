@@ -2,7 +2,7 @@
 title: "Como Monitorar o Desempenho de SEO do Seu Site com Ferramentas Gratuitas"
 date: 2025-04-01
 description: "Vamos ver como monitorar efetivamente o desempenho do seu SEO com ferramentas completamente gratuitas, transformando dados em decisões"
-image: "/images/2025/04/Como-Monitorar-o-Desempenho-de-SEO-do-Seu-Site-com-Ferramentas-Gratuitas.jpg"
+image: "/images/Como-Monitorar-o-Desempenho-de-SEO-do-Seu-Site-com-Ferramentas-Gratuitas.webp"
 ---
 
 Na era digital, sua presença online não é apenas uma vitrine — é seu principal canal de aquisição. No entanto, ter um site bonito não é suficiente.

@@ -2,7 +2,7 @@
 title: "Como Garantir Orçamento para SEO: Estratégias para Justificar Investimentos em Marketing Orgânico"
 date: 2025-03-17
 description: "Um orçamento eficiente para SEO é fundamental não apenas para planejar estratégias de otimização, mas também para demonstrar valor aos clientes e justificar"
-image: "/images/2025/03/Uma-equipe-de-marketing-de-5-pessoas-parecendo-estressada-com-documentos-financeiros-estilo-minimalista-limi.jpg"
+image: "/images/Uma-equipe-de-marketing-de-5-pessoas-parecendo-estressada-com-documentos-financeiros-estilo-minimalista-limi.webp"
 ---
 
 Um orçamento eficiente para SEO é fundamental não apenas para planejar estratégias de otimização, mas também para demonstrar valor aos clientes e justificar os investimentos necessários para alcançá-lo.

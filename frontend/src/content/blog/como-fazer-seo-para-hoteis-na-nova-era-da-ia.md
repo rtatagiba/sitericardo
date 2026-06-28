@@ -2,7 +2,7 @@
 title: "Como Fazer SEO para Hoteis na nova era da IA"
 date: 2025-03-14
 description: "O mundo digital não espera por ninguém – muito menos por hotéis que ainda acreditam que apenas um bom serviço e uma localização privilegiada são suficientes"
-image: "/images/2025/03/SEO-para-Hoteis.jpeg"
+image: "/images/Como fazer seo para sites de turismo.webp"
 ---
 
 O mundo digital não espera por ninguém – muito menos por hotéis que ainda acreditam que apenas um bom serviço e uma localização privilegiada são suficientes para prosperar. No cenário atual, onde a pesquisa online é o primeiro passo de 81% dos viajantes, segundo dados da TripAdvisor, a invisibilidade digital equivale a manter quartos vazios perpetuamente.

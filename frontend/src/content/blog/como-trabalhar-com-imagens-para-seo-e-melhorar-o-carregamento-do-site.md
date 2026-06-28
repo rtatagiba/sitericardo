@@ -2,7 +2,7 @@
 title: "Como trabalhar com Imagens para SEO e Melhorar o Carregamento do Site"
 date: 2025-03-14
 description: "Você já se perguntou por que seu concorrente aparece acima de você nos resultados de busca, mesmo quando seu conteúdo parece superior? A resposta pode estar"
-image: "/images/2025/03/Como-trabalhar-com-Imagens-para-SEO-e-Melhorar-o-Carregamento-do-Site.jpg"
+image: "/images/Como-trabalhar-com-Imagens-para-SEO-e-Melhorar-o-Carregamento-do-Site.webp"
 ---
 
 Você já se perguntou por que seu concorrente aparece acima de você nos resultados de busca, mesmo quando seu conteúdo parece superior? A resposta pode estar escondida onde você menos espera: nas suas imagens.

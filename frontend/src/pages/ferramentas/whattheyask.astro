@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import KeywordExplorer from "../../components/WhatTheyAsk/KeywordExplorer.astro";
+---
+
+<BaseLayout
+  title="What They Ask — O que as pessoas perguntam sobre qualquer tema"
+  description="Ferramenta gratuita para descobrir centenas de perguntas reais que as pessoas fazem sobre qualquer keyword. Alimentado pelo Google Suggest, sem custos de API."
+>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h1 class="text-4xl font-bold text-primary mb-3">WhatTheyAsk</h1>
+      <p class="text-lg text-gray-600 max-w-xl mx-auto">
+        Descobre o que as pessoas perguntam realmente sobre qualquer tema.
+        Centenas de sugestões reais do Google, agrupadas por intenção.
+      </p>
+    </div>
+    <KeywordExplorer />
+  </section>
+</BaseLayout>
