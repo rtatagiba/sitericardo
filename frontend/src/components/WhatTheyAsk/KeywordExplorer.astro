@@ -1,0 +1,259 @@
+---
+---
+
+<div class="w-full">
+  <!-- Search form -->
+  <div class="max-w-2xl mx-auto mb-10">
+    <div class="flex gap-2">
+      <input
+        id="wta-keyword"
+        type="text"
+        placeholder="ex: marketing digital"
+        class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent text-sm"
+      />
+      <select
+        id="wta-lang"
+        class="px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent text-sm bg-white cursor-pointer"
+      >
+        <option value="pt">PT 🇵🇹</option>
+        <option value="en">EN 🇬🇧</option>
+        <option value="es">ES 🇪🇸</option>
+      </select>
+      <button
+        id="wta-generate"
+        class="px-6 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm whitespace-nowrap"
+      >
+        Explorar
+      </button>
+    </div>
+    <label class="flex items-center gap-2 mt-3 text-xs text-gray-400 cursor-pointer select-none w-fit">
+      <input id="wta-test-mode" type="checkbox" class="accent-accent" />
+      Modo teste (1 query/categoria — evita ban)
+    </label>
+  </div>
+
+  <!-- Progress -->
+  <div id="wta-progress" class="hidden max-w-2xl mx-auto mb-8">
+    <div class="flex justify-between text-sm text-gray-500 mb-2">
+      <span>A carregar sugestões do Google...</span>
+      <span id="wta-progress-text">0 / 0</span>
+    </div>
+    <div class="h-2 bg-gray-100 rounded-full overflow-hidden">
+      <div
+        id="wta-progress-bar"
+        class="h-full bg-accent rounded-full transition-all duration-200"
+        style="width: 0%"
+      ></div>
+    </div>
+  </div>
+
+  <!-- Actions -->
+  <div id="wta-actions" class="hidden flex gap-3 mb-6 justify-end">
+    <button
+      id="wta-copy-all"
+      class="px-4 py-2 text-sm border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+    >
+      Copiar tudo
+    </button>
+    <button
+      id="wta-export"
+      class="px-4 py-2 text-sm border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+    >
+      Exportar CSV
+    </button>
+  </div>
+
+  <!-- Empty state -->
+  <div id="wta-empty" class="text-center py-24 text-gray-400">
+    <p class="text-5xl mb-4">🔍</p>
+    <p class="text-lg">Introduz uma keyword para começar</p>
+    <p class="text-sm mt-2 max-w-sm mx-auto">
+      O sistema vai gerar centenas de variações e consultar o Google Suggest
+      usando o teu IP — sem proxy, sem custos.
+    </p>
+  </div>
+
+  <!-- Results grid -->
+  <div id="wta-results" class="hidden grid gap-4 sm:grid-cols-2 lg:grid-cols-3"></div>
+</div>
+
+<script>
+  import { prefixes } from '../../lib/whattheyask/prefixes';
+  import { getCache, setCache } from '../../lib/whattheyask/cache';
+  import { fetchAllSuggestions } from '../../lib/whattheyask/googleSuggest';
+  import type { Language, QueryItem } from '../../lib/whattheyask/types';
+
+  const keywordInput = document.getElementById('wta-keyword') as HTMLInputElement;
+  const langSelect = document.getElementById('wta-lang') as HTMLSelectElement;
+  const generateBtn = document.getElementById('wta-generate') as HTMLButtonElement;
+  const progressSection = document.getElementById('wta-progress')!;
+  const progressText = document.getElementById('wta-progress-text')!;
+  const progressBar = document.getElementById('wta-progress-bar') as HTMLElement;
+  const actionsSection = document.getElementById('wta-actions')!;
+  const copyAllBtn = document.getElementById('wta-copy-all')!;
+  const exportBtn = document.getElementById('wta-export')!;
+  const emptyState = document.getElementById('wta-empty')!;
+  const resultsGrid = document.getElementById('wta-results')!;
+
+  let currentResults: Record<string, string[]> = {};
+  let currentKeyword = '';
+
+  function esc(str: string): string {
+    return str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function setProgress(show: boolean) {
+    progressSection.classList.toggle('hidden', !show);
+  }
+
+  function updateProgress(completed: number, total: number) {
+    progressText.textContent = `${completed} / ${total}`;
+    progressBar.style.width = `${Math.round((completed / total) * 100)}%`;
+  }
+
+  async function copyToClipboard(text: string, btn: HTMLElement) {
+    try {
+      await navigator.clipboard.writeText(text);
+      const original = btn.textContent;
+      btn.textContent = '✓ copiado';
+      setTimeout(() => {
+        btn.textContent = original;
+      }, 1500);
+    } catch {
+      // clipboard API not available — noop
+    }
+  }
+
+  function renderResults(results: Record<string, string[]>) {
+    currentResults = results;
+    emptyState.classList.add('hidden');
+    resultsGrid.innerHTML = '';
+
+    const categories = Object.entries(results)
+      .filter(([, suggestions]) => suggestions.length > 0)
+      .sort(([, a], [, b]) => b.length - a.length);
+
+    if (categories.length === 0) {
+      emptyState.classList.remove('hidden');
+      emptyState.innerHTML =
+        '<p class="text-5xl mb-4">😶</p><p class="text-lg">Sem resultados. Tenta outra keyword.</p>';
+      actionsSection.classList.add('hidden');
+      resultsGrid.classList.add('hidden');
+      return;
+    }
+
+    actionsSection.classList.remove('hidden');
+    resultsGrid.classList.remove('hidden');
+
+    for (const [category, suggestions] of categories) {
+      const card = document.createElement('div');
+      card.className = 'bg-white rounded-xl border border-gray-200 p-5 shadow-sm';
+      card.innerHTML = `
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="font-semibold text-primary">${esc(category)}</h3>
+          <div class="flex items-center gap-2">
+            <span class="text-xs text-gray-400 tabular-nums">${suggestions.length}</span>
+            <button
+              class="copy-cat text-xs text-accent hover:text-accent-dark font-medium transition-colors"
+              data-category="${esc(category)}"
+            >copiar</button>
+          </div>
+        </div>
+        <ul class="space-y-0.5">
+          ${suggestions.map((s) => `<li class="text-sm text-gray-700 py-0.5 leading-snug">${esc(s)}</li>`).join('')}
+        </ul>
+      `;
+      resultsGrid.appendChild(card);
+    }
+
+    resultsGrid.querySelectorAll<HTMLElement>('.copy-cat').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const cat = btn.dataset.category!;
+        copyToClipboard((currentResults[cat] ?? []).join('\n'), btn);
+      });
+    });
+  }
+
+  copyAllBtn.addEventListener('click', () => {
+    const text = Object.entries(currentResults)
+      .filter(([, s]) => s.length > 0)
+      .map(([cat, suggestions]) => `## ${cat}\n${suggestions.join('\n')}`)
+      .join('\n\n');
+    copyToClipboard(text, copyAllBtn);
+  });
+
+  exportBtn.addEventListener('click', () => {
+    const rows: string[][] = [['categoria', 'pergunta']];
+    for (const [category, suggestions] of Object.entries(currentResults)) {
+      for (const suggestion of suggestions) {
+        rows.push([category, suggestion]);
+      }
+    }
+    const csv = rows
+      .map((r) => r.map((cell) => `"${cell.replace(/"/g, '""')}"`).join(','))
+      .join('\n');
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `whattheyask-${currentKeyword.replace(/\s+/g, '-')}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+
+  async function handleGenerate() {
+    const keyword = keywordInput.value.trim();
+    if (!keyword || generateBtn.disabled) return;
+
+    const lang = langSelect.value as Language;
+    currentKeyword = keyword;
+
+    const cached = getCache(keyword, lang);
+    if (cached) {
+      setProgress(false);
+      renderResults(cached);
+      return;
+    }
+
+    const langPrefixes = prefixes[lang];
+    const testMode = (document.getElementById('wta-test-mode') as HTMLInputElement).checked;
+    const queries: QueryItem[] = [];
+    for (const [category, categoryPrefixes] of Object.entries(langPrefixes)) {
+      const selected = testMode ? categoryPrefixes.slice(0, 1) : categoryPrefixes;
+      for (const prefix of selected) {
+        queries.push({ category, prefix, query: `${prefix} ${keyword}` });
+      }
+    }
+
+    generateBtn.disabled = true;
+    generateBtn.textContent = 'A carregar...';
+    resultsGrid.classList.add('hidden');
+    actionsSection.classList.add('hidden');
+    emptyState.classList.add('hidden');
+    setProgress(true);
+    updateProgress(0, queries.length);
+
+    try {
+      const results = await fetchAllSuggestions(queries, lang, updateProgress);
+      setCache(keyword, lang, results);
+      renderResults(results);
+    } catch {
+      emptyState.classList.remove('hidden');
+      emptyState.innerHTML =
+        '<p class="text-5xl mb-4">⚠️</p><p class="text-lg text-red-500">Erro ao carregar. Tenta novamente.</p>';
+    } finally {
+      generateBtn.disabled = false;
+      generateBtn.textContent = 'Explorar';
+      setProgress(false);
+    }
+  }
+
+  generateBtn.addEventListener('click', handleGenerate);
+  keywordInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') handleGenerate();
+  });
+</script>

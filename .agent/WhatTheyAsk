@@ -1,0 +1,216 @@
+# WhatTheyAsk — Project Brief (revisto)
+
+## O que é
+Ferramenta web open-source que expande uma seed keyword em centenas de perguntas reais que as pessoas fazem nos motores de busca, agrupadas por tipo de intenção. Disponível gratuitamente no site do criador, sem custos de API nem dependências pagas.
+
+---
+
+## Como funciona
+
+### Fluxo principal
+1. Utilizador insere uma keyword + escolhe idioma
+2. O sistema gera automaticamente variações de queries com prefixos reais (Como, Quando, Onde, etc.)
+3. Cada variação é enviada ao Google Suggest **diretamente do browser do utilizador** via JSONP
+4. As sugestões reais devolvidas pelo Google são agrupadas por categoria e apresentadas em cards
+5. Utilizador pode copiar ou exportar os resultados
+
+### Porquê JSONP direto do browser
+- Cada utilizador bate no Google com o seu próprio IP — sem risco de ban centralizado
+- Zero custos de servidor para chamadas à API
+- Sem proxy, sem intermediários
+- O endpoint `suggestqueries.google.com` com `client=chrome&callback={fn}` devolve JSONP real
+
+---
+
+## ⚠️ Correção 1: endpoint JSONP (BLOQUEADOR)
+
+**Errado (plano original):**
+```
+client=firefox
+```
+`client=firefox` devolve array literal `["query",[...]]` sem wrapper — o parâmetro `callback` é ignorado. Script tag nunca executa, fetch direto é bloqueado por CORS. **Não funciona.**
+
+**Correto (testado e verificado):**
+```
+https://suggestqueries.google.com/complete/search?client=chrome&q={query}&hl={lang}&callback={fn}
+```
+`client=chrome` devolve `cb && cb([...])` — JSONP real. Bónus: inclui `google:suggestrelevance` scores (útil para a funcionalidade de ordenação do roadmap v2).
+
+---
+
+## ⚠️ Correção 2: sem React
+
+**Plano original:** `KeywordExplorer.tsx` como React island, implica `@astrojs/react` + `react` + `react-dom`.
+
+**Problema:** o site atual usa **Astro 7** com zero React — todos os componentes são `.astro`. Instalar React para uma única ferramenta adiciona peso desnecessário e quebra a consistência do projeto.
+
+**Decisão:** `.astro` page + `<script>` module em TypeScript puro. Funcionalidade idêntica, zero dependências novas, padrão consistente com o resto do site. Se no futuro houver mais componentes interativos que justifiquem React, adiciona-se `@astrojs/react` então.
+
+---
+
+## ⚠️ Correção 3: integrado no site, não repo standalone
+
+**Plano original:** descreve `whattheyask/` como raiz de projeto separado, com `CLAUDE.md` próprio, `README`, `.env.example`.
+
+**Realidade:** é uma página dentro do site existente em `frontend/`. Integra no monorepo.
+
+---
+
+## ⚠️ Correção 4: versão do Astro
+
+O projeto usa **Astro 7**, não Astro 5 como indicado no plano original.
+
+---
+
+## Prefixos por categoria
+
+| Categoria | Exemplos de prefixos |
+|---|---|
+| Como | como, como fazer, como usar, como funciona |
+| Quando | quando, quando é, quando usar |
+| Onde | onde, onde comprar, onde encontrar |
+| Aonde | aonde ir, aonde levar |
+| Porquê | porque, porque é que, por que razão |
+| Quem | quem é, quem faz, quem vende |
+| O quê | o que é, o que significa, o que fazer |
+| Qual / Quais | qual o melhor, quais são, qual a diferença |
+| Será que | será que, será possível |
+| Quanto | quanto custa, quanto tempo, quantos |
+| Sem | sem, sem glúten, sem açúcar (negações) |
+| Para | para que serve, para quem, para que é |
+| Vs / Ou | X ou Y, X vs Y, X versus Y |
+| Melhor | melhor, o melhor, melhores |
+| Perto | perto de mim, perto de Lisboa |
+
+---
+
+## Stack (corrigida)
+
+- **Astro 7** — framework principal, SSR desligado (site 100% estático)
+- **Vanilla TypeScript** — islands interativas sem React
+- **Tailwind v4** — estilos (já instalado no site)
+- **Cloudflare Pages** — deploy (já configurado no site)
+- **Sem backend** — toda a lógica corre no browser
+
+---
+
+## Estrutura de ficheiros (corrigida)
+
+```
+frontend/src/
+├── pages/
+│   └── ferramentas/
+│       └── whattheyask.astro         # Página da ferramenta, usa BaseLayout existente
+├── components/
+│   └── WhatTheyAsk/
+│       └── KeywordExplorer.astro     # UI + <script> TypeScript inline
+└── lib/
+    └── whattheyask/
+        ├── prefixes.ts               # Todos os prefixos por categoria e idioma
+        ├── googleSuggest.ts          # Chamada JSONP ao Google Suggest (client=chrome)
+        ├── cache.ts                  # Cache localStorage com TTL 24h
+        └── types.ts                  # Tipos partilhados
+```
+
+Sem `CLAUDE.md` separado, sem `README` separado, sem `.env.example` — integrado no monorepo do site.
+
+---
+
+## Funcionalidades
+
+### Core (v1)
+- Input de keyword + seletor de idioma (PT / EN / ES)
+- Geração automática de todas as variações de queries
+- Chamadas JSONP ao Google Suggest em paralelo (com rate limiting suave)
+- Cards agrupados por categoria com contagem de resultados
+- Indicador de progresso (X de Y queries concluídas)
+- Cache local 24h — mesma keyword não refaz chamadas
+- Copiar por categoria ou tudo de uma vez
+- Export CSV
+
+### Roadmap (v2+)
+- Filtro por categoria
+- Ordenar por relevância (usar `google:suggestrelevance` já retornado pelo endpoint `client=chrome`)
+- Modo escuro / claro
+- Histórico de pesquisas recentes (localStorage)
+- Comparar duas keywords lado a lado
+- Suporte a mais idiomas (FR, DE, IT)
+
+---
+
+## Ficheiros chave
+
+### `lib/whattheyask/prefixes.ts`
+Objeto com todas as categorias e os seus prefixos em cada idioma:
+```ts
+{
+  pt: {
+    como: ["como", "como fazer", "como usar", ...],
+    quando: ["quando", "quando é", ...],
+    ...
+  },
+  en: { ... },
+  es: { ... }
+}
+```
+
+### `lib/whattheyask/googleSuggest.ts`
+Função que recebe query string e devolve array de sugestões via JSONP.
+
+Endpoint: `https://suggestqueries.google.com/complete/search?client=chrome&q={query}&hl={lang}&callback={fn}`
+
+- Cria `<script>` tag dinamicamente
+- Regista callback global temporário com nome único (evitar colisões)
+- Limpa script tag e callback após resposta ou timeout (3s)
+- Wrapper em try/catch — falha silenciosa por categoria (endpoint não documentado)
+
+Rate limiting:
+- Máximo 5 chamadas em paralelo
+- Jitter 100–200ms entre lotes (evitar burst de ~50 calls que pode ativar captcha no IP do utilizador)
+
+### `lib/whattheyask/cache.ts`
+- Chave: `wta_{keyword_normalizada}_{lang}`
+- **Normalização obrigatória:** `keyword.trim().toLowerCase()` antes de gerar chave — `"Astro "` ≠ `"astro"` resultaria em cache misses duplicados
+- TTL: 24 horas
+- Guarda o objeto completo de resultados por categoria
+
+### `pages/ferramentas/whattheyask.astro`
+- Usa `BaseLayout` (Navbar + Footer do site existentes)
+- Importa `KeywordExplorer.astro`
+- Meta tags adequadas (SEO da ferramenta)
+
+### `components/WhatTheyAsk/KeywordExplorer.astro`
+- Estado gerido via `<script>` TypeScript inline
+- Estado: `keyword`, `lang`, `loading`, `progress`, `results`, `error`
+- `handleGenerate()` — normaliza keyword → verifica cache → gera variações → dispara JSONP com jitter → agrupa por categoria
+- Progresso em tempo real enquanto chamadas chegam
+- Grid de cards responsivo
+
+---
+
+## Riscos técnicos
+
+| Risco | Mitigação |
+|---|---|
+| Captcha/throttle no IP do utilizador (~50 calls/keyword em burst) | Jitter 100–200ms entre lotes + cap 5 paralelas |
+| Endpoint quebrar (não documentado pelo Google) | try/catch por chamada, empty state gracioso por categoria |
+| Cache miss por variação de capitalização ("Astro " ≠ "astro") | Normalizar keyword: `trim().toLowerCase()` antes da chave |
+| Zona cinzenta legal (scraping via IP do utilizador) | Nota no README; prática standard (AnswerThePublic, Semrush, etc.) |
+
+---
+
+## Entrada a adicionar no CLAUDE.md do site
+
+```markdown
+## WhatTheyAsk (`/ferramentas/whattheyask`)
+
+Keyword question explorer — expande seeds em perguntas reais via Google Suggest.
+
+### Regras
+- Zero dependências novas — sem React, sem APIs pagas
+- JSONP via `client=chrome` (não `client=firefox` — não funciona como JSONP)
+- O IP das chamadas é sempre o do utilizador final, nunca do servidor
+- Cache localStorage TTL 24h — chave `wta_{keyword.trim().toLowerCase()}_{lang}`
+- Rate limiting: máx 5 JSONP em paralelo + jitter 100–200ms entre lotes
+- Site 100% estático — sem SSR, sem endpoints server-side
+```
