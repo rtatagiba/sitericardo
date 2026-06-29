@@ -1,9 +1,9 @@
 ---
-
 title: "Como Calcular seu Orçamento de SEO: Um Guia Completo para Empresas Brasileiras"
 date: 2025-03-17
 description: "O digital é o principal canal de marketing para muitas empresas hoje em dia."
 image: "/images/Como fazer calculo.webp"
+---
 
 ## Como Calcular seu Orçamento de SEO: Um Guia Completo para Empresas Brasileiras
 
