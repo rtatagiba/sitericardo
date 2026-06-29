@@ -2,11 +2,11 @@
 title: "Como Fazer SEO para Pequenas Empresas: Um Guia Completo"
 date: 2025-03-08
 description: Ter uma presença online forte é essencial para qualquer pequena empresa nos dias de hoje. No entanto, apenas ter um site não é suficiente – você precisa que
-image: /images/como-fazer-seo-para-pequenas-empresas-um-guia-completo/img-1782729378237.webp
+image: /images/como-fazer-seo-para-pequenas-empresas-um-guia-completo/img-1782729813382.webp
 category: ""
 draft: false
 tags: []
-updatedDate: 2026-06-29T10:36:21.336Z
+updatedDate: 2026-06-29T10:43:36.704Z
 ---
 
 Ter uma presença online forte é essencial para qualquer pequena empresa nos dias de hoje. No entanto, apenas ter um site não é suficiente – você precisa que as pessoas o encontrem! É aí que entra o SEO (Search Engine Optimization, ou Otimização para Mecanismos de Busca).
