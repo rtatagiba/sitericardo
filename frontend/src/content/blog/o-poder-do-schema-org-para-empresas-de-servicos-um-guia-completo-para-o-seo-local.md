@@ -2,7 +2,7 @@
 title: "O Poder do Schema.org para Empresas de Serviços: Um Guia Completo para o SEO Local"
 date: 2025-02-26
 description: "No cenário digital cada vez mais competitivo, empresas de serviços locais precisam de toda vantagem possível para se destacarem nos resultados de busca. O"
-image: "/images/2025/02/a-photo-of-a-restaurant-with-a-beautiful-1.webp"
+image: "/images/2025/02/a-photo-of-a-restaurant-with-a-beautiful-1.jpeg"
 ---
 
 No cenário digital cada vez mais competitivo, empresas de serviços locais precisam de toda vantagem possível para se destacarem nos resultados de busca. O Schema.org emerge como uma ferramenta fundamental que pode transformar a visibilidade online do seu negócio, especialmente com a evolução dos algoritmos de IA dos motores de busca.
