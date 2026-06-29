@@ -1,6 +1,6 @@
 ---
 pubDate: 2026-06-29T14:29:46.461Z
-updatedDate: 2026-06-29T14:29:46.461Z
+updatedDate: 2026-06-29T15:25:09.931Z
 author: Editorial
 draft: false
 title: "A Oficialização do Grounding: O Futuro do Tráfego Orgânico Segundo o Google"
@@ -56,7 +56,7 @@ Este é o ponto mais relevante do documento para quem trabalha com conteúdo.
 
 O Google confirma que está **explorando parcerias e modelos de troca de valor financeiro** com sites cujo conteúdo contribui ativamente para a _factualidade_ e a _atualização_ das respostas generativas,o que o documento chama de **grounding**.
 
-O que é grounding? É o processo pelo qual um modelo de linguagem "ancora" a sua resposta em dados reais e verificáveis, em vez de gerar informação do zero (e potencialmente alucinar). O modelo precisa de fontes confiáveis, atualizadas e coerentes para garantir que o que diz é verdade.
+O que é [grounding?](https://ai.google.dev/gemini-api/docs/google-search?hl=pt-br) É o processo pelo qual um modelo de linguagem "ancora" a sua resposta em dados reais e verificáveis, em vez de gerar informação do zero (e potencialmente alucinar). O modelo precisa de fontes confiáveis, atualizadas e coerentes para garantir que o que diz é verdade.
 
 Em termos simples: **os LLMs precisam de sites como os seus para não mentir**. E o Google está, oficialmente, a explorar formas de pagar por isso.
 
