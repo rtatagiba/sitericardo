@@ -4,7 +4,7 @@ import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 
 const posts = (await getCollection('blog'))
-  .sort((a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => b.data.date.getTime() - a.data.date.getTime());
+  .sort((a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => (b.data.date ?? b.data.pubDate ?? new Date(0)).getTime() - (a.data.date ?? a.data.pubDate ?? new Date(0)).getTime());
 ---
 
 <BaseLayout
@@ -32,7 +32,7 @@ const posts = (await getCollection('blog'))
           )}
           <div class="p-6 flex flex-col flex-1">
             <time class="text-xs text-gray-500 mb-2 block">
-              {post.data.date.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })}
+              {(post.data.date ?? post.data.pubDate ?? new Date(0)).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })}
             </time>
             <h2 class="font-bold text-lg mb-2 text-primary leading-snug flex-1">
               <a href={`/blog/${post.id}`} class="hover:text-accent transition-colors">
