@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Página não encontrada (404)" description="A página que você procura não existe ou mudou de endereço." noindex={true}>
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+    <p class="text-accent font-bold text-6xl mb-4">404</p>
+    <h1 class="text-3xl font-bold text-primary mb-4">Página não encontrada</h1>
+    <p class="text-gray-600 mb-2">
+      A página que você procura não existe ou mudou de endereço.
+    </p>
+    <p id="fuzzy-status" class="text-gray-500 text-sm mb-8" aria-live="polite"></p>
+    <div id="fuzzy-suggestion" class="hidden mb-8">
+      <p class="text-gray-700 mb-3">Você procurava por esta página?</p>
+      <a id="fuzzy-link" href="/" class="inline-block bg-accent text-white font-medium px-6 py-3 rounded-lg hover:opacity-90 transition-opacity break-all"></a>
+    </div>
+    <div class="flex items-center justify-center gap-4">
+      <a href="/" class="text-accent font-medium hover:underline">Ir para a Home</a>
+      <span class="text-gray-300">|</span>
+      <a href="/blog" class="text-accent font-medium hover:underline">Ver o Blog</a>
+    </div>
+  </section>
+
+  <script>
+    // FuzzyRedirect: compares the broken path against every URL in the
+    // sitemap. >= 85% similarity auto-redirects; otherwise shows the best
+    // match as a suggestion.
+    function levenshtein(a: string, b: string): number {
+      const m = a.length;
+      const n = b.length;
+      if (m === 0) return n;
+      if (n === 0) return m;
+      let prev = Array.from({ length: n + 1 }, (_, i) => i);
+      for (let i = 1; i <= m; i++) {
+        const curr = [i];
+        for (let j = 1; j <= n; j++) {
+          curr[j] = Math.min(
+            prev[j] + 1,
+            curr[j - 1] + 1,
+            prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1),
+          );
+        }
+        prev = curr;
+      }
+      return prev[n];
+    }
+
+    function similarity(a: string, b: string): number {
+      const maxLen = Math.max(a.length, b.length);
+      if (maxLen === 0) return 1;
+      return 1 - levenshtein(a, b) / maxLen;
+    }
+
+    async function fetchLocs(url: string): Promise<string[]> {
+      const res = await fetch(url);
+      if (!res.ok) return [];
+      const text = await res.text();
+      const doc = new DOMParser().parseFromString(text, 'application/xml');
+      return Array.from(doc.querySelectorAll('loc')).map((el) => el.textContent ?? '');
+    }
+
+    async function run() {
+      try {
+        const indexLocs = await fetchLocs('/sitemap-index.xml');
+        const childSitemaps = indexLocs.filter((u) => u.endsWith('.xml'));
+        const pageUrls = (
+          await Promise.all(childSitemaps.map((u) => fetchLocs(u)))
+        ).flat();
+        if (pageUrls.length === 0) return;
+
+        const currentPath = decodeURIComponent(location.pathname).replace(/\/+$/, '').toLowerCase();
+        let best: { url: string; score: number } | null = null;
+        for (const url of pageUrls) {
+          const path = new URL(url).pathname.replace(/\/+$/, '').toLowerCase();
+          const score = similarity(currentPath, path);
+          if (!best || score > best.score) best = { url, score };
+        }
+        if (!best) return;
+
+        if (best.score >= 0.85) {
+          const status = document.getElementById('fuzzy-status');
+          if (status) status.textContent = 'Redirecionando para a página correta…';
+          location.replace(best.url);
+        } else if (best.score >= 0.6) {
+          const box = document.getElementById('fuzzy-suggestion');
+          const link = document.getElementById('fuzzy-link') as HTMLAnchorElement | null;
+          if (box && link) {
+            link.href = best.url;
+            link.textContent = new URL(best.url).pathname;
+            box.classList.remove('hidden');
+          }
+        }
+      } catch {
+        // Silent failure — static links above remain usable
+      }
+    }
+
+    run();
+  </script>
+</BaseLayout>

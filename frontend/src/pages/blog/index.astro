@@ -1,10 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
+import { getPublishedPosts } from '../../lib/seo/posts';
 
-const posts = (await getCollection('blog'))
-  .sort((a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => (b.data.date ?? b.data.pubDate ?? new Date(0)).getTime() - (a.data.date ?? a.data.pubDate ?? new Date(0)).getTime());
+const posts = await getPublishedPosts();
 ---
 
 <BaseLayout

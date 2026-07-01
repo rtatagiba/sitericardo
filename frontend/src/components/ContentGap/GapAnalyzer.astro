@@ -1,0 +1,278 @@
+---
+---
+
+<div class="w-full">
+  <!-- Input form -->
+  <div class="max-w-2xl mx-auto mb-10">
+    <label class="block text-sm font-medium text-gray-700 mb-1" for="cg-user-site">
+      O teu site
+    </label>
+    <input
+      id="cg-user-site"
+      type="text"
+      placeholder="ex: meusite.com ou meusite.com/sitemap.xml"
+      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent text-sm mb-4"
+    />
+    <label class="block text-sm font-medium text-gray-700 mb-1" for="cg-competitors">
+      Concorrentes (um por linha, até 9)
+    </label>
+    <textarea
+      id="cg-competitors"
+      rows="5"
+      placeholder="concorrente1.com&#10;concorrente2.com&#10;concorrente3.com"
+      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent text-sm resize-y"
+    ></textarea>
+    <button
+      id="cg-analyze"
+      class="mt-4 w-full px-6 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm"
+    >
+      Analisar lacunas de conteúdo
+    </button>
+    <p id="cg-form-error" class="hidden mt-2 text-sm text-red-600"></p>
+  </div>
+
+  <!-- Per-site progress -->
+  <div id="cg-progress" class="hidden max-w-2xl mx-auto mb-8">
+    <ul id="cg-progress-list" class="space-y-1 text-sm"></ul>
+  </div>
+
+  <!-- Empty state -->
+  <div id="cg-empty" class="text-center py-24 text-gray-400">
+    <p class="text-5xl mb-4">🧩</p>
+    <p class="text-lg">Compara sitemaps e descobre o que falta no teu site</p>
+    <p class="text-sm mt-2 max-w-sm mx-auto">
+      A ferramenta lê o sitemap de cada site, agrupa os conteúdos por tópico e
+      mostra as oportunidades que os concorrentes já cobrem — e tu ainda não.
+    </p>
+  </div>
+
+  <!-- Results -->
+  <div id="cg-results" class="hidden">
+    <div id="cg-summary" class="flex flex-wrap gap-3 mb-6"></div>
+
+    <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+      <label class="flex items-center gap-2 text-sm text-gray-600 cursor-pointer select-none">
+        <input id="cg-only-gaps" type="checkbox" checked class="accent-accent" />
+        Mostrar apenas oportunidades (tópicos que o teu site não tem)
+      </label>
+      <button
+        id="cg-export"
+        class="px-4 py-2 text-sm border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+      >
+        Exportar para Excel (CSV)
+      </button>
+    </div>
+
+    <div class="overflow-x-auto border border-gray-200 rounded-xl">
+      <table class="w-full text-sm">
+        <thead id="cg-table-head" class="bg-gray-50 text-left text-gray-600"></thead>
+        <tbody id="cg-table-body" class="divide-y divide-gray-100 bg-white"></tbody>
+      </table>
+    </div>
+    <p id="cg-table-note" class="text-xs text-gray-400 mt-2"></p>
+  </div>
+</div>
+
+<script>
+  import { fetchSitemapUrls } from '../../lib/contentgap/sitemap';
+  import { clusterTopics } from '../../lib/contentgap/compare';
+  import { normalizeSiteInput } from '../../lib/contentgap/sitemap';
+  import type { TopicCluster } from '../../lib/contentgap/types';
+
+  const userSiteInput = document.getElementById('cg-user-site') as HTMLInputElement;
+  const competitorsInput = document.getElementById('cg-competitors') as HTMLTextAreaElement;
+  const analyzeBtn = document.getElementById('cg-analyze') as HTMLButtonElement;
+  const formError = document.getElementById('cg-form-error')!;
+  const progressSection = document.getElementById('cg-progress')!;
+  const progressList = document.getElementById('cg-progress-list')!;
+  const emptyState = document.getElementById('cg-empty')!;
+  const resultsSection = document.getElementById('cg-results')!;
+  const summaryEl = document.getElementById('cg-summary')!;
+  const onlyGapsCheckbox = document.getElementById('cg-only-gaps') as HTMLInputElement;
+  const exportBtn = document.getElementById('cg-export')!;
+  const tableHead = document.getElementById('cg-table-head')!;
+  const tableBody = document.getElementById('cg-table-body')!;
+  const tableNote = document.getElementById('cg-table-note')!;
+
+  const MAX_RENDERED_ROWS = 500;
+
+  let hosts: string[] = [];
+  let clusters: TopicCluster[] = [];
+
+  function esc(str: string): string {
+    return str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function showFormError(message: string) {
+    formError.textContent = message;
+    formError.classList.remove('hidden');
+  }
+
+  function setProgressLine(index: number, host: string, message: string, state: 'loading' | 'ok' | 'error') {
+    let line = document.getElementById(`cg-progress-${index}`);
+    if (!line) {
+      line = document.createElement('li');
+      line.id = `cg-progress-${index}`;
+      progressList.appendChild(line);
+    }
+    const icon = state === 'ok' ? '✅' : state === 'error' ? '⚠️' : '⏳';
+    const color = state === 'error' ? 'text-amber-700' : 'text-gray-600';
+    line.className = color;
+    line.textContent = `${icon} ${host} — ${message}`;
+  }
+
+  function visibleClusters(): TopicCluster[] {
+    return onlyGapsCheckbox.checked ? clusters.filter((c) => !c.userHas) : clusters;
+  }
+
+  function renderSummary(urlCounts: number[], errors: (string | undefined)[]) {
+    const gapCount = clusters.filter((c) => !c.userHas).length;
+    const chips: string[] = [
+      `<div class="px-4 py-2 rounded-lg bg-accent/10 text-accent font-semibold text-sm">${gapCount} oportunidades de conteúdo</div>`,
+      `<div class="px-4 py-2 rounded-lg bg-gray-100 text-gray-700 text-sm">${clusters.length} tópicos analisados</div>`,
+    ];
+    hosts.forEach((host, i) => {
+      const label = i === 0 ? `${host} (o teu site)` : host;
+      const detail = errors[i] ? `erro: ${errors[i]}` : `${urlCounts[i]} URLs`;
+      chips.push(
+        `<div class="px-4 py-2 rounded-lg border border-gray-200 text-sm text-gray-600">${esc(label)} · ${esc(detail)}</div>`,
+      );
+    });
+    summaryEl.innerHTML = chips.join('');
+  }
+
+  function renderTable() {
+    const rows = visibleClusters();
+
+    tableHead.innerHTML = `
+      <tr>
+        <th class="px-4 py-3 font-semibold whitespace-nowrap">Tópico</th>
+        <th class="px-4 py-3 font-semibold text-center whitespace-nowrap">Concorrentes</th>
+        ${hosts
+          .map(
+            (host, i) =>
+              `<th class="px-4 py-3 font-semibold text-center whitespace-nowrap ${i === 0 ? 'text-accent' : ''}">${esc(host)}${i === 0 ? ' ★' : ''}</th>`,
+          )
+          .join('')}
+      </tr>`;
+
+    tableBody.innerHTML = rows
+      .slice(0, MAX_RENDERED_ROWS)
+      .map((cluster) => {
+        const cells = cluster.urlsBySite
+          .map((urls, i) => {
+            if (urls.length === 0) {
+              return `<td class="px-4 py-2 text-center text-gray-300">—</td>`;
+            }
+            const extra = urls.length > 1 ? ` <span class="text-gray-400">+${urls.length - 1}</span>` : '';
+            return `<td class="px-4 py-2 text-center"><a href="${esc(urls[0])}" target="_blank" rel="noopener nofollow" class="${i === 0 ? 'text-gray-500' : 'text-green-600'} hover:underline" title="${esc(urls[0])}">✓</a>${extra}</td>`;
+          })
+          .join('');
+        const badge = cluster.userHas
+          ? ''
+          : '<span class="ml-2 text-[10px] uppercase tracking-wide bg-accent/10 text-accent px-1.5 py-0.5 rounded">oportunidade</span>';
+        return `<tr>
+          <td class="px-4 py-2 text-gray-800">${esc(cluster.label)}${badge}</td>
+          <td class="px-4 py-2 text-center tabular-nums text-gray-600">${cluster.competitorCount}</td>
+          ${cells}
+        </tr>`;
+      })
+      .join('');
+
+    tableNote.textContent =
+      rows.length > MAX_RENDERED_ROWS
+        ? `A mostrar ${MAX_RENDERED_ROWS} de ${rows.length} tópicos — exporta o CSV para veres tudo. Clica no ✓ para abrir o URL.`
+        : `${rows.length} tópicos. Clica no ✓ para abrir o URL correspondente.`;
+  }
+
+  exportBtn.addEventListener('click', () => {
+    const rows: string[][] = [['topico', 'oportunidade', 'concorrentes_com_tema', ...hosts]];
+    for (const cluster of visibleClusters()) {
+      rows.push([
+        cluster.label,
+        cluster.userHas ? 'nao' : 'sim',
+        String(cluster.competitorCount),
+        ...cluster.urlsBySite.map((urls) => urls.join(' | ')),
+      ]);
+    }
+    // BOM + semicolons so Excel (pt locale) opens it with correct columns/accents
+    const csv =
+      '\u{FEFF}' +
+      rows.map((r) => r.map((cell) => `"${cell.replace(/"/g, '""')}"`).join(';')).join('\r\n');
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `lacuna-de-conteudo-${hosts[0] ?? 'site'}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+
+  onlyGapsCheckbox.addEventListener('change', renderTable);
+
+  async function handleAnalyze() {
+    formError.classList.add('hidden');
+
+    const userSite = userSiteInput.value.trim();
+    const competitors = competitorsInput.value
+      .split('\n')
+      .map((l) => l.trim())
+      .filter(Boolean);
+
+    if (!userSite) return showFormError('Indica o teu site.');
+    if (competitors.length === 0) return showFormError('Indica pelo menos um concorrente.');
+    if (competitors.length > 9) return showFormError('Máximo de 9 concorrentes (10 sites no total).');
+
+    const inputs = [userSite, ...competitors];
+    try {
+      hosts = inputs.map((i) => new URL(normalizeSiteInput(i).origin).hostname.replace(/^www\./, ''));
+    } catch {
+      return showFormError('Um dos endereços é inválido. Usa o formato dominio.com.');
+    }
+
+    analyzeBtn.disabled = true;
+    analyzeBtn.textContent = 'A analisar...';
+    emptyState.classList.add('hidden');
+    resultsSection.classList.add('hidden');
+    progressList.innerHTML = '';
+    progressSection.classList.remove('hidden');
+
+    const results = await Promise.all(
+      inputs.map(async (input, i) => {
+        setProgressLine(i, hosts[i], 'a iniciar...', 'loading');
+        try {
+          const urls = await fetchSitemapUrls(input, (msg) => setProgressLine(i, hosts[i], msg, 'loading'));
+          setProgressLine(i, hosts[i], `${urls.length} URLs encontrados`, 'ok');
+          return { urls, error: undefined as string | undefined };
+        } catch (err) {
+          const message = err instanceof Error ? err.message : 'erro desconhecido';
+          setProgressLine(i, hosts[i], message, 'error');
+          return { urls: [] as string[], error: message };
+        }
+      }),
+    );
+
+    analyzeBtn.disabled = false;
+    analyzeBtn.textContent = 'Analisar lacunas de conteúdo';
+
+    if (results[0].error) {
+      showFormError(`Não foi possível ler o sitemap do teu site (${results[0].error}). Verifica o endereço ou indica o URL direto do sitemap.`);
+      return;
+    }
+    if (results.slice(1).every((r) => r.error)) {
+      showFormError('Nenhum sitemap de concorrente pôde ser lido. Verifica os endereços.');
+      return;
+    }
+
+    clusters = clusterTopics(results.map((r) => r.urls));
+    renderSummary(results.map((r) => r.urls.length), results.map((r) => r.error));
+    renderTable();
+    resultsSection.classList.remove('hidden');
+  }
+
+  analyzeBtn.addEventListener('click', handleAnalyze);
+</script>

@@ -1,0 +1,50 @@
+# Padrão de Arquitetura: CMS Estático via GitHub e Cloudflare Workers
+
+Esta documentação (Skill/KI) descreve as melhores práticas e a arquitetura adotada para transformar um site estático gerado (como Astro) em um sistema gerenciável com recursos de **Publicar, Editar e Excluir** artigos diretamente pelo navegador, sem a necessidade de um banco de dados tradicional ou um CMS pesado (como WordPress).
+
+## 🏗️ 1. Arquitetura Geral
+
+O sistema é dividido em duas partes principais:
+
+1. **Frontend (Astro + Tailwind CSS)**: 
+   - Interfaces estáticas criadas na pasta `src/pages/admin/` (`publicar.astro`, `gerenciar.astro`, `editar.astro`).
+   - Todo o código roda no lado do cliente (Client-side) usando a tag `<script>`, o que mantém o site 100% estático, rápido e hospedável de graça no Cloudflare Pages.
+2. **Backend / Proxy API (Cloudflare Worker)**:
+   - Um script leve (`cloudflare-worker/index.js`) hospedado no Cloudflare Workers.
+   - Atua como uma ponte segura entre o Frontend e a **API do GitHub**.
+   - Responsável por receber os comandos (ex: "crie este arquivo", "delete este arquivo") e executar os *commits* diretamente no repositório.
+
+## 🔐 2. Segurança e Autenticação
+
+Para evitar que qualquer pessoa acesse a API e publique artigos ou apague arquivos no GitHub, foi implementado um sistema simples e eficiente:
+
+- **Chave de API Secreta**: Uma variável de ambiente configurada no Cloudflare Worker (`API_SECRET_KEY`).
+- **Headers HTTP**: O Frontend envia a chave através do header `Authorization: Bearer <CHAVE>` em cada requisição.
+- **Local Storage**: Para melhorar a experiência do usuário (UX), o Frontend salva a chave no `localStorage` do navegador logo no primeiro acesso bem-sucedido. Assim, o usuário não precisa digitar a senha repetidamente.
+
+## 💾 3. Gestão de Estado e UX (Melhores Práticas)
+
+- **Feedback Visual Claro**: Toda requisição ao Worker (que pode demorar devido à comunicação com o GitHub) bloqueia os botões e exibe um status ("Carregando...", "Publicando...").
+- **Mensagens de Status Dinâmicas**: Utiliza-se um container de mensagens (verde para sucesso, vermelho para erro) para informar exatamente o que aconteceu e por que falhou.
+- **Auto-Loading**: Sempre que houver uma chave salva no `localStorage`, as páginas que exigem listagem de dados (como `/admin/gerenciar`) carregam os dados automaticamente ao serem abertas, reduzindo a fricção e o número de cliques.
+- **Tratamento de Dados Locais (Frontmatter)**: O processamento de metadados como título, data, tags e SEO é feito injetando um bloco YAML/Frontmatter padrão no início do conteúdo Markdown gerado, garantindo que o compilador do Astro reconheça a postagem corretamente.
+
+## 🔄 4. O Fluxo de Git e Deploy Contínuo
+
+O fluxo de publicação tira proveito do CI/CD (Continuous Integration / Continuous Deployment) natural do GitHub + Cloudflare:
+
+1. **Ação do Usuário**: O administrador publica/edita/deleta um artigo no painel.
+2. **Commit via API**: O Cloudflare Worker utiliza a API REST do GitHub para fazer o commit na branch principal (`main` ou `Secure`).
+3. **Webhook Automático**: O GitHub notifica o Cloudflare Pages de que há um novo commit.
+4. **Build Automático**: O Cloudflare Pages roda `npm run build` e em 1-2 minutos o site é atualizado no ar com o novo artigo (ou sem o artigo excluído).
+
+### ⚠️ Dica de Resolução de Conflitos
+Quando se gerencia arquivos no GitHub via API, podem ocorrer **conflitos de merge** se você alterar o mesmo arquivo localmente e tentar dar push, enquanto o Worker já atualizou o repositório remoto.
+**Solução Padrão**: Sempre faça `git pull origin <branch>` (ou `git fetch` + `git merge`) localmente antes de modificar os arquivos ou fazer um novo *push* pelo terminal.
+
+## 🛠️ 5. Extensibilidade
+
+Essa *skill* de comunicação com o GitHub via Worker não se limita a artigos (Markdown). A mesma arquitetura pode ser facilmente estendida para:
+- Fazer **Upload de Imagens** convertendo arquivos para Base64 e enviando via API do GitHub para a pasta `public/images/`.
+- Editar arquivos de configuração (como `src/config.yaml`).
+- Gerenciar depoimentos, produtos ou qualquer outro conteúdo baseado em texto/arquivos JSON ou Markdown.

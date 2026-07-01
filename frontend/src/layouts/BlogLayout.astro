@@ -1,18 +1,20 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import { SITE_URL } from '../lib/seo/site';
 
 interface Props {
   title: string;
   description: string;
   date: Date;
+  updatedDate?: Date;
   image?: string;
+  tags?: string[];
   slug: string; // post.id in Astro v6
 }
 
-const { title, description, date, image, slug } = Astro.props;
+const { title, description, date, updatedDate, image, tags, slug } = Astro.props;
 
-const siteUrl = 'https://ricardotatagiba.com.br';
-const postUrl = `${siteUrl}/blog/${slug}`;
+const postUrl = `${SITE_URL}/blog/${slug}/`;
 const dateIso = date.toISOString();
 const dateFormatted = date.toLocaleDateString('pt-BR', {
   day: '2-digit',
@@ -20,31 +22,26 @@ const dateFormatted = date.toLocaleDateString('pt-BR', {
   year: 'numeric',
 });
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'BlogPosting',
-  headline: title,
-  description,
-  datePublished: dateIso,
-  dateModified: dateIso,
-  url: postUrl,
-  author: {
-    '@type': 'Person',
-    name: 'Ricardo Tatagiba',
-    url: siteUrl,
-  },
-  publisher: {
-    '@type': 'Person',
-    name: 'Ricardo Tatagiba',
-    url: siteUrl,
-  },
-  ...(image ? { image: image.startsWith('http') ? image : `${siteUrl}${image}` } : {}),
-};
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Blog', url: '/blog' },
+  { name: title },
+];
 ---
 
-<BaseLayout title={title} description={description} image={image} canonical={postUrl}>
-  <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
-
+<BaseLayout
+  title={title}
+  description={description}
+  image={image}
+  imageAlt={title}
+  canonical={postUrl}
+  type="article"
+  publishDate={date}
+  updatedDate={updatedDate}
+  tags={tags}
+  breadcrumbs={breadcrumbs}
+  markdownUrl={`${SITE_URL}/blog/${slug}.md`}
+>
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <nav class="text-sm text-gray-500 mb-8" aria-label="Breadcrumb">
       <ol class="flex items-center gap-2">

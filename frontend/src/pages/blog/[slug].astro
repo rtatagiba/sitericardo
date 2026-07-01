@@ -1,10 +1,11 @@
 ---
-import { getCollection, render } from 'astro:content';
+import { render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import BlogLayout from '../../layouts/BlogLayout.astro';
+import { getPublishedPosts } from '../../lib/seo/posts';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
+  const posts = await getPublishedPosts();
   return posts.map((post: CollectionEntry<'blog'>) => ({
     params: { slug: post.id },
     props: { post },
@@ -14,13 +15,19 @@ export async function getStaticPaths() {
 const { post } = Astro.props as { post: CollectionEntry<'blog'> };
 const { Content } = await render(post);
 const postDate = post.data.date ?? post.data.pubDate ?? new Date();
+const updatedDate =
+  post.data.updatedDate && post.data.updatedDate.getTime() !== postDate.getTime()
+    ? post.data.updatedDate
+    : undefined;
 ---
 
 <BlogLayout
   title={post.data.title}
   description={post.data.description}
   date={postDate}
+  updatedDate={updatedDate}
   image={post.data.image}
+  tags={post.data.tags}
   slug={post.id}
 >
   <Content />
