@@ -14,7 +14,7 @@
       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent text-sm mb-4"
     />
     <label class="block text-sm font-medium text-gray-700 mb-1" for="cg-competitors">
-      Concorrentes (um por linha, até 9)
+      Concorrentes (um por linha, até 5)
     </label>
     <textarea
       id="cg-competitors"
@@ -225,7 +225,7 @@
 
     if (!userSite) return showFormError('Indica o teu site.');
     if (competitors.length === 0) return showFormError('Indica pelo menos um concorrente.');
-    if (competitors.length > 9) return showFormError('Máximo de 9 concorrentes (10 sites no total).');
+    if (competitors.length > 5) return showFormError('Máximo de 5 concorrentes (6 sites no total).');
 
     const inputs = [userSite, ...competitors];
     try {
