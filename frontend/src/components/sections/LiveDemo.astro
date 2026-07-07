@@ -1,0 +1,176 @@
+---
+// Cena 6: a prova viva. Um input real — o visitante escreve uma palavra
+// e vê perguntas reais materializarem-se à volta. Demo, não panfleto.
+// Mesmo padrão do WhatTheyAsk: JSONP client=chrome, IP do visitante.
+---
+
+<section id="live-demo" class="demo">
+  <div class="demo-inner">
+    <h2 class="depth-title demo-title">Experimenta: o que perguntam sobre o teu negócio?</h2>
+    <form class="demo-form" id="demo-form" autocomplete="off">
+      <input
+        id="demo-input"
+        type="text"
+        placeholder="escreve uma palavra… ex: dentista"
+        class="demo-input"
+        maxlength="60"
+      />
+      <button type="submit" class="demo-btn">revelar</button>
+    </form>
+    <div id="demo-cloud" class="demo-cloud depth-mono" aria-live="polite"></div>
+    <p class="demo-more">
+      <a href="/ferramentas/whattheyask">explorar centenas de perguntas no WhatTheyAsk →</a>
+    </p>
+  </div>
+</section>
+
+<script>
+  // Google Suggest via JSONP (client=chrome) — usa o IP do visitante.
+  const form = document.getElementById('demo-form');
+  const input = document.getElementById('demo-input') as HTMLInputElement;
+  const cloud = document.getElementById('demo-cloud');
+  const PREFIXES = ['como', 'quanto custa', 'onde', 'qual', 'porque'];
+
+  function jsonp(query: string): Promise<string[]> {
+    return new Promise((resolve) => {
+      const cb = `__demo_cb_${Math.random().toString(36).slice(2)}`;
+      const s = document.createElement('script');
+      const timer = setTimeout(() => done([]), 4000);
+      function done(items: string[]) {
+        clearTimeout(timer);
+        delete (window as any)[cb];
+        s.remove();
+        resolve(items);
+      }
+      (window as any)[cb] = (data: any) => done((data?.[1] ?? []).slice(0, 4));
+      s.src = `https://suggestqueries.google.com/complete/search?client=chrome&hl=pt&jsonp=${cb}&q=${encodeURIComponent(query)}`;
+      s.onerror = () => done([]);
+      document.head.appendChild(s);
+    });
+  }
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const kw = input.value.trim().toLowerCase();
+    if (!kw || !cloud) return;
+    cloud.innerHTML = '';
+    const seen = new Set<string>();
+    for (const p of PREFIXES) {
+      const items = await jsonp(`${p} ${kw}`);
+      items.forEach((q) => {
+        if (seen.has(q) || seen.size >= 14) return;
+        seen.add(q);
+        const el = document.createElement('span');
+        el.className = 'demo-q';
+        el.textContent = q;
+        el.style.setProperty('--dx', `${(Math.random() * 2 - 1) * 18}px`);
+        el.style.setProperty('--dur', `${(4 + Math.random() * 3).toFixed(1)}s`);
+        cloud.appendChild(el);
+        requestAnimationFrame(() => el.classList.add('on'));
+      });
+      // jitter entre lotes, mesmo padrão da ferramenta completa
+      await new Promise((r) => setTimeout(r, 120 + Math.random() * 100));
+    }
+    if (seen.size === 0) {
+      cloud.innerHTML = '<span class="demo-q on">sem sugestões agora — tenta outra palavra</span>';
+    }
+  });
+</script>
+
+<style>
+  .demo {
+    position: relative;
+    z-index: 1;
+    padding: 22vh clamp(1.25rem, 6vw, 5rem);
+  }
+  .demo-inner {
+    max-width: 52rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .demo-title {
+    font-size: clamp(1.8rem, 4vw, 3.2rem);
+    margin: 0 0 2.5rem;
+  }
+  .demo-form {
+    display: flex;
+    gap: 0.75rem;
+    max-width: 30rem;
+    margin: 0 auto 3rem;
+  }
+  .demo-input {
+    flex: 1;
+    background: rgba(245, 240, 232, 0.04);
+    border: 1px solid var(--depth-line);
+    border-radius: 999px;
+    padding: 0.85rem 1.4rem;
+    color: var(--depth-white);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  .demo-input:focus {
+    border-color: var(--depth-amber);
+  }
+  .demo-input::placeholder {
+    color: rgba(245, 240, 232, 0.3);
+  }
+  .demo-btn {
+    background: var(--depth-amber);
+    color: var(--depth-bg);
+    border: 0;
+    border-radius: 999px;
+    padding: 0.85rem 1.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+  }
+  .demo-btn:hover {
+    box-shadow: 0 0 28px rgba(232, 168, 85, 0.4);
+  }
+
+  .demo-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem 1.4rem;
+    justify-content: center;
+    min-height: 8rem;
+  }
+  .demo-cloud :global(.demo-q) {
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity 0.9s ease,
+      transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    color: rgba(79, 216, 232, 0.85);
+    font-size: 0.78rem;
+    animation: demo-float var(--dur, 5s) ease-in-out infinite alternate;
+  }
+  .demo-cloud :global(.demo-q.on) {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @keyframes demo-float {
+    to {
+      translate: var(--dx, 10px) -8px;
+    }
+  }
+
+  .demo-more {
+    margin-top: 3rem;
+  }
+  .demo-more a {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--depth-white-dim);
+    text-decoration: none;
+    border-bottom: 1px solid var(--depth-line);
+    padding-bottom: 2px;
+    transition: color 0.3s ease;
+  }
+  .demo-more a:hover {
+    color: var(--depth-amber);
+  }
+</style>

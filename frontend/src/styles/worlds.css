@@ -1,0 +1,155 @@
+/*
+ * Duas Realidades — design tokens dos dois mundos.
+ *
+ * Superfície: a simulação. Fria, plana, ligeiramente morta.
+ * Profundidade: a realidade. Escura, volumétrica, viva.
+ *
+ * A metáfora nunca é explicada em texto — só nestes tokens.
+ */
+
+:root {
+  /* ── Mundo A: Superfície ─────────────────────────────── */
+  --surface-bg: #e8eaed;
+  --surface-text: #5f6368;
+  --surface-link: #1a0dab;
+  --surface-border: #dadce0;
+  --surface-radius: 4px;
+  --surface-ease: linear;
+  --surface-duration: 150ms;
+
+  /* ── Mundo B: Profundidade ───────────────────────────── */
+  --depth-bg: #0a0e14;
+  --depth-amber: #e8a855;
+  --depth-cyan: #4fd8e8;
+  --depth-white: #f5f0e8;
+  --depth-white-dim: rgba(245, 240, 232, 0.62);
+  --depth-line: rgba(232, 168, 85, 0.22);
+
+  /* ── Tipografia ──────────────────────────────────────── */
+  --font-surface: Arial, Helvetica, 'Inter', sans-serif;
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* ── Lanterna (atualizadas via rAF em lantern.js) ────── */
+  --mx: 50vw;
+  --my: 50vh;
+  --mr: 0px;
+}
+
+/* ═══ Base do mundo Profundidade (o conteúdo real) ═══ */
+
+.depth-world {
+  background: var(--depth-bg);
+  color: var(--depth-white);
+  font-family: var(--font-sans);
+}
+
+.depth-world ::selection {
+  background: var(--depth-amber);
+  color: var(--depth-bg);
+}
+
+.depth-title {
+  font-family: var(--font-serif);
+  font-weight: 560;
+  color: var(--depth-amber);
+  letter-spacing: -0.02em;
+  line-height: 1.04;
+  text-wrap: balance;
+}
+
+.depth-mono {
+  font-family: var(--font-mono);
+  color: var(--depth-cyan);
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
+}
+
+.depth-body {
+  color: var(--depth-white-dim);
+  line-height: 1.7;
+  max-width: 38rem;
+}
+
+/* ═══ Superfície: overlay mascarado pela lanterna ═══ */
+
+#surface-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  background: var(--surface-bg);
+  color: var(--surface-text);
+  font-family: var(--font-surface);
+  /* Buraco da lanterna: transparente no centro, opaco fora */
+  -webkit-mask-image: radial-gradient(
+    circle var(--mr) at var(--mx) var(--my),
+    transparent 0%,
+    transparent 70%,
+    black 100%
+  );
+  mask-image: radial-gradient(
+    circle var(--mr) at var(--mx) var(--my),
+    transparent 0%,
+    transparent 70%,
+    black 100%
+  );
+  will-change: mask-image;
+}
+
+#surface-layer.ripping {
+  pointer-events: none;
+}
+
+/* Anel da lanterna: a "borda quente" que segue o cursor */
+#lantern-ring {
+  position: fixed;
+  z-index: 31;
+  width: 12px;
+  height: 12px;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  box-shadow:
+    0 0 24px 6px rgba(232, 168, 85, 0.35),
+    inset 0 0 18px 4px rgba(232, 168, 85, 0.25);
+  border: 1px solid rgba(232, 168, 85, 0.45);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* ═══ Estados globais ═══ */
+
+/* Scroll bloqueado até ao rasgo */
+html.pre-rip,
+html.pre-rip body {
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Já revelado (sessionStorage): Superfície nem monta */
+html.revealed #surface-layer,
+html.revealed #lantern-ring {
+  display: none;
+}
+
+/* ═══ Reduced motion: versão calma, direto na Profundidade ═══ */
+
+@media (prefers-reduced-motion: reduce) {
+  #surface-layer,
+  #lantern-ring,
+  #depth-canvas {
+    display: none !important;
+  }
+  html.pre-rip,
+  html.pre-rip body {
+    overflow: auto;
+    height: auto;
+  }
+  .depth-world * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

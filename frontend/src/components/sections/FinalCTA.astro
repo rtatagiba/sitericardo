@@ -1,0 +1,98 @@
+---
+// Cena 8: tudo escurece; as partículas convergem; a pergunta final.
+---
+
+<section id="cta" class="cta">
+  <h2 class="cta-question depth-title" aria-label="Até quando vais otimizar para um mundo que já não existe?">
+    <span class="cta-line">Até quando vais otimizar</span>
+    <span class="cta-line">para um mundo</span>
+    <span class="cta-line">que já não existe?</span>
+  </h2>
+  <a href="/contato" class="cta-button">Falar comigo</a>
+
+  <footer class="cta-footer">
+    <nav aria-label="Rodapé">
+      <a href="/servicos">serviços</a>
+      <a href="/blog">blog</a>
+      <a href="/portfolio">portfólio</a>
+      <a href="/sobre">sobre</a>
+      <a href="/contato">contato</a>
+      <a href="/politica-de-privacidade">privacidade</a>
+    </nav>
+    <p class="cta-copy">© {new Date().getFullYear()} Ricardo Tatagiba — SEO que as máquinas leem.</p>
+  </footer>
+</section>
+
+<style>
+  .cta {
+    position: relative;
+    z-index: 1;
+    min-height: 130vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20vh clamp(1.25rem, 6vw, 5rem) 4rem;
+  }
+  .cta-question {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: clamp(2.1rem, 6vw, 5rem);
+    margin: 0 0 4rem;
+  }
+  .cta-line {
+    display: block;
+  }
+
+  .cta-button {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--depth-bg);
+    background: var(--depth-amber);
+    border-radius: 999px;
+    padding: 1.05rem 2.8rem;
+    text-decoration: none;
+    box-shadow:
+      0 0 34px rgba(232, 168, 85, 0.45),
+      0 0 90px rgba(232, 168, 85, 0.18);
+    transition: box-shadow 0.4s ease, transform 0.4s ease;
+  }
+  .cta-button:hover {
+    box-shadow:
+      0 0 48px rgba(232, 168, 85, 0.65),
+      0 0 130px rgba(232, 168, 85, 0.28);
+    transform: translateY(-2px);
+  }
+
+  .cta-footer {
+    margin-top: auto;
+    padding-top: 16vh;
+    width: 100%;
+  }
+  .cta-footer nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.6rem;
+    margin-bottom: 1.2rem;
+  }
+  .cta-footer a {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    color: rgba(245, 240, 232, 0.4);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .cta-footer a:hover {
+    color: var(--depth-amber);
+  }
+  .cta-copy {
+    font-size: 0.7rem;
+    color: rgba(245, 240, 232, 0.28);
+    margin: 0;
+  }
+</style>

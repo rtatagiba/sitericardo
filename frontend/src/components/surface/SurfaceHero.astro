@@ -1,0 +1,286 @@
+---
+// A simulação: uma página de resultados a sério — pesquisa feita,
+// "melhor consultor de SEO", e todos os resultados são o próprio site.
+// Igual a um motor de busca, sem nome nem logo de nenhum.
+// Tudo [data-fragment] estilhaça no rasgo.
+const query = 'melhor consultor de SEO';
+
+const results = [
+  {
+    url: 'https://ricardotatagiba.com.br',
+    crumb: 'ricardotatagiba.com.br',
+    title: 'Ricardo Tatagiba — Consultor SEO Freelancer',
+    desc: 'Consultor SEO Freelancer com mais de 10 anos de experiência. Ajudo empresas a crescer no Google com estratégias de SEO e marketing digital eficazes.',
+  },
+  {
+    url: 'https://ricardotatagiba.com.br/servicos',
+    crumb: 'ricardotatagiba.com.br › servicos',
+    title: 'Serviços de SEO — Ricardo Tatagiba',
+    desc: 'SEO técnico, SEO local, criação de conteúdo, Google Ads, Google My Business e automação com IA. Estratégias completas para a tua visibilidade online.',
+  },
+  {
+    url: 'https://ricardotatagiba.com.br/ferramentas',
+    crumb: 'ricardotatagiba.com.br › ferramentas',
+    title: 'Ferramentas gratuitas de SEO e Marketing',
+    desc: 'Ferramentas gratuitas para explorar perguntas reais, encontrar lacunas de conteúdo e melhorar o teu SEO — sem custos e sem registo.',
+  },
+  {
+    url: 'https://ricardotatagiba.com.br/ferramentas/whattheyask',
+    crumb: 'ricardotatagiba.com.br › ferramentas › whattheyask',
+    title: 'What They Ask — O que as pessoas perguntam sobre qualquer tema',
+    desc: 'Explora centenas de perguntas reais que as pessoas fazem sobre qualquer palavra-chave. Dados diretos do autocomplete, organizados por intenção.',
+  },
+  {
+    url: 'https://ricardotatagiba.com.br/ferramentas/lacuna-de-conteudo',
+    crumb: 'ricardotatagiba.com.br › ferramentas › lacuna-de-conteudo',
+    title: 'Lacuna de Conteúdo — Os temas que os concorrentes cobrem e tu não',
+    desc: 'Compara o teu site com os concorrentes e descobre os temas em falta no teu conteúdo. Análise gratuita de lacunas de conteúdo.',
+  },
+  {
+    url: 'https://ricardotatagiba.com.br/blog',
+    crumb: 'ricardotatagiba.com.br › blog',
+    title: 'Blog de SEO e Marketing Digital — Ricardo Tatagiba',
+    desc: 'Artigos práticos sobre SEO, Core Web Vitals, schema.org, SEO local e visibilidade em motores de busca e IAs. Conteúdo em português, sem enrolação.',
+  },
+  {
+    url: 'https://ricardotatagiba.com.br/portfolio',
+    crumb: 'ricardotatagiba.com.br › portfolio',
+    title: 'Portfolio — Ricardo Tatagiba',
+    desc: 'Casos reais de crescimento orgânico: mais tráfego, mais posições, mais clientes. Vê os resultados de quem já trabalhou comigo.',
+  },
+  {
+    url: 'https://ricardotatagiba.com.br/sobre',
+    crumb: 'ricardotatagiba.com.br › sobre',
+    title: 'Sobre — Ricardo Tatagiba',
+    desc: 'Mais de 10 anos entre SEO e desenvolvimento full stack. A história de quem otimiza sites por dentro e por fora.',
+  },
+  {
+    url: 'https://ricardotatagiba.com.br/contato',
+    crumb: 'ricardotatagiba.com.br › contato',
+    title: 'Contato — Ricardo Tatagiba',
+    desc: 'Vamos conversar sobre o teu negócio e como conseguir mais visibilidade orgânica. Resposta em menos de 24 horas.',
+  },
+];
+---
+
+<div class="s-page" aria-hidden="true">
+  <header class="s-top" data-fragment>
+    <div class="s-searchbar">
+      <svg class="s-glass" viewBox="0 0 24 24" width="18" height="18">
+        <path
+          d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"
+          fill="#9aa0a6"
+        />
+      </svg>
+      <span class="s-query">{query}</span>
+      <span class="s-x">✕</span>
+    </div>
+    <nav class="s-tabs">
+      <span class="s-tab active">Todos</span>
+      <span class="s-tab">Imagens</span>
+      <span class="s-tab">Notícias</span>
+      <span class="s-tab">Vídeos</span>
+      <span class="s-tab">Mapas</span>
+      <span class="s-tab">Mais</span>
+    </nav>
+  </header>
+
+  <div class="s-col">
+    <p class="s-stats" data-fragment>
+      Aproximadamente 1.240.000 resultados (0,42 segundos)
+    </p>
+
+    {results.map((r) => (
+      <div class="s-result" data-fragment>
+        <div class="s-source">
+          <span class="s-favicon">R</span>
+          <span class="s-sitename">
+            Ricardo Tatagiba
+            <span class="s-crumb">{r.crumb}</span>
+          </span>
+        </div>
+        <p class="s-title">{r.title}</p>
+        <p class="s-desc">{r.desc}</p>
+      </div>
+    ))}
+
+    <footer class="s-metrics" data-fragment>
+      <span>posição média <strong>#1</strong></span>
+      <span>2.400 visitas/mês</span>
+      <span>CTR 3,1%</span>
+      <span class="s-chart">
+        {[38, 52, 44, 61, 58, 70, 66].map((h) => (
+          <i style={`height:${h}%`}></i>
+        ))}
+      </span>
+    </footer>
+  </div>
+</div>
+
+<p id="lantern-hint" class="s-hint">move o rato</p>
+
+<style>
+  .s-page {
+    min-height: 100vh;
+    background: #fff;
+  }
+
+  /* ── Cabeçalho: barra de pesquisa preenchida + tabs ── */
+  .s-top {
+    padding: 1.4rem clamp(1rem, 12vw, 11rem) 0;
+    border-bottom: 1px solid var(--surface-border);
+    background: #fff;
+  }
+  .s-searchbar {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    max-width: 36rem;
+    height: 2.9rem;
+    border: 1px solid var(--surface-border);
+    border-radius: 999px;
+    background: #fff;
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.12);
+    padding: 0 1.2rem;
+  }
+  .s-query {
+    flex: 1;
+    font-size: 0.95rem;
+    color: #202124;
+  }
+  .s-x {
+    color: #9aa0a6;
+    font-size: 0.8rem;
+  }
+  .s-tabs {
+    display: flex;
+    gap: 1.6rem;
+    margin-top: 1.1rem;
+    font-size: 0.8rem;
+    color: #5f6368;
+  }
+  .s-tab {
+    padding-bottom: 0.7rem;
+  }
+  .s-tab.active {
+    color: var(--surface-link);
+    border-bottom: 3px solid var(--surface-link);
+    font-weight: 500;
+  }
+
+  /* ── Coluna de resultados ── */
+  .s-col {
+    max-width: 40.75rem; /* ~652px, a largura clássica da coluna */
+    padding: 1.2rem clamp(1rem, 4vw, 1.5rem) 4rem;
+    margin-left: clamp(0rem, 11vw, 10rem);
+  }
+  .s-stats {
+    font-size: 0.78rem;
+    color: #70757a;
+    margin: 0 0 1.4rem;
+  }
+
+  .s-result {
+    margin-bottom: 1.9rem;
+  }
+  .s-source {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.35rem;
+  }
+  .s-favicon {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #f1f3f4;
+    border: 1px solid #ecedef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #5f6368;
+    flex-shrink: 0;
+  }
+  .s-sitename {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.82rem;
+    color: #202124;
+    line-height: 1.3;
+  }
+  .s-crumb {
+    font-size: 0.74rem;
+    color: #4d5156;
+  }
+  .s-title {
+    font-size: 1.22rem;
+    line-height: 1.35;
+    color: var(--surface-link);
+    margin: 0 0 0.25rem;
+    cursor: pointer;
+  }
+  .s-title:hover {
+    text-decoration: underline;
+  }
+  .s-desc {
+    font-size: 0.86rem;
+    line-height: 1.55;
+    color: #4d5156;
+    margin: 0;
+    max-width: 37rem;
+  }
+
+  /* ── Métricas de vaidade no fundo ── */
+  .s-metrics {
+    display: flex;
+    align-items: flex-end;
+    gap: 2rem;
+    margin-top: 2.6rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--surface-border);
+    font-size: 0.72rem;
+    color: #80868b;
+  }
+  .s-metrics strong {
+    color: var(--surface-text);
+  }
+  .s-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 2rem;
+    margin-left: auto;
+  }
+  .s-chart i {
+    width: 6px;
+    background: #c6cace;
+    display: block;
+  }
+
+  .s-hint {
+    position: fixed;
+    right: 2rem;
+    bottom: 1.6rem;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.85rem;
+    color: #9aa0a6;
+    margin: 0;
+    transition: opacity 0.6s ease;
+  }
+  .s-hint.gone {
+    opacity: 0;
+  }
+
+  @media (max-width: 768px) {
+    .s-col {
+      margin-left: 0;
+    }
+    .s-tabs {
+      gap: 1.1rem;
+      overflow: hidden;
+    }
+  }
+</style>

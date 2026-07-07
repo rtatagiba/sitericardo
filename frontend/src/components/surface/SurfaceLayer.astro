@@ -1,0 +1,11 @@
+---
+// O overlay da simulação. Cobre a Profundidade; a máscara da lanterna
+// (worlds.css, --mx/--my/--mr) abre o buraco. Destruído após o rasgo.
+// aria-hidden: o conteúdo real vive nas sections/ por baixo.
+import SurfaceHero from './SurfaceHero.astro';
+---
+
+<div id="surface-layer" aria-hidden="true">
+  <SurfaceHero />
+</div>
+<div id="lantern-ring" aria-hidden="true"></div>

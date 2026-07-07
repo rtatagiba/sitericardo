@@ -1,0 +1,78 @@
+---
+// Cena 4: tipografia editorial gigante, uma frase por viewport.
+// Ao fundo, perguntas reais atravessam o espaço como tráfego distante.
+const streamQuestions = [
+  'como aparecer no google maps?',
+  'quanto custa um consultor de seo?',
+  'o que é seo local?',
+  'como otimizar o google meu negócio?',
+  'seo ou ads: o que vale mais a pena?',
+  'como aparecer nas respostas da ia?',
+  'o que são dados estruturados?',
+  'como melhorar a velocidade do site?',
+  'porque o meu site não aparece no google?',
+  'o que é uma entidade em seo?',
+];
+---
+
+<section id="what-changed" class="wc">
+  <div class="wc-stream depth-mono" aria-hidden="true">
+    {streamQuestions.map((q, i) => (
+      <span class="wc-q" style={`--d:${(i * 3.1).toFixed(1)}s; --y:${8 + ((i * 17) % 84)}%`}>{q}</span>
+    ))}
+  </div>
+
+  <h2 class="sr-only">O que mudou na pesquisa</h2>
+  <p class="wc-phrase depth-title">As pessoas já não pesquisam.</p>
+  <p class="wc-phrase depth-title">Perguntam.</p>
+  <p class="wc-phrase depth-title">E as máquinas escolhem quem responde.</p>
+</section>
+
+<style>
+  .wc {
+    position: relative;
+    z-index: 1;
+    padding: 20vh clamp(1.25rem, 6vw, 5rem);
+    overflow: hidden;
+  }
+  .wc-phrase {
+    font-size: clamp(2.2rem, 6.5vw, 5.2rem);
+    margin: 0 auto;
+    max-width: 60rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  .wc-phrase:nth-child(4) {
+    color: var(--depth-white);
+  }
+
+  .wc-stream {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .wc-q {
+    position: absolute;
+    left: 100%;
+    top: var(--y);
+    white-space: nowrap;
+    font-size: 0.7rem;
+    color: rgba(79, 216, 232, 0.22);
+    animation: wc-drift 26s linear infinite;
+    animation-delay: var(--d);
+  }
+  @keyframes wc-drift {
+    to {
+      transform: translateX(calc(-100vw - 100%));
+    }
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+</style>
