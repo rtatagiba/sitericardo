@@ -8,12 +8,13 @@ export const DEFAULT_FETCH_OPTIONS: FetchOptions = {
 
 /**
  * Ordered fetch strategies: direct first (some sites send CORS headers),
- * then free public CORS proxies. Keeps the site 100% static — no backend.
+ * then our own same-origin proxy (frontend/functions/api/fetch-url.ts),
+ * then a public CORS proxy as last resort. Keeps the site 100% static.
  */
 const STRATEGIES: Array<(url: string) => string> = [
   (u) => u,
+  (u) => `/api/fetch-url?url=${encodeURIComponent(u)}`,
   (u) => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
-  (u) => `https://corsproxy.io/?url=${encodeURIComponent(u)}`,
 ];
 
 async function fetchText(url: string, timeoutMs: number): Promise<string> {
@@ -82,46 +83,69 @@ function extractLocs(doc: Document, parentTag: 'url' | 'sitemap'): string[] {
   return locs;
 }
 
-async function findSitemapUrl(origin: string, timeoutMs: number): Promise<string> {
-  const candidates = [
+/**
+ * Collects candidate sitemap entry points for an origin, most-authoritative
+ * first. robots.txt "Sitemap:" lines win: the owner declares the real location,
+ * which is decisive when a stale /sitemap.xml shadows the live one — e.g. a
+ * WordPress→Astro migration that leaves a zombie Yoast index pointing at 404
+ * children. Well-known paths follow as fallbacks. Callers try each in turn and
+ * keep the first that yields actual page URLs (see crawlSitemap).
+ */
+async function discoverSitemapUrls(origin: string, timeoutMs: number): Promise<string[]> {
+  const found: string[] = [];
+  try {
+    const robots = await fetchText(`${origin}/robots.txt`, timeoutMs);
+    for (const m of robots.matchAll(/^\s*sitemap:\s*(\S+)/gim)) {
+      const loc = m[1].trim();
+      if (loc && !found.includes(loc)) found.push(loc);
+    }
+  } catch {
+    // robots.txt missing/unreachable — fall back to well-known paths
+  }
+  const wellKnown = [
     `${origin}/sitemap.xml`,
     `${origin}/sitemap_index.xml`,
-    `${origin}/wp-sitemap.xml`,
     `${origin}/sitemap-index.xml`,
+    `${origin}/wp-sitemap.xml`,
   ];
-  for (const candidate of candidates) {
+  for (const c of wellKnown) if (!found.includes(c)) found.push(c);
+  return found;
+}
+
+/**
+ * Fallback for sites with no discoverable sitemap: pull page URLs from
+ * their RSS/Atom feed instead. Gives partial coverage (recent posts)
+ * rather than a hard failure.
+ */
+async function tryRssFeeds(origin: string, timeoutMs: number): Promise<string[]> {
+  const candidates = [`${origin}/feed`, `${origin}/feed/`, `${origin}/?feed=rss2`];
+  for (const url of candidates) {
     try {
-      const text = await fetchText(candidate, timeoutMs);
-      if (parseXml(text)) return candidate;
+      const text = await fetchText(url, timeoutMs);
+      const doc = parseXml(text);
+      if (!doc) continue;
+      const links = Array.from(doc.querySelectorAll('item > link'))
+        .map((el) => el.textContent?.trim())
+        .filter((v): v is string => !!v);
+      if (links.length > 0) return links;
     } catch {
       // try next candidate
     }
   }
-  // Last resort: robots.txt often declares the sitemap location
-  try {
-    const robots = await fetchText(`${origin}/robots.txt`, timeoutMs);
-    const match = robots.match(/^sitemap:\s*(\S+)/im);
-    if (match) return match[1];
-  } catch {
-    // ignore
-  }
-  throw new Error('sitemap não encontrado');
+  return [];
 }
 
 /**
- * Fetches every page URL declared in a site's sitemap, following
- * sitemap-index files recursively (bounded by maxChildSitemaps/maxUrls).
+ * Crawls one sitemap entry point, following sitemap-index files recursively
+ * (bounded by maxChildSitemaps/maxUrls). Returns the page URLs found, or an
+ * empty array on any failure — never throws, so the caller can move on to the
+ * next candidate entry point (e.g. when an index lists only dead 404 children).
  */
-export async function fetchSitemapUrls(
-  input: string,
+async function crawlSitemap(
+  entryUrl: string,
+  options: FetchOptions,
   onProgress: (message: string) => void,
-  options: FetchOptions = DEFAULT_FETCH_OPTIONS,
 ): Promise<string[]> {
-  const { origin, sitemapUrl } = normalizeSiteInput(input);
-
-  onProgress('a localizar sitemap...');
-  const entryUrl = sitemapUrl ?? (await findSitemapUrl(origin, options.timeoutMs));
-
   const urls: string[] = [];
   const queue: string[] = [entryUrl];
   const visited = new Set<string>();
@@ -138,15 +162,11 @@ export async function fetchSitemapUrls(
     try {
       text = await fetchText(current, options.timeoutMs);
     } catch {
-      if (current === entryUrl) throw new Error('não foi possível descarregar o sitemap');
       continue;
     }
 
     const doc = parseXml(text);
-    if (!doc) {
-      if (current === entryUrl) throw new Error('sitemap com XML inválido');
-      continue;
-    }
+    if (!doc) continue;
 
     if (doc.querySelector('sitemapindex')) {
       for (const child of extractLocs(doc, 'sitemap')) {
@@ -162,6 +182,36 @@ export async function fetchSitemapUrls(
     }
   }
 
-  if (urls.length === 0) throw new Error('sitemap sem URLs de páginas');
   return urls;
+}
+
+/**
+ * Fetches every page URL declared in a site's sitemap. Discovers candidate
+ * entry points (robots.txt first, then well-known paths), then tries each until
+ * one actually yields page URLs — so a stale index whose children all 404 falls
+ * through to the real sitemap instead of failing. Sites with no usable sitemap
+ * fall back to their RSS/Atom feed for partial coverage.
+ */
+export async function fetchSitemapUrls(
+  input: string,
+  onProgress: (message: string) => void,
+  options: FetchOptions = DEFAULT_FETCH_OPTIONS,
+): Promise<string[]> {
+  const { origin, sitemapUrl } = normalizeSiteInput(input);
+
+  onProgress('a localizar sitemap...');
+  const entryUrls = sitemapUrl
+    ? [sitemapUrl]
+    : await discoverSitemapUrls(origin, options.timeoutMs);
+
+  for (const entryUrl of entryUrls) {
+    const urls = await crawlSitemap(entryUrl, options, onProgress);
+    if (urls.length > 0) return urls;
+  }
+
+  onProgress('sitemap não encontrado, a tentar feed RSS...');
+  const rssUrls = await tryRssFeeds(origin, options.timeoutMs);
+  if (rssUrls.length > 0) return rssUrls.slice(0, options.maxUrls);
+
+  throw new Error('sitemap não encontrado');
 }
