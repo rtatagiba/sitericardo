@@ -1,7 +1,7 @@
 ---
 pubDate: 2026-07-08T17:33:59.422Z
 date: 2026-07-08
-updatedDate: 2026-07-08T18:40:10.990Z
+updatedDate: 2026-07-08T18:40:37.084Z
 author: Editorial
 draft: false
 title: Como bloquear treinamento de IA sem sumir do Google (a mudança que a Cloudflare fez em julho de 2026)
@@ -32,11 +32,11 @@ O que muda em setembro A partir de 15 de setembro de 2026, todo [domínio novo 
 
 **Busca continua liberada**. A lógica é direta: um anúncio na página é sinal de que aquele conteúdo foi feito pra ser visto por gente de verdade, e é a atenção humana que paga a conta ali. Tem um detalhe técnico que muda o jogo pra quem opera bot multipropósito. O Googlebot indexa pra busca e também coleta dado que pode virar treinamento.
 
-Com a regra nova, bloquear treinamento bloqueia o bot inteiro naquela função, mesmo que ele esteja fazendo busca de forma legítima em paralelo. Isso obriga empresa de IA a separar comportamento em vez de esconder tudo atrás de um crawler só. Quem já tem site rodando pode manter a configuração antiga até a data limite. Ninguém muda de padrão sem avisar. ## O pacote extra que veio junto 
+Com a regra nova, bloquear treinamento bloqueia o bot inteiro naquela função, mesmo que ele esteja fazendo busca de forma legítima em paralelo. Isso obriga empresa de IA a separar comportamento em vez de esconder tudo atrás de um crawler só. Quem já tem site rodando pode manter a configuração antiga até a data limite. Ninguém muda de padrão sem avisar.  O pacote extra que veio junto 
 
-BotBase: base de dados pesquisável, disponível pra cliente Enterprise, com todo bot verificado e a classificação exata de cada um.
+**BotBase**: base de dados pesquisável, disponível pra cliente Enterprise, com todo bot verificado e a classificação exata de cada um.
 
-Sinal de uso de conteúdo: extensão do robots.txt tradicional. Agora dá pra dizer não só se um bot pode acessar o conteúdo, mas o que ele pode fazer depois: interagir sem guardar nada, indexar com link de volta, ou resumir e reproduzir o material.
+**Sinal de uso de conteúdo**: extensão do robots.txt tradicional. Agora dá pra dizer não só se um bot pode acessar o conteúdo, mas o que ele pode fazer depois: interagir sem guardar nada, indexar com link de volta, ou resumir e reproduzir o material.
 
 ## Verified com novo significado
 
