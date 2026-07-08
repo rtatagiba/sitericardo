@@ -1,0 +1,971 @@
+{
+  "communities": {
+    "0": [
+      "ahrefs",
+      "avif",
+      "backlinko",
+      "bing_webmaster_tools",
+      "brightlocal",
+      "chatgpt",
+      "core_web_vitals",
+      "david_ogilvy",
+      "ee_eat",
+      "frontend_src_content_blog_como_melhorar_o_ranking_do_seu_site_no_google_dicas_praticas",
+      "frontend_src_content_blog_como_monitorar_desempenho_seo_seu_site_ferramentas_gratuitas",
+      "frontend_src_content_blog_como_recuperar_de_mencoes_negativas_a_marca",
+      "frontend_src_content_blog_como_trabalhar_com_imagens_para_seo_e_melhorar_o_carregamento_do_site",
+      "frontend_src_content_blog_criacao_de_faqs_programadas_com_dados_estruturados_json_ld_um_guia_completo_para_seo_na_era_da_ia",
+      "frontend_src_content_blog_o_impacto_dos_core_web_vitals_no_seo_um_guia_completo",
+      "frontend_src_content_blog_o_poder_do_schema_org_para_empresas_de_servicos_um_guia_completo_para_o_seo_local",
+      "frontend_src_content_blog_por_que_seo_local_e_fundamental_para_pequenos_negocios",
+      "frontend_src_content_blog_sucesso_em_seo_local_como_acompanhar_rankings_conversoes_e_chamadas",
+      "google_analytics",
+      "google_business_profile",
+      "google_search_console",
+      "hotjar",
+      "hubspot",
+      "image_optimization",
+      "json_ld",
+      "lazy_loading",
+      "magazine_luiza",
+      "microsoft_clarity",
+      "moz",
+      "nap_consistency",
+      "neil_patel_digital",
+      "nubank",
+      "page_speed_insights",
+      "peter_drucker",
+      "rd_station",
+      "rich_results",
+      "schema_org",
+      "screaming_frog",
+      "semrush",
+      "seo_local",
+      "sistrix",
+      "stalo_digital",
+      "stride_web_vitals",
+      "ubersuggest",
+      "webp"
+    ],
+    "1": [
+      "agent_astro_cloudflare_skill",
+      "agent_github_publisher_skill",
+      "agent_workflows_code",
+      "agent_workflows_especificacao",
+      "agent_workflows_pesquisa",
+      "backend_readme",
+      "frontend_agents_md",
+      "frontend_claude_md",
+      "frontend_favicon_svg",
+      "frontend_public_images_1_webp",
+      "frontend_public_images_2_webp",
+      "frontend_public_images_3_webp",
+      "frontend_public_images_como_analisar_palavras_chaves_webp",
+      "frontend_public_images_como_criar_conteudo_seo_friendly_que_converte_webp",
+      "frontend_public_images_como_criar_titulos_em_meta_descricao_otimizada_para_seo_webp",
+      "frontend_public_images_como_fazer_calculo_webp",
+      "frontend_public_images_como_fazer_seo_para_pequnas_e_medias_empresas_webp",
+      "frontend_public_images_como_monitorar_o_desempenho_de_seo_do_seu_site_com_ferramentas_gratuitas_webp",
+      "frontend_public_images_como_trabalhar_com_imagens_para_seo_e_melhorar_o_carregamento_do_site_webp",
+      "frontend_public_images_deniz_yu_webp",
+      "frontend_public_images_design_sem_nome_3_webp",
+      "frontend_public_images_design_sem_nome_webp",
+      "frontend_public_images_firefly_palavras_flutuando_no_ar_num_ambiente_tecnologico_webp",
+      "frontend_public_images_firefly_personagem_de_terno_com_cores_do_google_com_um_mapa_na_mao_num_cenario_webp",
+      "frontend_public_images_grounding_no_google_o_que_e_webp",
+      "frontend_public_images_meta_cria_aparelho_para_ler_mentes_webp",
+      "frontend_public_images_missao_ser_feliz_webp",
+      "frontend_public_images_ricardo_tatagiba_seo_img_hero_matrix_webp",
+      "frontend_public_images_staloo_digital_webp",
+      "frontend_readme_md",
+      "frontend_robots_txt",
+      "novosite_astroy_architecture",
+      "novosite_depth_world",
+      "novosite_gsap",
+      "novosite_lantern",
+      "novosite_lenis",
+      "novosite_rasgo",
+      "novosite_ricardo_tatagiba",
+      "novosite_site",
+      "novosite_surface_world",
+      "novosite_threejs",
+      "novosite_whattheyask"
+    ],
+    "2": [
+      "c_users_ricardo_guedes_desktop_projects_site_ricardo_frontend_src_components_scripts_main_ts",
+      "c_users_ricardo_guedes_desktop_projects_site_ricardo_frontend_src_lib_contentgap_compare",
+      "c_users_ricardo_guedes_desktop_projects_site_ricardo_frontend_src_lib_contentgap_sitemap",
+      "c_users_ricardo_guedes_desktop_projects_site_ricardo_frontend_src_lib_contentgap_types",
+      "c_users_ricardo_guedes_desktop_projects_site_ricardo_frontend_src_lib_seo_schema",
+      "c_users_ricardo_guedes_desktop_projects_site_ricardo_frontend_src_lib_seo_site",
+      "c_users_ricardo_guedes_desktop_projects_site_ricardo_frontend_src_styles_global_css",
+      "c_users_ricardo_guedes_desktop_projects_site_ricardo_frontend_src_styles_worlds_css",
+      "frontend_src_components_contentgap_gapanalyzer",
+      "frontend_src_components_footer",
+      "frontend_src_components_navbar",
+      "frontend_src_components_navbar_menu",
+      "frontend_src_components_navbar_navlinks",
+      "frontend_src_layouts_baselayout",
+      "frontend_src_layouts_bloglayout",
+      "frontend_src_layouts_bloglayout_breadcrumbs",
+      "frontend_src_layouts_bloglayout_dateformatted",
+      "frontend_src_layouts_bloglayout_dateiso",
+      "frontend_src_layouts_immersivelayout",
+      "frontend_src_lib_seo_schema",
+      "frontend_src_lib_seo_schema_breadcrumbitem",
+      "frontend_src_lib_seo_schema_buildgraph",
+      "frontend_src_lib_seo_schema_graphoptions",
+      "frontend_src_lib_seo_site",
+      "frontend_src_lib_seo_site_absoluteurl",
+      "frontend_src_lib_seo_site_author",
+      "frontend_src_pages_404",
+      "frontend_src_pages_contato",
+      "frontend_src_pages_ferramentas_index",
+      "frontend_src_pages_ferramentas_index_tools",
+      "frontend_src_pages_ferramentas_lacuna_de_conteudo",
+      "frontend_src_pages_politica_de_privacidade",
+      "frontend_src_pages_portfolio",
+      "frontend_src_pages_servicos",
+      "frontend_src_pages_servicos_services",
+      "frontend_src_pages_sobre"
+    ],
+    "3": [
+      "frontend_astro_collections_blog_schema",
+      "frontend_astro_collections_blog_schema_author_type",
+      "frontend_astro_collections_blog_schema_category_type",
+      "frontend_astro_collections_blog_schema_date_format",
+      "frontend_astro_collections_blog_schema_date_type",
+      "frontend_astro_collections_blog_schema_description_type",
+      "frontend_astro_collections_blog_schema_draft_type",
+      "frontend_astro_collections_blog_schema_image_type",
+      "frontend_astro_collections_blog_schema_items_type",
+      "frontend_astro_collections_blog_schema_properties",
+      "frontend_astro_collections_blog_schema_properties_author",
+      "frontend_astro_collections_blog_schema_properties_category",
+      "frontend_astro_collections_blog_schema_properties_date",
+      "frontend_astro_collections_blog_schema_properties_description",
+      "frontend_astro_collections_blog_schema_properties_draft",
+      "frontend_astro_collections_blog_schema_properties_image",
+      "frontend_astro_collections_blog_schema_properties_pubdate",
+      "frontend_astro_collections_blog_schema_properties_publishdate",
+      "frontend_astro_collections_blog_schema_properties_tags",
+      "frontend_astro_collections_blog_schema_properties_title",
+      "frontend_astro_collections_blog_schema_properties_updateddate",
+      "frontend_astro_collections_blog_schema_pubdate_format",
+      "frontend_astro_collections_blog_schema_pubdate_type",
+      "frontend_astro_collections_blog_schema_publishdate_format",
+      "frontend_astro_collections_blog_schema_publishdate_type",
+      "frontend_astro_collections_blog_schema_required",
+      "frontend_astro_collections_blog_schema_schema",
+      "frontend_astro_collections_blog_schema_tags_items",
+      "frontend_astro_collections_blog_schema_tags_type",
+      "frontend_astro_collections_blog_schema_title_type",
+      "frontend_astro_collections_blog_schema_type",
+      "frontend_astro_collections_blog_schema_updateddate_format",
+      "frontend_astro_collections_blog_schema_updateddate_type"
+    ],
+    "4": [
+      "astro_content",
+      "c_users_ricardo_guedes_desktop_projects_site_ricardo_frontend_src_lib_seo_posts",
+      "frontend_src_components_depth_depthcanvas",
+      "frontend_src_components_sections_bloggallery",
+      "frontend_src_components_sections_finalcta",
+      "frontend_src_components_sections_hero",
+      "frontend_src_components_sections_livedemo",
+      "frontend_src_components_sections_livedemo_done",
+      "frontend_src_components_sections_services",
+      "frontend_src_components_sections_whatchanged",
+      "frontend_src_components_surface_surfacehero",
+      "frontend_src_components_surface_surfacelayer",
+      "frontend_src_content_config",
+      "frontend_src_content_config_blog",
+      "frontend_src_content_config_collections",
+      "frontend_src_lib_seo_posts",
+      "frontend_src_lib_seo_posts_getpublishedposts",
+      "frontend_src_pages_blog_index",
+      "frontend_src_pages_blog_slug",
+      "frontend_src_pages_blog_slug_getstaticpaths",
+      "frontend_src_pages_blog_slug_md",
+      "frontend_src_pages_blog_slug_md_get",
+      "frontend_src_pages_blog_slug_md_getstaticpaths",
+      "frontend_src_pages_blog_slug_post",
+      "frontend_src_pages_index",
+      "frontend_src_pages_index_posts",
+      "frontend_src_pages_llms_txt",
+      "frontend_src_pages_llms_txt_get",
+      "frontend_src_pages_rss_xml",
+      "frontend_src_pages_rss_xml_get",
+      "frontend_src_pages_rss_xml_parser"
+    ],
+    "5": [
+      "frontend_astro_config",
+      "frontend_astro_config_gitlastmod",
+      "frontend_astro_config_legacyredirects",
+      "frontend_astro_config_sourcefilefor",
+      "frontend_src_lib_contentgap_compare",
+      "frontend_src_lib_contentgap_compare_clustertopics",
+      "frontend_src_lib_contentgap_compare_iscontenturl",
+      "frontend_src_lib_contentgap_compare_jaccard",
+      "frontend_src_lib_contentgap_compare_non_content_patterns",
+      "frontend_src_lib_contentgap_compare_stopwords",
+      "frontend_src_lib_contentgap_compare_tokenizeurl",
+      "frontend_src_lib_contentgap_sitemap",
+      "frontend_src_lib_contentgap_sitemap_default_fetch_options",
+      "frontend_src_lib_contentgap_sitemap_extractlocs",
+      "frontend_src_lib_contentgap_sitemap_fetchsitemapurls",
+      "frontend_src_lib_contentgap_sitemap_fetchtext",
+      "frontend_src_lib_contentgap_sitemap_findsitemapurl",
+      "frontend_src_lib_contentgap_sitemap_normalizesiteinput",
+      "frontend_src_lib_contentgap_sitemap_parsexml",
+      "frontend_src_lib_contentgap_sitemap_strategies",
+      "frontend_src_lib_contentgap_types",
+      "frontend_src_lib_contentgap_types_fetchoptions",
+      "frontend_src_lib_contentgap_types_siteentry",
+      "frontend_src_lib_contentgap_types_siteresult",
+      "frontend_src_lib_contentgap_types_topiccluster",
+      "frontend_src_lib_seo_indexnow",
+      "frontend_src_lib_seo_indexnow_indexnow"
+    ],
+    "6": [
+      "frontend_package",
+      "frontend_package_dependencies",
+      "frontend_package_dependencies_astro",
+      "frontend_package_dependencies_astrojs_rss",
+      "frontend_package_dependencies_astrojs_sitemap",
+      "frontend_package_dependencies_gsap",
+      "frontend_package_dependencies_lenis",
+      "frontend_package_dependencies_markdown_it",
+      "frontend_package_dependencies_sanitize_html",
+      "frontend_package_dependencies_tailwindcss",
+      "frontend_package_dependencies_tailwindcss_vite",
+      "frontend_package_dependencies_three",
+      "frontend_package_devdependencies",
+      "frontend_package_devdependencies_astrojs_check",
+      "frontend_package_devdependencies_types_markdown_it",
+      "frontend_package_devdependencies_types_sanitize_html",
+      "frontend_package_devdependencies_typescript",
+      "frontend_package_engines",
+      "frontend_package_engines_node",
+      "frontend_package_name",
+      "frontend_package_scripts",
+      "frontend_package_scripts_astro",
+      "frontend_package_scripts_build",
+      "frontend_package_scripts_dev",
+      "frontend_package_scripts_preview",
+      "frontend_package_type",
+      "frontend_package_version"
+    ],
+    "7": [
+      "concept_competitor_analysis_seo",
+      "concept_core_web_vitals",
+      "concept_e_e_a_t",
+      "concept_geo",
+      "concept_grounding",
+      "concept_local_seo_keywords",
+      "concept_meta_description_title_tag",
+      "concept_semantic_seo",
+      "concept_seo_budget_roi",
+      "concept_seo_for_hotels",
+      "concept_sitemap",
+      "concept_tourism_seo",
+      "frontend_src_content_blog_a_mudanca_para_o_seo_semantico_o_que_os_vetores_significam_para_sua_estrategia_md",
+      "frontend_src_content_blog_a_oficializacao_do_grounding_o_futuro_do_trafego_organico_segundo_o_google_md",
+      "frontend_src_content_blog_analise_de_concorrentes_em_seo_como_identificar_e_superar_seus_competidores_nos_resultados_de_busca_md",
+      "frontend_src_content_blog_como_calcular_seu_orcamento_de_seo_um_guia_completo_para_empresas_brasileiras_md",
+      "frontend_src_content_blog_como_criar_conteudo_seo_friendly_que_converte_md",
+      "frontend_src_content_blog_como_criar_um_sitemap_melhorar_indexacao_site_md",
+      "frontend_src_content_blog_como_escolher_as_melhores_palavras_chave_para_seu_negocio_local_md",
+      "frontend_src_content_blog_como_escrever_titulos_e_meta_descricoes_que_aumentam_o_ctr_md",
+      "frontend_src_content_blog_como_fazer_seo_para_hoteis_na_nova_era_da_ia_md",
+      "frontend_src_content_blog_como_fazer_seo_para_sites_de_turismo_atraia_mais_visitantes_md",
+      "frontend_src_content_blog_como_garantir_orcamento_para_seo_estrategias_para_justificar_investimentos_em_marketing_organico_md",
+      "internal_ref_melhorar_ranking_google",
+      "internal_ref_schema_org_guide",
+      "internal_ref_seoaudity_free"
+    ],
+    "8": [
+      "frontend_astro_content_d",
+      "frontend_astro_content_d_allvaluesof",
+      "frontend_astro_content_d_collectionentry",
+      "frontend_astro_content_d_collectionkey",
+      "frontend_astro_content_d_contentconfig",
+      "frontend_astro_content_d_dataentrymap",
+      "frontend_astro_content_d_extractcollectionfiltertype",
+      "frontend_astro_content_d_extractdatatype",
+      "frontend_astro_content_d_extractentryfiltertype",
+      "frontend_astro_content_d_extracterrortype",
+      "frontend_astro_content_d_extractloaderconfig",
+      "frontend_astro_content_d_extractloadertypes",
+      "frontend_astro_content_d_flatten",
+      "frontend_astro_content_d_inferentryschema",
+      "frontend_astro_content_d_inferloaderschema",
+      "frontend_astro_content_d_livecontentconfig",
+      "frontend_astro_content_d_liveloadercollectionfiltertype",
+      "frontend_astro_content_d_liveloaderdatatype",
+      "frontend_astro_content_d_liveloaderentryfiltertype",
+      "frontend_astro_content_d_liveloadererrortype",
+      "frontend_astro_content_d_referencedataentry",
+      "frontend_astro_content_d_referenceliveentry",
+      "frontend_astro_content_d_render",
+      "frontend_astro_content_d_renderedcontent",
+      "frontend_astro_content_d_renderresult"
+    ],
+    "9": [
+      "frontend_public_images_2020_06_gallery4_free_img",
+      "frontend_public_images_2020_06_left_free_img",
+      "frontend_public_images_2020_06_people_inside_room",
+      "frontend_public_images_2020_06_theworkplace_logo_dark",
+      "frontend_public_images_2020_06_theworkplace_logo_light",
+      "frontend_public_images_2020_07_about_1",
+      "frontend_public_images_2020_07_affordable_pricing",
+      "frontend_public_images_2020_07_aminities_bg",
+      "frontend_public_images_2020_07_co_working_space_social",
+      "frontend_public_images_2020_07_conf_room",
+      "frontend_public_images_2020_07_facilites",
+      "frontend_public_images_2020_07_favicon_free_img",
+      "frontend_public_images_2020_07_full_kitchen",
+      "frontend_public_images_2020_07_furniture",
+      "frontend_public_images_2020_07_gallery_1",
+      "frontend_public_images_2020_07_gallery_2",
+      "frontend_public_images_2020_07_hero_bg_01",
+      "frontend_public_images_2020_07_work_floor",
+      "frontend_public_images_2020_07_writing_notepad",
+      "frontend_public_images_2021_03_logo_1",
+      "frontend_public_images_2021_03_logo_2",
+      "frontend_public_images_2021_03_logo_3",
+      "frontend_public_images_2021_03_logo_4",
+      "theworkplace_website"
+    ],
+    "10": [
+      "airbnb",
+      "asos",
+      "bmw",
+      "booking_com",
+      "diageo",
+      "dominos_pizza",
+      "frontend_src_content_blog_como_medir_o_share_of_search_o_gps_da_sua_relevancia_no_mercado_digital",
+      "gain_theory",
+      "google_trends",
+      "img_public_images_como_medir_o_share_of_search_o_gps_da_sua_relevancia_no_mercado_digital_img_1782723682843",
+      "img_public_images_como_medir_o_share_of_search_o_gps_da_sua_relevancia_no_mercado_digital_img_1782732824449",
+      "ipa",
+      "jeff_bezos",
+      "kantar",
+      "les_binet",
+      "market_share",
+      "mastercard",
+      "samsung",
+      "searchmetrics",
+      "share_of_search",
+      "spotify",
+      "unilever"
+    ],
+    "11": [
+      "frontend_src_components_scripts_lantern",
+      "frontend_src_components_scripts_lantern_createlantern",
+      "frontend_src_components_scripts_main",
+      "frontend_src_components_scripts_main_boot",
+      "frontend_src_components_scripts_rip",
+      "frontend_src_components_scripts_rip_armrip",
+      "frontend_src_components_scripts_state",
+      "frontend_src_components_scripts_state_isforcedsurface",
+      "frontend_src_components_scripts_state_isreducedmotion",
+      "frontend_src_components_scripts_state_isrevealed",
+      "frontend_src_components_scripts_state_istouch",
+      "frontend_src_components_scripts_state_markrevealed",
+      "frontend_src_components_scripts_typing",
+      "frontend_src_components_scripts_typing_herotypingloop",
+      "frontend_src_components_scripts_typing_pause",
+      "frontend_src_components_scripts_typing_typetokens"
+    ],
+    "12": [
+      "frontend_src_lib_whattheyask_cache",
+      "frontend_src_lib_whattheyask_cache_cachekey",
+      "frontend_src_lib_whattheyask_cache_getcache",
+      "frontend_src_lib_whattheyask_cache_setcache",
+      "frontend_src_lib_whattheyask_googlesuggest",
+      "frontend_src_lib_whattheyask_googlesuggest_fetchallsuggestions",
+      "frontend_src_lib_whattheyask_googlesuggest_suggest",
+      "frontend_src_lib_whattheyask_prefixes",
+      "frontend_src_lib_whattheyask_prefixes_prefixes",
+      "frontend_src_lib_whattheyask_types",
+      "frontend_src_lib_whattheyask_types_cacheentry",
+      "frontend_src_lib_whattheyask_types_language",
+      "frontend_src_lib_whattheyask_types_prefixmap",
+      "frontend_src_lib_whattheyask_types_queryitem"
+    ],
+    "13": [
+      "scripts_convert_wp",
+      "scripts_convert_wp_buildfrontmatter",
+      "scripts_convert_wp_cleancontent",
+      "scripts_convert_wp_dirname",
+      "scripts_convert_wp_extractmeta",
+      "scripts_convert_wp_folders",
+      "scripts_convert_wp_output",
+      "scripts_convert_wp_root",
+      "scripts_convert_wp_sitericardo",
+      "scripts_convert_wp_skip_slugs",
+      "scripts_convert_wp_td",
+      "scripts_convert_wp_tomarkdown"
+    ],
+    "14": [
+      "frontend_src_components_depth_world",
+      "frontend_src_components_depth_world_animatefield",
+      "frontend_src_components_depth_world_createdepthworld",
+      "frontend_src_components_depth_world_glyphs",
+      "frontend_src_components_depth_world_glyphtexture",
+      "frontend_src_components_depth_world_makeglyphfield",
+      "frontend_src_components_depth_world_makegodrays",
+      "frontend_src_components_depth_world_raytexture"
+    ],
+    "15": [
+      "agent_frontend_design_principles",
+      "plano_site_ricardo_guedes_framer_motion",
+      "plano_site_ricardo_guedes_react",
+      "plano_site_ricardo_guedes_ricardo_guedes",
+      "plano_site_ricardo_guedes_site",
+      "plano_site_ricardo_guedes_tailwind",
+      "plano_site_ricardo_guedes_vite"
+    ],
+    "16": [
+      "c_users_ricardo_guedes_desktop_projects_site_ricardo_frontend_src_lib_whattheyask_cache",
+      "c_users_ricardo_guedes_desktop_projects_site_ricardo_frontend_src_lib_whattheyask_googlesuggest",
+      "c_users_ricardo_guedes_desktop_projects_site_ricardo_frontend_src_lib_whattheyask_prefixes",
+      "c_users_ricardo_guedes_desktop_projects_site_ricardo_frontend_src_lib_whattheyask_types",
+      "frontend_src_components_whattheyask_keywordexplorer",
+      "frontend_src_components_whattheyask_keywordexplorer_for",
+      "frontend_src_pages_ferramentas_whattheyask"
+    ],
+    "17": [
+      "blitzmetrics",
+      "dennis_yu",
+      "digitalks_event",
+      "frontend_src_content_blog_evento_de_marketing_digital_em_lisboa_digitalks",
+      "linda_pereira",
+      "tiago_senna"
+    ],
+    "18": [
+      "frontend_src_components_scripts_scroll",
+      "frontend_src_components_scripts_scroll_initfinalcta",
+      "frontend_src_components_scripts_scroll_initgallery",
+      "frontend_src_components_scripts_scroll_initscroll",
+      "frontend_src_components_scripts_scroll_initservices",
+      "frontend_src_components_scripts_scroll_initwhatchanged"
+    ],
+    "19": [
+      "frontend_tsconfig",
+      "frontend_tsconfig_exclude",
+      "frontend_tsconfig_extends",
+      "frontend_tsconfig_include"
+    ],
+    "20": [
+      "scripts_package",
+      "scripts_package_dependencies",
+      "scripts_package_dependencies_cheerio",
+      "scripts_package_dependencies_turndown"
+    ],
+    "21": [
+      "bcbl",
+      "frontend_src_content_blog_meta_revoluciona_a_comunicacao_com_ia_que_converte_pensamentos_em_texto",
+      "meta_ai_brain2qwerty"
+    ],
+    "22": [
+      "concept_small_business_seo",
+      "frontend_src_content_blog_como_fazer_seo_para_pequenas_empresas_um_guia_completo_md"
+    ],
+    "23": [
+      "frontend_astro_content_assets"
+    ],
+    "24": [
+      "frontend_astro_content_modules"
+    ],
+    "25": [
+      "frontend_astro_types_d"
+    ],
+    "26": [
+      "frontend_public_images_2019_11_about_bg_jpg_img"
+    ],
+    "27": [
+      "frontend_public_images_2019_11_founder_jpg_img"
+    ],
+    "28": [
+      "frontend_public_images_2019_11_manager_jpg_img"
+    ],
+    "29": [
+      "frontend_public_images_2019_11_receptionist_jpg_img"
+    ],
+    "30": [
+      "frontend_public_images_2020_06_bg_blob_gradient_svg"
+    ],
+    "31": [
+      "frontend_public_images_2020_06_blob_grad_svg"
+    ],
+    "32": [
+      "frontend_public_images_2020_06_dots_png_img"
+    ],
+    "33": [
+      "frontend_public_images_2020_06_gallery1_free_img_jpg_img"
+    ],
+    "34": [
+      "frontend_public_images_2020_06_gallery3_free_img_jpg_img"
+    ],
+    "35": [
+      "frontend_public_images_2024_12_2152477_1_image"
+    ],
+    "36": [
+      "frontend_public_images_2024_12_about1_image"
+    ],
+    "37": [
+      "frontend_public_images_2024_12_brain_svgrepo_com_image"
+    ],
+    "38": [
+      "frontend_public_images_2024_12_google_ads_image"
+    ],
+    "39": [
+      "frontend_public_images_2024_12_google_adsense_image"
+    ],
+    "40": [
+      "frontend_public_images_2024_12_google_analytics_image"
+    ],
+    "41": [
+      "frontend_public_images_2024_12_google_maps_svgrepo_com_image"
+    ],
+    "42": [
+      "frontend_public_images_2024_12_google_my_business_logo_image"
+    ],
+    "43": [
+      "frontend_public_images_2024_12_image_placeholder_about_1_image"
+    ],
+    "44": [
+      "frontend_public_images_2024_12_image_placeholder_about_image"
+    ],
+    "45": [
+      "frontend_public_images_2024_12_image_placeholder_hero_image"
+    ],
+    "46": [
+      "frontend_public_images_2024_12_image_testemonials_image"
+    ],
+    "47": [
+      "frontend_public_images_2024_12_instagram_image"
+    ],
+    "48": [
+      "frontend_public_images_2024_12_stalo_digital_logo_sem_letras_removebg_preview_image"
+    ],
+    "49": [
+      "frontend_public_images_2025_02_a_photo_of_a_restaurant_with_a_beautiful_1_image"
+    ],
+    "50": [
+      "frontend_public_images_2025_02_meta_cria_aparelho_para_ler_mentes_image"
+    ],
+    "51": [
+      "frontend_public_images_2025_03_1_image"
+    ],
+    "52": [
+      "frontend_public_images_2025_03_2_image"
+    ],
+    "53": [
+      "frontend_public_images_2025_03_3_image"
+    ],
+    "54": [
+      "frontend_public_images_2025_03_como_criar_conteudo_seo_friendly_que_converte_image"
+    ],
+    "55": [
+      "frontend_public_images_2025_03_como_criar_titulos_em_meta_descricao_otimizada_para_seo_image"
+    ],
+    "56": [
+      "frontend_public_images_2025_03_como_escolher_as_melhores_palavras_chave_para_seu_negocio_local_image"
+    ],
+    "57": [
+      "frontend_public_images_2025_03_como_medir_o_share_of_search_image"
+    ],
+    "58": [
+      "frontend_public_images_2025_03_como_trabalhar_com_imagens_para_seo_e_melhorar_o_carregamento_do_site_image"
+    ],
+    "59": [
+      "frontend_public_images_2025_03_firefly_palavras_flutuando_no_ar_num_ambiente_tecnologico_image"
+    ],
+    "60": [
+      "frontend_public_images_2025_03_firefly_personagem_de_terno_com_cores_do_google_com_um_mapa_na_mao_num_cenario_image"
+    ],
+    "61": [
+      "frontend_public_images_2025_03_pessoa_fazendo_um_comentario_num_produto_pelo_google_e_3_estrelas_de_avaliacao_em_sequencia"
+    ],
+    "62": [
+      "frontend_public_images_2025_03_pessoa_trabalhando_no_computador_usando_o_google_e_pensando_bastante_e_tom_preocupado_esta_num_escr_08_03_2025_at_12_23_16_image"
+    ],
+    "63": [
+      "frontend_public_images_2025_03_ricardo_seo_calculando_roi_na_matrix"
+    ],
+    "64": [
+      "frontend_public_images_2025_03_seo_para_hoteis"
+    ],
+    "65": [
+      "frontend_public_images_2025_03_uma_equipe_de_marketing_de_5_pessoas_parecendo_estressada_com_documentos_financeiros_estilo_minimalista_limi"
+    ],
+    "66": [
+      "frontend_public_images_2025_04_1_image"
+    ],
+    "67": [
+      "frontend_public_images_2025_04_2_image"
+    ],
+    "68": [
+      "frontend_public_images_2025_04_como_monitorar_o_desempenho_de_seo_do_seu_site_com_ferramentas_gratuitas"
+    ],
+    "69": [
+      "frontend_public_images_2025_04_dados_estruturados_em_faq_com_json"
+    ],
+    "70": [
+      "frontend_public_images_2025_04_deniz_yu"
+    ],
+    "71": [
+      "frontend_public_images_2025_04_design_sem_nome"
+    ],
+    "72": [
+      "frontend_public_images_2025_04_design_sem_nome_3"
+    ],
+    "73": [
+      "frontend_public_images_2025_04_estamos_aqui"
+    ],
+    "74": [
+      "frontend_public_images_2025_04_generated_image_april_01_2025"
+    ],
+    "75": [
+      "frontend_public_images_2025_04_sitemap_xml"
+    ],
+    "76": [
+      "frontend_public_images_2025_07_design_sem_nome_1"
+    ],
+    "77": [
+      "frontend_public_images_2025_07_excelcheat"
+    ],
+    "78": [
+      "frontend_public_images_2025_07_excelcheat_1"
+    ],
+    "79": [
+      "frontend_public_images_2025_07_instagram-svgrepo-com_instagram_svgrepo_com"
+    ],
+    "80": [
+      "frontend_public_images_2025_07_missao_ser_feliz"
+    ],
+    "81": [
+      "frontend_public_images_2025_07_prochave_jpg"
+    ],
+    "82": [
+      "frontend_public_images_2025_07_vivendo_clinica_endocrinologia"
+    ],
+    "83": [
+      "frontend_public_images_2025_07_youtube_color_svgrepo_com_svg_logo"
+    ],
+    "84": [
+      "frontend_public_images_a_oficializacao_do_grounding_o_futuro_do_trafego_organico_segundo_o_google_img_1782743053779_webp"
+    ],
+    "85": [
+      "frontend_public_images_como_escolher_as_melhores_palavras_chave_para_seu_negocio_local_img_1782729773793_webp"
+    ],
+    "86": [
+      "frontend_public_images_como_fazer_seo_para_pequenas_empresas_um_guia_completo_img_1782729378237_webp"
+    ],
+    "87": [
+      "frontend_public_images_como_fazer_seo_para_sites_de_turismo_atraia_mais_visitantes_img_1782724037474_webp"
+    ],
+    "88": [
+      "frontend_public_images_como_fazer_seo_para_sites_de_turismo_webp_img"
+    ],
+    "89": [
+      "frontend_public_images_como_medir_o_share_of_search_o_gps_da_sua_relevancia_no_mercado_digital_img_1782723682843_webp"
+    ],
+    "90": [
+      "frontend_public_images_dados_estrutiras_em_paginas_de_faq_com_jason_webp_img"
+    ],
+    "91": [
+      "frontend_public_images_elementor_thumbs_affordable_pricing_qylrxzl9b0cjigrive4km27g3o24gx6netqffkh0dc_jpg"
+    ],
+    "92": [
+      "frontend_public_images_elementor_thumbs_facilites_qylrxzl9b0cjigrive4km27g3o24gx6netqffkh0dc_jpg"
+    ],
+    "93": [
+      "frontend_public_images_elementor_thumbs_people_inside_room_qylrxxpkxc9yv8u96dbbh2oiwwbe1iz6qkfgh0jsps_jpg"
+    ],
+    "94": [
+      "frontend_public_images_estamos_aqui_webp_img"
+    ],
+    "95": [
+      "frontend_public_images_excelcheat_1_webp_img"
+    ],
+    "96": [
+      "frontend_public_images_excelcheat_webp_img"
+    ],
+    "97": [
+      "frontend_public_images_meta_cria_ai_para_conectar_cerebro_ao_computador_webp_img"
+    ],
+    "98": [
+      "frontend_public_images_og_default_jpg_img"
+    ],
+    "99": [
+      "frontend_public_images_pessoa_fazendo_um_comentario_num_produto_pelo_google_e_3_estrelas_de_avaliacao_em_sequencia_webp_img"
+    ],
+    "100": [
+      "frontend_public_images_prochave_webp_img"
+    ],
+    "101": [
+      "frontend_public_images_sitemap_xml_webp_img"
+    ],
+    "102": [
+      "frontend_public_images_teste1_img_1782766760168_jpeg"
+    ],
+    "103": [
+      "frontend_public_images_uma_equipe_de_marketing_de_5_pessoas_parecendo_estressada_com_documentos_financeiros_estilo_minimalista_limi_webp_img"
+    ],
+    "104": [
+      "frontend_public_images_vivendo_clinica_endocrinologia_webp_img"
+    ],
+    "105": [
+      "frontend_public_images_webp_express_test_conversion_webp_img"
+    ],
+    "106": [
+      "img_public_images_como_escolher_as_melhores_palavras_chave_para_seu_negocio_local_img_1782729773793"
+    ],
+    "107": [
+      "img_public_images_como_fazer_seo_para_pequenas_empresas_um_guia_completo_img_1782729378237"
+    ],
+    "108": [
+      "img_public_images_como_fazer_seo_para_pequenas_empresas_um_guia_completo_img_1782729813382"
+    ],
+    "109": [
+      "img_public_images_como_fazer_seo_para_sites_de_turismo_atraia_mais_visitantes_img_1782724037474"
+    ],
+    "110": [
+      "img_public_images_como_fazer_seo_para_sites_de_turismo_atraia_mais_visitantes_img_1782732880663"
+    ],
+    "111": [
+      "podcast_share_of_search"
+    ]
+  },
+  "cohesion": {
+    "0": 0.06666666666666667,
+    "1": 0.04878048780487805,
+    "2": 0.07777777777777778,
+    "3": 0.06060606060606061,
+    "4": 0.09462365591397849,
+    "5": 0.11396011396011396,
+    "6": 0.07407407407407407,
+    "7": 0.10153846153846154,
+    "8": 0.08,
+    "9": 0.08695652173913043,
+    "10": 0.09090909090909091,
+    "11": 0.24166666666666667,
+    "12": 0.2087912087912088,
+    "13": 0.18181818181818182,
+    "14": 0.39285714285714285,
+    "15": 0.2857142857142857,
+    "16": 0.2857142857142857,
+    "17": 0.3333333333333333,
+    "18": 0.6,
+    "19": 0.5,
+    "20": 0.5,
+    "21": 0.6666666666666666,
+    "22": 1.0,
+    "23": 1.0,
+    "24": 1.0,
+    "25": 1.0,
+    "26": 1.0,
+    "27": 1.0,
+    "28": 1.0,
+    "29": 1.0,
+    "30": 1.0,
+    "31": 1.0,
+    "32": 1.0,
+    "33": 1.0,
+    "34": 1.0,
+    "35": 1.0,
+    "36": 1.0,
+    "37": 1.0,
+    "38": 1.0,
+    "39": 1.0,
+    "40": 1.0,
+    "41": 1.0,
+    "42": 1.0,
+    "43": 1.0,
+    "44": 1.0,
+    "45": 1.0,
+    "46": 1.0,
+    "47": 1.0,
+    "48": 1.0,
+    "49": 1.0,
+    "50": 1.0,
+    "51": 1.0,
+    "52": 1.0,
+    "53": 1.0,
+    "54": 1.0,
+    "55": 1.0,
+    "56": 1.0,
+    "57": 1.0,
+    "58": 1.0,
+    "59": 1.0,
+    "60": 1.0,
+    "61": 1.0,
+    "62": 1.0,
+    "63": 1.0,
+    "64": 1.0,
+    "65": 1.0,
+    "66": 1.0,
+    "67": 1.0,
+    "68": 1.0,
+    "69": 1.0,
+    "70": 1.0,
+    "71": 1.0,
+    "72": 1.0,
+    "73": 1.0,
+    "74": 1.0,
+    "75": 1.0,
+    "76": 1.0,
+    "77": 1.0,
+    "78": 1.0,
+    "79": 1.0,
+    "80": 1.0,
+    "81": 1.0,
+    "82": 1.0,
+    "83": 1.0,
+    "84": 1.0,
+    "85": 1.0,
+    "86": 1.0,
+    "87": 1.0,
+    "88": 1.0,
+    "89": 1.0,
+    "90": 1.0,
+    "91": 1.0,
+    "92": 1.0,
+    "93": 1.0,
+    "94": 1.0,
+    "95": 1.0,
+    "96": 1.0,
+    "97": 1.0,
+    "98": 1.0,
+    "99": 1.0,
+    "100": 1.0,
+    "101": 1.0,
+    "102": 1.0,
+    "103": 1.0,
+    "104": 1.0,
+    "105": 1.0,
+    "106": 1.0,
+    "107": 1.0,
+    "108": 1.0,
+    "109": 1.0,
+    "110": 1.0,
+    "111": 1.0
+  },
+  "gods": [
+    {
+      "id": "novosite_site",
+      "label": "Duas Realidades (Site ricardotatagiba.com.br)",
+      "degree": 41
+    },
+    {
+      "id": "frontend_src_content_blog_como_medir_o_share_of_search_o_gps_da_sua_relevancia_no_mercado_digital",
+      "label": "Como Medir o Share of Search: O GPS da Sua Relev\u00e2ncia no Mercado Digital",
+      "degree": 24
+    },
+    {
+      "id": "frontend_src_content_blog_como_melhorar_o_ranking_do_seu_site_no_google_dicas_praticas",
+      "label": "Como Melhorar o Ranking do Seu Site no Google: Dicas Pr\u00e1ticas",
+      "degree": 12
+    },
+    {
+      "id": "frontend_src_content_blog_como_monitorar_desempenho_seo_seu_site_ferramentas_gratuitas",
+      "label": "Como Monitorar o Desempenho de SEO do Seu Site com Ferramentas Gratuitas",
+      "degree": 11
+    },
+    {
+      "id": "frontend_src_lib_seo_posts_getpublishedposts",
+      "label": "getPublishedPosts()",
+      "degree": 10
+    },
+    {
+      "id": "frontend_src_content_blog_por_que_seo_local_e_fundamental_para_pequenos_negocios",
+      "label": "Por que seo local \u00e9 fundamental para pequenos neg\u00f3cios",
+      "degree": 10
+    },
+    {
+      "id": "frontend_src_content_blog_criacao_de_faqs_programadas_com_dados_estruturados_json_ld_um_guia_completo_para_seo_na_era_da_ia",
+      "label": "Cria\u00e7\u00e3o de FAQs programadas com dados estruturados JSON-LD: Um guia completo para SEO na era da IA",
+      "degree": 8
+    },
+    {
+      "id": "frontend_src_content_blog_como_trabalhar_com_imagens_para_seo_e_melhorar_o_carregamento_do_site",
+      "label": "Como trabalhar com Imagens para SEO e Melhorar o Carregamento do Site",
+      "degree": 7
+    },
+    {
+      "id": "frontend_src_content_blog_sucesso_em_seo_local_como_acompanhar_rankings_conversoes_e_chamadas",
+      "label": "Sucesso em SEO Local: Como acompanhar rankings, convers\u00f5es e chamadas",
+      "degree": 7
+    },
+    {
+      "id": "frontend_src_lib_contentgap_sitemap_fetchsitemapurls",
+      "label": "fetchSitemapUrls()",
+      "degree": 6
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Favicon SVG",
+      "target": "Duas Realidades (Site ricardotatagiba.com.br)",
+      "source_files": [
+        "frontend/public/favicon.svg",
+        "novosite.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (doc \u2194 image); connects across different repos/directories; peripheral node `Favicon SVG` unexpectedly reaches hub `Duas Realidades (Site ricardotatagiba.com.br)`"
+    },
+    {
+      "source": "Image 1.webp (Screenshot/Graphic)",
+      "target": "Duas Realidades (Site ricardotatagiba.com.br)",
+      "source_files": [
+        "frontend/public/images/1.webp",
+        "novosite.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (doc \u2194 image); connects across different repos/directories; peripheral node `Image 1.webp (Screenshot/Graphic)` unexpectedly reaches hub `Duas Realidades (Site ricardotatagiba.com.br)`"
+    },
+    {
+      "source": "Image 2.webp (Screenshot/Graphic)",
+      "target": "Duas Realidades (Site ricardotatagiba.com.br)",
+      "source_files": [
+        "frontend/public/images/2.webp",
+        "novosite.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (doc \u2194 image); connects across different repos/directories; peripheral node `Image 2.webp (Screenshot/Graphic)` unexpectedly reaches hub `Duas Realidades (Site ricardotatagiba.com.br)`"
+    },
+    {
+      "source": "Image 3.webp (Screenshot/Graphic)",
+      "target": "Duas Realidades (Site ricardotatagiba.com.br)",
+      "source_files": [
+        "frontend/public/images/3.webp",
+        "novosite.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (doc \u2194 image); connects across different repos/directories; peripheral node `Image 3.webp (Screenshot/Graphic)` unexpectedly reaches hub `Duas Realidades (Site ricardotatagiba.com.br)`"
+    },
+    {
+      "source": "Image: Como Analisar Palavras-chave",
+      "target": "Duas Realidades (Site ricardotatagiba.com.br)",
+      "source_files": [
+        "frontend/public/images/Como analisar palavras chaves.webp",
+        "novosite.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (doc \u2194 image); connects across different repos/directories; peripheral node `Image: Como Analisar Palavras-chave` unexpectedly reaches hub `Duas Realidades (Site ricardotatagiba.com.br)`"
+    }
+  ],
+  "tokens": {
+    "input": 151898,
+    "output": 76687
+  }
+}

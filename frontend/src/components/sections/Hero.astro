@@ -1,0 +1,183 @@
+---
+// Cena 1–2 (Profundidade): o hero real, aquele que a lanterna revela.
+// Texto centralizado; a barra de IA vive abaixo do texto.
+// HTML semântico desde o primeiro render — é isto que máquinas leem.
+---
+
+<section id="hero" class="hero">
+  <nav class="hero-nav" aria-label="Navegação principal">
+    <a href="/" class="hero-brand">Ricardo Tatagiba</a>
+    <div class="hero-links">
+      <a href="/servicos">serviços</a>
+      <a href="/ferramentas">ferramentas</a>
+      <a href="/blog">blog</a>
+      <a href="/sobre">sobre</a>
+      <a href="/contato">contato</a>
+    </div>
+  </nav>
+
+  <div class="hero-inner">
+    <h1 class="depth-title hero-title">O SEO que as máquinas leem.</h1>
+    <p class="depth-body hero-sub">
+      Consultor SEO com mais de 10 anos de experiência. Estrutura, significado e
+      autoridade para a tua marca ser a resposta — no Google e nas IAs.
+    </p>
+
+    <!-- A barra de pesquisa da Profundidade: pergunta real + resposta a gerar-se -->
+    <div class="hero-ai" aria-hidden="true">
+      <p class="depth-mono hero-question-line">
+        <span class="hero-prompt">›</span>
+        <span id="hero-question"></span><span class="hero-caret"></span>
+      </p>
+    </div>
+    <p class="hero-answer-line"><span id="hero-answer"></span></p>
+
+    <!-- Entidades e schema: o que substitui as métricas de vaidade -->
+    <ul class="hero-entities depth-mono" aria-label="Entidades estruturadas">
+      <li><code>Organization</code></li>
+      <li><code>sameAs</code></li>
+      <li><code>FAQPage</code></li>
+      <li><code>Person → Ricardo Tatagiba</code></li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 1.6rem clamp(1.25rem, 5vw, 4rem) 3rem;
+  }
+
+  .hero-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+  }
+  .hero-brand {
+    font-family: var(--font-serif);
+    color: var(--depth-white);
+    font-size: 0.95rem;
+    text-decoration: none;
+  }
+  .hero-links {
+    display: flex;
+    gap: 1.4rem;
+  }
+  .hero-links a {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    color: var(--depth-white-dim);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .hero-links a:hover {
+    color: var(--depth-amber);
+  }
+
+  .hero-inner {
+    flex: 1;
+    width: 100%;
+    max-width: 46rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 6.5vw, 5.4rem);
+    margin: 0 0 1.4rem;
+  }
+  .hero-sub {
+    font-size: clamp(1rem, 1.6vw, 1.15rem);
+    margin: 0 auto 3rem;
+  }
+
+  /* A barra: geometria de barra de pesquisa, abaixo do texto */
+  .hero-ai {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 34rem;
+    height: 2.9rem;
+    border: 1px solid rgba(232, 168, 85, 0.4);
+    border-radius: 999px;
+    padding: 0 1.2rem;
+    background: rgba(232, 168, 85, 0.05);
+    box-shadow: 0 0 24px rgba(232, 168, 85, 0.12);
+  }
+  .hero-question-line {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .hero-prompt {
+    color: var(--depth-amber);
+    margin-right: 0.5rem;
+  }
+  .hero-caret {
+    display: inline-block;
+    width: 0.55em;
+    height: 1.05em;
+    margin-left: 2px;
+    background: var(--depth-cyan);
+    vertical-align: text-bottom;
+    animation: caret-blink 1.1s steps(1) infinite;
+  }
+  @keyframes caret-blink {
+    50% {
+      opacity: 0;
+    }
+  }
+  .hero-answer-line {
+    margin: 1rem 0 0;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    line-height: 1.7;
+    color: var(--depth-white-dim);
+    max-width: 34rem;
+    min-height: 2.8rem;
+  }
+
+  .hero-entities {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 3rem 0 0;
+  }
+  .hero-entities li {
+    position: relative;
+    color: rgba(79, 216, 232, 0.75);
+    font-size: 0.72rem;
+  }
+  .hero-entities li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -1.6rem;
+    top: 50%;
+    width: 1.2rem;
+    height: 1px;
+    background: var(--depth-line);
+  }
+
+  @media (max-width: 768px) {
+    .hero-nav {
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+  }
+</style>

@@ -1,0 +1,170 @@
+---
+// Cena 5: os serviços como camadas de um site a ser iluminado.
+// Um plano flutua ao centro; cada batida de scroll acende uma camada.
+const services = [
+  {
+    key: 'estrutura',
+    title: 'Estrutura',
+    tag: 'SEO técnico',
+    desc: 'O wireframe da página ganha esqueleto: headings, indexação, velocidade.',
+  },
+  {
+    key: 'significado',
+    title: 'Significado',
+    tag: 'Conteúdo + entidades',
+    desc: 'Palavras deixam de ser palavras-chave e passam a ser entidades que as máquinas entendem.',
+  },
+  {
+    key: 'alcance',
+    title: 'Alcance',
+    tag: 'Google Ads',
+    desc: 'Enquanto o orgânico cresce, o tráfego pago valida e acelera.',
+  },
+  {
+    key: 'presenca',
+    title: 'Presença local',
+    tag: 'GMB / SEO local',
+    desc: 'Um pin de mapa materializa-se: o teu negócio como resposta na tua região.',
+  },
+  {
+    key: 'automacao',
+    title: 'Automação',
+    tag: 'IA',
+    desc: 'A página começa a gerar variações de si própria: escala sem esforço manual.',
+  },
+];
+---
+
+<section id="services" class="svc">
+  <h2 class="sr-only">O que eu faço</h2>
+
+  <div class="svc-stage">
+    <!-- O plano 3D: uma página web abstrata, camada a camada -->
+    <div class="svc-plane" aria-hidden="true">
+      {services.map((s, i) => (
+        <div class={`svc-layer svc-layer-${s.key}`} style={`--i:${i}`}>
+          <div class="svc-layer-glow"></div>
+        </div>
+      ))}
+    </div>
+
+    <div class="svc-cards">
+      {services.map((s) => (
+        <article class="svc-card">
+          <h3 class="depth-title svc-card-title">{s.title}</h3>
+          <p class="depth-mono svc-card-tag">{s.tag}</p>
+          <p class="depth-body svc-card-desc">{s.desc}</p>
+          <a href="/servicos" class="svc-card-link">ver serviço →</a>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .svc {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 clamp(1.25rem, 6vw, 5rem);
+  }
+  .svc-stage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    width: 100%;
+    max-width: 68rem;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .svc-plane {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    max-height: 62vh;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+  .svc-layer {
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--depth-line);
+    border-radius: 6px;
+    background: rgba(232, 168, 85, 0.03);
+    transform: translateZ(calc(var(--i) * 26px)) translateY(14px);
+    opacity: 0;
+    box-shadow: 0 0 40px rgba(232, 168, 85, 0.08);
+  }
+  .svc-layer-glow {
+    position: absolute;
+    inset: 12%;
+    border-radius: 4px;
+    background: radial-gradient(ellipse at 30% 20%, rgba(232, 168, 85, 0.14), transparent 65%);
+  }
+
+  .svc-cards {
+    position: relative;
+    min-height: 16rem;
+  }
+  .svc-card {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .svc-card-title {
+    font-size: clamp(1.9rem, 3.4vw, 3rem);
+    margin: 0 0 0.35rem;
+  }
+  .svc-card-tag {
+    margin: 0 0 1rem;
+    opacity: 0.8;
+  }
+  .svc-card-desc {
+    margin: 0 0 1.5rem;
+  }
+  .svc-card-link {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--depth-amber);
+    text-decoration: none;
+    border-bottom: 1px solid var(--depth-line);
+    padding-bottom: 2px;
+  }
+  .svc-card-link:hover {
+    border-color: var(--depth-amber);
+  }
+
+  /* Reduced motion / no-JS: as camadas e o primeiro card visíveis */
+  @media (prefers-reduced-motion: reduce) {
+    .svc-layer {
+      opacity: 1;
+    }
+    .svc-card {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      margin-bottom: 3rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .svc-stage {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .svc-plane {
+      max-height: 34vh;
+    }
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+</style>

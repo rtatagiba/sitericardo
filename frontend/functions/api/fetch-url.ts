@@ -7,7 +7,12 @@
 const ALLOWED_TARGET = /(\.xml(\?.*)?$)|(\/robots\.txt$)|(\/feed\/?(\?.*)?$)|([?&]feed=)/i;
 
 function isAllowedOrigin(origin: string | null): boolean {
-  if (!origin) return false;
+  // No Origin header means a same-origin request — browsers only attach
+  // Origin on cross-origin fetches, so a same-origin GET (the normal path
+  // for this tool) legitimately arrives with no header at all. Rejecting
+  // that here would 403 the tool's own same-origin calls while doing
+  // nothing to stop a real cross-site abuser, whose fetch always sets Origin.
+  if (!origin) return true;
   try {
     const { hostname, protocol } = new URL(origin);
     if (protocol === 'http:' && hostname === 'localhost') return true;
@@ -29,7 +34,7 @@ export const onRequestGet = async ({ request }: { request: Request }): Promise<R
     return new Response('bad target', { status: 400 });
   }
 
-  const corsHeaders = { 'Access-Control-Allow-Origin': origin! };
+  const corsHeaders = { 'Access-Control-Allow-Origin': origin ?? '*' };
 
   // caches.default is a Cloudflare Workers extension, absent from lib.dom's CacheStorage.
   const cache = (caches as unknown as { default: Cache }).default;
