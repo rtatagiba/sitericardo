@@ -7,9 +7,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="Cases reais de SEO, tráfego pago e marketing digital desenvolvidos por Ricardo Tatagiba. 11 anos de experiência, +300 sites, +150 clientes satisfeitos."
 >
   <!-- Stats -->
-  <section class="bg-primary text-white py-16">
+  <section class="bg-black text-white py-16">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="text-4xl font-bold mb-4">Portfolio</h1>
+      <h1 class="text-4xl font-bold mb-4 text-primary">Portfolio</h1>
       <p class="text-white/70 text-lg mb-12 max-w-2xl">
         11 anos no mercado. Resultados reais para clientes em Brasil, Portugal e além.
       </p>
@@ -32,11 +32,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- Cases -->
   <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
     <h2 class="text-3xl font-bold text-primary mb-2">Cases de Sucesso</h2>
-    <p class="text-gray-600 mb-12">Projetos reais com métricas reais.</p>
+    <p class="text-green-300 mb-12">Projetos reais com métricas reais.</p>
 
     <div class="space-y-12">
       <!-- Cacilhas Tattoo -->
-      <div class="border border-gray-100 rounded-2xl p-8 hover:shadow-md transition-shadow">
+      <div class="border border-green-900 rounded-2xl p-8 hover:shadow-md transition-shadow">
         <div class="flex flex-wrap items-start gap-4 mb-6">
           <div class="inline-block bg-accent/10 text-accent text-xs font-semibold px-3 py-1 rounded-full">
             SEO Local · Portugal
@@ -46,7 +46,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
         </div>
         <h3 class="text-2xl font-bold text-primary mb-4">Local SEO — Loja de Tatuagem em Almada</h3>
-        <p class="text-gray-600 leading-relaxed mb-6">
+        <p class="text-green-300 leading-relaxed mb-6">
           Dono precisava aumentar o tráfego de clientes. Fiz análise completa do perfil Google, criação de site,
           otimização do GMB, produção de fotos e campanhas de anúncios locais. Resultado: receita cresceu +33%.
         </p>
@@ -56,22 +56,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             { metric: '+1.538,6%', label: 'Aparições em pesquisa', sub: '2.802 pesquisas/mês' },
             { metric: '+33%', label: 'Aumento de receita', sub: 'Resultado direto' },
           ].map(({ metric, label, sub }) => (
-            <div class="bg-gray-50 rounded-xl p-4">
+            <div class="bg-neutral-900 rounded-xl p-4">
               <div class="text-2xl font-bold text-accent mb-1">{metric}</div>
               <div class="text-sm font-medium text-primary">{label}</div>
-              <div class="text-xs text-gray-500">{sub}</div>
+              <div class="text-xs text-green-300">{sub}</div>
             </div>
           ))}
         </div>
         <div class="mt-4 flex flex-wrap gap-2">
           {['SEO Local', 'Google Meu Negócio', 'Criação de Site', 'Google Ads Local', 'Fotografia'].map(tag => (
-            <span class="text-xs bg-gray-100 text-gray-600 px-3 py-1 rounded-full">{tag}</span>
+            <span class="text-xs bg-neutral-900 text-green-300 px-3 py-1 rounded-full">{tag}</span>
           ))}
         </div>
       </div>
 
       <!-- Ogjerman -->
-      <div class="border border-gray-100 rounded-2xl p-8 hover:shadow-md transition-shadow">
+      <div class="border border-green-900 rounded-2xl p-8 hover:shadow-md transition-shadow">
         <div class="flex flex-wrap items-start gap-4 mb-6">
           <div class="inline-block bg-accent/10 text-accent text-xs font-semibold px-3 py-1 rounded-full">
             Tráfego Pago · Albania / Brasil
@@ -81,7 +81,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
         </div>
         <h3 class="text-2xl font-bold text-primary mb-4">Facebook & Instagram Ads — Escola de Idiomas</h3>
-        <p class="text-gray-600 leading-relaxed mb-6">
+        <p class="text-green-300 leading-relaxed mb-6">
           Ogjerman é influenciador referência na Albânia no ensino de alemão. Quando o projeto estava no início,
           gerenciei as campanhas de anúncios que levaram o investimento em ads de menos de 5.000€/ano para
           quase 38.000€ no ano seguinte — crescimento explosivo de vendas. Com mais de 125.000 seguidores e
@@ -93,22 +93,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             { metric: '+660%', label: 'Crescimento de budget', sub: 'De <5K para 38K€' },
             { metric: '125K+', label: 'Seguidores alcançados', sub: 'Mídia + TV' },
           ].map(({ metric, label, sub }) => (
-            <div class="bg-gray-50 rounded-xl p-4">
+            <div class="bg-neutral-900 rounded-xl p-4">
               <div class="text-2xl font-bold text-accent mb-1">{metric}</div>
               <div class="text-sm font-medium text-primary">{label}</div>
-              <div class="text-xs text-gray-500">{sub}</div>
+              <div class="text-xs text-green-300">{sub}</div>
             </div>
           ))}
         </div>
         <div class="mt-4 flex flex-wrap gap-2">
           {['Facebook Ads', 'Instagram Ads', 'Growth Strategy', 'Gestão de Campanhas', 'Copywriting de Anúncios'].map(tag => (
-            <span class="text-xs bg-gray-100 text-gray-600 px-3 py-1 rounded-full">{tag}</span>
+            <span class="text-xs bg-neutral-900 text-green-300 px-3 py-1 rounded-full">{tag}</span>
           ))}
         </div>
       </div>
 
       <!-- Pura Energia Positiva -->
-      <div class="border border-gray-100 rounded-2xl p-8 hover:shadow-md transition-shadow">
+      <div class="border border-green-900 rounded-2xl p-8 hover:shadow-md transition-shadow">
         <div class="flex flex-wrap items-start gap-4 mb-6">
           <div class="inline-block bg-accent/10 text-accent text-xs font-semibold px-3 py-1 rounded-full">
             Head of Marketing · Brasil
@@ -118,7 +118,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
         </div>
         <h3 class="text-2xl font-bold text-primary mb-4">Head of Marketing — Maior Podcast de Meditação do Brasil</h3>
-        <p class="text-gray-600 leading-relaxed mb-6">
+        <p class="text-green-300 leading-relaxed mb-6">
           Em 2022 e 2023 gerenciei o marketing do maior podcast de meditação do Brasil. O projeto estava em construção —
           o site precisava de melhorias significativas e não havia App. Fui peça chave na criação do site, no desenvolvimento
           do primeiro protótipo do App, na gestão das primeiras campanhas de anúncios, no reposicionamento de marca e na
@@ -130,16 +130,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             { metric: 'Site', label: 'Reestruturação completa', sub: 'Do zero até o lançamento' },
             { metric: 'Ads', label: 'Facebook & Email mkt', sub: 'RD Station + Meta Ads' },
           ].map(({ metric, label, sub }) => (
-            <div class="bg-gray-50 rounded-xl p-4">
+            <div class="bg-neutral-900 rounded-xl p-4">
               <div class="text-2xl font-bold text-accent mb-1">{metric}</div>
               <div class="text-sm font-medium text-primary">{label}</div>
-              <div class="text-xs text-gray-500">{sub}</div>
+              <div class="text-xs text-green-300">{sub}</div>
             </div>
           ))}
         </div>
         <div class="mt-4 flex flex-wrap gap-2">
           {['Estratégia de Marketing', 'Facebook Ads', 'Email Marketing', 'RD Station', 'Branding', 'Desenvolvimento de App'].map(tag => (
-            <span class="text-xs bg-gray-100 text-gray-600 px-3 py-1 rounded-full">{tag}</span>
+            <span class="text-xs bg-neutral-900 text-green-300 px-3 py-1 rounded-full">{tag}</span>
           ))}
         </div>
       </div>
@@ -147,10 +147,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </section>
 
   <!-- Websites Portfolio -->
-  <section class="bg-gray-50 py-20">
+  <section class="bg-black py-20">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-bold text-primary mb-2">Sites Criados</h2>
-      <p class="text-gray-600 mb-12">
+      <p class="text-green-300 mb-12">
         Mais de 300 sites criados em 10+ anos. Abaixo alguns dos mais recentes.
       </p>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -161,12 +161,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           { name: 'Endocrinologia em Botafogo', sector: 'Saúde', desc: 'Site médico moderno para clínica de endocrinologia no Rio de Janeiro.' },
           { name: 'Hipnoterapia de Confiança', sector: 'Saúde & Bem-estar', desc: 'Site de terapeuta com design imersivo e foco em conversão de sessões.' },
         ].map(({ name, sector, desc }) => (
-          <div class="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-md transition-shadow">
+          <div class="bg-black rounded-xl p-6 border border-green-900 hover:shadow-md transition-shadow">
             <div class="inline-block bg-accent/10 text-accent text-xs font-semibold px-3 py-1 rounded-full mb-3">
               {sector}
             </div>
             <h3 class="font-bold text-primary mb-2">{name}</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">{desc}</p>
+            <p class="text-green-300 text-sm leading-relaxed">{desc}</p>
           </div>
         ))}
       </div>
@@ -176,10 +176,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- CTA -->
   <section class="py-20">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-gray-600 mb-6 text-lg">Quer resultados como estes para o seu negócio?</p>
+      <p class="text-green-300 mb-6 text-lg">Quer resultados como estes para o seu negócio?</p>
       <a
         href="/contato"
-        class="inline-block bg-accent text-primary font-semibold px-10 py-3 rounded-lg hover:bg-accent-dark transition-colors"
+        class="inline-block bg-accent text-black font-semibold px-10 py-3 rounded-lg hover:bg-accent-dark transition-colors"
       >
         Falar sobre o seu projeto
       </a>

@@ -20,10 +20,10 @@ const posts = (await getCollection("blog"))
   <Hero />
 
   <!-- Serviços -->
-  <section class="py-20 px-4 bg-gray-50">
+  <section class="py-20 px-4 bg-black">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-3xl font-bold text-center mb-4">O que eu faço</h2>
-      <p class="text-gray-600 text-center mb-12 max-w-xl mx-auto">
+      <p class="text-green-300 text-center mb-12 max-w-xl mx-auto">
         Estratégias completas para aumentar sua visibilidade online e atrair
         mais clientes.
       </p>
@@ -55,9 +55,9 @@ const posts = (await getCollection("blog"))
               desc: "Processos inteligentes para escalar resultados com menos esforço manual.",
             },
           ].map(({ title, desc }) => (
-            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="bg-black rounded-xl p-6 shadow-sm border border-green-900 hover:shadow-md transition-shadow">
               <h3 class="font-bold text-lg mb-2 text-primary">{title}</h3>
-              <p class="text-gray-600 text-sm leading-relaxed">{desc}</p>
+              <p class="text-green-300 text-sm leading-relaxed">{desc}</p>
             </div>
           ))
         }
@@ -65,7 +65,7 @@ const posts = (await getCollection("blog"))
       <div class="text-center mt-10">
         <a
           href="/servicos"
-          class="inline-block bg-primary text-white font-semibold px-8 py-3 rounded-lg hover:bg-gray-800 transition-colors"
+          class="inline-block bg-black border border-green-900 text-white font-semibold px-8 py-3 rounded-lg hover:bg-neutral-900 transition-colors"
         >
           Ver todos os serviços
         </a>
@@ -79,12 +79,12 @@ const posts = (await getCollection("blog"))
       <section class="py-20 px-4">
         <div class="max-w-6xl mx-auto">
           <h2 class="text-3xl font-bold mb-4">Artigos recentes</h2>
-          <p class="text-gray-600 mb-12">
+          <p class="text-green-300 mb-12">
             Conteúdo prático sobre SEO, marketing digital e visibilidade online.
           </p>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             {posts.map((post: CollectionEntry<"blog">) => (
-              <article class="border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow">
+              <article class="border border-green-900 rounded-xl overflow-hidden hover:shadow-md transition-shadow">
                 {post.data.image && (
                   <img
                     src={post.data.image}
@@ -94,7 +94,7 @@ const posts = (await getCollection("blog"))
                   />
                 )}
                 <div class="p-6">
-                  <time class="text-xs text-gray-500 mb-2 block">
+                  <time class="text-xs text-green-300 mb-2 block">
                     {(post.data.date ?? post.data.pubDate ?? new Date(0)).toLocaleDateString("pt-BR", {
                       day: "2-digit",
                       month: "long",
@@ -109,7 +109,7 @@ const posts = (await getCollection("blog"))
                       {post.data.title}
                     </a>
                   </h3>
-                  <p class="text-gray-600 text-sm leading-relaxed line-clamp-3">
+                  <p class="text-green-300 text-sm leading-relaxed line-clamp-3">
                     {post.data.description}
                   </p>
                 </div>
@@ -119,7 +119,7 @@ const posts = (await getCollection("blog"))
           <div class="text-center mt-10">
             <a
               href="/blog"
-              class="inline-block border border-primary text-primary font-semibold px-8 py-3 rounded-lg hover:bg-primary hover:text-white transition-colors"
+              class="inline-block border border-primary text-primary font-semibold px-8 py-3 rounded-lg hover:bg-neutral-900 transition-colors"
             >
               Ver todos os artigos
             </a>
@@ -132,16 +132,16 @@ const posts = (await getCollection("blog"))
   <!-- CTA -->
   <section class="bg-accent py-16 px-4">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-primary mb-4">
+      <h2 class="text-3xl font-bold text-black mb-4">
         Pronto para crescer no Google?
       </h2>
-      <p class="text-primary/80 mb-8 max-w-xl mx-auto">
+      <p class="text-black/80 mb-8 max-w-xl mx-auto">
         Vamos conversar sobre o seu negócio e como posso ajudá-lo a conseguir
         mais visibilidade orgânica.
       </p>
       <a
         href="/contato"
-        class="inline-block bg-primary text-white font-semibold px-10 py-3 rounded-lg hover:bg-gray-800 transition-colors"
+        class="inline-block bg-black text-white font-semibold px-10 py-3 rounded-lg hover:bg-neutral-900 transition-colors"
       >
         Entrar em contato
       </a>

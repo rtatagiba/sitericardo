@@ -23,7 +23,7 @@
   <div class="hero-inner">
     <h1 class="depth-title hero-title">O SEO que as máquinas leem.</h1>
     <p class="depth-body hero-sub">
-      Consultor SEO com mais de 10 anos de experiência. Estrutura, significado e
+      Consultor SEO com mais de 12 anos de experiência. Estrutura, significado e
       autoridade para a tua marca ser a resposta no Google e nas IAs.
     </p>
 
@@ -64,7 +64,6 @@
     height: 100%;
     object-fit: cover;
     z-index: 0;
-    opacity: 0;
   }
 
   .hero-inner {
@@ -79,17 +78,6 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    animation: hero-inner-in 0.7s ease-out 0.12s both;
-  }
-  @keyframes hero-inner-in {
-    from {
-      transform: translateY(14px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
   }
 
   .hero-title {
@@ -174,31 +162,3 @@
     background: var(--depth-line);
   }
 </style>
-
-<script>
-  const video = document.querySelector<HTMLVideoElement>(".hero-bg-video");
-  if (video) {
-    const TARGET_OPACITY = 1;
-    const reduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-    const applyOpacity = (v: number) => {
-      video.style.opacity = String(v);
-    };
-    if (reduced) {
-      applyOpacity(TARGET_OPACITY);
-    } else {
-      const DURATION = 1200;
-      let start: number | null = null;
-      const step = (ts: number) => {
-        if (start === null) start = ts;
-        const p = Math.min((ts - start) / DURATION, 1);
-        applyOpacity(p * TARGET_OPACITY);
-        if (p < 1) requestAnimationFrame(step);
-      };
-      const begin = () => requestAnimationFrame(step);
-      if (video.readyState >= 3) begin();
-      else video.addEventListener("canplay", begin, { once: true });
-    }
-  }
-</script>

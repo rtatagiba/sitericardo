@@ -1,97 +1,43 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const whatsappNumber = '351961736521';
+const whatsappMessage = 'Ola queria saber mais informações sobre SEO e criação de sites';
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 ---
 
 <BaseLayout
   title="Contato — Ricardo Tatagiba"
-  description="Entre em contato com Ricardo Tatagiba para discutir seu projeto de SEO. Consultor SEO Freelancer disponível para projetos em todo o Brasil."
+  description="Entre em contato com Ricardo Tatagiba para discutir seu projeto de SEO. Consultor SEO Freelancer disponível em Lisboa, Portugal."
 >
-  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+  <section class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <h1 class="text-4xl font-bold text-primary mb-4">Vamos conversar?</h1>
+    <p class="text-green-300 leading-relaxed mb-8">
+      Se você quer aumentar a visibilidade do seu negócio no Google e atrair mais clientes
+      de forma orgânica, estou aqui para ajudar. Chame no WhatsApp.
+    </p>
+
+    <div class="flex items-start gap-3 mb-8">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="text-accent mt-0.5 shrink-0">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
       <div>
-        <h1 class="text-4xl font-bold text-primary mb-4">Vamos conversar?</h1>
-        <p class="text-gray-600 leading-relaxed mb-8">
-          Se você quer aumentar a visibilidade do seu negócio no Google e atrair mais clientes
-          de forma orgânica, estou aqui para ajudar. Preencha o formulário ao lado ou me contate
-          diretamente.
-        </p>
-
-        <div class="space-y-4">
-          <div class="flex items-start gap-3">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="text-accent mt-0.5 shrink-0">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-            <div>
-              <div class="text-xs text-gray-500 mb-1">Email</div>
-              <a href="mailto:contato@ricardotatagiba.com.br" class="text-primary font-medium hover:text-accent transition-colors">
-                contato@ricardotatagiba.com.br
-              </a>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-3">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="text-accent mt-0.5 shrink-0">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-            <div>
-              <div class="text-xs text-gray-500 mb-1">Localização</div>
-              <span class="text-primary font-medium">Brasil — atendimento remoto</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <form
-          method="POST"
-          action="https://formspree.io/f/YOUR_FORM_ID"
-          class="space-y-4"
-        >
-          <div>
-            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nome</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-primary placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
-              placeholder="Seu nome"
-            />
-          </div>
-
-          <div>
-            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-primary placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
-              placeholder="seu@email.com"
-            />
-          </div>
-
-          <div>
-            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensagem</label>
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              required
-              class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-primary placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent resize-none"
-              placeholder="Fale sobre o seu projeto..."
-            ></textarea>
-          </div>
-
-          <button
-            type="submit"
-            class="w-full bg-accent text-primary font-semibold py-3 rounded-lg hover:bg-accent-dark transition-colors"
-          >
-            Enviar mensagem
-          </button>
-        </form>
+        <div class="text-xs text-green-300 mb-1">Localização</div>
+        <span class="text-primary font-medium">Lisboa, Portugal</span>
       </div>
     </div>
+
+    <a
+      href={whatsappUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-3 bg-accent text-black font-semibold px-6 py-3.5 rounded-lg hover:bg-accent-dark transition-colors"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 004.74 1.21h.005c5.46 0 9.91-4.45 9.91-9.91C21.98 6.45 17.53 2 12.04 2zm0 18.15h-.005a8.24 8.24 0 01-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 01-1.26-4.42c0-4.55 3.7-8.25 8.25-8.25 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 012.42 5.83c0 4.55-3.7 8.28-8.25 8.28zm4.52-6.19c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.99-1.22-.73-.65-1.23-1.46-1.37-1.71-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01a.92.92 0 00-.67.31c-.23.25-.87.85-.87 2.08s.89 2.41 1.02 2.58c.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.11-.23-.17-.48-.29z" />
+      </svg>
+      Falar no WhatsApp
+    </a>
   </section>
 </BaseLayout>
