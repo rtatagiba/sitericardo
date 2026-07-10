@@ -5,22 +5,26 @@
 ---
 
 <section id="hero" class="hero">
-  <nav class="hero-nav" aria-label="Navegação principal">
-    <a href="/" class="hero-brand">Ricardo Tatagiba</a>
-    <div class="hero-links">
-      <a href="/servicos">serviços</a>
-      <a href="/ferramentas">ferramentas</a>
-      <a href="/blog">blog</a>
-      <a href="/sobre">sobre</a>
-      <a href="/contato">contato</a>
-    </div>
-  </nav>
+  <video
+    class="hero-bg-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    aria-hidden="true"
+  >
+    <source
+      src="/videos/Bald_man_typing_at_console_202607101608.mp4"
+      type="video/mp4"
+    />
+  </video>
 
   <div class="hero-inner">
     <h1 class="depth-title hero-title">O SEO que as máquinas leem.</h1>
     <p class="depth-body hero-sub">
       Consultor SEO com mais de 10 anos de experiência. Estrutura, significado e
-      autoridade para a tua marca ser a resposta — no Google e nas IAs.
+      autoridade para a tua marca ser a resposta no Google e nas IAs.
     </p>
 
     <!-- A barra de pesquisa da Profundidade: pergunta real + resposta a gerar-se -->
@@ -50,37 +54,22 @@
     display: flex;
     flex-direction: column;
     padding: 1.6rem clamp(1.25rem, 5vw, 4rem) 3rem;
+    overflow: hidden;
   }
 
-  .hero-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 1rem;
-  }
-  .hero-brand {
-    font-family: var(--font-serif);
-    color: var(--depth-white);
-    font-size: 0.95rem;
-    text-decoration: none;
-  }
-  .hero-links {
-    display: flex;
-    gap: 1.4rem;
-  }
-  .hero-links a {
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.06em;
-    color: var(--depth-white-dim);
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  .hero-links a:hover {
-    color: var(--depth-amber);
+  .hero-bg-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0;
   }
 
   .hero-inner {
+    position: relative;
+    z-index: 1;
     flex: 1;
     width: 100%;
     max-width: 46rem;
@@ -90,6 +79,17 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    animation: hero-inner-in 0.7s ease-out 0.12s both;
+  }
+  @keyframes hero-inner-in {
+    from {
+      transform: translateY(14px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 
   .hero-title {
@@ -165,7 +165,7 @@
     font-size: 0.72rem;
   }
   .hero-entities li:not(:last-child)::after {
-    content: '';
+    content: "";
     position: absolute;
     right: -1.6rem;
     top: 50%;
@@ -173,11 +173,32 @@
     height: 1px;
     background: var(--depth-line);
   }
+</style>
 
-  @media (max-width: 768px) {
-    .hero-nav {
-      flex-wrap: wrap;
-      gap: 0.6rem;
+<script>
+  const video = document.querySelector<HTMLVideoElement>(".hero-bg-video");
+  if (video) {
+    const TARGET_OPACITY = 1;
+    const reduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    const applyOpacity = (v: number) => {
+      video.style.opacity = String(v);
+    };
+    if (reduced) {
+      applyOpacity(TARGET_OPACITY);
+    } else {
+      const DURATION = 1200;
+      let start: number | null = null;
+      const step = (ts: number) => {
+        if (start === null) start = ts;
+        const p = Math.min((ts - start) / DURATION, 1);
+        applyOpacity(p * TARGET_OPACITY);
+        if (p < 1) requestAnimationFrame(step);
+      };
+      const begin = () => requestAnimationFrame(step);
+      if (video.readyState >= 3) begin();
+      else video.addEventListener("canplay", begin, { once: true });
     }
   }
-</style>
+</script>
