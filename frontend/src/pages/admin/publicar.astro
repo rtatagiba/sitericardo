@@ -113,15 +113,19 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       imageFile.value = '';
       return showStatus('err', 'Imagem muito grande (máx. 5 MB). Otimize antes de subir.');
     }
+    // Prévia instantânea a partir do arquivo local (o caminho remoto só existe após o build)
+    if (imagePreview.dataset.objurl) URL.revokeObjectURL(imagePreview.dataset.objurl);
+    const objectUrl = URL.createObjectURL(file);
+    imagePreview.dataset.objurl = objectUrl;
+    imagePreview.src = objectUrl;
+    imagePreview.classList.remove('hidden');
     imageHint.textContent = `Enviando ${file.name}...`;
     showStatus('info', 'Enviando imagem para o GitHub...');
     try {
       const res = await uploadImage(file);
       $('image').value = res.path;
-      imagePreview.src = res.path;
-      imagePreview.classList.remove('hidden');
-      imageHint.textContent = `Enviada: ${res.path}`;
-      showStatus('ok', `Imagem enviada! Disponível em ${res.path} após o build.`);
+      imageHint.textContent = `Enviada: ${res.path} (aparece no site após o build, em 1–2 min)`;
+      showStatus('ok', `Imagem enviada! Caminho salvo no artigo: ${res.path}`);
     } catch (e) {
       imageHint.textContent = 'Falha no envio. Tente novamente.';
       showStatus('err', `Falha ao enviar imagem: ${(e as Error).message}`);
