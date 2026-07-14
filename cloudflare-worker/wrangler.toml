@@ -1,6 +1,7 @@
 name = "blog-admin"
 main = "index.js"
 compatibility_date = "2026-07-01"
+account_id = "8c908063ae111ab2da3236363710ff35"
 
 [vars]
 GITHUB_OWNER = "rtatagiba"
