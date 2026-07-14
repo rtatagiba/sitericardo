@@ -192,6 +192,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       editor.setMarkdown('');
       ($('date') as HTMLInputElement).value = new Date().toISOString().slice(0, 10);
       slugTouched = false;
+      // Limpa a prévia da imagem de destaque (form.reset() não alcança o <img>)
+      if (imagePreview.dataset.objurl) {
+        URL.revokeObjectURL(imagePreview.dataset.objurl);
+        delete imagePreview.dataset.objurl;
+      }
+      imagePreview.removeAttribute('src');
+      imagePreview.classList.add('hidden');
+      imageHint.textContent = 'Envie um arquivo ou cole um caminho existente.';
     } catch (e) {
       showStatus('err', `Falha ao publicar: ${(e as Error).message}`);
       refreshAuthBox();
