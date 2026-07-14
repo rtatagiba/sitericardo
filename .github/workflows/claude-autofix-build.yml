@@ -1,0 +1,124 @@
+# .github/workflows/claude-autofix-build.yml
+#
+# Agente de correção automática de erros de build (Astro + Cloudflare Pages)
+#
+# Fluxo:
+#   1. Em todo push na main, replica o build que a Cloudflare Pages faria
+#   2. Se o build falhar, captura o log completo
+#   3. Aciona o Claude Code para diagnosticar e corrigir
+#   4. Claude valida o fix rodando o build novamente
+#   5. Se o build passar, abre um PR com a correção (nunca commita direto na main)
+#
+# Pré-requisitos:
+#   - Rodar /install-github-app no Claude Code (instala o GitHub App da Anthropic)
+#   - Secret ANTHROPIC_API_KEY cadastrado em Settings > Secrets and variables > Actions
+#
+name: Claude Auto-Fix Build
+
+on:
+  push:
+    branches: [main]
+  # Permite disparar manualmente pela aba Actions também
+  workflow_dispatch:
+
+# Evita dois auto-fixes rodando em paralelo (loop/conflito)
+concurrency:
+  group: claude-autofix-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      build_failed: ${{ steps.build.outputs.failed }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22          # alinhe com a versão configurada no Cloudflare Pages
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build (replica o build do Cloudflare Pages)
+        id: build
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          if npm run build 2>&1 | tee build.log; then
+            echo "failed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "failed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # Guarda o log para o job de correção
+      - name: Upload build log
+        if: steps.build.outputs.failed == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-log
+          path: build.log
+          retention-days: 3
+
+  autofix:
+    needs: build
+    if: needs.build.outputs.build_failed == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20            # safety net: nunca roda mais de 20 min
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Download build log
+        uses: actions/download-artifact@v4
+        with:
+          name: build-log
+
+      - name: Claude Code - diagnosticar e corrigir
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            O build deste site Astro (deploy no Cloudflare Pages) falhou.
+            O log completo do erro está no arquivo build.log na raiz do repositório.
+
+            Sua tarefa:
+            1. Leia o build.log e identifique a causa raiz do erro.
+            2. Corrija o problema no código. Regras:
+               - Faça a MENOR mudança possível que resolva o erro.
+               - NUNCA altere conteúdo editorial (arquivos .md/.mdx em src/content),
+                 exceto frontmatter quebrado que impeça o build.
+               - NUNCA remova funcionalidades para "fazer o build passar".
+               - NUNCA altere astro.config.mjs, wrangler.toml ou package.json
+                 a menos que o erro seja comprovadamente de configuração/dependência.
+               - Se o erro for de variável de ambiente ausente no Cloudflare
+                 (não existe no ambiente de build), NÃO tente corrigir no código:
+                 apenas explique no resumo qual variável falta cadastrar no dashboard.
+            3. Valide: rode `npm ci && npm run build` e confirme que passa.
+               Se não passar, tente novamente (máximo 3 tentativas de correção).
+            4. Se conseguir corrigir: crie uma branch `autofix/build-<descrição-curta>`,
+               commite com mensagem `fix(build): <descrição>` e abra um Pull Request
+               para a main explicando: (a) qual era o erro, (b) a causa raiz,
+               (c) o que foi alterado e por quê.
+            5. Se NÃO conseguir corrigir após 3 tentativas: abra uma Issue no
+               repositório com o diagnóstico completo e as tentativas feitas.
+               NÃO abra PR com código quebrado.
+
+            Responda o resumo final em português.
+          claude_args: |
+            --max-turns 25
+            --model claude-sonnet-4-6
+            --allowedTools "Bash(npm ci),Bash(npm run build),Bash(npm install:*),Bash(git:*),Bash(gh pr create:*),Bash(gh issue create:*),Read,Grep,Glob,Edit,Write"
