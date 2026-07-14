@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Editar artigo" description="Painel administrativo" noindex={true}>
-  <main class="mx-auto max-w-3xl px-4 py-12">
+  <main class="mx-auto max-w-5xl px-4 py-12">
     <h1 class="text-3xl font-bold mb-2">Editar artigo</h1>
     <p class="text-sm opacity-70 mb-8">
       Editando: <code id="slug-label" class="font-mono">…</code> ·
@@ -22,8 +22,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
     <form id="edit-form" class="hidden space-y-5">
       <div>
-        <label for="content" class="block font-medium mb-1">Arquivo completo (frontmatter + Markdown)</label>
-        <textarea id="content" rows="26" class="w-full rounded border px-3 py-2 bg-white dark:bg-neutral-900 font-mono text-sm"></textarea>
+        <label for="frontmatter" class="block font-medium mb-1">Metadados (frontmatter YAML)</label>
+        <textarea id="frontmatter" rows="6" class="w-full rounded border px-3 py-2 bg-white dark:bg-neutral-900 font-mono text-sm"></textarea>
+        <p class="mt-1 text-xs opacity-60">Título, data, descrição e imagem de destaque do artigo.</p>
+      </div>
+      <div>
+        <label class="block font-medium mb-1">Conteúdo</label>
+        <div id="content-editor" class="rounded border bg-white dark:bg-neutral-900"></div>
+        <p class="mt-1 text-xs opacity-60">
+          Use a barra de ferramentas para formatar, inserir links, tabelas e imagens (a imagem também pode ser
+          colada ou arrastada para o editor). O botão "Markdown" no rodapé alterna para edição em código.
+        </p>
       </div>
       <button type="submit" id="save" class="rounded bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 font-semibold disabled:opacity-50 disabled:cursor-not-allowed">
         Salvar alterações
@@ -34,11 +43,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 <script>
   import { api, getSavedKey } from '../../lib/admin/api.js';
+  import { createEditor } from '../../lib/admin/editor.js';
 
   const authBox = document.getElementById('auth')!;
   const statusBox = document.getElementById('status')!;
   const form = document.getElementById('edit-form')!;
-  const contentEl = document.getElementById('content') as HTMLTextAreaElement;
+  const frontmatterEl = document.getElementById('frontmatter') as HTMLTextAreaElement;
   const saveBtn = document.getElementById('save') as HTMLButtonElement;
 
   const slug = new URLSearchParams(location.search).get('slug') || '';
@@ -55,14 +65,32 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     statusBox.textContent = msg;
   }
 
+  let editor: ReturnType<typeof createEditor> | undefined;
+
+  /** Separa o frontmatter YAML do corpo Markdown do arquivo. */
+  function splitFrontmatter(raw: string) {
+    const m = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
+    return m ? { frontmatter: m[1], body: raw.slice(m[0].length) } : { frontmatter: '', body: raw };
+  }
+
   async function loadPost(key?: string) {
     if (!slug) return showStatus('err', 'Nenhum slug informado. Abra esta página pelo botão "Editar" em /admin/gerenciar.');
     showStatus('info', 'Carregando artigo...');
     try {
       const data = await api(`/posts/${slug}`, key ? { key } : {});
       authBox.classList.add('hidden');
-      contentEl.value = data.content;
+      const { frontmatter, body } = splitFrontmatter(data.content);
+      frontmatterEl.value = frontmatter.trim();
       form.classList.remove('hidden');
+      if (editor) {
+        editor.setMarkdown(body);
+      } else {
+        editor = createEditor({
+          el: document.getElementById('content-editor')!,
+          initialValue: body,
+          onStatus: showStatus,
+        });
+      }
       statusBox.classList.add('hidden');
     } catch (e) {
       authBox.classList.toggle('hidden', !!getSavedKey());
@@ -72,10 +100,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
   form.addEventListener('submit', async (ev) => {
     ev.preventDefault();
+    const fm = frontmatterEl.value.trim();
+    const body = editor ? editor.getMarkdown().trim() : '';
+    if (!body) return showStatus('err', 'O conteúdo do artigo está vazio.');
+    const content = (fm ? ['---', fm, '---', ''] : []).concat([body, '']).join('\n');
+
     saveBtn.disabled = true;
     showStatus('info', 'Salvando... aguarde o commit no GitHub.');
     try {
-      await api(`/posts/${slug}`, { method: 'PUT', body: { content: contentEl.value } });
+      await api(`/posts/${slug}`, { method: 'PUT', body: { content } });
       showStatus('ok', 'Alterações salvas! O site atualiza em 1–2 minutos.');
     } catch (e) {
       showStatus('err', `Falha ao salvar: ${(e as Error).message}`);
