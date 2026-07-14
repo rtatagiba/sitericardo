@@ -5,13 +5,11 @@ description: "O tamanho ideal do title tag é de 50 a 60 caracteres, segundo an�
 image: "/images/como-o-google-reescreve-sua-title-tag-4.jpeg"
 ---
 
-**Resumo rápido:** o tamanho ideal do title tag é de 50 a 60 caracteres, o equivalente a cerca de 580 a 600 pixels no desktop. A faixa de 51 a 55 caracteres é a que o Google menos reescreve: só 40% dos títulos nesse intervalo foram alterados, contra quase 100% dos títulos com mais de 70 caracteres. 
+**Resumo rápido:** o tamanho ideal do title tag é de 50 a 60 caracteres, o equivalente a cerca de 580 a 600 pixels no desktop. A faixa de 51 a 55 caracteres é a que o Google menos reescreve: só 40% dos títulos nesse intervalo foram alterados, contra quase 100% dos títulos com mais de 70 caracteres.
 
 Os números vêm de uma análise de 81 mil title tags feita pela [Zyppy](https://zyppy.com/seo/google-title-rewrite-study/), de Cyrus Shepard, que também cruzou tamanho de título com tráfego real do Google.
 
-```
 Agora, o detalhe que quase todo mundo erra: o Google não tem limite de caracteres para o título. O limite é de exibição, não de indexação. E essa diferença muda a forma de escrever títulos. 
-```
 
 ## O Google tem um limite de caracteres para o título?
 
@@ -25,7 +23,6 @@ Isso significa que dá para encher o título de palavra-chave sem custo? Não. O
 ![Google reescrever meta tags](/images/google-reescrever-meta-tags-2.jpeg)
 
 ## Com que frequência o Google reescreve títulos?
-
 
 O Google reescreveu títulos em todas as faixas de tamanho no estudo da Zyppy, mas a frequência varia brutalmente conforme o comprimento:
 
