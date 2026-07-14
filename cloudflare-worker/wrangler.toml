@@ -7,6 +7,7 @@ GITHUB_OWNER = "rtatagiba"
 GITHUB_REPO = "sitericardo"
 GITHUB_BRANCH = "main"
 CONTENT_PATH = "frontend/src/content/blog"
+IMAGE_PATH = "frontend/public/images"
 # Em produção, restrinja ao domínio do site:
 # ALLOWED_ORIGIN = "https://ricardotatagiba.com.br"
 
