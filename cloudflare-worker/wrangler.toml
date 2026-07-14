@@ -1,0 +1,15 @@
+name = "blog-admin"
+main = "index.js"
+compatibility_date = "2026-07-01"
+
+[vars]
+GITHUB_OWNER = "rtatagiba"
+GITHUB_REPO = "sitericardo"
+GITHUB_BRANCH = "main"
+CONTENT_PATH = "frontend/src/content/blog"
+# Em produção, restrinja ao domínio do site:
+# ALLOWED_ORIGIN = "https://ricardotatagiba.com.br"
+
+# Secrets (nunca commitar valores!):
+#   npx wrangler secret put GITHUB_TOKEN     → fine-grained PAT com permissão "Contents: Read and write" no repo
+#   npx wrangler secret put API_SECRET_KEY   → senha do painel (a mesma digitada em /admin)

@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Editar artigo" description="Painel administrativo" noindex={true}>
+  <main class="mx-auto max-w-3xl px-4 py-12">
+    <h1 class="text-3xl font-bold mb-2">Editar artigo</h1>
+    <p class="text-sm opacity-70 mb-8">
+      Editando: <code id="slug-label" class="font-mono">…</code> ·
+      <a href="/admin/gerenciar/" class="underline">← Voltar para gerenciar</a>
+    </p>
+
+    <section id="auth" class="hidden mb-8 rounded-lg border border-amber-400/50 bg-amber-50 dark:bg-amber-950/30 p-4">
+      <label for="api-key" class="block font-medium mb-2">Chave de API</label>
+      <div class="flex gap-2">
+        <input type="password" id="api-key" class="flex-1 rounded border px-3 py-2 bg-white dark:bg-neutral-900" placeholder="Cole a chave secreta" />
+        <button id="save-key" class="rounded bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 px-4 py-2 font-medium">Entrar</button>
+      </div>
+    </section>
+
+    <div id="status" class="hidden mb-6 rounded-lg p-4"></div>
+
+    <form id="edit-form" class="hidden space-y-5">
+      <div>
+        <label for="content" class="block font-medium mb-1">Arquivo completo (frontmatter + Markdown)</label>
+        <textarea id="content" rows="26" class="w-full rounded border px-3 py-2 bg-white dark:bg-neutral-900 font-mono text-sm"></textarea>
+      </div>
+      <button type="submit" id="save" class="rounded bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 font-semibold disabled:opacity-50 disabled:cursor-not-allowed">
+        Salvar alterações
+      </button>
+    </form>
+  </main>
+</BaseLayout>
+
+<script>
+  import { api, getSavedKey } from '../../lib/admin/api.js';
+
+  const authBox = document.getElementById('auth')!;
+  const statusBox = document.getElementById('status')!;
+  const form = document.getElementById('edit-form')!;
+  const contentEl = document.getElementById('content') as HTMLTextAreaElement;
+  const saveBtn = document.getElementById('save') as HTMLButtonElement;
+
+  const slug = new URLSearchParams(location.search).get('slug') || '';
+  document.getElementById('slug-label')!.textContent = slug || '(nenhum)';
+
+  function showStatus(kind: 'ok' | 'err' | 'info', msg: string) {
+    statusBox.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-900', 'bg-red-100', 'text-red-900', 'bg-blue-100', 'text-blue-900');
+    const classes = kind === 'ok'
+      ? ['bg-emerald-100', 'text-emerald-900']
+      : kind === 'err'
+        ? ['bg-red-100', 'text-red-900']
+        : ['bg-blue-100', 'text-blue-900'];
+    statusBox.classList.add(...classes);
+    statusBox.textContent = msg;
+  }
+
+  async function loadPost(key?: string) {
+    if (!slug) return showStatus('err', 'Nenhum slug informado. Abra esta página pelo botão "Editar" em /admin/gerenciar.');
+    showStatus('info', 'Carregando artigo...');
+    try {
+      const data = await api(`/posts/${slug}`, key ? { key } : {});
+      authBox.classList.add('hidden');
+      contentEl.value = data.content;
+      form.classList.remove('hidden');
+      statusBox.classList.add('hidden');
+    } catch (e) {
+      authBox.classList.toggle('hidden', !!getSavedKey());
+      showStatus('err', (e as Error).message);
+    }
+  }
+
+  form.addEventListener('submit', async (ev) => {
+    ev.preventDefault();
+    saveBtn.disabled = true;
+    showStatus('info', 'Salvando... aguarde o commit no GitHub.');
+    try {
+      await api(`/posts/${slug}`, { method: 'PUT', body: { content: contentEl.value } });
+      showStatus('ok', 'Alterações salvas! O site atualiza em 1–2 minutos.');
+    } catch (e) {
+      showStatus('err', `Falha ao salvar: ${(e as Error).message}`);
+    } finally {
+      saveBtn.disabled = false;
+    }
+  });
+
+  document.getElementById('save-key')!.addEventListener('click', () => {
+    const key = (document.getElementById('api-key') as HTMLInputElement).value.trim();
+    if (!key) return showStatus('err', 'Digite a chave de API.');
+    loadPost(key);
+  });
+
+  if (getSavedKey()) loadPost();
+  else {
+    authBox.classList.remove('hidden');
+    if (!slug) showStatus('err', 'Nenhum slug informado.');
+  }
+</script>

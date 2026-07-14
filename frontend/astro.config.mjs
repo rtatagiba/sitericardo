@@ -113,7 +113,10 @@ export default defineConfig({
   integrations: [
     sitemap({
       entryLimit: 1000,
-      filter: (page) => !new URL(page).pathname.startsWith('/404'),
+      filter: (page) => {
+        const { pathname } = new URL(page);
+        return !pathname.startsWith('/404') && !pathname.startsWith('/admin');
+      },
       chunks: {
         // Blog posts get their own sitemap; everything else falls into "pages"
         posts: (item) => {
