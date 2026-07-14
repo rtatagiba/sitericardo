@@ -1,0 +1,142 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Publicar artigo" description="Painel administrativo" noindex={true}>
+  <main class="mx-auto max-w-3xl px-4 py-12">
+    <h1 class="text-3xl font-bold mb-2">Publicar artigo</h1>
+    <p class="text-sm opacity-70 mb-8">
+      O artigo é commitado no GitHub e entra no ar após o build automático (1–2 min).
+      <a href="/admin/gerenciar/" class="underline">Gerenciar artigos →</a>
+    </p>
+
+    <!-- Login: aparece só quando não há chave salva no localStorage -->
+    <section id="auth" class="hidden mb-8 rounded-lg border border-amber-400/50 bg-amber-50 dark:bg-amber-950/30 p-4">
+      <label for="api-key" class="block font-medium mb-2">Chave de API</label>
+      <div class="flex gap-2">
+        <input type="password" id="api-key" class="flex-1 rounded border px-3 py-2 bg-white dark:bg-neutral-900" placeholder="Cole a chave secreta" />
+        <button id="save-key" class="rounded bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 px-4 py-2 font-medium">Entrar</button>
+      </div>
+    </section>
+
+    <form id="post-form" class="space-y-5">
+      <div>
+        <label for="title" class="block font-medium mb-1">Título *</label>
+        <input type="text" id="title" required class="w-full rounded border px-3 py-2 bg-white dark:bg-neutral-900" />
+      </div>
+      <div>
+        <label for="slug" class="block font-medium mb-1">Slug (URL)</label>
+        <input type="text" id="slug" class="w-full rounded border px-3 py-2 bg-white dark:bg-neutral-900 font-mono text-sm" placeholder="gerado-a-partir-do-titulo" />
+      </div>
+      <div>
+        <label for="description" class="block font-medium mb-1">Descrição (SEO) *</label>
+        <textarea id="description" required rows="2" class="w-full rounded border px-3 py-2 bg-white dark:bg-neutral-900"></textarea>
+      </div>
+      <div class="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label for="date" class="block font-medium mb-1">Data</label>
+          <input type="date" id="date" class="w-full rounded border px-3 py-2 bg-white dark:bg-neutral-900" />
+        </div>
+        <div>
+          <label for="image" class="block font-medium mb-1">Imagem (opcional)</label>
+          <input type="text" id="image" class="w-full rounded border px-3 py-2 bg-white dark:bg-neutral-900 font-mono text-sm" placeholder="/images/exemplo.webp" />
+        </div>
+      </div>
+      <div>
+        <label for="content" class="block font-medium mb-1">Conteúdo (Markdown) *</label>
+        <textarea id="content" required rows="18" class="w-full rounded border px-3 py-2 bg-white dark:bg-neutral-900 font-mono text-sm"></textarea>
+      </div>
+      <button type="submit" id="publish" class="rounded bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 font-semibold disabled:opacity-50 disabled:cursor-not-allowed">
+        Publicar artigo
+      </button>
+    </form>
+
+    <div id="status" class="hidden mt-6 rounded-lg p-4"></div>
+  </main>
+</BaseLayout>
+
+<script>
+  import { api, getSavedKey, slugify, yamlString } from '../../lib/admin/api.js';
+
+  const $ = (id: string) => document.getElementById(id) as HTMLInputElement;
+  const authBox = $('auth');
+  const statusBox = $('status');
+  const publishBtn = $('publish') as unknown as HTMLButtonElement;
+
+  function showStatus(kind: 'ok' | 'err' | 'info', msg: string) {
+    statusBox.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-900', 'bg-red-100', 'text-red-900', 'bg-blue-100', 'text-blue-900');
+    const classes = kind === 'ok'
+      ? ['bg-emerald-100', 'text-emerald-900']
+      : kind === 'err'
+        ? ['bg-red-100', 'text-red-900']
+        : ['bg-blue-100', 'text-blue-900'];
+    statusBox.classList.add(...classes);
+    statusBox.textContent = msg;
+  }
+
+  function refreshAuthBox() {
+    authBox.classList.toggle('hidden', !!getSavedKey());
+  }
+  refreshAuthBox();
+
+  // Data padrão: hoje
+  ($('date') as HTMLInputElement).value = new Date().toISOString().slice(0, 10);
+
+  // Slug gerado automaticamente enquanto o usuário não o editar manualmente
+  let slugTouched = false;
+  $('slug').addEventListener('input', () => { slugTouched = true; });
+  $('title').addEventListener('input', () => {
+    if (!slugTouched) $('slug').value = slugify($('title').value);
+  });
+
+  $('save-key').addEventListener('click', async () => {
+    const key = $('api-key').value.trim();
+    if (!key) return showStatus('err', 'Digite a chave de API.');
+    showStatus('info', 'Validando chave...');
+    try {
+      await api('/posts', { key });
+      refreshAuthBox();
+      showStatus('ok', 'Chave válida! Você já pode publicar.');
+    } catch (e) {
+      showStatus('err', (e as Error).message);
+    }
+  });
+
+  document.getElementById('post-form')!.addEventListener('submit', async (ev) => {
+    ev.preventDefault();
+    if (!getSavedKey()) {
+      refreshAuthBox();
+      return showStatus('err', 'Informe a chave de API antes de publicar.');
+    }
+
+    const slug = $('slug').value.trim() || slugify($('title').value);
+    if (!slug) return showStatus('err', 'Título/slug inválido.');
+
+    const lines = [
+      '---',
+      `title: ${yamlString($('title').value.trim())}`,
+      `date: ${$('date').value || new Date().toISOString().slice(0, 10)}`,
+      `description: ${yamlString($('description').value.trim())}`,
+    ];
+    const image = $('image').value.trim();
+    if (image) lines.push(`image: ${yamlString(image)}`);
+    lines.push('---', '', $('content').value.trim(), '');
+
+    publishBtn.disabled = true;
+    showStatus('info', 'Publicando... aguarde o commit no GitHub.');
+    try {
+      const res = await api(`/posts/${slug}`, { method: 'PUT', body: { content: lines.join('\n') } });
+      showStatus('ok', res.created
+        ? `Artigo publicado! Em 1–2 minutos estará em /blog/${slug}/`
+        : `Artigo "${slug}" já existia e foi atualizado.`);
+      (document.getElementById('post-form') as HTMLFormElement).reset();
+      ($('date') as HTMLInputElement).value = new Date().toISOString().slice(0, 10);
+      slugTouched = false;
+    } catch (e) {
+      showStatus('err', `Falha ao publicar: ${(e as Error).message}`);
+      refreshAuthBox();
+    } finally {
+      publishBtn.disabled = false;
+    }
+  });
+</script>
