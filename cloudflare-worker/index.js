@@ -67,6 +67,63 @@ async function getSha(env, slug) {
   return ok ? data.sha : null;
 }
 
+// Normaliza o nome do arquivo: sem acentos, minúsculo, só [a-z0-9-] no "miolo"
+function safeFilename(name) {
+  const dot = name.lastIndexOf('.');
+  const ext = (dot > 0 ? name.slice(dot + 1) : 'webp').toLowerCase().replace(/[^a-z0-9]/g, '');
+  const base = (dot > 0 ? name.slice(0, dot) : name)
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '') || 'imagem';
+  return { base, ext };
+}
+
+async function imageExists(env, filename) {
+  const { ok } = await github(
+    env,
+    'GET',
+    `/repos/${env.GITHUB_OWNER}/${env.GITHUB_REPO}/contents/${env.IMAGE_PATH}/${filename}?ref=${env.GITHUB_BRANCH}`,
+  );
+  return ok;
+}
+
+// POST /images  { filename, content }  content = Base64 puro (sem "data:...;base64,")
+async function uploadImage(env, request) {
+  const body = await request.json().catch(() => null);
+  if (!body?.filename || !body?.content) {
+    return json(env, 400, { error: 'Campos "filename" e "content" (Base64) são obrigatórios.' });
+  }
+
+  const { base, ext } = safeFilename(body.filename);
+  const allowed = ['webp', 'png', 'jpg', 'jpeg', 'gif', 'svg', 'avif'];
+  if (!allowed.includes(ext)) {
+    return json(env, 400, { error: `Extensão .${ext} não permitida. Use: ${allowed.join(', ')}.` });
+  }
+
+  // Evita sobrescrever: se já existe, acrescenta sufixo numérico
+  let filename = `${base}.${ext}`;
+  for (let n = 2; (await imageExists(env, filename)) && n < 100; n++) {
+    filename = `${base}-${n}.${ext}`;
+  }
+
+  const { ok, status, data } = await github(
+    env,
+    'PUT',
+    `/repos/${env.GITHUB_OWNER}/${env.GITHUB_REPO}/contents/${env.IMAGE_PATH}/${filename}`,
+    {
+      message: `img: adiciona ${filename}`,
+      content: body.content.replace(/^data:[^;]+;base64,/, ''),
+      branch: env.GITHUB_BRANCH,
+    },
+  );
+  if (!ok) return json(env, status, { error: data?.message || 'Erro ao enviar imagem.' });
+
+  // Caminho público servido pelo Astro (public/images/foo.webp → /images/foo.webp)
+  return json(env, 201, { filename, path: `/images/${filename}`, commit: data.commit?.sha });
+}
+
 export default {
   async fetch(request, env) {
     if (request.method === 'OPTIONS') {
@@ -79,8 +136,15 @@ export default {
     }
 
     const url = new URL(request.url);
+
+    // POST /images — upload de imagem (Base64) para IMAGE_PATH
+    if (url.pathname.replace(/\/$/, '') === '/images') {
+      if (request.method !== 'POST') return json(env, 405, { error: 'Use POST em /images.' });
+      return uploadImage(env, request);
+    }
+
     const match = url.pathname.match(/^\/posts(?:\/([a-z0-9-]+))?\/?$/);
-    if (!match) return json(env, 404, { error: 'Rota não encontrada. Use /posts ou /posts/:slug.' });
+    if (!match) return json(env, 404, { error: 'Rota não encontrada. Use /posts, /posts/:slug ou /images.' });
     const slug = match[1];
 
     try {

@@ -21,6 +21,8 @@ export function clearKey() {
 /**
  * Chama o Worker. Lança Error com mensagem amigável em caso de falha;
  * em 401 a chave salva é descartada para forçar novo login.
+ * @param {string} path
+ * @param {{ method?: string, body?: unknown, key?: string }} [options]
  */
 export async function api(path, { method = 'GET', body, key } = {}) {
   const apiKey = key ?? getSavedKey();
@@ -65,4 +67,20 @@ export function slugify(text) {
 /** Escapa valor para uso em YAML entre aspas duplas. */
 export function yamlString(value) {
   return `"${String(value).replace(/\\/g, '\\\\').replace(/"/g, '\\"')}"`;
+}
+
+/** Lê um File e devolve o conteúdo em Base64 puro (sem o prefixo data:). */
+export function fileToBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(String(reader.result).replace(/^data:[^;]+;base64,/, ''));
+    reader.onerror = () => reject(new Error('Falha ao ler o arquivo.'));
+    reader.readAsDataURL(file);
+  });
+}
+
+/** Sobe uma imagem para o repositório e retorna { path: '/images/...' }. */
+export async function uploadImage(file) {
+  const content = await fileToBase64(file);
+  return api('/images', { method: 'POST', body: { filename: file.name, content } });
 }

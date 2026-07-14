@@ -38,8 +38,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           <input type="date" id="date" class="w-full rounded border px-3 py-2 bg-white dark:bg-neutral-900" />
         </div>
         <div>
-          <label for="image" class="block font-medium mb-1">Imagem (opcional)</label>
-          <input type="text" id="image" class="w-full rounded border px-3 py-2 bg-white dark:bg-neutral-900 font-mono text-sm" placeholder="/images/exemplo.webp" />
+          <label for="image" class="block font-medium mb-1">Imagem de destaque (opcional)</label>
+          <div class="flex gap-2">
+            <input type="text" id="image" class="flex-1 rounded border px-3 py-2 bg-white dark:bg-neutral-900 font-mono text-sm" placeholder="/images/exemplo.webp" />
+            <button type="button" id="pick-image" class="shrink-0 rounded border px-3 py-2 text-sm font-medium">Subir…</button>
+          </div>
+          <input type="file" id="image-file" accept="image/*" class="hidden" />
+          <p id="image-hint" class="mt-1 text-xs opacity-60">Envie um arquivo ou cole um caminho existente.</p>
+          <img id="image-preview" alt="Prévia" class="hidden mt-2 max-h-40 rounded border" />
         </div>
       </div>
       <div>
@@ -56,7 +62,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <script>
-  import { api, getSavedKey, slugify, yamlString } from '../../lib/admin/api.js';
+  import { api, getSavedKey, slugify, yamlString, uploadImage } from '../../lib/admin/api.js';
 
   const $ = (id: string) => document.getElementById(id) as HTMLInputElement;
   const authBox = $('auth');
@@ -87,6 +93,40 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   $('slug').addEventListener('input', () => { slugTouched = true; });
   $('title').addEventListener('input', () => {
     if (!slugTouched) $('slug').value = slugify($('title').value);
+  });
+
+  // Upload de imagem: botão "Subir…" abre o seletor de arquivos
+  const imageFile = $('image-file') as HTMLInputElement;
+  const imagePreview = $('image-preview') as unknown as HTMLImageElement;
+  const imageHint = $('image-hint');
+  $('pick-image').addEventListener('click', () => {
+    if (!getSavedKey()) {
+      refreshAuthBox();
+      return showStatus('err', 'Informe a chave de API antes de subir imagens.');
+    }
+    imageFile.click();
+  });
+  imageFile.addEventListener('change', async () => {
+    const file = imageFile.files?.[0];
+    if (!file) return;
+    if (file.size > 5 * 1024 * 1024) {
+      return showStatus('err', 'Imagem muito grande (máx. 5 MB). Otimize antes de subir.');
+    }
+    imageHint.textContent = `Enviando ${file.name}...`;
+    showStatus('info', 'Enviando imagem para o GitHub...');
+    try {
+      const res = await uploadImage(file);
+      $('image').value = res.path;
+      imagePreview.src = res.path;
+      imagePreview.classList.remove('hidden');
+      imageHint.textContent = `Enviada: ${res.path}`;
+      showStatus('ok', `Imagem enviada! Disponível em ${res.path} após o build.`);
+    } catch (e) {
+      imageHint.textContent = 'Falha no envio. Tente novamente.';
+      showStatus('err', `Falha ao enviar imagem: ${(e as Error).message}`);
+    } finally {
+      imageFile.value = '';
+    }
   });
 
   $('save-key').addEventListener('click', async () => {

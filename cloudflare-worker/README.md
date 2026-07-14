@@ -41,3 +41,6 @@ Todos exigem o header `Authorization: Bearer <API_SECRET_KEY>`.
 | GET | `/posts/:slug` | Retorna o markdown bruto do artigo |
 | PUT | `/posts/:slug` | Cria ou atualiza (`{ "content": "..." }`) |
 | DELETE | `/posts/:slug` | Exclui o artigo |
+| POST | `/images` | Sobe uma imagem (`{ "filename": "foto.webp", "content": "<Base64>" }`) para `IMAGE_PATH`; devolve `{ "path": "/images/foto.webp" }` |
+
+O nome do arquivo é normalizado (sem acentos, kebab-case) e ganha sufixo numérico se já existir, evitando sobrescrever imagens. Extensões aceitas: webp, png, jpg, jpeg, gif, svg, avif.
