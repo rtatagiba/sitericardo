@@ -99,17 +99,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   const imageFile = $('image-file') as HTMLInputElement;
   const imagePreview = $('image-preview') as unknown as HTMLImageElement;
   const imageHint = $('image-hint');
-  $('pick-image').addEventListener('click', () => {
-    if (!getSavedKey()) {
-      refreshAuthBox();
-      return showStatus('err', 'Informe a chave de API antes de subir imagens.');
-    }
-    imageFile.click();
-  });
+  // Abre o seletor de arquivos imediatamente; a chave só é exigida ao enviar
+  $('pick-image').addEventListener('click', () => imageFile.click());
   imageFile.addEventListener('change', async () => {
     const file = imageFile.files?.[0];
     if (!file) return;
+    if (!getSavedKey()) {
+      imageFile.value = '';
+      refreshAuthBox();
+      return showStatus('err', 'Informe a chave de API antes de subir imagens.');
+    }
     if (file.size > 5 * 1024 * 1024) {
+      imageFile.value = '';
       return showStatus('err', 'Imagem muito grande (máx. 5 MB). Otimize antes de subir.');
     }
     imageHint.textContent = `Enviando ${file.name}...`;
