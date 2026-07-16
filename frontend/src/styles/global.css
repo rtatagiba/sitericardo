@@ -4,6 +4,8 @@
   --color-primary: #7fd9a0;
   --color-accent: #34d874;
   --color-accent-dark: #1fae5c;
+  --color-text: #d4d4d4;
+  --color-text-muted: #a3a3a3;
   --font-family-sans: Inter, ui-sans-serif, system-ui, sans-serif;
 }
 
@@ -13,7 +15,7 @@ html {
 
 body {
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
-  color: #7fd9a0;
+  color: #d4d4d4;
   background-color: #000000;
 }
 
@@ -40,7 +42,7 @@ body {
 .prose p {
   margin-bottom: 1rem;
   line-height: 1.75;
-  color: #a3e6bc;
+  color: #d4d4d4;
 }
 
 .prose ul, .prose ol {
@@ -51,7 +53,7 @@ body {
 .prose li {
   margin-bottom: 0.5rem;
   line-height: 1.75;
-  color: #a3e6bc;
+  color: #d4d4d4;
 }
 
 .prose ul li {
@@ -69,7 +71,7 @@ body {
 
 .prose strong {
   font-weight: 600;
-  color: #7fd9a0;
+  color: #f0f0f0;
 }
 
 .prose img {
@@ -84,7 +86,7 @@ body {
   padding-left: 1rem;
   margin: 1.5rem 0;
   font-style: italic;
-  color: #7fbf94;
+  color: #a3a3a3;
 }
 
 .prose table {
@@ -114,7 +116,7 @@ body {
 .prose td {
   padding: 0.875rem 1.25rem;
   border-bottom: 1px solid #1f4d31;
-  color: #a3e6bc;
+  color: #d4d4d4;
   vertical-align: middle;
 }
 
@@ -133,5 +135,5 @@ body {
 
 .prose tbody tr:last-child {
   font-weight: 600;
-  color: #7fd9a0;
+  color: #f0f0f0;
 }

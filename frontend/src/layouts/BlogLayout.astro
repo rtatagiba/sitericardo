@@ -43,13 +43,13 @@ const breadcrumbs = [
   markdownUrl={`${SITE_URL}/blog/${slug}.md`}
 >
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <nav class="text-sm text-green-300 mb-8" aria-label="Breadcrumb">
+    <nav class="text-sm text-neutral-400 mb-8" aria-label="Breadcrumb">
       <ol class="flex items-center gap-2">
-        <li><a href="/" class="hover:text-accent transition-colors">Home</a></li>
-        <li class="text-green-200">/</li>
-        <li><a href="/blog" class="hover:text-accent transition-colors">Blog</a></li>
-        <li class="text-green-200">/</li>
-        <li class="text-primary font-medium truncate max-w-xs">{title}</li>
+        <li><a href="/" class="text-primary hover:text-accent transition-colors">Home</a></li>
+        <li class="text-neutral-600">/</li>
+        <li><a href="/blog" class="text-primary hover:text-accent transition-colors">Blog</a></li>
+        <li class="text-neutral-600">/</li>
+        <li class="text-neutral-400 font-medium truncate max-w-xs">{title}</li>
       </ol>
     </nav>
 
@@ -58,7 +58,7 @@ const breadcrumbs = [
         <h1 class="text-3xl sm:text-4xl font-bold text-primary leading-tight mb-4">
           {title}
         </h1>
-        <time datetime={dateIso} class="text-green-300 text-sm">
+        <time datetime={dateIso} class="text-neutral-400 text-sm">
           {dateFormatted}
         </time>
       </header>
