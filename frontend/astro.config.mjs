@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
+import astroRelatedContent from '@philnash/astro-related-content';
 import { execSync } from 'node:child_process';
 import { existsSync, readdirSync } from 'node:fs';
 import { indexNow } from './src/lib/seo/indexnow.mjs';
@@ -131,5 +132,8 @@ export default defineConfig({
       },
     }),
     indexNow({ key: INDEXNOW_KEY, siteUrl: SITE_URL }),
+    astroRelatedContent({
+      collections: [{ collection: 'blog' }],
+    }),
   ],
 });

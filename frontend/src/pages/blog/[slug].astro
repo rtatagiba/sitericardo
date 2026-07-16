@@ -1,6 +1,7 @@
 ---
 import { render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
+import { getRelatedContent } from 'virtual:astro-related-content';
 import BlogLayout from '../../layouts/BlogLayout.astro';
 import { getPublishedPosts } from '../../lib/seo/posts';
 
@@ -14,6 +15,8 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props as { post: CollectionEntry<'blog'> };
 const { Content } = await render(post);
+const relatedContent = await getRelatedContent('blog', post.id);
+const relatedPosts = relatedContent.map((match) => match.entry).filter((entry) => !entry.data.draft);
 const postDate = post.data.date ?? post.data.pubDate ?? new Date();
 const updatedDate =
   post.data.updatedDate && post.data.updatedDate.getTime() !== postDate.getTime()
@@ -29,6 +32,7 @@ const updatedDate =
   image={post.data.image}
   tags={post.data.tags}
   slug={post.id}
+  relatedPosts={relatedPosts}
 >
   <Content />
 </BlogLayout>
