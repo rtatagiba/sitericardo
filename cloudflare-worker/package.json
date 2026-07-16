@@ -1,0 +1,16 @@
+{
+  "name": "blog-admin-worker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Worker que faz a ponte entre o painel /admin e a API do GitHub",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "logs": "wrangler tail",
+    "set-key": "wrangler secret put API_SECRET_KEY",
+    "set-token": "wrangler secret put GITHUB_TOKEN"
+  },
+  "devDependencies": {
+    "wrangler": "^4.110.0"
+  }
+}

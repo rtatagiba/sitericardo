@@ -1,0 +1,210 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Publicar artigo" description="Painel administrativo" noindex={true}>
+  <main class="mx-auto max-w-5xl px-4 py-12">
+    <h1 class="text-3xl font-bold mb-2">Publicar artigo</h1>
+    <p class="text-sm opacity-70 mb-8">
+      O artigo é commitado no GitHub e entra no ar após o build automático (1–2 min).
+      <a href="/admin/gerenciar/" class="underline">Gerenciar artigos →</a>
+    </p>
+
+    <!-- Login: aparece só quando não há chave salva no localStorage -->
+    <section id="auth" class="hidden mb-8 rounded-lg border border-amber-400/50 bg-amber-50 dark:bg-amber-950/30 p-4">
+      <label for="api-key" class="block font-medium mb-2">Chave de API</label>
+      <div class="flex gap-2">
+        <input type="password" id="api-key" class="flex-1 rounded border px-3 py-2 bg-white dark:bg-neutral-900" placeholder="Cole a chave secreta" />
+        <button id="save-key" class="rounded bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 px-4 py-2 font-medium">Entrar</button>
+      </div>
+    </section>
+
+    <form id="post-form" class="space-y-5">
+      <div>
+        <label for="title" class="block font-medium mb-1">Título *</label>
+        <input type="text" id="title" required class="w-full rounded border px-3 py-2 bg-white dark:bg-neutral-900" />
+      </div>
+      <div>
+        <label for="slug" class="block font-medium mb-1">Slug (URL)</label>
+        <input type="text" id="slug" class="w-full rounded border px-3 py-2 bg-white dark:bg-neutral-900 font-mono text-sm" placeholder="gerado-a-partir-do-titulo" />
+      </div>
+      <div>
+        <label for="description" class="block font-medium mb-1">Descrição (SEO) *</label>
+        <textarea id="description" required rows="2" class="w-full rounded border px-3 py-2 bg-white dark:bg-neutral-900"></textarea>
+      </div>
+      <div class="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label for="date" class="block font-medium mb-1">Data</label>
+          <input type="date" id="date" class="w-full rounded border px-3 py-2 bg-white dark:bg-neutral-900" />
+        </div>
+        <div>
+          <label for="image" class="block font-medium mb-1">Imagem de destaque (opcional)</label>
+          <div class="flex gap-2">
+            <input type="text" id="image" class="flex-1 rounded border px-3 py-2 bg-white dark:bg-neutral-900 font-mono text-sm" placeholder="/images/exemplo.webp" />
+            <button type="button" id="pick-image" class="shrink-0 rounded border px-3 py-2 text-sm font-medium">Subir…</button>
+          </div>
+          <input type="file" id="image-file" accept="image/*" class="hidden" />
+          <p id="image-hint" class="mt-1 text-xs opacity-60">Envie um arquivo ou cole um caminho existente.</p>
+          <img id="image-preview" alt="Prévia" class="hidden mt-2 max-h-40 rounded border" />
+        </div>
+      </div>
+      <div>
+        <label class="block font-medium mb-1">Conteúdo *</label>
+        <div id="content-editor" class="rounded border bg-white dark:bg-neutral-900"></div>
+        <p class="mt-1 text-xs opacity-60">
+          Use a barra de ferramentas para formatar, inserir links, tabelas e imagens (a imagem também pode ser
+          colada ou arrastada para o editor). O botão "Markdown" no rodapé alterna para edição em código.
+        </p>
+      </div>
+      <button type="submit" id="publish" class="rounded bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 font-semibold disabled:opacity-50 disabled:cursor-not-allowed">
+        Publicar artigo
+      </button>
+    </form>
+
+    <div id="status" class="hidden mt-6 rounded-lg p-4"></div>
+  </main>
+</BaseLayout>
+
+<script>
+  import { api, getSavedKey, slugify, yamlString, uploadImage } from '../../lib/admin/api.js';
+  import { createEditor } from '../../lib/admin/editor.js';
+
+  const $ = (id: string) => document.getElementById(id) as HTMLInputElement;
+  const authBox = $('auth');
+  const statusBox = $('status');
+  const publishBtn = $('publish') as unknown as HTMLButtonElement;
+
+  function showStatus(kind: 'ok' | 'err' | 'info', msg: string) {
+    statusBox.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-900', 'bg-red-100', 'text-red-900', 'bg-blue-100', 'text-blue-900');
+    const classes = kind === 'ok'
+      ? ['bg-emerald-100', 'text-emerald-900']
+      : kind === 'err'
+        ? ['bg-red-100', 'text-red-900']
+        : ['bg-blue-100', 'text-blue-900'];
+    statusBox.classList.add(...classes);
+    statusBox.textContent = msg;
+  }
+
+  function refreshAuthBox() {
+    authBox.classList.toggle('hidden', !!getSavedKey());
+  }
+  refreshAuthBox();
+
+  // Data padrão: hoje
+  ($('date') as HTMLInputElement).value = new Date().toISOString().slice(0, 10);
+
+  // Editor rico do conteúdo (WYSIWYG + Markdown)
+  const editor = createEditor({
+    el: document.getElementById('content-editor')!,
+    onStatus: showStatus,
+  });
+
+  // Slug gerado automaticamente enquanto o usuário não o editar manualmente
+  let slugTouched = false;
+  $('slug').addEventListener('input', () => { slugTouched = true; });
+  $('title').addEventListener('input', () => {
+    if (!slugTouched) $('slug').value = slugify($('title').value);
+  });
+
+  // Upload de imagem: botão "Subir…" abre o seletor de arquivos
+  const imageFile = $('image-file') as HTMLInputElement;
+  const imagePreview = $('image-preview') as unknown as HTMLImageElement;
+  const imageHint = $('image-hint');
+  // Abre o seletor de arquivos imediatamente; a chave só é exigida ao enviar
+  $('pick-image').addEventListener('click', () => imageFile.click());
+  imageFile.addEventListener('change', async () => {
+    const file = imageFile.files?.[0];
+    if (!file) return;
+    if (!getSavedKey()) {
+      imageFile.value = '';
+      refreshAuthBox();
+      return showStatus('err', 'Informe a chave de API antes de subir imagens.');
+    }
+    if (file.size > 5 * 1024 * 1024) {
+      imageFile.value = '';
+      return showStatus('err', 'Imagem muito grande (máx. 5 MB). Otimize antes de subir.');
+    }
+    // Prévia instantânea a partir do arquivo local (o caminho remoto só existe após o build)
+    if (imagePreview.dataset.objurl) URL.revokeObjectURL(imagePreview.dataset.objurl);
+    const objectUrl = URL.createObjectURL(file);
+    imagePreview.dataset.objurl = objectUrl;
+    imagePreview.src = objectUrl;
+    imagePreview.classList.remove('hidden');
+    imageHint.textContent = `Enviando ${file.name}...`;
+    showStatus('info', 'Enviando imagem para o GitHub...');
+    try {
+      const res = await uploadImage(file);
+      $('image').value = res.path;
+      imageHint.textContent = `Enviada: ${res.path} (aparece no site após o build, em 1–2 min)`;
+      showStatus('ok', `Imagem enviada! Caminho salvo no artigo: ${res.path}`);
+    } catch (e) {
+      imageHint.textContent = 'Falha no envio. Tente novamente.';
+      showStatus('err', `Falha ao enviar imagem: ${(e as Error).message}`);
+    } finally {
+      imageFile.value = '';
+    }
+  });
+
+  $('save-key').addEventListener('click', async () => {
+    const key = $('api-key').value.trim();
+    if (!key) return showStatus('err', 'Digite a chave de API.');
+    showStatus('info', 'Validando chave...');
+    try {
+      await api('/posts', { key });
+      refreshAuthBox();
+      showStatus('ok', 'Chave válida! Você já pode publicar.');
+    } catch (e) {
+      showStatus('err', (e as Error).message);
+    }
+  });
+
+  document.getElementById('post-form')!.addEventListener('submit', async (ev) => {
+    ev.preventDefault();
+    if (!getSavedKey()) {
+      refreshAuthBox();
+      return showStatus('err', 'Informe a chave de API antes de publicar.');
+    }
+
+    const slug = $('slug').value.trim() || slugify($('title').value);
+    if (!slug) return showStatus('err', 'Título/slug inválido.');
+
+    const markdown = editor.getMarkdown().trim();
+    if (!markdown) return showStatus('err', 'O conteúdo do artigo está vazio.');
+
+    const lines = [
+      '---',
+      `title: ${yamlString($('title').value.trim())}`,
+      `date: ${$('date').value || new Date().toISOString().slice(0, 10)}`,
+      `description: ${yamlString($('description').value.trim())}`,
+    ];
+    const image = $('image').value.trim();
+    if (image) lines.push(`image: ${yamlString(image)}`);
+    lines.push('---', '', markdown, '');
+
+    publishBtn.disabled = true;
+    showStatus('info', 'Publicando... aguarde o commit no GitHub.');
+    try {
+      const res = await api(`/posts/${slug}`, { method: 'PUT', body: { content: lines.join('\n') } });
+      showStatus('ok', res.created
+        ? `Artigo publicado! Em 1–2 minutos estará em /blog/${slug}/`
+        : `Artigo "${slug}" já existia e foi atualizado.`);
+      (document.getElementById('post-form') as HTMLFormElement).reset();
+      editor.setMarkdown('');
+      ($('date') as HTMLInputElement).value = new Date().toISOString().slice(0, 10);
+      slugTouched = false;
+      // Limpa a prévia da imagem de destaque (form.reset() não alcança o <img>)
+      if (imagePreview.dataset.objurl) {
+        URL.revokeObjectURL(imagePreview.dataset.objurl);
+        delete imagePreview.dataset.objurl;
+      }
+      imagePreview.removeAttribute('src');
+      imagePreview.classList.add('hidden');
+      imageHint.textContent = 'Envie um arquivo ou cole um caminho existente.';
+    } catch (e) {
+      showStatus('err', `Falha ao publicar: ${(e as Error).message}`);
+      refreshAuthBox();
+    } finally {
+      publishBtn.disabled = false;
+    }
+  });
+</script>

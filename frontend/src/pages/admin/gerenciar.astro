@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Gerenciar artigos" description="Painel administrativo" noindex={true}>
+  <main class="mx-auto max-w-3xl px-4 py-12">
+    <h1 class="text-3xl font-bold mb-2">Gerenciar artigos</h1>
+    <p class="text-sm opacity-70 mb-8">
+      <a href="/admin/publicar/" class="underline">+ Publicar novo artigo</a>
+    </p>
+
+    <section id="auth" class="hidden mb-8 rounded-lg border border-amber-400/50 bg-amber-50 dark:bg-amber-950/30 p-4">
+      <label for="api-key" class="block font-medium mb-2">Chave de API</label>
+      <div class="flex gap-2">
+        <input type="password" id="api-key" class="flex-1 rounded border px-3 py-2 bg-white dark:bg-neutral-900" placeholder="Cole a chave secreta" />
+        <button id="save-key" class="rounded bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 px-4 py-2 font-medium">Entrar</button>
+      </div>
+    </section>
+
+    <div id="status" class="hidden mb-6 rounded-lg p-4"></div>
+    <ul id="post-list" class="divide-y rounded-lg border"></ul>
+  </main>
+</BaseLayout>
+
+<script>
+  import { api, getSavedKey } from '../../lib/admin/api.js';
+
+  const authBox = document.getElementById('auth')!;
+  const statusBox = document.getElementById('status')!;
+  const list = document.getElementById('post-list')!;
+
+  function showStatus(kind: 'ok' | 'err' | 'info', msg: string) {
+    statusBox.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-900', 'bg-red-100', 'text-red-900', 'bg-blue-100', 'text-blue-900');
+    const classes = kind === 'ok'
+      ? ['bg-emerald-100', 'text-emerald-900']
+      : kind === 'err'
+        ? ['bg-red-100', 'text-red-900']
+        : ['bg-blue-100', 'text-blue-900'];
+    statusBox.classList.add(...classes);
+    statusBox.textContent = msg;
+  }
+  const hideStatus = () => statusBox.classList.add('hidden');
+
+  async function loadPosts(key?: string) {
+    showStatus('info', 'Carregando artigos...');
+    try {
+      const { posts } = await api('/posts', key ? { key } : {});
+      authBox.classList.add('hidden');
+      hideStatus();
+      list.innerHTML = '';
+      if (!posts.length) return showStatus('info', 'Nenhum artigo encontrado.');
+      for (const post of posts) {
+        const li = document.createElement('li');
+        li.className = 'flex items-center justify-between gap-3 p-3';
+        const title = document.createElement('span');
+        title.className = 'font-mono text-sm break-all';
+        title.textContent = post.slug;
+        const actions = document.createElement('span');
+        actions.className = 'flex shrink-0 gap-2';
+        const ver = document.createElement('a');
+        ver.href = `/blog/${post.slug}/`;
+        ver.target = '_blank';
+        ver.className = 'rounded border px-3 py-1 text-sm';
+        ver.textContent = 'Ver';
+        const editar = document.createElement('a');
+        editar.href = `/admin/editar/?slug=${encodeURIComponent(post.slug)}`;
+        editar.className = 'rounded bg-blue-600 text-white px-3 py-1 text-sm';
+        editar.textContent = 'Editar';
+        const excluir = document.createElement('button');
+        excluir.className = 'rounded bg-red-600 text-white px-3 py-1 text-sm disabled:opacity-50';
+        excluir.textContent = 'Excluir';
+        excluir.addEventListener('click', () => deletePost(post.slug, excluir));
+        actions.append(ver, editar, excluir);
+        li.append(title, actions);
+        list.appendChild(li);
+      }
+    } catch (e) {
+      authBox.classList.toggle('hidden', !!getSavedKey());
+      showStatus('err', (e as Error).message);
+    }
+  }
+
+  async function deletePost(slug: string, btn: HTMLButtonElement) {
+    if (!confirm(`Excluir o artigo "${slug}"?\n\nO arquivo será removido do GitHub e sairá do ar no próximo build.`)) return;
+    btn.disabled = true;
+    showStatus('info', `Excluindo "${slug}"...`);
+    try {
+      await api(`/posts/${slug}`, { method: 'DELETE' });
+      showStatus('ok', `Artigo "${slug}" excluído.`);
+      loadPosts();
+    } catch (e) {
+      btn.disabled = false;
+      showStatus('err', `Falha ao excluir: ${(e as Error).message}`);
+    }
+  }
+
+  document.getElementById('save-key')!.addEventListener('click', () => {
+    const key = (document.getElementById('api-key') as HTMLInputElement).value.trim();
+    if (!key) return showStatus('err', 'Digite a chave de API.');
+    loadPosts(key);
+  });
+
+  // Auto-loading: se já existe chave salva, carrega a lista direto
+  if (getSavedKey()) loadPosts();
+  else authBox.classList.remove('hidden');
+</script>
