@@ -58,3 +58,5 @@ Uma versão funcional precisa ler as linhas reais do seu log, mapear cada nome d
 O próprio Forrester reforça: os números dele valem pouco fora do contexto, porque são duas semanas de dados num site sem tráfego promovido. O valor está no método, não na estatística. 
 
 Se seu site tem tráfego de verdade, o dataset nos seus logs de acesso é bem melhor que o dele, e a checagem pode ser feita ainda hoje. Puxe um intervalo de datas, cruze os nomes contra as listas oficiais e veja qual fração do seu "tráfego de IA" resiste à prova do IP. Depois olhe pra linha do Googlebot e se prepare.
+
+Saber quais bots são reais é só metade do trabalho. A outra metade é decidir o que cada um pode fazer no seu site, e como estruturar o conteúdo para o crawler certo levar ele até a resposta de uma IA. O guia [como aparecer no ChatGPT, Gemini e Perplexity](/blog/como-aparecer-no-chatgpt-guia-aeo-geo) detalha os dois lados dessa equação.

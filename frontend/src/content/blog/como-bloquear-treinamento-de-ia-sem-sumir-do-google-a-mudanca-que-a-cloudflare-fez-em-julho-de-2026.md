@@ -47,3 +47,5 @@ Confiança transitiva: um cabeçalho técnico chamado Forwarded garante que a co
 Fecha a brecha de contornar a regra usando proxy. O que fazer com essa informação A Cloudflare está atrás de mais de um quinto dos domínios da internet, então isso não é ajuste cosmético.
 
 Se você administra um site, vale entrar no painel antes de setembro chegar e revisar suas regras de bot uma por uma. Decidir o que liberar em busca, o que travar em treinamento e como tratar agente autônomo é o tipo de escolha que separa um site que continua trazendo visitante de um que só alimenta modelo em troca de nada.
+
+Liberar o crawler certo é só o primeiro passo. O guia [como aparecer no ChatGPT, Gemini e Perplexity](/blog/como-aparecer-no-chatgpt-guia-aeo-geo) mostra o que fazer depois: schema, JSON-LD e llms.txt para o conteúdo liberado realmente virar citação.
