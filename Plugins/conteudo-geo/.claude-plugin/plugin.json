@@ -1,0 +1,17 @@
+{
+  "name": "conteudo-geo",
+  "version": "0.1.0",
+  "description": "Pipeline de conteúdo GEO/AEO agnóstico de nicho: escreve posts otimizados para citação por IAs, humaniza o rascunho e orquestra silo de links internos + imagens. Configurável por site via /setup-conteudo.",
+  "author": {
+    "name": "Ricardo"
+  },
+  "keywords": [
+    "geo",
+    "aeo",
+    "seo",
+    "blog",
+    "conteudo",
+    "afiliado",
+    "pt-br"
+  ]
+}
