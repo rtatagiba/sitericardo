@@ -34,5 +34,77 @@
     "alt_text": "Tela de computador exibindo linhas de código em um terminal, representando onde o Graphify é instalado",
     "url_origem": null,
     "atribuicao": null
+  },
+  {
+    "artigo_slug": "como-aparecer-no-chatgpt-guia-aeo-geo",
+    "arquivo": "citacao-de-fonte-por-chatbot-de-ia.webp",
+    "papel": "capa",
+    "fonte": "gerar",
+    "modelo": "google/nano-banana",
+    "personagem": true,
+    "prompt": "render 3D estilo cyberpunk de hacker de dados, hologramas verdes, chuva de codigo estilo Matrix ao fundo, personagem observando uma tela holografica flutuante com a resposta de um chatbot de IA citando uma fonte, sem texto",
+    "alt_text": null,
+    "url_origem": null,
+    "atribuicao": null
+  },
+  {
+    "artigo_slug": "como-aparecer-no-chatgpt-guia-aeo-geo",
+    "arquivo": "crawler-de-ia-escaneando-conteudo-do-site.webp",
+    "papel": "secundaria",
+    "fonte": "gerar",
+    "modelo": "black-forest-labs/flux-schnell",
+    "personagem": false,
+    "prompt": "robo aranha digital verde brilhante escaneando linhas de texto luminosas flutuantes, estetica cyberpunk de dados, fundo escuro com chuva de codigo estilo Matrix, sem texto legivel",
+    "alt_text": "Robô representando um crawler de inteligência artificial analisando o conteúdo de um site",
+    "url_origem": null,
+    "atribuicao": null
+  },
+  {
+    "artigo_slug": "como-aparecer-no-chatgpt-guia-aeo-geo",
+    "arquivo": "dados-estruturados-schema-json-ld.webp",
+    "papel": "secundaria",
+    "fonte": "gerar",
+    "modelo": "black-forest-labs/flux-schnell",
+    "personagem": false,
+    "prompt": "blocos de dados conectados por linhas verdes brilhantes flutuando no ar, representando estrutura de dados e schema, estetica cyberpunk hacker, fundo escuro, sem texto legivel",
+    "alt_text": "Blocos de dados conectados representando a estrutura de schema e JSON-LD de uma página",
+    "url_origem": null,
+    "atribuicao": null
+  },
+  {
+    "artigo_slug": "autoridade-topic-clusters-de-conteudo-seo-geo",
+    "arquivo": "rede-holografica-de-cluster-de-conteudo.webp",
+    "papel": "capa",
+    "fonte": "gerar",
+    "modelo": "google/nano-banana",
+    "personagem": true,
+    "prompt": "render 3D estilo cyberpunk de hacker de dados, hologramas verdes, chuva de codigo estilo Matrix ao fundo, personagem apontando para uma estrutura holografica de rede com um no central maior conectado a varios nos menores, representando um cluster de conteudo, sem texto",
+    "alt_text": null,
+    "url_origem": null,
+    "atribuicao": null
+  },
+  {
+    "artigo_slug": "autoridade-topic-clusters-de-conteudo-seo-geo",
+    "arquivo": "escudo-de-autoridade-e-confianca-digital.webp",
+    "papel": "secundaria",
+    "fonte": "gerar",
+    "modelo": "black-forest-labs/flux-schnell",
+    "personagem": false,
+    "prompt": "escudo digital verde brilhante flutuando sobre uma rede de dados conectados, representando confianca e autoridade, estetica cyberpunk hacker, fundo escuro, sem texto legivel",
+    "alt_text": "Escudo digital luminoso representando autoridade e confiança de um site para o Google e para IA",
+    "url_origem": null,
+    "atribuicao": null
+  },
+  {
+    "artigo_slug": "autoridade-topic-clusters-de-conteudo-seo-geo",
+    "arquivo": "estrutura-de-pilar-e-satelites-de-conteudo.webp",
+    "papel": "secundaria",
+    "fonte": "gerar",
+    "modelo": "black-forest-labs/flux-schnell",
+    "personagem": false,
+    "prompt": "estrutura de rede verde brilhante com um no central maior e varios nos menores conectados por linhas luminosas, representando pilar e satelites de conteudo, estetica cyberpunk de dados, fundo escuro, sem texto legivel",
+    "alt_text": "Rede de nós conectados representando a estrutura de pilar e satélites de um cluster de conteúdo",
+    "url_origem": null,
+    "atribuicao": null
   }
 ]
