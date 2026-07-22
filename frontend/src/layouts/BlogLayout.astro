@@ -1,6 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import { SITE_URL } from '../lib/seo/site';
+import type { CollectionEntry } from 'astro:content';
 
 interface Props {
   title: string;
@@ -10,9 +11,10 @@ interface Props {
   image?: string;
   tags?: string[];
   slug: string; // post.id in Astro v6
+  relatedPosts?: CollectionEntry<'blog'>[];
 }
 
-const { title, description, date, updatedDate, image, tags, slug } = Astro.props;
+const { title, description, date, updatedDate, image, tags, slug, relatedPosts = [] } = Astro.props;
 
 const postUrl = `${SITE_URL}/blog/${slug}/`;
 const dateIso = date.toISOString();
@@ -76,6 +78,37 @@ const breadcrumbs = [
         <slot />
       </div>
     </article>
+
+    {relatedPosts.length > 0 && (
+      <section class="mt-12 pt-8 border-t border-green-900" aria-labelledby="related-posts-heading">
+        <h2 id="related-posts-heading" class="text-xl font-bold text-primary mb-6">
+          Posts relacionados
+        </h2>
+        <ul class="flex flex-col gap-4">
+          {relatedPosts.map((related) => (
+            <li>
+              <a
+                href={`/blog/${related.id}/`}
+                class="flex items-center gap-4 rounded-lg border border-green-900 p-3 hover:border-accent transition-colors"
+              >
+                {related.data.image && (
+                  <img
+                    src={related.data.image}
+                    alt=""
+                    class="w-24 h-24 shrink-0 rounded-md object-cover"
+                    loading="lazy"
+                  />
+                )}
+                <span class="min-w-0">
+                  <span class="block font-medium text-primary mb-1">{related.data.title}</span>
+                  <span class="block text-sm text-green-300 line-clamp-2">{related.data.description}</span>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
 
     <div class="mt-12 pt-8 border-t border-green-900">
       <a
