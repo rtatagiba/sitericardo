@@ -37,9 +37,15 @@
 
 import Replicate from "replicate";
 import fs from "node:fs/promises";
-import { createReadStream } from "node:fs";
 import path from "node:path";
 import sharp from "sharp";
+
+async function paraDataUri(caminho) {
+  const buf = await fs.readFile(caminho);
+  const ext = path.extname(caminho).slice(1).toLowerCase();
+  const mime = ext === "jpg" ? "jpeg" : ext;
+  return `data:image/${mime};base64,${buf.toString("base64")}`;
+}
 
 function parseArgs(argv) {
   const a = {};
@@ -121,7 +127,7 @@ async function main() {
   const input = usaPersonagem
     ? {
         prompt,
-        image_input: refs.map((ref) => createReadStream(ref)),
+        image_input: await Promise.all(refs.map(paraDataUri)),
         aspect_ratio: aspect,
         output_format: "png",
       }

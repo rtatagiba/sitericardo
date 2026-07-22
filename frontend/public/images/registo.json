@@ -1,0 +1,38 @@
+[
+  {
+    "artigo_slug": "graphify-como-economizar-tokens-ao-usar-ia",
+    "arquivo": "grafo-de-conhecimento-do-codigo.webp",
+    "papel": "capa",
+    "fonte": "gerar",
+    "modelo": "google/nano-banana",
+    "personagem": true,
+    "prompt": "render 3D estilo cyberpunk de hacker de dados, hologramas verdes, chuva de codigo estilo Matrix ao fundo, personagem observando e apontando para um grande grafo tridimensional de nos e conexoes luminosas verdes representando um mapa de codigo, sem texto",
+    "alt_text": null,
+    "url_origem": null,
+    "atribuicao": null
+  },
+  {
+    "artigo_slug": "graphify-como-economizar-tokens-ao-usar-ia",
+    "arquivo": "grafo-de-nos-do-codigo.webp",
+    "papel": "secundaria",
+    "fonte": "gerar",
+    "modelo": "black-forest-labs/flux-schnell",
+    "personagem": false,
+    "prompt": "close-up de um grafo de nos e conexoes verdes brilhantes ligando arquivos de codigo, fundo escuro, estetica de dados cyberpunk, sem texto",
+    "alt_text": "Grafo de nós e conexões verdes representando a estrutura de um projeto de código",
+    "url_origem": null,
+    "atribuicao": null
+  },
+  {
+    "artigo_slug": "graphify-como-economizar-tokens-ao-usar-ia",
+    "arquivo": "instalacao-do-graphify-no-terminal.webp",
+    "papel": "secundaria",
+    "fonte": "gerar",
+    "modelo": "black-forest-labs/flux-schnell",
+    "personagem": false,
+    "prompt": "terminal de computador escuro com cursor piscando e chuva de codigo verde estilo Matrix ao fundo, estetica cyberpunk de dados, sem texto legivel",
+    "alt_text": "Tela de computador exibindo linhas de código em um terminal, representando onde o Graphify é instalado",
+    "url_origem": null,
+    "atribuicao": null
+  }
+]
