@@ -13,7 +13,7 @@ Os dados estruturados são códigos implementados em seu site que fornecem conte
 
 O JSON-LD (JavaScript Object Notation for Linked Data) é o formato recomendado pelo Google para implementação de dados estruturados, por ser mais limpo e fácil de implementar. Ele é inserido diretamente no código HTML da página, sem interferir na formatação visual do conteúdo.
 
-Na era da inteligência artificial, quando os algoritmos de busca estão cada vez mais sofisticados, fornecer dados estruturados claros é praticamente obrigatório se você quer se destacar nos resultados de pesquisa.
+Na era da inteligência artificial, quando os algoritmos de busca estão cada vez mais sofisticados, fornecer dados estruturados claros é praticamente obrigatório se você quer se destacar nos resultados de pesquisa — inclusive nas respostas de [ChatGPT, Gemini e Perplexity](/blog/como-aparecer-no-chatgpt-guia-aeo-geo/).
 
 ## A importância das FAQs estruturadas na era da IA
 
@@ -21,7 +21,7 @@ As FAQs (Perguntas Frequentes) com schema markup oferecem diversas vantagens:
 
 1.  **Maior visibilidade nos resultados de pesquisa**: FAQs estruturadas podem aparecer como rich results (resultados enriquecidos), ocupando mais espaço na página de resultados e aumentando suas chances de cliques.
 2.  **Respostas diretas às perguntas dos usuários**: Com o crescimento das pesquisas por voz e dos assistentes de IA, ter conteúdo marcado como FAQ ajuda a posicionar seu site como fonte de respostas diretas.
-3.  **Maior autoridade temática**: Ao responder perguntas específicas do seu nicho, você demonstra expertise para o Google, fortalecendo seu posicionamento.
+3.  **[Maior autoridade temática](/blog/autoridade-topic-clusters-de-conteudo-seo-geo/)**: Ao responder perguntas específicas do seu nicho, você demonstra expertise para o Google, fortalecendo seu posicionamento.
 4.  **Melhoria na experiência do usuário**: FAQs bem estruturadas facilitam a navegação e compreensão do conteúdo pelos visitantes.
 
 Segundo um estudo da SEMrush, páginas com rich results têm, em média, uma taxa de cliques 58% maior do que resultados normais. Isso representa um ganho significativo de tráfego apenas com a implementação correta dos dados estruturados.
@@ -101,7 +101,7 @@ Identifique as 5 principais objeções que clientes têm antes de contratar [SER
 Após gerar seu código JSON-LD, é crucial validá-lo para garantir que está correto e será reconhecido pelo Google. Existem algumas ferramentas essenciais para isso:
 
 1.  **Schema Markup Validator (ferramenta oficial do Google)**: Disponível em [validator.schema.org](https://validator.schema.org/), permite verificar se seu código está correto e será compreendido pelos motores de busca.
-2.  **Ferramenta de Teste de Dados Estruturados do Google**: Disponível no [Google Search Console](/como-melhorar-o-ranking-do-seu-site-no-google-dicas-praticas/), permite ver como o Google interpreta seus dados estruturados e se há algum erro.
+2.  **[Rich Results Test](https://search.google.com/test/rich-results)**: sucessor da antiga Ferramenta de Teste de Dados Estruturados, disponível também dentro do [Google Search Console](https://search.google.com/search-console/about), permite ver como o Google interpreta seus dados estruturados e se há algum erro.
 3.  **Rank Math** e **Yoast SEO**: Plugins para WordPress que facilitam a implementação de dados estruturados sem necessidade de manipular código diretamente.
 4.  **Schema App**: Ferramenta paga que oferece soluções avançadas para implementação e gerenciamento de dados estruturados.
 
@@ -125,7 +125,7 @@ Com o aumento das pesquisas por voz, formular perguntas em linguagem natural, co
 
 ### 5\. Combine com outros tipos de schema
 
-Além do FAQPage, considere implementar outros [tipos de schema relevantes para sua página](/o-poder-do-schema-org-para-empresas-de-servicos-um-guia-completo-para-o-seo-local/), como Article, Product ou Organization, criando uma rede semântica rica que ajuda o Google a entender completamente seu conteúdo.
+Além do FAQPage, considere implementar outros [tipos de schema relevantes para sua página](/blog/o-poder-do-schema-org-para-empresas-de-servicos-um-guia-completo-para-o-seo-local/), como Article, Product ou Organization, criando uma rede semântica rica que ajuda o Google a entender completamente seu conteúdo.
 
 ## Como medir os resultados de suas FAQs estruturadas
 
@@ -140,7 +140,7 @@ Implementar FAQs estruturadas é apenas o começo. Para garantir que estão gera
 
 A Moz, autoridade em SEO, implementou FAQs estruturadas em suas páginas de produtos e viu um aumento de 21% nas impressões de busca orgânica e 12% nos cliques, conforme relatado em seu estudo de caso de 2023. Além disso, o tempo médio na página aumentou, indicando que os usuários estavam encontrando respostas valiosas para suas perguntas.
 
-## Exemplo prático: Gerando FAQs estruturadas para SEO local
+## Exemplo prático: Gerando FAQs estruturadas para [SEO local](/blog/por-que-seo-local-e-fundamental-para-pequenos-negocios/)
 
 Veja como um prompt para o ChatGPT pode gerar FAQs estruturadas prontas para implementação:
 

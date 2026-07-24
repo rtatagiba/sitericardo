@@ -29,7 +29,7 @@ Para pequenas empresas, o SEO é particularmente importante porque:
 
 ### 1\. Pesquisa de palavras-chave focada no seu negócio local
 
-A pesquisa de palavras-chave é o alicerce de qualquer estratégia de SEO. Para pequenas empresas, é fundamental focar em:
+A [pesquisa de palavras-chave](/blog/como-escolher-as-melhores-palavras-chave-para-seu-negocio-local/) é o alicerce de qualquer estratégia de SEO. Para pequenas empresas, é fundamental focar em:
 
 **Palavras-chave locais:**
 
@@ -43,9 +43,9 @@ A pesquisa de palavras-chave é o alicerce de qualquer estratégia de SEO. Para 
 
 **Ferramentas gratuitas para pesquisa:**
 
--   Google Keyword Planner
--   AnswerThePublic
--   Google Trends
+-   [Google Keyword Planner](https://ads.google.com/aw/keywordplanner/home)
+-   [AnswerThePublic](https://answerthepublic.com/en)
+-   [Google Trends](https://trends.google.com/trends/)
 -   Ubersuggest (versão gratuita)
 -   As próprias sugestões de pesquisa do Google
 
@@ -57,9 +57,9 @@ Mesmo sem conhecimentos técnicos avançados, você pode melhorar aspectos funda
 
 **Velocidade do site:**
 
--   Comprima imagens antes de fazer upload (use ferramentas como TinyPNG)
+-   [Comprima imagens](/blog/como-trabalhar-com-imagens-para-seo-e-melhorar-o-carregamento-do-site/) antes de fazer upload (use ferramentas como [TinyPNG](https://tinypng.com/))
 -   Utilize plataformas ou temas que já sejam otimizados para velocidade
--   Faça o teste do PageSpeed Insights do Google e corrija problemas básicos
+-   Faça o teste do [PageSpeed Insights](https://pagespeed.web.dev/) do Google e corrija problemas básicos
 
 **Adaptação para dispositivos móveis:**
 
@@ -105,9 +105,9 @@ Mesmo sem conhecimentos técnicos avançados, você pode melhorar aspectos funda
 
 ### 4\. SEO local para pequenas empresas
 
-Para negócios que atendem clientes localmente, o SEO local é absolutamente essencial:
+Para negócios que atendem clientes localmente, [o SEO local é absolutamente essencial](/blog/por-que-seo-local-e-fundamental-para-pequenos-negocios/):
 
-**Google Meu Negócio:**
+**[Google Meu Negócio](https://support.google.com/business/answer/7039811?hl=pt-BR):**
 
 -   Crie e verifique sua conta gratuitamente
 -   Preencha TODAS as informações disponíveis (horários, fotos, serviços)
@@ -127,6 +127,7 @@ Para negócios que atendem clientes localmente, o SEO local é absolutamente ess
 -   Crie uma página “Contato” com mapa incorporado
 -   Mencione bairros, cidades e regiões que você atende no conteúdo
 -   Inclua notícias e eventos locais em seu blog
+-   Implemente [dados estruturados LocalBusiness (Schema.org)](/blog/o-poder-do-schema-org-para-empresas-de-servicos-um-guia-completo-para-o-seo-local/) para reforçar esses sinais para o Google
 
 ### 5\. Criação de conteúdo valioso para sua audiência local
 
@@ -175,6 +176,8 @@ Links de outros sites para o seu são como “votos de confiança” para o Goog
 -   Use âncoras de texto descritivas (não apenas “clique aqui”)
 -   Priorize links para suas páginas mais importantes
 
+Depois de melhorar os fatores on-page e locais, vale entender [quais outros fatores o Google usa para ranquear seu site](/blog/como-melhorar-o-ranking-do-seu-site-no-google-dicas-praticas/) e como [analisar o que seus concorrentes estão fazendo melhor](/blog/analise-de-concorrentes-em-seo-como-identificar-e-superar-seus-competidores-nos-resultados-de-busca/).
+
 ### 7\. Monitoramento e análise para melhorias contínuas
 
 Não é possível melhorar o que você não mede:
@@ -182,8 +185,9 @@ Não é possível melhorar o que você não mede:
 **Ferramentas essenciais (gratuitas):**
 
 -   Google Analytics: para dados de visitantes e comportamento
--   Google Search Console: para monitorar desempenho nas buscas
+-   [Google Search Console](https://search.google.com/search-console/about): para monitorar desempenho nas buscas
 -   Bing Webmaster Tools: para visibilidade no Bing
+-   Veja também nosso guia com [mais ferramentas gratuitas de monitoramento de SEO](/blog/como-monitorar-desempenho-seo-seu-site-ferramentas-gratuitas/)
 
 **Métricas importantes para acompanhar:**
 
@@ -243,11 +247,10 @@ Lembre-se: o melhor momento para começar seu projeto de SEO foi há um ano. O s
 
 ## Recursos adicionais para aprendizado contínuo
 
--   Blog do Google para Webmasters
--   Curso gratuito de SEO da HubSpot
+-   [Blog oficial do Google Search Central](https://developers.google.com/search/blog)
+-   [Curso gratuito de SEO da HubSpot Academy](https://academy.hubspot.com/courses/seo-training)
+-   [Guia para iniciantes em SEO da Moz](https://moz.com/beginners-guide-to-seo)
 -   Comunidade “WhiteHat SEO” no Facebook (em português)
--   Podcast “Marketing Digital” da Rock Content
--   Webinars gratuitos do SEMrush (alguns em português)
 
 * * *
 

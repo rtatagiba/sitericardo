@@ -64,7 +64,7 @@ O FID mede o tempo entre a primeira interação do usuário com a página (como 
 -   Ruim: acima de 300 milissegundos
     
 
-**Observação importante:** O Google anunciou que substituirá o FID pela métrica Interaction to Next Paint (INP) em março de 2025, que avalia a responsividade durante toda a visita, não apenas na primeira interação.
+**Observação importante:** desde março de 2024, o Google [substituiu oficialmente o FID pela métrica Interaction to Next Paint (INP)](https://web.dev/articles/vitals) como Core Web Vital, já que o INP avalia a responsividade durante toda a visita, não apenas na primeira interação.
 
 ### 3\. Cumulative Layout Shift (CLS) – A Estabilidade Visual
 
@@ -89,27 +89,23 @@ A máxima que diz “o que não é medido não pode ser melhorado” nunca foi t
 
 ### 1\. Google PageSpeed Insights
 
-A ferramenta mais acessível para análises rápidas, o PageSpeed Insights fornece dados de laboratório e de campo (RUM – Real User Monitoring) divididos entre dispositivos desktop e móveis.
+A ferramenta mais acessível para análises rápidas, o [PageSpeed Insights](https://pagespeed.web.dev/) fornece dados de laboratório e de campo (RUM – Real User Monitoring) divididos entre dispositivos desktop e móveis.
 
 A vantagem aqui é a simplicidade – basta inserir a URL e receber uma análise detalhada, com sugestões específicas de melhorias para cada métrica.
 
 ### 2\. Google Search Console
 
-O Search Console oferece uma visão mais ampla do desempenho do site como um todo, mostrando tendências e agregando páginas com problemas similares. É particularmente útil para identificar padrões de problemas em seções específicas do site.
+O [Search Console](https://search.google.com/search-console/about) oferece uma visão mais ampla do desempenho do site como um todo, mostrando tendências e agregando páginas com problemas similares. É particularmente útil para identificar padrões de problemas em seções específicas do site.
 
 ### 3\. Chrome DevTools
 
 Para análises mais técnicas e granulares, o Chrome DevTools permite monitorar o desempenho em tempo real, identificando gargalos específicos no carregamento da página e na execução de JavaScript.
 
-A guia “Performance” oferece insights valiosos sobre o LCP, enquanto a guia “Network” ajuda a entender como os recursos estão sendo carregados e onde estão os atrasos.
+A guia “Performance” oferece insights valiosos sobre o LCP, enquanto a guia “Network” ajuda a entender como os recursos estão sendo carregados e onde estão os atrasos. Desde janeiro de 2025, [a extensão Web Vitals foi incorporada ao próprio DevTools](https://developer.chrome.com/blog/web-vitals-extension), que passou a ser o canal recomendado pelo Google para esse monitoramento.
 
-### 4\. Web Vitals Extension
+### 4\. Firebase Performance Monitoring
 
-Esta extensão do Chrome exibe métricas em tempo real enquanto você navega, facilitando o monitoramento constante e a identificação imediata de problemas.
-
-### 5\. Firebase Performance Monitoring
-
-Para aplicações web complexas, o Firebase Performance Monitoring oferece análises mais profundas de usuários reais, com segmentação geográfica e por dispositivo.
+Para aplicações web complexas, o [Firebase Performance Monitoring](https://firebase.google.com/docs/perf-mon) oferece análises mais profundas de usuários reais, com segmentação geográfica e por dispositivo.
 
 ### Estratégias Práticas para Otimização
 
@@ -358,7 +354,7 @@ Um grande portal de notícias brasileiro com quedas constantes no tráfego orgâ
 
 O Google continua evoluindo suas métricas, com mudanças importantes no horizonte:
 
-1.  **Substituição do FID pelo INP (Interaction to Next Paint)** programada para março de 2025
+1.  **Substituição do FID pelo INP (Interaction to Next Paint)**, já efetivada em março de 2024
     
 2.  **Expansão da análise para incluir mais páginas** do site, não apenas a página inicial
     
@@ -373,7 +369,7 @@ Estar à frente dessas mudanças não é apenas uma questão técnica – é uma
 
 Os Core Web Vitals não são apenas um conjunto de métricas técnicas ou um capricho do Google. Eles representam uma mudança fundamental na forma como pensamos sobre presença digital – um retorno ao propósito essencial da web: servir os usuários com experiências rápidas, responsivas e estáveis.
 
-As marcas que entenderem isso verão os Core Web Vitals não como um obstáculo a ser superado, mas como uma oportunidade de diferenciação em mercados cada vez mais competitivos.
+As marcas que entenderem isso verão os Core Web Vitals não como um obstáculo a ser superado, mas como uma oportunidade de diferenciação em mercados cada vez mais competitivos. Veja também como usar essas métricas para [analisar e superar seus concorrentes](/blog/analise-de-concorrentes-em-seo-como-identificar-e-superar-seus-competidores-nos-resultados-de-busca/) e quais [outros fatores o Google considera no ranking](/blog/como-melhorar-o-ranking-do-seu-site-no-google-dicas-praticas/).
 
 Como David Ogilvy uma vez disse: “O consumidor não é um idiota. Ela é sua esposa.” Na era digital, poderíamos adaptar essa frase: “O usuário não é um dado estatístico. Ele é seu cliente mais valioso, e cada milissegundo de espera é uma oportunidade para seu concorrente conquistá-lo.”
 

@@ -21,7 +21,7 @@ Este guia completo vai além das definições básicas. Vamos mergulhar nas ferr
 
 O Share of Search representa a porcentagem de todas as buscas orgânicas para uma categoria específica que sua marca consegue capturar. Em essência, mede o quanto do “espaço mental” do consumidor você ocupa quando ele pensa sobre seu segmento de mercado.
 
-Introduzido ao mundo do marketing por Les Binet, chefe de efetividade da agência Adam&Eve DDB e pesquisador do The Institute of Practitioners in Advertising (IPA), o conceito rapidamente ganhou status de métrica essencial por sua capacidade preditiva.
+Introduzido ao mundo do marketing por Les Binet, chefe de efetividade da agência Adam&Eve DDB e pesquisador do [The Institute of Practitioners in Advertising (IPA)](https://ipa.co.uk/knowledge/effectiveness-research-analysis/share-of-search), o conceito rapidamente ganhou status de métrica essencial por sua capacidade preditiva.
 
 ### A Correlação com o Market Share Tradicional
 
@@ -51,11 +51,11 @@ Como afirmou Les Binet: “O Share of Search é possivelmente a métrica de marc
 
 ### Ferramentas Essenciais para Monitorar seu Share of Search
 
-Monitorar efetivamente seu Share of Search exige um arsenal de ferramentas adequadas. Aqui está um guia das mais eficazes do mercado:
+Monitorar efetivamente seu Share of Search exige um arsenal de ferramentas adequadas — muitas delas as mesmas usadas para [monitorar o desempenho geral de SEO do seu site](/blog/como-monitorar-desempenho-seo-seu-site-ferramentas-gratuitas/). Aqui está um guia das mais eficazes do mercado:
 
 ### 1\. Google Trends: O Ponto de Partida Gratuito
 
-O Google Trends permanece como o recurso mais acessível para pequenas e médias empresas iniciarem seu monitoramento.
+O [Google Trends](https://trends.google.com/trends/) permanece como o recurso mais acessível para pequenas e médias empresas iniciarem seu monitoramento.
 
 **Como utilizar para Share of Search:**
 
@@ -113,7 +113,7 @@ Para não deixar nada abstrato, vamos ao passo a passo prático:
 
 ### 1\. Definição de Categoria e Concorrentes
 
-O primeiro passo é definir claramente:
+Este é o mesmo exercício de mapeamento feito em uma boa [análise de concorrentes em SEO](/blog/analise-de-concorrentes-em-seo-como-identificar-e-superar-seus-competidores-nos-resultados-de-busca/). O primeiro passo é definir claramente:
 
 -   Qual categoria específica você está analisando
     
@@ -160,7 +160,7 @@ Conquistar Share of Search requer entender as intenções de busca dos usuários
 
 ### Buscas Informativas: Sendo a Resposta
 
-As buscas informativas compõem aproximadamente 80% de todas as pesquisas online, segundo dados da SEMrush. Elas incluem:
+As buscas informativas compõem aproximadamente 80% de todas as pesquisas online, segundo dados da SEMrush. Isso reforça por que o [SEO semântico focado em tópicos e significado](/blog/a-mudanca-para-o-seo-semantico-o-que-os-vetores-significam-para-sua-estrategia/) supera a antiga lógica de palavra-chave isolada. Elas incluem:
 
 -   Perguntas (como, o que, por que)
     
@@ -323,6 +323,8 @@ O Share of Search transcende o status de simples métrica para se tornar uma fil
     
 
 Como disse Jeff Bezos: “A busca é a interface para a intenção do cliente.” Dominar seu Share of Search significa, em última análise, conquistar um espaço privilegiado na mente do consumidor — o verdadeiro campo de batalha do marketing moderno.
+
+Para transformar essa presença mental em posições reais no Google, veja nosso guia de [como melhorar o ranking do seu site](/blog/como-melhorar-o-ranking-do-seu-site-no-google-dicas-praticas/).
 
 ### Quer Descobrir seu Verdadeiro Potencial no Share of Search?
 

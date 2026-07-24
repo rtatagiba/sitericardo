@@ -29,7 +29,7 @@ Tiveram muitas palestras boas, mas a primeira do Dennis Yu foi incrível, foi be
 
 ### ![Dennis Yu, CEO da BlitzMetrics, foi um dos principais destaques do evento. Na sua palestra "AI Warfare: Winning in SEO + Social in 2025](/images/2025/04/Deniz-Yu.jpg)Dennis Yu: O Destaque do primeiro dia de Evento do Digitalks
 
-[Dennis Yu](https://www.linkedin.com/in/dennisyu/), CEO da BlitzMetrics, foi um dos principais destaques do evento. Na sua palestra “AI Warfare: Winning in SEO + Social in 2025”, Yu explorou como a inteligência artificial está a transformar as [estratégias de SEO](/como-garantir-orcamento-para-seo-estrategias-para-justificar-investimentos-em-marketing-organico/) e redes sociais, oferecendo insights valiosos sobre como as empresas podem adaptar-se a estas mudanças para manterem-se competitivas.
+[Dennis Yu](https://www.linkedin.com/in/dennisyu/), CEO da [BlitzMetrics](https://blitzmetrics.com/), foi um dos principais destaques do evento. Na sua palestra “AI Warfare: Winning in SEO + Social in 2025”, Yu explorou como a inteligência artificial está a transformar as [estratégias de SEO](/blog/como-garantir-orcamento-para-seo-estrategias-para-justificar-investimentos-em-marketing-organico/) e redes sociais — um tema que também exploramos no nosso [guia de como aparecer no ChatGPT e em outras IAs (AEO/GEO)](/blog/como-aparecer-no-chatgpt-guia-aeo-geo/) — oferecendo insights valiosos sobre como as empresas podem adaptar-se a estas mudanças para manterem-se competitivas.
 
 ### Inovação no Marketing: Estratégias Digitais
 

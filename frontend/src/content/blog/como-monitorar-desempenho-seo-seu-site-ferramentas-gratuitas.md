@@ -9,7 +9,7 @@ Na era digital, sua presença online não é apenas uma vitrine — é seu princ
 
 O SEO (Search Engine Optimization) é a diferença entre um site que gera resultados consistentes e um que permanece perdido na segunda página do Google. Mas como saber se suas estratégias estão funcionando sem investir fortunas em ferramentas premium?
 
-Vamos ver como monitorar efetivamente o [desempenho do seu SEO](/como-criar-conteudo-seo-friendly-que-converte/) com ferramentas completamente gratuitas, transformando dados em decisões que impulsionam seu crescimento online.
+Vamos ver como monitorar efetivamente o [desempenho do seu SEO](/blog/como-criar-conteudo-seo-friendly-que-converte/) com ferramentas completamente gratuitas, transformando dados em decisões que impulsionam seu crescimento online.
 
 ### O que é SEO e por que você precisa monitorá-lo
 
@@ -73,7 +73,7 @@ O Google Search Console é a ferramenta oficial do Google para webmasters e é a
     
 -   **Cobertura do índice**: identifica quais páginas estão indexadas e quais têm problemas
     
--   **Aprimoramento de experiência**: análise de Core Web Vitals e usabilidade móvel
+-   **Aprimoramento de experiência**: análise de [Core Web Vitals](/blog/o-impacto-dos-core-web-vitals-no-seo-um-guia-completo/) e usabilidade móvel
     
 -   **Links**: monitora quem está linkando para seu site
     
@@ -164,14 +164,14 @@ Esta ferramenta de desktop permite rastrear até 500 URLs gratuitamente, oferece
     
 -   **Verificação de links quebrados**: identifica links que não funcionam
     
--   **Geração de sitemap**: cria arquivos XML de sitemap automaticamente
+-   **Geração de sitemap**: cria [arquivos XML de sitemap](/blog/como-criar-um-sitemap-melhorar-indexacao-site/) automaticamente
     
 
 ### Monitoramento do comportamento do usuário
 
 ### Hotjar (plano básico gratuito)
 
-O Hotjar permite visualizar como os usuários interagem com seu site, oferecendo insights valiosos sobre a experiência do usuário.
+O [Hotjar](https://www.hotjar.com/) permite visualizar como os usuários interagem com seu site, oferecendo insights valiosos sobre a experiência do usuário.
 
 **Principais funcionalidades:**
 
@@ -188,7 +188,7 @@ O Hotjar permite visualizar como os usuários interagem com seu site, oferecendo
 
 ### Microsoft Clarity
 
-Lançada recentemente, esta ferramenta gratuita da Microsoft oferece recursos similares ao Hotjar sem limitações de pageviews.
+[Microsoft Clarity](https://clarity.microsoft.com/), gratuita, oferece recursos similares ao Hotjar sem limitações de pageviews.
 
 **Principais funcionalidades:**
 
@@ -209,11 +209,11 @@ Antes de implementar qualquer mudança, documente o estado atual do seu site. Is
 
 ### Monitore competidores
 
-Use ferramentas como SEMrush ou Ubersuggest para acompanhar o desempenho dos concorrentes. Quando um competidor sobe ou desce drasticamente no ranking, investigue o que mudou.
+Use ferramentas como SEMrush ou Ubersuggest para acompanhar o desempenho dos concorrentes — veja também nosso guia de [análise de concorrentes em SEO](/blog/analise-de-concorrentes-em-seo-como-identificar-e-superar-seus-competidores-nos-resultados-de-busca/). Quando um competidor sobe ou desce drasticamente no ranking, investigue o que mudou.
 
 ### Crie um dashboard personalizado
 
-O Google Data Studio (agora Looker Studio) permite criar dashboards gratuitos que consolidam dados de várias fontes. Isso facilita a visualização e análise das métricas mais importantes.
+O [Looker Studio](https://lookerstudio.google.com/) (antigo Google Data Studio) permite criar dashboards gratuitos que consolidam dados de várias fontes. Isso facilita a visualização e análise das métricas mais importantes.
 
 ### Estabeleça uma rotina de monitoramento
 
@@ -273,7 +273,7 @@ Os dados por si só não têm valor. O verdadeiro poder está na interpretação
 
 -   Google Analytics (para identificar páginas problemáticas)
     
--   PageSpeed Insights (velocidade de carregamento)
+-   [PageSpeed Insights](https://pagespeed.web.dev/) (velocidade de carregamento)
     
 -   Hotjar ou Microsoft Clarity (comportamento do usuário)
     
@@ -302,11 +302,11 @@ Os dados por si só não têm valor. O verdadeiro poder está na interpretação
 
 ### Conclusão: Transforme dados em crescimento
 
-O monitoramento eficaz de SEO não requer grandes investimentos financeiros, mas sim um compromisso com a análise contínua e a adaptação. As ferramentas gratuitas mencionadas neste artigo oferecem todos os recursos necessários para construir uma [estratégia de SEO](/como-garantir-orcamento-para-seo-estrategias-para-justificar-investimentos-em-marketing-organico/) baseada em dados.
+O monitoramento eficaz de SEO não requer grandes investimentos financeiros, mas sim um compromisso com a análise contínua e a adaptação. As ferramentas gratuitas mencionadas neste artigo oferecem todos os recursos necessários para construir uma [estratégia de SEO](/blog/como-garantir-orcamento-para-seo-estrategias-para-justificar-investimentos-em-marketing-organico/) baseada em dados.
 
 Como David Ogilvy diria, “Nunca pare de testar, e sua publicidade nunca parará de melhorar”. O mesmo se aplica ao SEO. O sucesso não vem de uma única grande mudança, mas de centenas de pequenos ajustes informados por dados precisos.
 
-Lembre-se: o objetivo final não é apenas melhorar métricas, mas [construir uma presença online](/como-garantir-orcamento-para-seo-estrategias-para-justificar-investimentos-em-marketing-organico/) que genuinamente atenda às necessidades do seu público. Quando você consegue isso, o crescimento orgânico sustentável é apenas uma consequência natural.
+Lembre-se: o objetivo final não é apenas melhorar métricas, mas [construir uma presença online](/blog/como-garantir-orcamento-para-seo-estrategias-para-justificar-investimentos-em-marketing-organico/) que genuinamente atenda às necessidades do seu público. Quando você consegue isso, o crescimento orgânico sustentável é apenas uma consequência natural.
 
 ### Dê o próximo passo na sua estratégia de SEO
 

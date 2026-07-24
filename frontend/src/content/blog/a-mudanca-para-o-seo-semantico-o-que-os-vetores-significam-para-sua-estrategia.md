@@ -29,13 +29,13 @@ Ao compreender melhor a intenção de pesquisa dos usuários, os mecanismos de b
 
 ### Inovação em IA e recursos de pesquisa
 
-A tecnologia de vetores está impulsionando recursos como o Google SGE (Search Generative Experience) e ferramentas de IA como o ChatGPT do Magazine Luiza ou a assistente virtual do Nubank, que podem gerar resumos, responder a perguntas e fornecer informações relevantes com base no contexto.
+A tecnologia de vetores está impulsionando recursos como as [AI Overviews do Google](https://blog.google/products-and-platforms/products/search/generative-ai-search/) (sucessoras do antigo SGE, Search Generative Experience) e ferramentas de IA como o ChatGPT do Magazine Luiza ou a assistente virtual do Nubank, que podem gerar resumos, responder a perguntas e fornecer informações relevantes com base no contexto. Veja também nosso [guia de como aparecer no ChatGPT e em outras respostas de IA (AEO/GEO)](/blog/como-aparecer-no-chatgpt-guia-aeo-geo/).
 
 ## Como adaptar sua estratégia de SEO para a era semântica
 
 ### Concentre-se em tópicos, não apenas em palavras-chave
 
-Em vez de criar conteúdo em torno de palavras-chave específicas, desenvolva um entendimento abrangente dos tópicos relevantes para seu público. Por exemplo, uma imobiliária em Belo Horizonte deve criar conteúdo que aborde todos os aspectos do mercado imobiliário local, não apenas páginas otimizadas para “apartamentos à venda em Belo Horizonte”.
+Em vez de criar conteúdo em torno de palavras-chave específicas, desenvolva um entendimento abrangente dos tópicos relevantes para seu público — o que hoje chamamos de [autoridade tópica e clusters de conteúdo](/blog/autoridade-topic-clusters-de-conteudo-seo-geo/). Por exemplo, uma imobiliária em Belo Horizonte deve criar conteúdo que aborde todos os aspectos do mercado imobiliário local, não apenas páginas otimizadas para “apartamentos à venda em Belo Horizonte”.
 
 ### Priorize a qualidade e a profundidade do conteúdo
 
@@ -45,7 +45,7 @@ A Via Varejo, por exemplo, não se limita a listar produtos em seu blog; eles cr
 
 ### Estruture seu conteúdo para facilitar a compreensão
 
-Os mecanismos de busca dependem de [sinais estruturais para entender o conteúdo](/o-poder-do-schema-org-para-empresas-de-servicos-um-guia-completo-para-o-seo-local/). Use cabeçalhos HTML adequados, dados estruturados e uma hierarquia de conteúdo clara para ajudar os algoritmos a compreender o significado do seu conteúdo.
+Os mecanismos de busca dependem de [sinais estruturais para entender o conteúdo](/blog/o-poder-do-schema-org-para-empresas-de-servicos-um-guia-completo-para-o-seo-local/). Use cabeçalhos HTML adequados, dados estruturados e uma hierarquia de conteúdo clara para ajudar os algoritmos a compreender o significado do seu conteúdo.
 
 O Banco Itaú, por exemplo, organiza seu centro de ajuda em categorias claras e utiliza dados estruturados para destacar perguntas frequentes, tornando mais fácil para os mecanismos de busca indexar e entender o conteúdo.
 
@@ -71,7 +71,7 @@ Plataformas como [Surfer SEO](https://surferseo.com/) e Clearscope analisam os r
 
 ### Ferramentas de agrupamento de tópicos
 
-A criação de mapas de conteúdo baseados em tópicos pode ajudar a [estruturar sua estratégia de conteúdo](/como-melhorar-o-ranking-do-seu-site-no-google-dicas-praticas/). Ferramentas como o MarketMuse podem ajudar a identificar lacunas em sua cobertura de conteúdo.
+A criação de mapas de conteúdo baseados em tópicos pode ajudar a [estruturar sua estratégia de conteúdo](/blog/como-melhorar-o-ranking-do-seu-site-no-google-dicas-praticas/). Ferramentas como o [MarketMuse](https://www.marketmuse.com/) podem ajudar a identificar lacunas em sua cobertura de conteúdo, assim como a [comparação de sitemap com concorrentes](/blog/lacuna-de-conteudo-comparar-sitemap-concorrente/) para encontrar pautas que você ainda não cobre.
 
 ## O futuro do SEO é semântico
 
@@ -86,3 +86,5 @@ Os profissionais de SEO bem-sucedidos serão aqueles que se adaptarem a esta nov
 A era do SEO baseado em palavras-chave não acabou completamente, mas está evoluindo para algo mais sofisticado. As palavras-chave ainda importam, mas como parte de uma abordagem mais ampla e centrada no usuário que prioriza o significado, o contexto e a relevância.
 
 As empresas brasileiras que adotarem esta abordagem semântica estarão bem posicionadas para se destacar nos resultados de pesquisa, oferecendo aos usuários exatamente o que eles estão procurando, mesmo quando não usam as palavras exatas para descrevê-lo.
+
+Essa mudança de palavras-chave para significado é a mesma força por trás da [oficialização do grounding pelo Google](/blog/a-oficializacao-do-grounding-o-futuro-do-trafego-organico-segundo-o-google/), onde entidades e E-E-A-T passam a pesar mais do que a simples correspondência textual.

@@ -59,13 +59,13 @@ Evite escrever para impressionar. Escreva para expressar. Use linguagem clara e 
 
 Com um conteúdo estruturado e envolvente, chegamos à camada técnica da otimização. Aqui, alguns elementos merecem atenção especial:
 
-**Meta-título e meta-descrição:** Estes são seus vendedores na página de resultados. Garanta que sejam persuasivos e contenham suas palavras-chave principais.
+**[Meta-título e meta-descrição](/blog/como-escrever-titulos-e-meta-descricoes-que-aumentam-o-ctr/):** Estes são seus vendedores na página de resultados. Garanta que sejam persuasivos e contenham suas palavras-chave principais.
 
 **URLs amigáveis:** Mantenha-os curtos, descritivos e incluindo palavras-chave relevantes.
 
-**Otimização de imagens:** Comprima-as sem perder qualidade e inclua textos alternativos descritivos.
+**[Otimização de imagens](/blog/como-trabalhar-com-imagens-para-seo-e-melhorar-o-carregamento-do-site/):** Comprima-as sem perder qualidade e inclua textos alternativos descritivos.
 
-**Estrutura de dados:** Implemente schema markup para ajudar os motores de busca a entenderem melhor seu conteúdo.
+**[Estrutura de dados](/blog/o-poder-do-schema-org-para-empresas-de-servicos-um-guia-completo-para-o-seo-local/):** Implemente schema markup para ajudar os motores de busca a entenderem melhor seu conteúdo.
 
 **Experiência móvel:** Garanta que seu conteúdo seja perfeitamente acessível em dispositivos móveis.
 
@@ -88,28 +88,28 @@ O conteúdo verdadeiramente excelente é como um organismo vivo. Ele evolui, se 
 
 ### Para Criação de Títulos:
 
--   **CoSchedule Headline Analyzer:** Avalia o potencial de seu título em termos de SEO e engajamento.
+-   **[CoSchedule Headline Analyzer](https://coschedule.com/headline-analyzer):** Avalia o potencial de seu título em termos de SEO e engajamento.
     
--   **Answer the Public:** Revela as perguntas mais comuns sobre seu tema, perfeito para criar títulos que respondam diretamente às dúvidas do público.
+-   **[AnswerThePublic](https://answerthepublic.com/en):** Revela as perguntas mais comuns sobre seu tema, perfeito para criar títulos que respondam diretamente às dúvidas do público.
     
 
 ### Para Análise de Intenção de Busca:
 
 -   **Google Search Console:** Mostra exatamente quais consultas levam os usuários ao seu site.
     
--   **AlsoAsked:** Revela perguntas relacionadas que os usuários fazem, ajudando a compreender a jornada completa de busca.
+-   **[AlsoAsked](https://alsoasked.com/):** Revela perguntas relacionadas que os usuários fazem, ajudando a compreender a jornada completa de busca.
     
 
 ### Para Aprimoramento de Texto:
 
--   **Hemingway Editor:** Ajuda a simplificar seu texto, tornando-o mais legível e acessível.
+-   **[Hemingway Editor](https://hemingwayapp.com/):** Ajuda a simplificar seu texto, tornando-o mais legível e acessível.
     
--   **Grammarly:** Vai além da gramática, sugerindo melhorias de estilo e tom.
+-   **[Grammarly](https://www.grammarly.com/):** Vai além da gramática, sugerindo melhorias de estilo e tom.
     
 
 ### A Revolução das Entidades no SEO
 
-O Google evoluiu. Não se trata mais apenas de palavras-chave, mas de entidades e seus relacionamentos. Uma entidade é qualquer coisa única, distinta e bem definida. Pode ser uma pessoa, lugar, empresa, conceito ou ideia.
+O Google evoluiu. [Não se trata mais apenas de palavras-chave, mas de entidades e seus relacionamentos](/blog/a-mudanca-para-o-seo-semantico-o-que-os-vetores-significam-para-sua-estrategia/). Uma entidade é qualquer coisa única, distinta e bem definida. Pode ser uma pessoa, lugar, empresa, conceito ou ideia.
 
 Quando você cria conteúdo, pense em como as entidades principais se relacionam com subtópicos relevantes. Assim como a Wikipedia organiza informações em torno de entidades principais, seu conteúdo deve criar uma rede de significados interconectados.
 

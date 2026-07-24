@@ -72,7 +72,7 @@ Não podemos melhorar o que não medimos. Estas são as métricas essenciais par
 
 **Largest Contentful Paint (LCP)**
 
-Mede o tempo necessário para que o maior elemento visível seja renderizado. Frequentemente, este elemento é uma imagem. Google recomenda um LCP de 2,5 segundos ou menos.
+Mede o tempo necessário para que o maior elemento visível seja renderizado. Frequentemente, este elemento é uma imagem. Google recomenda um LCP de 2,5 segundos ou menos — veja nosso [guia completo de Core Web Vitals](/blog/o-impacto-dos-core-web-vitals-no-seo-um-guia-completo/) para entender essa e as demais métricas em profundidade.
 
 **Cumulative Layout Shift (CLS)**
 
@@ -144,7 +144,7 @@ Nunca carregue uma imagem de 2000×2000 pixels para exibi-la em um espaço de 40
 
 **7\. Comprima inteligentemente**
 
-Ferramentas como TinyPNG, ImageOptim, ou Squoosh podem reduzir drasticamente o tamanho do arquivo sem perda perceptível de qualidade.
+Ferramentas como [TinyPNG](https://tinypng.com/), ImageOptim, ou [Squoosh](https://squoosh.app/) (do próprio Google) podem reduzir drasticamente o tamanho do arquivo sem perda perceptível de qualidade.
 
 **8\. Utilize técnicas de carregamento progressivo**
 
@@ -156,7 +156,7 @@ Para superar seus concorrentes, você precisa primeiro entender suas estratégia
 
 1.  **Analise o código-fonte** de seus sites para identificar técnicas de otimização de imagens
     
-2.  **Teste a velocidade** de seus sites com ferramentas como Google PageSpeed Insights ou GTmetrix
+2.  **Teste a velocidade** de seus sites com ferramentas como [Google PageSpeed Insights](https://pagespeed.web.dev/) ou [GTmetrix](https://gtmetrix.com/)
     
 3.  **Examine seus formatos de imagem** usando extensões de navegador como “Whatruns” ou simplesmente salvando suas imagens
     
@@ -228,7 +228,7 @@ A verdade é que a otimização de imagens não é glamorosa. É minuciosa, téc
 
 Enquanto seus concorrentes continuam sobrecarregando seus sites com imagens não otimizadas, você tem agora o conhecimento para transformar suas imagens de um peso morto em uma vantagem competitiva.
 
-O Google já disse claramente: a velocidade é um fator de classificação. Com Core Web Vitals agora parte do algoritmo, otimizar suas imagens não é opcional – é essencial para se manter competitivo.
+O Google já disse claramente: a velocidade é um fator de classificação. Com Core Web Vitals agora parte do algoritmo, otimizar suas imagens não é opcional – é essencial para se manter competitivo. Para imagens importantes do seu catálogo ou portfólio, considere também um [sitemap de imagens dedicado](/blog/como-criar-um-sitemap-melhorar-indexacao-site/), que ajuda o Google a descobri-las mais rápido.
 
 Agora, você tem duas opções:
 

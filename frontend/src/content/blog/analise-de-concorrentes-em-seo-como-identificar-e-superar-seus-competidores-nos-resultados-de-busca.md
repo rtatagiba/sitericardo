@@ -11,7 +11,7 @@ Enquanto você contempla a tela do computador, vendo o domínio rival ocupando o
 
 A resposta pode estar escondida não apenas nas palavras-chave que utilizam ou nos links que apontam para eles, mas na experiência que oferecem aos usuários que visitam suas páginas. No mundo digital atual, a experiência do usuário não é apenas um diferencial competitivo — é o fator decisivo que determina quem conquista o topo dos resultados de busca.
 
-Neste artigo, vamos desvendar como analisar seus concorrentes não apenas pelo prisma tradicional do SEO, mas através do poder transformador da experiência do usuário. Mais especificamente, vamos mergulhar nos três pilares fundamentais que o Google utiliza para avaliar a qualidade da experiência: os Core Web Vitals.
+Neste artigo, vamos desvendar como analisar seus concorrentes não apenas pelo prisma tradicional do SEO, mas através do poder transformador da experiência do usuário. Mais especificamente, vamos mergulhar nos três pilares fundamentais que o Google utiliza para avaliar a qualidade da experiência: os Core Web Vitals — que exploramos em profundidade no [guia completo sobre o impacto dos Core Web Vitals no SEO](/blog/o-impacto-dos-core-web-vitals-no-seo-um-guia-completo/).
 
 ### O Que São os Core Web Vitals e Por Que São Cruciais para Superar Concorrentes
 
@@ -31,7 +31,7 @@ Imagine dois restaurantes lado a lado. No primeiro, você entra e é imediatamen
 
 **Como identificar o LCP dos concorrentes:**
 
-1.  Utilize ferramentas como o PageSpeed Insights ou o Lighthouse para analisar o desempenho das páginas dos seus concorrentes.
+1.  Utilize ferramentas como o [PageSpeed Insights](https://pagespeed.web.dev/) ou o Lighthouse para analisar o desempenho das páginas dos seus concorrentes.
     
 2.  Identifique o elemento que constitui o LCP nas páginas deles — geralmente uma imagem principal, um banner ou um bloco de texto.
     
@@ -52,6 +52,8 @@ Imagine dois restaurantes lado a lado. No primeiro, você entra e é imediatamen
 Um LCP ideal deve ocorrer em até 2,5 segundos. Se o seu concorrente está em 3,2 segundos e você consegue chegar a 2,3 segundos, você acabou de criar uma vantagem competitiva significativa.
 
 ### First Input Delay (FID): Respondendo ao Chamado do Usuário
+
+**Nota de atualização:** desde março de 2024, o Google [substituiu oficialmente o FID pelo INP (Interaction to Next Paint)](https://web.dev/articles/vitals) como Core Web Vital, por medir a responsividade durante toda a visita e não apenas na primeira interação. O raciocínio de análise competitiva abaixo continua válido, mas ao auditar concorrentes hoje, meça o INP.
 
 O FID mede a responsividade do seu site ao primeiro clique ou toque do usuário. É o tempo entre a interação inicial e o momento em que o navegador começa a processar essa interação.
 
@@ -111,17 +113,17 @@ Um bom CLS deve ser menor que 0,1. Se o seu concorrente está em 0,15 e você co
 
 Para conduzir uma análise competitiva eficaz, você precisará de um arsenal de ferramentas:
 
-1.  **Google PageSpeed Insights:** Oferece uma visão geral dos Core Web Vitals e sugestões de melhorias.
+1.  **[Google PageSpeed Insights](https://pagespeed.web.dev/):** Oferece uma visão geral dos Core Web Vitals e sugestões de melhorias.
     
 2.  **Lighthouse:** Fornece uma análise mais detalhada e pode ser executado localmente.
     
 3.  **Chrome DevTools:** Permite examinar o comportamento de carregamento e renderização de páginas.
     
-4.  **WebPageTest:** Ideal para testes em diferentes localizações e condições de rede.
+4.  **[WebPageTest](https://www.webpagetest.org/):** Ideal para testes em diferentes localizações e condições de rede.
     
-5.  **Search Console:** Oferece relatórios de Core Web Vitals para seu próprio site.
+5.  **[Search Console](https://search.google.com/search-console/about):** Oferece relatórios de Core Web Vitals para seu próprio site.
     
-6.  **CrUX (Chrome User Experience Report):** Fornece dados reais de usuários para sites públicos, incluindo concorrentes.
+6.  **[CrUX (Chrome User Experience Report)](https://developer.chrome.com/docs/crux):** Fornece dados reais de usuários para sites públicos, incluindo concorrentes.
     
 
 Ao analisar seus concorrentes, documente meticulosamente seus achados:
@@ -162,5 +164,7 @@ As métricas são importantes, mas o verdadeiro objetivo é a experiência do us
 A análise competitiva dos Core Web Vitals não é apenas uma tática técnica de SEO; é uma estratégia de negócios que posiciona seu site para o sucesso a longo prazo. Ao entender como seus concorrentes estão abordando estas métricas críticas e implementar melhorias estratégicas, você não está apenas melhorando suas posições nos mecanismos de busca — está fundamentalmente aprimorando a maneira como seus usuários experimentam sua marca online.
 
 E em um mundo digital onde a paciência é cada vez mais escassa, oferecer uma experiência superior não é apenas uma vantagem competitiva — é uma necessidade para a sobrevivência e prosperidade.
+
+Depois de otimizar a experiência técnica, vale revisar os [demais fatores que o Google usa para ranquear seu site](/blog/como-melhorar-o-ranking-do-seu-site-no-google-dicas-praticas/) e acompanhar o progresso com [ferramentas gratuitas de monitoramento de SEO](/blog/como-monitorar-desempenho-seo-seu-site-ferramentas-gratuitas/).
 
 **Está pronto para deixar seus concorrentes para trás nas buscas?** [Clique aqui para solicitar uma auditoria completa do seu site](/seo-audity-free/) e descubra exatamente o que você precisa fazer para superar a concorrência nos resultados de busca.

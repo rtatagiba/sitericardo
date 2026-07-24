@@ -9,7 +9,7 @@ A Meta revelou um sistema inovador de inteligência artificial capaz de transfor
 
 ### Um Avanço na Comunicação Cérebro-Computador
 
-Desenvolvido em parceria com o Centro Basco de Cognição, Cérebro e Linguagem (BCBL), o estudo envolveu 35 voluntários. Utilizando magnetoencefalografia (MEG) e eletroencefalografia (EEG), os pesquisadores registraram a atividade cerebral enquanto os participantes digitavam frases. Com base nesses dados, um modelo de IA foi treinado para reconstruir as frases apenas a partir dos sinais cerebrais, atingindo uma precisão de até 80% na decodificação de caracteres capturados via MEG — o dobro do desempenho de sistemas tradicionais baseados em EEG.
+Desenvolvido em parceria com o [Centro Basco de Cognição, Cérebro e Linguagem (BCBL)](https://www.bcbl.eu/en), o [estudo](https://arxiv.org/html/2502.17480v1) envolveu 35 voluntários. Utilizando magnetoencefalografia (MEG) e eletroencefalografia (EEG), os pesquisadores registraram a atividade cerebral enquanto os participantes digitavam frases. Com base nesses dados, um modelo de IA foi treinado para reconstruir as frases apenas a partir dos sinais cerebrais, atingindo uma precisão de até 80% na decodificação de caracteres capturados via MEG — o dobro do desempenho de sistemas tradicionais baseados em EEG.
 
 Esse avanço se baseia em pesquisas anteriores da Meta sobre decodificação de imagens e fala a partir da atividade cerebral, expandindo agora para a geração de frases completas. O potencial dessa tecnologia abre novas perspectivas para interfaces cérebro-computador não invasivas, podendo beneficiar pessoas com deficiências na comunicação.
 
@@ -35,3 +35,7 @@ Apesar de ser um avanço promissor, a tecnologia enfrenta desafios significativo
 Embora ainda esteja longe do uso prático, o Brain2Qwerty representa um passo importante para a comunicação neural. No futuro, a evolução dessa tecnologia poderá proporcionar avanços na neurociência e no desenvolvimento de dispositivos assistivos para pessoas com limitações motoras ou dificuldades de fala.
 
 A Meta segue investindo no aprimoramento dessa interface, indicando que a fusão entre inteligência artificial e neurociência poderá redefinir a interação humano-computador nas próximas décadas. Se esses desafios forem superados, a conversão de pensamentos em texto poderá se tornar uma realidade cotidiana, revolucionando a forma como nos comunicamos e interagimos com a tecnologia.
+
+**Atualização:** em 2026 a Meta [anunciou o Brain2Qwerty v2](https://ai.meta.com/blog/brain2qwerty-brain-ai-human-communication/), com precisão média de 61% (chegando a 78% no melhor participante) e treinado com cerca de 22 mil frases — uma evolução direta do sistema descrito acima.
+
+Assim como o Brain2Qwerty depende de um modelo de deep learning para traduzir sinais cerebrais em significado, os motores de busca hoje dependem de modelos semelhantes — vetores e embeddings — para traduzir a intenção por trás de uma consulta em significado. Para entender como essa mudança está impactando o SEO, veja [a mudança para o SEO semântico e o que os vetores significam para sua estratégia](/blog/a-mudanca-para-o-seo-semantico-o-que-os-vetores-significam-para-sua-estrategia/).

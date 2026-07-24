@@ -32,7 +32,7 @@ As tags de título e meta descrições são importantes por três razões princi
 3.  **Definem a primeira impressão**: Antes mesmo de um visitante conhecer seu site, ele forma uma impressão baseada nestas pequenas porções de texto.
     
 
-Um estudo da Sistrix mostrou que os primeiros resultados orgânicos do Google têm um CTR médio de 28,5%. Este número cai drasticamente para 2,5% na décima posição. Mesmo estando bem posicionado, um título ou descrição fracos podem diminuir significativamente suas chances de receber cliques.
+Um [estudo da Sistrix](https://www.sistrix.com/) mostrou que os primeiros resultados orgânicos do Google têm um CTR médio de 28,5%. Este número cai drasticamente para 2,5% na décima posição. Mesmo estando bem posicionado, um título ou descrição fracos podem diminuir significativamente suas chances de receber cliques.
 
 ### Como escrever metadescrições eficazes e tags de título?
 
@@ -68,7 +68,7 @@ Um estudo da Sistrix mostrou que os primeiros resultados orgânicos do Google t�
 
 Embora tecnicamente não haja um limite de caracteres para as tags de título, o Google geralmente exibe apenas 50-60 caracteres nos resultados de busca de desktop e ainda menos em dispositivos móveis.
 
-Estudos da Moz indicam que títulos com 50-60 caracteres têm maior chance de serem exibidos completamente. No entanto, o Google não corta exatamente por número de caracteres, mas sim por pixels — aproximadamente 600 pixels de largura.
+Estudos da Moz indicam que títulos com 50-60 caracteres têm maior chance de serem exibidos completamente. No entanto, o Google não corta exatamente por número de caracteres, mas sim por pixels — aproximadamente 600 pixels de largura. Um [estudo mais recente com 81 mil títulos](/blog/title-tag-ideal-tem-de-50-a-60-caracteres-diz-estudo-com-81-mil-titulos/) confirma essa faixa e cruza o tamanho do título com dados reais de tráfego do Google.
 
 Letras maiúsculas e certos caracteres ocupam mais espaço, então um título com muitas letras maiúsculas poderá ser cortado antes dos 60 caracteres.
 
@@ -188,6 +188,8 @@ Estas ferramentas não substituem o julgamento humano, mas fornecem insights val
 Em um mundo onde cada segundo conta e a atenção é o bem mais escasso, estas pequenas porções de texto são os embaixadores do seu conteúdo. Invista tempo nelas. Refine-as. Teste-as. Os resultados compensarão o esforço.
 
 Como Ogilvy sempre insistiu: “Não conte. Venda.” Suas tags de título e meta descrições não devem apenas descrever seu conteúdo, mas vendê-lo de maneira irresistível.
+
+Um bom título é só a porta de entrada — depois do clique, é o [conteúdo em si que precisa converter](/blog/como-criar-conteudo-seo-friendly-que-converte/). E lembre-se: CTR mais alto é apenas um dos [muitos fatores que o Google considera no ranking](/blog/como-melhorar-o-ranking-do-seu-site-no-google-dicas-praticas/).
 
 ---
 

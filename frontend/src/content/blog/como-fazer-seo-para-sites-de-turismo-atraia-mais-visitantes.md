@@ -53,7 +53,7 @@ O Google não apenas entende idiomas diferentes — compreende nuances culturais
 
 ### Hreflang: Além da Tradução Básica
 
-[Implementar corretamente as tags hreflang](/como-fazer-seo-para-hoteis-na-nova-era-da-ia/) é apenas o começo. Um estudo da SEMrush mostrou que 75% dos sites multilíngues apresentam erros na implementação destas tags, comprometendo sua visibilidade internacional.
+[Implementar corretamente as tags hreflang](/blog/como-fazer-seo-para-hoteis-na-nova-era-da-ia/) é apenas o começo. Um estudo da SEMrush mostrou que 75% dos sites multilíngues apresentam erros na implementação destas tags, comprometendo sua visibilidade internacional.
 
 ### Adaptação Cultural do Conteúdo
 
@@ -95,7 +95,7 @@ O ecossistema digital do turismo é dominado por gigantes que definem padrões d
 
 ### Como os Agentes de IA Estão Transformando as Buscas
 
-Os agentes de IA, como ChatGPT, Claude e Bard, estão reconfigurando a jornada de descoberta de viagens:
+Os agentes de IA, como ChatGPT, Claude e Bard, estão reconfigurando a jornada de descoberta de viagens — veja nosso [guia de AEO/GEO](/blog/como-aparecer-no-chatgpt-guia-aeo-geo/) para entender como aparecer citado nessas respostas:
 
 1.  **Resposta Direta vs. Tráfego Referido**: O New York Times reportou que 65% das buscas por “melhor época para visitar Japão” agora são respondidas diretamente por agentes de IA, sem necessidade de clique adicional.
     
@@ -140,7 +140,7 @@ Empresas como a Hopper estão desenvolvendo assistentes virtuais que não apenas
 
 ### Conclusão: A Nova Era do SEO Turístico
 
-O SEO para turismo transcendeu a simples [otimização de palavras-chave](/como-escolher-as-melhores-palavras-chave-para-seu-negocio-local/) e [meta descrições](/como-escrever-titulos-e-meta-descricoes-que-aumentam-o-ctr/). Hoje, é uma ciência de comportamento humano, adaptação cultural e preparação tecnológica.
+O SEO para turismo transcendeu a simples [otimização de palavras-chave](/blog/como-escolher-as-melhores-palavras-chave-para-seu-negocio-local/) e [meta descrições](/blog/como-escrever-titulos-e-meta-descricoes-que-aumentam-o-ctr/). Hoje, é uma ciência de comportamento humano, adaptação cultural e preparação tecnológica. Os mesmos princípios se aplicam diretamente ao [SEO para hotéis](/blog/como-fazer-seo-para-hoteis-na-nova-era-da-ia/).
 
 A pergunta não é mais “Como posso rankear melhor?”, mas “Como posso resolver o problema do viajante de forma tão completa que ele não precise voltar ao Google?”
 

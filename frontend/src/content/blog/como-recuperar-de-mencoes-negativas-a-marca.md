@@ -11,7 +11,7 @@ Neste artigo, vamos explorar como identificar, reparar e recuperar de menções 
 
 ## Como Menções Negativas Afetam sua Visibilidade
 
-Menções negativas não só prejudicam a imagem da sua empresa, mas também podem afetar seu [desempenho nas buscas.](/como-fazer-seo-para-pequenas-empresas-um-guia-completo/) Quando potenciais clientes em São Paulo, Rio de Janeiro ou qualquer outra cidade brasileira pesquisam por sua marca, o que eles encontram? Resenhas positivas ou um mar de reclamações?
+Menções negativas não só prejudicam a imagem da sua empresa, mas também podem afetar seu [desempenho nas buscas.](/blog/como-fazer-seo-para-pequenas-empresas-um-guia-completo/) Quando potenciais clientes em São Paulo, Rio de Janeiro ou qualquer outra cidade brasileira pesquisam por sua marca, o que eles encontram? Resenhas positivas ou um mar de reclamações?
 
 Os algoritmos de busca estão cada vez mais avançados em compreender o sentimento por trás das menções à sua marca, o que pode influenciar seu posicionamento nos resultados de pesquisa.
 
@@ -21,7 +21,7 @@ Os algoritmos de busca estão cada vez mais avançados em compreender o sentimen
 
 O primeiro passo para gerenciar sua reputação online é saber onde e como sua marca está sendo mencionada. Ferramentas como [RD Station](https://www.rdstation.com/), [Buzzmonitor](https://getbuzzmonitor.com/en/) e outras plataformas brasileiras de monitoramento podem ajudar a rastrear menções à sua marca em:
 
--   Sites de avaliação como Reclame Aqui
+-   Sites de avaliação como [Reclame Aqui](https://www.reclameaqui.com.br/)
 -   Redes sociais
 -   Blogs e fóruns
 -   Sites de notícias
@@ -56,7 +56,7 @@ Parcerias com influenciadores respeitados em Curitiba, Belo Horizonte ou outras 
 
 ### 4\. Otimizar Seus Perfis e Propriedades Digitais
 
-Certifique-se de que seus perfis em redes sociais, [Google Meu Negócio](/como-escolher-as-melhores-palavras-chave-para-seu-negocio-local/) e diretórios estejam completamente otimizados. Isso inclui:
+Certifique-se de que seus perfis em redes sociais, [Google Meu Negócio](https://support.google.com/business/answer/7039811?hl=pt-BR) e diretórios estejam completamente otimizados — veja também nosso guia de [palavras-chave para negócio local](/blog/como-escolher-as-melhores-palavras-chave-para-seu-negocio-local/). Isso inclui:
 
 -   Informações precisas e atualizadas
 -   Fotos profissionais
@@ -88,6 +88,6 @@ Prepare sua equipe para responder adequadamente a críticas. Uma resposta inadeq
 
 ## Conclusão: Construindo uma Reputação Online Resiliente
 
-Gerenciar menções negativas à marca é um processo contínuo que requer atenção constante, mas os [benefícios para sua estratégia de SEO](/o-poder-do-schema-org-para-empresas-de-servicos-um-guia-completo-para-o-seo-local/) e imagem de marca são imensuráveis. Ao implementar as estratégias deste artigo, você estará preparado não apenas para recuperar-se de menções negativas, mas também para construir uma presença online que resista a futuras crises.
+Gerenciar menções negativas à marca é um processo contínuo que requer atenção constante, mas os [benefícios para sua estratégia de SEO](/blog/o-poder-do-schema-org-para-empresas-de-servicos-um-guia-completo-para-o-seo-local/) e imagem de marca são imensuráveis. Ao implementar as estratégias deste artigo, você estará preparado não apenas para recuperar-se de menções negativas, mas também para construir uma presença online que resista a futuras crises.
 
-Lembre-se: transparência, autenticidade e prontidão para resolver problemas são seus maiores aliados na [construção de uma reputação online positiva e duradoura](/a-mudanca-para-o-seo-semantico-o-que-os-vetores-significam-para-sua-estrategia/).
+Lembre-se: transparência, autenticidade e prontidão para resolver problemas são seus maiores aliados na [construção de uma reputação online positiva e duradoura](/blog/a-mudanca-para-o-seo-semantico-o-que-os-vetores-significam-para-sua-estrategia/) — e no [Share of Search da sua marca](/blog/como-medir-o-share-of-search-o-gps-da-sua-relevancia-no-mercado-digital/), que reflete diretamente a percepção do público sobre ela.
