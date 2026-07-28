@@ -150,7 +150,7 @@ Se você produz conteúdo, gere uma marca ou trabalha com SEO e marketing digita
 
 O documento do Google não foi escrito para profissionais de SEO. Mas contém, nas entrelinhas, a confirmação mais clara já publicada de que a lógica da visibilidade digital mudou.
 
-O tráfego orgânico do futuro não vem de palavras-chave ranqueadas,vem de ser a entidade que os modelos de linguagem usam para ancorar as suas respostas.
+O tráfego orgânico do futuro não vem de palavras-chave ranqueadas,vem de ser a entidade que os modelos de linguagem usam para ancorar as suas respostas. Vale notar que essa reorganização da SERP em torno de IA não é uma guerra do Google contra o tráfego orgânico: é consequência de [como a receita de busca é estruturada em quatro alavancas](/blog/quatro-alavancas-receita-busca-google/), e a Visão Geral de IA é hoje a principal delas em movimento.
 
 A IA só vai usar os seus dados se a sua marca for irrefutável. E construir essa irrefutabilidade,com consistência, autoridade e atualização constante,é exatamente o trabalho do GEO.
 
