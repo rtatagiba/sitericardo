@@ -1,0 +1,35 @@
+---
+// Vídeo de motion mostrando a criação de um site.
+---
+
+<div class="visual" aria-hidden="true">
+  <video
+    class="site-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+  >
+    <source src="/videos/motion-do-site.mp4" type="video/mp4" />
+  </video>
+</div>
+
+<style>
+  .visual {
+    position: relative;
+    width: 100%;
+    min-height: 22rem;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .site-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>

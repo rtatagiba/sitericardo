@@ -1,0 +1,176 @@
+---
+// Mockup de um relatório de auditoria: anel de score + checklist de achados.
+---
+
+<div class="visual" aria-hidden="true">
+  <div class="report">
+    <div class="report-head">
+      <div class="score-ring">
+        <span class="score-value">94</span>
+      </div>
+      <div>
+        <span class="score-label">Score geral</span>
+        <span class="score-before">era 68</span>
+      </div>
+    </div>
+
+    <ul class="checklist">
+      <li class="ok"><span class="mark">✓</span> Core Web Vitals</li>
+      <li class="ok"><span class="mark">✓</span> Indexação</li>
+      <li class="warn"><span class="mark">!</span> Dados estruturados (schema)</li>
+      <li class="warn"><span class="mark">!</span> 12 links quebrados</li>
+    </ul>
+  </div>
+
+  <div class="float-card card-issues">
+    <strong>27</strong>
+    <small>Pontos corrigidos</small>
+  </div>
+</div>
+
+<style>
+  .visual {
+    position: relative;
+    width: 100%;
+    min-height: 22rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 2rem;
+  }
+
+  .report {
+    width: 100%;
+    max-width: 22rem;
+    background: #0a1a10;
+    border: 1px solid rgba(52, 216, 116, 0.18);
+    border-radius: 0.9rem;
+    padding: 1.3rem 1.3rem 1.4rem;
+    box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6);
+  }
+
+  .report-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 1.1rem;
+    margin-bottom: 1.1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .score-ring {
+    flex-shrink: 0;
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: 999px;
+    background: conic-gradient(#34d874 0 94%, rgba(255, 255, 255, 0.08) 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .score-ring::before {
+    content: "";
+    position: absolute;
+  }
+  .score-value {
+    width: 2.7rem;
+    height: 2.7rem;
+    border-radius: 999px;
+    background: #0a1a10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #f0f0f0;
+  }
+
+  .score-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #d4d4d4;
+  }
+  .score-before {
+    display: block;
+    font-size: 0.7rem;
+    color: rgba(212, 212, 212, 0.45);
+    text-decoration: line-through;
+  }
+
+  .checklist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+  .checklist li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.8rem;
+    color: rgba(212, 212, 212, 0.85);
+  }
+
+  .mark {
+    flex-shrink: 0;
+    width: 1.1rem;
+    height: 1.1rem;
+    border-radius: 0.35rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 700;
+  }
+  .ok .mark {
+    background: rgba(52, 216, 116, 0.18);
+    color: #34d874;
+  }
+  .warn .mark {
+    background: rgba(232, 168, 85, 0.18);
+    color: #e8a855;
+  }
+
+  .float-card {
+    position: absolute;
+    top: 1.4rem;
+    right: 0.8rem;
+    background: rgba(10, 20, 14, 0.92);
+    border: 1px solid rgba(52, 216, 116, 0.3);
+    border-radius: 0.8rem;
+    padding: 0.55rem 0.85rem;
+    box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    animation: float-in 0.4s ease-out 100ms backwards;
+  }
+  .float-card strong {
+    display: block;
+    color: #f0f0f0;
+    font-size: 0.9rem;
+    line-height: 1.1;
+  }
+  .float-card small {
+    color: rgba(212, 212, 212, 0.6);
+    font-size: 0.66rem;
+  }
+
+  @keyframes float-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .float-card {
+      animation: none;
+    }
+  }
+</style>

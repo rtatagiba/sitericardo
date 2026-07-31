@@ -1,0 +1,158 @@
+---
+// Mockup de um fluxo de automação: 4 nós ligados, com um pulso a percorrer as linhas.
+---
+
+<div class="visual" aria-hidden="true">
+  <div class="flow">
+    <svg class="flow-lines" viewBox="0 0 320 220" fill="none" preserveAspectRatio="none">
+      <path class="line-path" d="M55 40 L55 100 L160 100 L160 40" />
+      <path class="line-path" d="M160 100 L160 160 L265 160 L265 100" />
+      <circle class="pulse" r="4" />
+    </svg>
+
+    <div class="node node-a">
+      <span class="node-label">Formulário</span>
+    </div>
+    <div class="node node-b">
+      <span class="node-label">IA qualifica</span>
+    </div>
+    <div class="node node-c">
+      <span class="node-label">CRM</span>
+    </div>
+    <div class="node node-d">
+      <span class="node-label">WhatsApp</span>
+    </div>
+  </div>
+
+  <div class="float-card card-hours">
+    <strong>12h/semana</strong>
+    <small>Poupadas em tarefas manuais</small>
+  </div>
+</div>
+
+<style>
+  .visual {
+    position: relative;
+    width: 100%;
+    min-height: 22rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .flow {
+    position: relative;
+    width: 100%;
+    max-width: 22rem;
+    aspect-ratio: 320 / 220;
+  }
+
+  .flow-lines {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .line-path {
+    stroke: rgba(52, 216, 116, 0.28);
+    stroke-width: 2;
+  }
+
+  .pulse {
+    fill: #34d874;
+    offset-path: path("M55 40 L55 100 L160 100 L160 160 L265 160 L265 100 L160 100 L160 40");
+    animation: travel 3.2s linear infinite;
+    filter: drop-shadow(0 0 4px rgba(52, 216, 116, 0.8));
+  }
+  @keyframes travel {
+    from {
+      offset-distance: 0%;
+    }
+    to {
+      offset-distance: 100%;
+    }
+  }
+
+  .node {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0.85rem;
+    border-radius: 0.7rem;
+    background: rgba(10, 20, 14, 0.95);
+    border: 1px solid rgba(52, 216, 116, 0.35);
+    box-shadow: 0 10px 24px -8px rgba(0, 0, 0, 0.55);
+    transform: translate(-50%, -50%);
+  }
+  .node-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #d4d4d4;
+    white-space: nowrap;
+  }
+
+  .node-a {
+    left: 17%;
+    top: 18%;
+  }
+  .node-b {
+    left: 50%;
+    top: 45%;
+  }
+  .node-c {
+    left: 83%;
+    top: 45%;
+  }
+  .node-d {
+    left: 83%;
+    top: 73%;
+  }
+
+  .float-card {
+    position: absolute;
+    bottom: 1.2rem;
+    left: 1rem;
+    background: rgba(10, 20, 14, 0.92);
+    border: 1px solid rgba(52, 216, 116, 0.3);
+    border-radius: 0.8rem;
+    padding: 0.55rem 0.9rem;
+    box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    animation: float-in 0.4s ease-out 140ms backwards;
+    max-width: 11rem;
+  }
+  .float-card strong {
+    display: block;
+    color: #f0f0f0;
+    font-size: 0.9rem;
+    line-height: 1.1;
+  }
+  .float-card small {
+    color: rgba(212, 212, 212, 0.6);
+    font-size: 0.66rem;
+  }
+
+  @keyframes float-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pulse {
+      animation: none;
+      offset-distance: 0%;
+    }
+    .float-card {
+      animation: none;
+    }
+  }
+</style>

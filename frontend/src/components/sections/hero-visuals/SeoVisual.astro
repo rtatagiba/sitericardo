@@ -1,0 +1,212 @@
+---
+// Mockup de uma página de resultados de busca com o site em #1 + gráfico de tráfego.
+---
+
+<div class="visual" aria-hidden="true">
+  <div class="serp">
+    <div class="serp-search">
+      <span class="serp-search-icon">⌕</span>
+      <span class="serp-search-text">consultor seo lisboa</span>
+    </div>
+
+    <div class="result result-1">
+      <span class="badge-1">1</span>
+      <div>
+        <span class="result-url">ricardotatagiba.com.br</span>
+        <span class="result-title">Ricardo Tatagiba — Consultor SEO</span>
+      </div>
+    </div>
+
+    <div class="result result-muted">
+      <div>
+        <span class="result-url dim">concorrente-a.com.br</span>
+        <span class="result-title dim"></span>
+      </div>
+    </div>
+
+    <div class="result result-muted">
+      <div>
+        <span class="result-url dim">concorrente-b.com.br</span>
+        <span class="result-title dim"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="float-card card-rank">
+    <strong>Posição #1</strong>
+    <small>"consultor seo lisboa"</small>
+  </div>
+
+  <div class="float-card card-chart">
+    <svg class="mini-chart" viewBox="0 0 80 32" fill="none">
+      <path
+        d="M2 28 L16 24 L30 25 L44 14 L58 16 L78 4"
+        stroke="#34d874"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      ></path>
+    </svg>
+    <div>
+      <strong>+184%</strong>
+      <small>Tráfego orgânico</small>
+    </div>
+  </div>
+</div>
+
+<style>
+  .visual {
+    position: relative;
+    width: 100%;
+    min-height: 22rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 2rem;
+  }
+
+  .serp {
+    width: 100%;
+    max-width: 24rem;
+    background: #0a1a10;
+    border: 1px solid rgba(52, 216, 116, 0.18);
+    border-radius: 0.9rem;
+    padding: 1.1rem 1.1rem 1.3rem;
+    box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6);
+  }
+
+  .serp-search {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 999px;
+    padding: 0.5rem 0.9rem;
+    margin-bottom: 1rem;
+  }
+  .serp-search-icon {
+    color: rgba(212, 212, 212, 0.5);
+    font-size: 0.85rem;
+  }
+  .serp-search-text {
+    font-size: 0.78rem;
+    color: rgba(212, 212, 212, 0.75);
+  }
+
+  .result {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .result:last-child {
+    border-bottom: none;
+  }
+
+  .badge-1 {
+    flex-shrink: 0;
+    width: 1.35rem;
+    height: 1.35rem;
+    border-radius: 999px;
+    background: #34d874;
+    color: #04120a;
+    font-size: 0.72rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.1rem;
+  }
+
+  .result-1 {
+    background: rgba(52, 216, 116, 0.08);
+    border-radius: 0.6rem;
+    padding: 0.65rem 0.6rem;
+    border-bottom: none;
+  }
+
+  .result-url {
+    display: block;
+    font-size: 0.68rem;
+    color: #7fd9a0;
+    margin-bottom: 0.15rem;
+  }
+  .result-title {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #f0f0f0;
+  }
+
+  .result-muted {
+    padding-left: 2rem;
+  }
+  .dim {
+    opacity: 0.35;
+  }
+  .result-title.dim {
+    height: 0.6rem;
+    width: 70%;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 999px;
+  }
+
+  .float-card {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(10, 20, 14, 0.92);
+    border: 1px solid rgba(52, 216, 116, 0.3);
+    border-radius: 0.8rem;
+    padding: 0.55rem 0.85rem;
+    box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    animation: float-in 0.4s ease-out backwards;
+  }
+  .float-card strong {
+    display: block;
+    color: #f0f0f0;
+    font-size: 0.9rem;
+    line-height: 1.1;
+  }
+  .float-card small {
+    color: rgba(212, 212, 212, 0.6);
+    font-size: 0.66rem;
+  }
+
+  .card-rank {
+    top: 1.2rem;
+    right: 0.5rem;
+    animation-delay: 60ms;
+  }
+  .card-chart {
+    bottom: 1.5rem;
+    left: 0.5rem;
+    animation-delay: 140ms;
+  }
+
+  .mini-chart {
+    width: 2.6rem;
+    height: 1.6rem;
+    flex-shrink: 0;
+  }
+
+  @keyframes float-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .float-card {
+      animation: none;
+    }
+  }
+</style>

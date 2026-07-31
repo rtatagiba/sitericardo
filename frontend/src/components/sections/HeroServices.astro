@@ -1,0 +1,554 @@
+---
+// Hero da home: painel de seleção de serviços (esquerda) + visual que troca
+// conforme o serviço escolhido (direita). Ver plano em
+// C:\Users\ricar\.claude\plans\quero-cmudar-a-home-elegant-taco.md
+import { services, defaultServiceId, type ServiceId } from "../../data/services";
+import { bookingUrl } from "../../lib/booking";
+import SiteVisual from "./hero-visuals/SiteVisual.astro";
+import AiVisual from "./hero-visuals/AiVisual.astro";
+import AutomacoesVisual from "./hero-visuals/AutomacoesVisual.astro";
+import SeoVisual from "./hero-visuals/SeoVisual.astro";
+import AuditoriaVisual from "./hero-visuals/AuditoriaVisual.astro";
+
+const visualComponents: Record<ServiceId, any> = {
+  sites: SiteVisual,
+  ia: AiVisual,
+  automacoes: AutomacoesVisual,
+  seo: SeoVisual,
+  auditoria: AuditoriaVisual,
+};
+
+const defaultService = services.find((s) => s.id === defaultServiceId)!;
+---
+
+<section class="hero-services" aria-labelledby="hero-services-title">
+  <div class="hero-services-inner">
+    <div class="hero-panel">
+      <h1 id="hero-services-title" class="hero-title">
+        Sites, IA e SEO.<br />Tudo num só lugar.
+      </h1>
+      <p class="hero-sub">
+        Consultor com mais de 12 anos de experiência, a construir, automatizar
+        e ranquear negócios no Google e nas IAs.
+      </p>
+
+      <p id="hero-picker-label" class="hero-picker-label">
+        O que gostarias de fazer?
+      </p>
+      <div class="hero-picker" role="radiogroup" aria-labelledby="hero-picker-label">
+        {
+          services.map((service) => {
+            const active = service.id === defaultServiceId;
+            return (
+              <button
+                type="button"
+                role="radio"
+                data-service={service.id}
+                aria-checked={active ? "true" : "false"}
+                tabindex={active ? 0 : -1}
+                class={`hero-box ${active ? "is-active" : ""}`}
+              >
+                <span class="box-check" aria-hidden="true" />
+                <span data-label>{service.label}</span>
+              </button>
+            );
+          })
+        }
+      </div>
+
+      <a
+        id="hero-cta"
+        href={bookingUrl(defaultService.label)}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hero-cta"
+      >
+        Agendar reunião
+      </a>
+
+      <ul class="hero-proof">
+        <li>+300 sites criados</li>
+        <li>12+ anos de experiência</li>
+        <li>Lisboa, Portugal</li>
+      </ul>
+    </div>
+
+    <div class="hero-stage">
+      {
+        services.map((service) => {
+          const Visual = visualComponents[service.id];
+          const active = service.id === defaultServiceId;
+          return (
+            <div class="stage-panel" data-panel={service.id} hidden={!active}>
+              <Visual />
+              <div class="stage-caption">
+                <h2>{service.headline}</h2>
+                <p>{service.desc}</p>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Navbar é sticky com h-16 (4rem); a hero ocupa o resto da primeira dobra. */
+  .hero-services {
+    padding: 1rem 1rem 2rem;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-services {
+      /* 50px de margem lateral fixa + respiro maior embaixo antes da 2ª dobra. */
+      padding: 1.25rem 50px 3rem;
+    }
+  }
+
+  /* Mobile: só o painel de opções aparece, com altura natural (sem cortes). */
+  .hero-services-inner {
+    max-width: 80rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* Desktop: os dois widgets voltam, lado a lado, preenchendo a dobra inteira. */
+  @media (min-width: 1024px) {
+    .hero-services-inner {
+      max-width: none;
+      height: calc(100vh - 8.25rem);
+      height: calc(100dvh - 8.25rem);
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      align-items: stretch;
+      gap: 2rem;
+    }
+  }
+
+  .hero-panel {
+    position: relative;
+    border-radius: 1.5rem;
+    border: 1px solid #14532d;
+    background: linear-gradient(155deg, #071a11 0%, #0b2a1b 55%, #04100a 100%);
+    padding: clamp(1.1rem, 3vw, 3rem);
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow-y: auto;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-panel {
+      /* Respiro pedido: mais espaço em cima e à direita do que à esquerda. */
+      padding: 200px 150px 1.5rem 50px;
+    }
+  }
+
+  .hero-title {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: clamp(2.1rem, 4.2vw, 3.5rem);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+    margin: 0 0 1rem;
+  }
+
+  .hero-sub {
+    color: rgba(212, 212, 212, 0.85);
+    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+    line-height: 1.6;
+    max-width: 32rem;
+    margin: 0 0 2rem;
+  }
+
+  .hero-picker-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #7fd9a0;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin: 0 0 0.9rem;
+  }
+
+  /* Grid de 6 colunas: as 2 primeiras opções ocupam metade cada (span 3),
+     as 3 seguintes dividem o resto (span 2) — mesma assimetria do widget
+     de referência, sem precisar de classes extra no markup. */
+  .hero-picker {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 0.65rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-box:nth-child(1),
+  .hero-box:nth-child(2) {
+    grid-column: span 3;
+  }
+
+  .hero-box:nth-child(n + 3) {
+    grid-column: span 2;
+  }
+
+  .hero-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    text-align: left;
+    padding: 1rem 1.1rem;
+    border-radius: 0.85rem;
+    border: 1px solid #14532d;
+    background: rgba(255, 255, 255, 0.04);
+    color: #d4d4d4;
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.3;
+    cursor: pointer;
+    transition:
+      border-color 150ms ease,
+      background-color 150ms ease,
+      transform 150ms ease,
+      color 150ms ease;
+  }
+
+  .hero-box:hover {
+    border-color: rgba(127, 217, 160, 0.6);
+    transform: translateY(-1px);
+  }
+
+  .hero-box:focus-visible {
+    outline: 2px solid #34d874;
+    outline-offset: 2px;
+  }
+
+  .hero-box.is-active {
+    border-color: #34d874;
+    background: rgba(52, 216, 116, 0.12);
+    color: #ffffff;
+  }
+
+  .box-check {
+    flex-shrink: 0;
+    width: 1.05rem;
+    height: 1.05rem;
+    border-radius: 0.3rem;
+    border: 1.5px solid rgba(212, 212, 212, 0.4);
+    position: relative;
+    transition: all 150ms ease;
+  }
+
+  .hero-box.is-active .box-check {
+    background: #34d874;
+    border-color: #34d874;
+  }
+
+  .hero-box.is-active .box-check::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 42%;
+    width: 0.3rem;
+    height: 0.55rem;
+    border-right: 2px solid #04120a;
+    border-bottom: 2px solid #04120a;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  .hero-cta {
+    display: block;
+    align-self: stretch;
+    text-align: center;
+    background: #34d874;
+    color: #000000;
+    font-weight: 600;
+    padding: 0.95rem 2.2rem;
+    border-radius: 999px;
+    transition: background-color 150ms ease;
+    margin-bottom: 1.75rem;
+  }
+  .hero-cta:hover {
+    background: #1fae5c;
+  }
+
+  .hero-proof {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
+    list-style: none;
+    padding: 1.25rem 0 0;
+    margin: auto 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: rgba(212, 212, 212, 0.6);
+    font-size: 0.78rem;
+  }
+
+  /* Visual da direita só entra a partir do desktop; no mobile fica só o painel. */
+  .hero-stage {
+    display: none;
+    position: relative;
+    border-radius: 1.5rem;
+    border: 1px solid #14532d;
+    background: #050a07;
+    overflow: hidden;
+    min-height: 0;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-stage {
+      display: flex;
+    }
+  }
+
+  .stage-panel {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    animation: stage-in 260ms ease-out;
+  }
+
+  @keyframes stage-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .stage-caption {
+    padding: 0 clamp(1.5rem, 4vw, 2.5rem) clamp(1.5rem, 4vw, 2.5rem);
+    margin-top: auto;
+  }
+
+  .stage-caption h2 {
+    color: #ffffff;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0 0 0.4rem;
+  }
+
+  .stage-caption p {
+    color: rgba(212, 212, 212, 0.7);
+    font-size: 0.85rem;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* Com o respiro de 200px no topo e 150px à direita, a altura útil do
+     painel encolhe — aperta-se as margens internas na mesma proporção
+     para o CTA e a prova social continuarem visíveis sem scroll. */
+  @media (min-width: 1024px) {
+    .hero-title {
+      font-size: clamp(2rem, 3vw, 2.75rem);
+      margin-bottom: 0.65rem;
+    }
+
+    .hero-sub {
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-picker-label {
+      margin-bottom: 0.55rem;
+    }
+
+    .hero-picker {
+      margin-bottom: 1rem;
+    }
+
+    .hero-box {
+      padding: 0.7rem 0.85rem;
+      gap: 0.5rem;
+    }
+
+    .hero-cta {
+      padding: 0.75rem 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-proof {
+      padding-top: 0.85rem;
+    }
+  }
+
+  /* Laptops mais baixos (ex: 1366×768): o mesmo respiro de 200px sobra menos
+     altura útil, então aperta-se mais uma vez para caber sem cortar o CTA. */
+  @media (min-width: 1024px) and (max-height: 820px) {
+    .hero-title {
+      font-size: clamp(1.7rem, 2.4vw, 2.15rem);
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-sub {
+      font-size: 0.85rem;
+      line-height: 1.45;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-picker-label {
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-picker {
+      gap: 0.5rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-box {
+      padding: 0.55rem 0.7rem;
+      gap: 0.35rem;
+      font-size: 0.78rem;
+    }
+
+    .hero-cta {
+      padding: 0.6rem 2rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-proof {
+      padding-top: 0.5rem;
+      font-size: 0.72rem;
+    }
+  }
+
+  /* Abaixo de 1024px só o painel de opções aparece; versão compacta do conteúdo. */
+  @media (max-width: 1023px) {
+    .hero-panel {
+      padding: 0.85rem 1rem;
+    }
+
+    .hero-title {
+      font-size: clamp(1.4rem, 6.5vw, 2.1rem);
+      line-height: 1.12;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-sub {
+      font-size: 0.78rem;
+      line-height: 1.4;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-picker-label {
+      font-size: 0.68rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-picker {
+      gap: 0.4rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-box {
+      padding: 0.55rem 0.6rem;
+      gap: 0.35rem;
+      font-size: 0.68rem;
+      border-radius: 0.6rem;
+    }
+
+    .box-check {
+      width: 0.85rem;
+      height: 0.85rem;
+    }
+
+    .hero-cta {
+      padding: 0.6rem 1.4rem;
+      margin-bottom: 0.6rem;
+      font-size: 0.85rem;
+    }
+
+    .hero-proof {
+      padding-top: 0.6rem;
+      gap: 0.3rem 0.85rem;
+      font-size: 0.65rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .stage-panel,
+    .hero-box {
+      animation: none;
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  import { bookingUrl } from "../../lib/booking";
+
+  // Componente é único na página (hero da home), por isso consulta o documento inteiro.
+  const radios = Array.from(
+    document.querySelectorAll<HTMLButtonElement>('[role="radio"][data-service]'),
+  );
+  const panels = Array.from(
+    document.querySelectorAll<HTMLElement>("[data-panel]"),
+  );
+  const cta = document.querySelector<HTMLAnchorElement>("#hero-cta");
+
+  declare global {
+    interface Window {
+      dataLayer?: unknown[];
+    }
+  }
+
+  function labelFor(id: string): string {
+    const radio = radios.find((r) => r.dataset.service === id);
+    return radio?.querySelector("[data-label]")?.textContent?.trim() ?? "";
+  }
+
+  function select(id: string, opts: { focus?: boolean } = {}): void {
+    radios.forEach((r) => {
+      const active = r.dataset.service === id;
+      r.setAttribute("aria-checked", String(active));
+      r.tabIndex = active ? 0 : -1;
+      r.classList.toggle("is-active", active);
+      if (active && opts.focus) r.focus();
+    });
+
+    panels.forEach((p) => {
+      p.hidden = p.dataset.panel !== id;
+    });
+
+    if (cta) cta.href = bookingUrl(labelFor(id));
+
+    window.dataLayer = window.dataLayer ?? [];
+    window.dataLayer.push({ event: "hero_service_select", service_id: id });
+  }
+
+  radios.forEach((radio, index) => {
+    radio.addEventListener("click", () => {
+      if (radio.dataset.service) select(radio.dataset.service);
+    });
+
+    radio.addEventListener("keydown", (e: KeyboardEvent) => {
+      let nextIndex: number | null = null;
+      if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+        nextIndex = (index + 1) % radios.length;
+      } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+        nextIndex = (index - 1 + radios.length) % radios.length;
+      } else if (e.key === "Home") {
+        nextIndex = 0;
+      } else if (e.key === "End") {
+        nextIndex = radios.length - 1;
+      }
+
+      if (nextIndex !== null) {
+        e.preventDefault();
+        const next = radios[nextIndex];
+        if (next?.dataset.service) select(next.dataset.service, { focus: true });
+      }
+    });
+  });
+
+  cta?.addEventListener("click", () => {
+    const activeId = radios.find(
+      (r) => r.getAttribute("aria-checked") === "true",
+    )?.dataset.service;
+    window.dataLayer = window.dataLayer ?? [];
+    window.dataLayer.push({ event: "hero_cta_click", service_id: activeId });
+  });
+</script>
