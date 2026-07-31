@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Hero from "../components/sections/Hero.astro";
+import HeroServices from "../components/sections/HeroServices.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 
@@ -13,78 +13,27 @@ const posts = (await getCollection("blog"))
 ---
 
 <BaseLayout
-  title="Ricardo Tatagiba — Consultor SEO Freelancer"
-  description="Consultor SEO Freelancer com mais de 10 anos de experiência. Ajudo empresas brasileiras a crescer no Google com estratégias de SEO e marketing digital eficazes."
+  title="Ricardo Tatagiba — Sites, IA, Automações e SEO"
+  description="Consultor freelancer com mais de 12 anos de experiência: criação de sites, implementação de IA, automações e SEO para o teu negócio crescer no Google."
 >
   <!-- Hero -->
-  <Hero />
-
-  <!-- Serviços -->
-  <section class="py-20 px-4 bg-black">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-4">O que eu faço</h2>
-      <p class="text-neutral-300 text-center mb-12 max-w-xl mx-auto">
-        Estratégias completas para aumentar sua visibilidade online e atrair
-        mais clientes.
-      </p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {
-          [
-            {
-              title: "SEO Técnico",
-              desc: "Auditoria completa e otimização técnica para melhorar indexação e velocidade.",
-            },
-            {
-              title: "SEO Local",
-              desc: "Domínio do Google Maps e resultados locais para atrair clientes da sua região.",
-            },
-            {
-              title: "Criação de Conteúdo",
-              desc: "Conteúdo otimizado que educa, converte e ranqueia no Google.",
-            },
-            {
-              title: "Google Ads",
-              desc: "Campanhas pagas com foco em conversão e redução do custo por lead.",
-            },
-            {
-              title: "Google My Business",
-              desc: "Otimização do perfil GMB para dominar buscas locais.",
-            },
-            {
-              title: "Automação com IA",
-              desc: "Processos inteligentes para escalar resultados com menos esforço manual.",
-            },
-          ].map(({ title, desc }) => (
-            <div class="bg-black rounded-xl p-6 shadow-sm border border-green-900 hover:shadow-md transition-shadow">
-              <h3 class="font-bold text-lg mb-2 text-primary">{title}</h3>
-              <p class="text-neutral-300 text-sm leading-relaxed">{desc}</p>
-            </div>
-          ))
-        }
-      </div>
-      <div class="text-center mt-10">
-        <a
-          href="/servicos"
-          class="inline-block bg-black border border-green-900 text-white font-semibold px-8 py-3 rounded-lg hover:bg-neutral-900 transition-colors"
-        >
-          Ver todos os serviços
-        </a>
-      </div>
-    </div>
-  </section>
+  <HeroServices />
 
   <!-- Blog recente -->
   {
     posts.length > 0 && (
-      <section class="py-20 px-4">
+      <section class="py-24 px-4">
         <div class="max-w-6xl mx-auto">
-          <h2 class="text-3xl font-bold mb-4">Artigos recentes</h2>
-          <p class="text-neutral-300 mb-12">
+          <p class="font-mono text-sm text-accent mb-3">// Últimos artigos</p>
+          <h2 class="font-display text-4xl md:text-5xl font-semibold text-primary mb-4 leading-tight">
+            Artigos recentes
+          </h2>
+          <p class="text-text-muted mb-14 max-w-xl">
             Conteúdo prático sobre SEO, marketing digital e visibilidade online.
           </p>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             {posts.map((post: CollectionEntry<"blog">) => (
-              <article class="border border-green-900 rounded-xl overflow-hidden hover:shadow-md transition-shadow">
+              <article class="border border-line rounded-lg overflow-hidden hover:border-accent transition-colors">
                 {post.data.image && (
                   <img
                     src={post.data.image}
@@ -94,14 +43,14 @@ const posts = (await getCollection("blog"))
                   />
                 )}
                 <div class="p-6">
-                  <time class="text-xs text-neutral-400 mb-2 block">
+                  <time class="font-mono text-xs text-text-muted mb-2 block">
                     {(post.data.date ?? post.data.pubDate ?? new Date(0)).toLocaleDateString("pt-BR", {
                       day: "2-digit",
                       month: "long",
                       year: "numeric",
                     })}
                   </time>
-                  <h3 class="font-bold text-lg mb-2 text-primary leading-snug">
+                  <h3 class="font-display font-semibold text-xl mb-2 text-primary leading-snug">
                     <a
                       href={`/blog/${post.id}`}
                       class="hover:text-accent transition-colors"
@@ -109,19 +58,19 @@ const posts = (await getCollection("blog"))
                       {post.data.title}
                     </a>
                   </h3>
-                  <p class="text-neutral-300 text-sm leading-relaxed line-clamp-3">
+                  <p class="text-text-muted text-sm leading-relaxed line-clamp-3">
                     {post.data.description}
                   </p>
                 </div>
               </article>
             ))}
           </div>
-          <div class="text-center mt-10">
+          <div class="mt-12">
             <a
               href="/blog"
-              class="inline-block border border-primary text-primary font-semibold px-8 py-3 rounded-lg hover:bg-neutral-900 transition-colors"
+              class="inline-flex items-center gap-2 bg-accent text-ink font-semibold px-8 py-3.5 rounded-md hover:bg-accent-dark transition-colors"
             >
-              Ver todos os artigos
+              Ver todos os artigos <span aria-hidden="true">→</span>
             </a>
           </div>
         </div>
@@ -130,20 +79,21 @@ const posts = (await getCollection("blog"))
   }
 
   <!-- CTA -->
-  <section class="bg-accent py-16 px-4">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-black mb-4">
-        Pronto para crescer no Google?
+  <section class="py-24 px-4">
+    <div class="max-w-4xl mx-auto border border-line rounded-lg px-8 py-16 md:py-20 bg-surface">
+      <p class="font-mono text-sm text-accent mb-3">// Próximo passo</p>
+      <h2 class="font-display text-4xl md:text-5xl font-semibold text-primary mb-5 leading-tight max-w-2xl">
+        Pronto para dar o próximo passo?
       </h2>
-      <p class="text-black/80 mb-8 max-w-xl mx-auto">
-        Vamos conversar sobre o seu negócio e como posso ajudá-lo a conseguir
-        mais visibilidade orgânica.
+      <p class="text-text-muted mb-10 max-w-xl text-lg">
+        Vamos conversar sobre o seu negócio e como posso ajudá-lo com site,
+        automação, IA ou SEO.
       </p>
       <a
         href="/contato"
-        class="inline-block bg-black text-white font-semibold px-10 py-3 rounded-lg hover:bg-neutral-900 transition-colors"
+        class="inline-flex items-center gap-2 bg-accent text-ink font-semibold px-10 py-4 rounded-md hover:bg-accent-dark transition-colors"
       >
-        Entrar em contato
+        Entrar em contato <span aria-hidden="true">→</span>
       </a>
     </div>
   </section>

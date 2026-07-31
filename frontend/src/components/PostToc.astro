@@ -1,0 +1,97 @@
+---
+import type { MarkdownHeading } from 'astro';
+
+interface Props {
+  headings: MarkdownHeading[];
+}
+
+const { headings } = Astro.props;
+
+// h1 é o título do artigo e h4+ fragmenta demais uma lista que vive numa
+// coluna estreita — o sumário fica só com as duas profundidades úteis.
+const items = headings.filter((h) => (h.depth === 2 || h.depth === 3) && Boolean(h.slug));
+---
+
+{items.length > 1 && (
+  <aside class="toc" aria-label="Sumário" data-open="true">
+    <button type="button" class="toc-toggle" aria-expanded="true" aria-controls="toc-list">
+      <span class="toc-toggle-icon" aria-hidden="true">≡</span>
+      <span class="toc-toggle-label">Sumário</span>
+      <span class="toc-toggle-count">{items.length}</span>
+    </button>
+    <nav class="toc-nav" id="toc-list">
+      <ol class="toc-list">
+        {items.map((heading) => (
+          <li class={`toc-item toc-depth-${heading.depth}`}>
+            <a href={`#${heading.slug}`} class="toc-link" data-toc-link={heading.slug}>
+              {heading.text}
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  </aside>
+)}
+
+<script>
+  const toc = document.querySelector<HTMLElement>('.toc');
+  const toggle = toc?.querySelector<HTMLButtonElement>('.toc-toggle');
+  const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('[data-toc-link]'));
+
+  if (toc && toggle && links.length > 0) {
+    const MOBILE = window.matchMedia('(max-width: 1023px)');
+
+    const setOpen = (open: boolean) => {
+      toc.dataset.open = String(open);
+      toggle.setAttribute('aria-expanded', String(open));
+    };
+
+    // No desktop a coluna é fixa e o sumário não custa nada; no telemóvel ele
+    // empurraria o texto para baixo do ecrã inteiro, por isso arranca fechado.
+    setOpen(!MOBILE.matches);
+    toggle.addEventListener('click', () => setOpen(toc.dataset.open !== 'true'));
+
+    const targets = links
+      .map((link) => {
+        const slug = link.dataset.tocLink;
+        const el = slug ? document.getElementById(slug) : null;
+        return el ? { link, el } : null;
+      })
+      .filter((entry): entry is { link: HTMLAnchorElement; el: HTMLElement } => entry !== null);
+
+    // Um pouco abaixo da navbar fixa (4rem): a secção conta como "atual"
+    // assim que o seu título passa por baixo dela.
+    const OFFSET = 88;
+    let active: HTMLAnchorElement | null = null;
+    let queued = false;
+
+    const sync = () => {
+      queued = false;
+      let current = targets[0]?.link ?? null;
+      for (const { link, el } of targets) {
+        if (el.getBoundingClientRect().top - OFFSET <= 0) current = link;
+      }
+      if (current === active) return;
+      active = current;
+      for (const { link } of targets) link.classList.toggle('is-active', link === current);
+    };
+
+    const onScroll = () => {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(sync);
+    };
+
+    sync();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+
+    // No telemóvel o sumário volta a fechar depois de saltar, senão o leitor
+    // aterra na secção certa com a lista inteira ainda por cima do texto.
+    for (const { link } of targets) {
+      link.addEventListener('click', () => {
+        if (MOBILE.matches) setOpen(false);
+      });
+    }
+  }
+</script>

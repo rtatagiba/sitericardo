@@ -1,0 +1,745 @@
+---
+// Mockup de um assistente de IA: pergunta do utilizador, consulta à base de
+// conhecimento (RAG), resposta com fontes citadas, agendamento automático e as
+// frentes de IA que implemento.
+const sources = ["tabela-precos.pdf", "servicos.md", "casos.csv"];
+const channels = ["Site", "WhatsApp", "Instagram"];
+const capabilities = [
+  { n: "01", label: "Chatbot no site", meta: "responde 24/7" },
+  { n: "02", label: "Agente no WhatsApp", meta: "qualifica leads" },
+  { n: "03", label: "Conteúdo em escala", meta: "com a tua voz" },
+  { n: "04", label: "Análise de dados", meta: "em linguagem natural" },
+];
+---
+
+<div class="visual" aria-hidden="true">
+  <div class="stack">
+    <div class="console">
+      <div class="console-head">
+        <span class="dot-live"></span>
+        <span class="console-name">Assistente IA</span>
+        <span class="console-tag">treinado com os teus dados</span>
+      </div>
+
+      <div class="chat">
+        <div class="msg msg-user">
+          <span>Quanto custa criar um site com SEO?</span>
+        </div>
+
+        <div class="retrieval">
+          <span class="retrieval-label">a consultar base de conhecimento</span>
+          <div class="chips">
+            {
+              sources.map((src, i) => (
+                <span class="chip" style={`--d:${320 + i * 130}ms`}>
+                  {src}
+                </span>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="msg msg-ai">
+          <span class="msg-ai-text"
+            >Depende do escopo, mas todo site que entrego já nasce otimizado
+            para</span
+          ><span class="caret"></span>
+        </div>
+
+        <p class="cited">3 fontes citadas · 0 respostas inventadas</p>
+
+        <div class="msg msg-user msg-late">
+          <span>Consigo falar contigo esta semana?</span>
+        </div>
+
+        <div class="event">
+          <span class="event-check">✓</span>
+          <div>
+            <strong>Reunião agendada</strong>
+            <span>Quinta, 15:00 · contacto guardado no CRM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="console-input">
+        <span class="console-placeholder">Escreve a tua pergunta…</span>
+        <span class="console-send">→</span>
+      </div>
+    </div>
+
+    <div class="channels">
+      <span class="channels-label">Ligado a</span>
+      {channels.map((ch) => <span class="channel">{ch}</span>)}
+    </div>
+
+    <div class="caps">
+      {
+        capabilities.map((cap, i) => (
+          <div class="cap" style={`--d:${420 + i * 90}ms`}>
+            <span class="cap-n">{cap.n}</span>
+            <div>
+              <strong>{cap.label}</strong>
+              <small>{cap.meta}</small>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="showcase">
+      <div class="showcase-head">
+        <span class="showcase-eyebrow">Sob medida</span>
+        <div class="showcase-dots">
+          <span class="sc-dot sc-dot-1"></span>
+          <span class="sc-dot sc-dot-2"></span>
+        </div>
+      </div>
+
+      <div class="slides">
+        <div class="slide slide-1">
+          <div class="slide-art">
+            <span class="art-bar art-bar-title"></span>
+            <span class="art-bar"></span>
+            <span class="art-bar art-bar-accent"></span>
+            <span class="art-bar art-bar-short"></span>
+          </div>
+          <div class="slide-copy">
+            <strong>Apps exclusivos</strong>
+            <p>Ferramentas internas feitas de raiz para o teu fluxo — não um SaaS genérico com o teu logo.</p>
+          </div>
+        </div>
+
+        <div class="slide slide-2">
+          <div class="slide-art art-grid">
+            <span class="art-cell"></span>
+            <span class="art-cell"></span>
+            <span class="art-cell art-cell-on"></span>
+            <span class="art-cell"></span>
+            <span class="art-cell art-cell-on"></span>
+            <span class="art-cell"></span>
+          </div>
+          <div class="slide-copy">
+            <strong>Soluções direcionadas</strong>
+            <p>Cada negócio tem um gargalo próprio. A IA entra onde dói, não onde está na moda.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="float-card card-kb">
+    <strong>342 docs</strong>
+    <small>Base de conhecimento</small>
+  </div>
+
+  <div class="float-card card-speed">
+    <span class="dot-live"></span>
+    <div>
+      <strong>1.2s</strong>
+      <small>Tempo de resposta</small>
+    </div>
+  </div>
+
+  <div class="float-card card-leads">
+    <strong>68%</strong>
+    <small>Conversas viram lead</small>
+  </div>
+</div>
+
+<style>
+  .visual {
+    position: relative;
+    width: 100%;
+    min-height: 22rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    overflow: hidden;
+  }
+
+  /* Malha de fundo — dá textura de prancheta ao espaço à volta do console. */
+  .visual::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    background-image:
+      linear-gradient(var(--color-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-line) 1px, transparent 1px);
+    background-size: 2.5rem 2.5rem;
+    opacity: 0.35;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, #000 20%, transparent 100%);
+    pointer-events: none;
+  }
+
+  .stack {
+    position: relative;
+    width: 100%;
+    max-width: 25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  /* Console — o balão solto virou uma janela de assistente completa. */
+  .console {
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: 0.6rem;
+    overflow: hidden;
+    animation: float-in 0.4s ease-out backwards;
+  }
+
+  .console-head {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 0.9rem;
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  .console-name {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .console-tag {
+    margin-left: auto;
+    font-family: var(--font-family-mono);
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-text-muted);
+  }
+
+  .chat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    padding: 0.9rem;
+  }
+
+  .msg {
+    max-width: 88%;
+    padding: 0.6rem 0.9rem;
+    border-radius: 1rem;
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .msg-user {
+    align-self: flex-end;
+    background: var(--color-accent);
+    color: var(--color-ink);
+    font-weight: 600;
+    border-radius: 0.3rem;
+  }
+
+  .msg-late {
+    animation: float-in 0.4s ease-out 900ms backwards;
+  }
+
+  .msg-ai {
+    align-self: flex-start;
+    background: transparent;
+    border: 1px solid var(--color-line);
+    color: var(--color-text-muted);
+    border-radius: 0.3rem;
+    font-family: var(--font-family-mono);
+    font-size: 0.78rem;
+  }
+
+  /* Passo de RAG: mostra que a resposta vem de documentos reais. */
+  .retrieval {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding-left: 0.1rem;
+  }
+
+  .retrieval-label {
+    font-family: var(--font-family-mono);
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+  }
+  .retrieval-label::before {
+    content: "⟶ ";
+    color: var(--color-accent);
+  }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .chip {
+    font-family: var(--font-family-mono);
+    font-size: 0.62rem;
+    color: var(--color-text);
+    background: rgba(201, 138, 44, 0.1);
+    border: 1px solid rgba(201, 138, 44, 0.35);
+    border-radius: 0.3rem;
+    padding: 0.2rem 0.45rem;
+    animation: chip-in 0.35s ease-out var(--d, 0ms) backwards;
+  }
+
+  .cited {
+    margin: 0;
+    font-family: var(--font-family-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.03em;
+    color: var(--color-sage);
+  }
+
+  /* Evento de sistema: a conversa termina em reunião marcada, que é o CTA. */
+  .event {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 0.15rem;
+    padding: 0.55rem 0.7rem;
+    border: 1px dashed rgba(107, 122, 99, 0.55);
+    border-radius: 0.4rem;
+    background: rgba(107, 122, 99, 0.08);
+    animation: float-in 0.4s ease-out 1150ms backwards;
+  }
+  .event-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 1.15rem;
+    height: 1.15rem;
+    border-radius: 999px;
+    background: var(--color-sage);
+    color: var(--color-ink);
+    font-size: 0.65rem;
+    font-weight: 700;
+  }
+  .event strong {
+    display: block;
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  .event span {
+    font-family: var(--font-family-mono);
+    font-size: 0.62rem;
+    color: var(--color-text-muted);
+  }
+
+  .console-input {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.55rem 0.9rem;
+    border-top: 1px solid var(--color-line);
+  }
+
+  .console-placeholder {
+    flex: 1;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    opacity: 0.7;
+  }
+
+  .console-send {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 0.3rem;
+    background: var(--color-accent);
+    color: var(--color-ink);
+    font-size: 0.8rem;
+    line-height: 1;
+  }
+
+  /* Onde o assistente vive — reforça que não é só um widget no site. */
+  .channels {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    animation: float-in 0.4s ease-out 220ms backwards;
+  }
+
+  .channels-label {
+    font-family: var(--font-family-mono);
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-muted);
+    opacity: 0.7;
+    margin-right: 0.1rem;
+  }
+
+  .channel {
+    font-family: var(--font-family-mono);
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    padding: 0.25rem 0.6rem;
+    background: var(--color-ink);
+  }
+
+  /* Frentes de IA — enche o espaço abaixo e mostra a amplitude do serviço. */
+  .caps {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+
+  .cap {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.45rem;
+    padding: 0.6rem 0.7rem;
+    border: 1px solid var(--color-line);
+    border-radius: 0.45rem;
+    background: var(--color-surface);
+    animation: float-in 0.4s ease-out var(--d, 0ms) backwards;
+  }
+  .cap-n {
+    font-family: var(--font-family-mono);
+    font-size: 0.62rem;
+    color: var(--color-accent);
+    line-height: 1.4;
+  }
+  .cap strong {
+    display: block;
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.3;
+  }
+  .cap small {
+    font-family: var(--font-family-mono);
+    font-size: 0.6rem;
+    color: var(--color-text-muted);
+  }
+
+  /* Slide alternado: apps exclusivos ↔ soluções à medida, em fade infinito.
+     Ciclo de 10s = 2 slides × 5s. */
+  .showcase {
+    border: 1px solid var(--color-line);
+    border-radius: 0.5rem;
+    background: var(--color-surface);
+    padding: 0.7rem 0.8rem 0.8rem;
+    animation: float-in 0.4s ease-out 780ms backwards;
+  }
+
+  .showcase-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.6rem;
+  }
+
+  .showcase-eyebrow {
+    font-family: var(--font-family-mono);
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-accent);
+  }
+
+  .showcase-dots {
+    display: flex;
+    gap: 0.3rem;
+  }
+
+  .sc-dot {
+    width: 0.3rem;
+    height: 0.3rem;
+    border-radius: 999px;
+    background: var(--color-line);
+    animation: dot-cycle 10s linear infinite;
+  }
+  .sc-dot-2 {
+    animation-delay: 5s;
+  }
+  @keyframes dot-cycle {
+    0%,
+    48% {
+      background: var(--color-accent);
+    }
+    50%,
+    100% {
+      background: var(--color-line);
+    }
+  }
+
+  /* Slides empilhados na mesma célula: a altura é a do maior. */
+  .slides {
+    display: grid;
+  }
+
+  .slide {
+    grid-area: 1 / 1;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    animation: slide-fade 10s ease-in-out infinite backwards;
+  }
+  .slide-2 {
+    animation-delay: 5s;
+  }
+
+  @keyframes slide-fade {
+    0% {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    4%,
+    45% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    50%,
+    100% {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+  }
+
+  .slide-art {
+    flex-shrink: 0;
+    width: 3.6rem;
+    height: 3.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.28rem;
+    padding: 0.4rem;
+    border: 1px solid var(--color-line);
+    border-radius: 0.35rem;
+    background: var(--color-ink);
+  }
+
+  .art-bar {
+    height: 0.28rem;
+    border-radius: 999px;
+    background: var(--color-line);
+  }
+  .art-bar-title {
+    width: 60%;
+    background: var(--color-text-muted);
+  }
+  .art-bar-accent {
+    background: var(--color-accent);
+  }
+  .art-bar-short {
+    width: 45%;
+  }
+
+  .art-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.22rem;
+  }
+  .art-cell {
+    border-radius: 0.12rem;
+    background: var(--color-line);
+  }
+  .art-cell-on {
+    background: var(--color-accent);
+  }
+
+  .slide-copy strong {
+    display: block;
+    font-family: var(--font-family-display);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.2rem;
+  }
+  .slide-copy p {
+    margin: 0;
+    font-size: 0.72rem;
+    line-height: 1.45;
+    color: var(--color-text-muted);
+  }
+
+  .caret {
+    display: inline-block;
+    width: 0.45em;
+    height: 1em;
+    margin-left: 2px;
+    background: var(--color-accent);
+    vertical-align: text-bottom;
+    animation: caret-blink 1s steps(1) infinite;
+  }
+  @keyframes caret-blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .float-card {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: 0.5rem;
+    padding: 0.7rem 1rem;
+    animation: float-in 0.4s ease-out backwards;
+  }
+  .float-card strong {
+    display: block;
+    font-family: var(--font-family-display);
+    font-weight: 600;
+    color: var(--color-text);
+    font-size: 1.3rem;
+    line-height: 1.1;
+  }
+  .float-card small {
+    font-family: var(--font-family-mono);
+    color: var(--color-text-muted);
+    font-size: 0.66rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .card-kb {
+    top: 1.5rem;
+    left: 1rem;
+    animation-delay: 60ms;
+  }
+  .card-speed {
+    top: 28%;
+    right: 1rem;
+    animation-delay: 140ms;
+  }
+  .card-leads {
+    bottom: 2rem;
+    left: 1.5rem;
+    animation-delay: 300ms;
+  }
+
+  .dot-live {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 999px;
+    background: var(--color-sage);
+    flex-shrink: 0;
+    animation: dot-pulse 2s ease-in-out infinite;
+  }
+  @keyframes dot-pulse {
+    50% {
+      opacity: 0.35;
+    }
+  }
+
+  @keyframes float-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes chip-in {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Palcos estreitos: os cartões flutuantes sobrepunham-se ao console. */
+  @media (max-width: 1279px) {
+    .card-kb,
+    .card-speed,
+    .card-leads {
+      display: none;
+    }
+  }
+
+  /* Ecrãs baixos: corta o que é acessório para a legenda não ser empurrada. */
+  @media (max-height: 860px) {
+    .visual {
+      padding: 1.25rem 2rem;
+      min-height: 18rem;
+    }
+    .stack {
+      gap: 0.6rem;
+    }
+    .chat {
+      gap: 0.45rem;
+      padding: 0.75rem;
+    }
+    .msg {
+      padding: 0.5rem 0.8rem;
+      font-size: 0.78rem;
+    }
+    .caps {
+      display: none;
+    }
+    .card-leads {
+      display: none;
+    }
+    .showcase {
+      padding: 0.55rem 0.7rem 0.65rem;
+    }
+    .slide-art {
+      width: 3rem;
+      height: 2.6rem;
+    }
+    .slide-copy p {
+      font-size: 0.68rem;
+    }
+  }
+
+  /* Portáteis muito baixos: nem o slide cabe sem cortar a legenda. */
+  @media (max-height: 720px) {
+    .showcase {
+      display: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .float-card,
+    .console,
+    .channels,
+    .chip,
+    .cap,
+    .event,
+    .msg-late,
+    .caret,
+    .dot-live,
+    .showcase,
+    .sc-dot {
+      animation: none;
+    }
+
+    /* Sem animação os slides ficariam sobrepostos: mostra-se só o primeiro. */
+    .slide {
+      animation: none;
+    }
+    .slide-2 {
+      display: none;
+    }
+    .sc-dot-1 {
+      background: var(--color-accent);
+    }
+  }
+</style>
