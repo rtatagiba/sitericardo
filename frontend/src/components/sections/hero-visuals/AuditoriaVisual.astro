@@ -1,164 +1,775 @@
 ---
-// Mockup de um relatório de auditoria: anel de score + checklist de achados.
+// Auditoria em dois tempos: à esquerda o crawl a correr (tabela de URLs no
+// espírito do Screaming Frog, com código de estado e verificações por linha),
+// à direita o diagnóstico — score atual, projeção com o plano, e a lista de
+// achados ordenada por impacto. O código de cores é semântico e único deste
+// visual: vermelho corrige já, amarelo precisa de atenção, verde está ok.
+
+type Sev = "bad" | "warn" | "ok";
+
+const glyph: Record<Sev, string> = { ok: "✓", warn: "!", bad: "✕" };
+
+/** Severidade derivada do código de estado, para não repetir na tabela. */
+const codeSev = (code: string): Sev =>
+  code.startsWith("2") ? "ok" : code.startsWith("3") ? "warn" : "bad";
+
+const crawl: { url: string; code: string; title: Sev; meta: Sev }[] = [
+  { url: "/", code: "200", title: "ok", meta: "ok" },
+  { url: "/servicos", code: "200", title: "ok", meta: "ok" },
+  { url: "/servicos/seo-tecnico", code: "200", title: "ok", meta: "warn" },
+  { url: "/blog/core-web-vitals", code: "200", title: "warn", meta: "ok" },
+  { url: "/produtos/antigo", code: "404", title: "bad", meta: "bad" },
+  { url: "/index.php?p=2", code: "301", title: "ok", meta: "warn" },
+  { url: "/blog/tag/seo/page/7", code: "200", title: "bad", meta: "warn" },
+  { url: "/contacto", code: "200", title: "ok", meta: "ok" },
+];
+
+const tally: { n: string; label: string; sev: Sev }[] = [
+  { n: "12", label: "Crítico", sev: "bad" },
+  { n: "34", label: "Atenção", sev: "warn" },
+  { n: "196", label: "Ok", sev: "ok" },
+];
+
+const issues: { label: string; n: string; sev: Sev; fill: string }[] = [
+  { label: "Erros 404 e cadeias de redirect", n: "12", sev: "bad", fill: "92%" },
+  { label: "Páginas fora do índice do Google", n: "7", sev: "bad", fill: "78%" },
+  { label: "Meta descriptions em falta", n: "28", sev: "warn", fill: "58%" },
+  { label: "Imagens sem alt e acima de 200 kB", n: "41", sev: "warn", fill: "44%" },
+  { label: "Sitemap, robots e canónicos", n: "ok", sev: "ok", fill: "100%" },
+  { label: "HTTPS e Core Web Vitals", n: "ok", sev: "ok", fill: "100%" },
+];
 ---
 
 <div class="visual" aria-hidden="true">
-  <div class="report">
-    <div class="report-head">
-      <div class="score-ring">
-        <span class="score-value">94</span>
+  <div class="stack">
+    <!-- Barra do crawler: dá o arranque narrativo (o site está a ser lido). -->
+    <div class="crawler">
+      <div class="crawler-head">
+        <span class="dot-live"></span>
+        <span class="crawler-url">crawl · ricardotatagiba.com.br</span>
+        <span class="crawler-count">
+          <span class="count">
+            <i>0</i><i>96</i><i>184</i><i>312</i>
+          </span>
+          <span class="count-unit">urls</span>
+        </span>
       </div>
-      <div>
-        <span class="score-label">Score geral</span>
-        <span class="score-before">era 68</span>
+      <div class="crawler-bar"><span class="crawler-fill"></span></div>
+    </div>
+
+    <div class="split">
+      <!-- Coluna 1: a folha de crawl. As linhas passam em loop contínuo. -->
+      <div class="sheet">
+        <div class="sheet-head">
+          <span class="h-url">endereço</span>
+          <span class="h-cell">cod</span>
+          <span class="h-cell">h1</span>
+          <span class="h-cell">meta</span>
+        </div>
+
+        <div class="sheet-body">
+          <div class="sheet-stream">
+            {
+              [...crawl, ...crawl].map((r) => (
+                <div class="crow">
+                  <span class="c-url">{r.url}</span>
+                  <span class={`c-code sev-${codeSev(r.code)}`}>{r.code}</span>
+                  <span class={`c-mark sev-${r.title}`}>{glyph[r.title]}</span>
+                  <span class={`c-mark sev-${r.meta}`}>{glyph[r.meta]}</span>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+
+      <!-- Coluna 2: o diagnóstico. -->
+      <div class="board">
+        <div class="gauge">
+          <svg class="gauge-svg" viewBox="0 0 64 64">
+            <circle
+              class="arc-track"
+              cx="32"
+              cy="32"
+              r="26"
+              pathLength="100"></circle>
+            <circle
+              class="arc-ok"
+              cx="32"
+              cy="32"
+              r="26"
+              pathLength="100"
+              stroke-dashoffset="-62"></circle>
+            <circle class="arc-warn" cx="32" cy="32" r="26" pathLength="100"
+            ></circle>
+          </svg>
+
+          <div class="gauge-text">
+            <span class="gauge-reel">
+              <i class="v-warn">62</i><i class="v-ok">94</i>
+            </span>
+            <span class="gauge-label">Score do site</span>
+            <span class="gauge-proj">+32 com o plano</span>
+          </div>
+        </div>
+
+        <div class="tally">
+          {
+            tally.map((t, i) => (
+              <div class={`tal sev-${t.sev}`} style={`--d:${300 + i * 120}ms`}>
+                <strong>{t.n}</strong>
+                <small>{t.label}</small>
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="issues">
+          <div class="issues-head">
+            <span>Plano de ação</span>
+            <span class="issues-sort">↓ impacto</span>
+          </div>
+
+          {
+            issues.map((it, i) => (
+              <div
+                class={`iss sev-${it.sev}`}
+                style={`--d:${180 + i * 90}ms; --fill:${it.fill}`}
+              >
+                <span class="iss-dot" />
+                <span class="iss-label">{it.label}</span>
+                <span class="iss-n">{it.n}</span>
+                <span class="iss-bar">
+                  <span class="iss-fill" />
+                </span>
+              </div>
+            ))
+          }
+        </div>
       </div>
     </div>
 
-    <ul class="checklist">
-      <li class="ok"><span class="mark">✓</span> Core Web Vitals</li>
-      <li class="ok"><span class="mark">✓</span> Indexação</li>
-      <li class="warn"><span class="mark">!</span> Dados estruturados (schema)</li>
-      <li class="warn"><span class="mark">!</span> 12 links quebrados</li>
-    </ul>
-  </div>
-
-  <div class="float-card card-issues">
-    <strong>27</strong>
-    <small>Pontos corrigidos</small>
+    <div class="legend">
+      <span class="leg sev-bad"><i></i> Corrigir já</span>
+      <span class="leg sev-warn"><i></i> A rever</span>
+      <span class="leg sev-ok"><i></i> Está ok</span>
+    </div>
   </div>
 </div>
 
 <style>
   .visual {
+    /* Semáforo do diagnóstico. Vivo, mas dentro da temperatura quente da
+       paleta — vermelho puro (#f00) sobre o grafite queima e desalinha do
+       ocre da marca. Só estas três cores carregam significado aqui. */
+    --bad: #e2553d;
+    --warn: #eda42a;
+    --ok: #59b073;
+
+    /* Altura de linha da folha de crawl e dos odómetros. */
+    --r: 1.75rem;
+    --ch: 0.95rem;
+    --gh: 1.6rem;
+
     position: relative;
     width: 100%;
     min-height: 22rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2.5rem 2rem;
+    padding: 1.75rem;
+    overflow: hidden;
   }
 
-  .report {
+  /* Malha de prancheta, igual aos outros painéis do hero. */
+  .visual::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    background-image:
+      linear-gradient(var(--color-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-line) 1px, transparent 1px);
+    background-size: 2.5rem 2.5rem;
+    opacity: 0.35;
+    mask-image: radial-gradient(
+      ellipse 70% 60% at 50% 45%,
+      #000 20%,
+      transparent 100%
+    );
+    pointer-events: none;
+  }
+
+  .stack {
+    position: relative;
     width: 100%;
-    max-width: 22rem;
+    max-width: 34rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  /* ---- Barra do crawler ---- */
+
+  .crawler {
     background: var(--color-surface);
     border: 1px solid var(--color-line);
     border-radius: 0.5rem;
-    padding: 1.3rem 1.3rem 1.4rem;
+    padding: 0.55rem 0.75rem 0.6rem;
+    animation: float-in 0.4s ease-out backwards;
   }
 
-  .report-head {
+  .crawler-head {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    padding-bottom: 1.1rem;
-    margin-bottom: 1.1rem;
-    border-bottom: 1px solid var(--color-line);
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 
-  .score-ring {
-    flex-shrink: 0;
-    width: 3.6rem;
-    height: 3.6rem;
-    border-radius: 999px;
-    background: conic-gradient(var(--color-accent) 0 94%, var(--color-line) 0);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .score-ring::before {
-    content: "";
-    position: absolute;
-  }
-  .score-value {
-    width: 2.7rem;
-    height: 2.7rem;
-    border-radius: 999px;
-    background: var(--color-surface);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-family-display);
-    font-weight: 600;
-    font-size: 1.15rem;
-    color: var(--color-text);
-  }
-
-  .score-label {
-    display: block;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--color-text);
-  }
-  .score-before {
-    display: block;
+  .crawler-url {
     font-family: var(--font-family-mono);
-    font-size: 0.68rem;
-    color: var(--color-text-muted);
-    text-decoration: line-through;
-  }
-
-  .checklist {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.55rem;
-  }
-  .checklist li {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-size: 0.8rem;
+    font-size: 0.66rem;
     color: var(--color-text-muted);
   }
 
-  .mark {
-    flex-shrink: 0;
-    width: 1.1rem;
-    height: 1.1rem;
-    border-radius: 0.3rem;
+  .crawler-count {
+    margin-left: auto;
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 0.3rem;
+  }
+
+  /* Odómetro do contador de URLs — sem borda, por isso o passo é --ch limpo. */
+  .count {
+    display: block;
+    height: var(--ch);
+    overflow: hidden;
+    text-align: right;
+    animation: count-up 12s infinite;
+  }
+  .count i {
+    display: block;
+    height: var(--ch);
     font-family: var(--font-family-mono);
-    font-size: 0.65rem;
+    font-style: normal;
+    font-size: 0.75rem;
     font-weight: 700;
-    border: 1px solid var(--color-line);
-  }
-  .ok .mark {
-    color: var(--color-sage);
-  }
-  .warn .mark {
+    line-height: var(--ch);
     color: var(--color-accent);
   }
 
-  .float-card {
-    position: absolute;
-    top: 1.4rem;
-    right: 0.8rem;
+  @keyframes count-up {
+    0%,
+    6% {
+      transform: translateY(0);
+    }
+    14% {
+      transform: translateY(calc(var(--ch) * -1));
+    }
+    24% {
+      transform: translateY(calc(var(--ch) * -2));
+    }
+    36%,
+    95% {
+      transform: translateY(calc(var(--ch) * -3));
+    }
+    96%,
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .count-unit {
+    font-family: var(--font-family-mono);
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-muted);
+  }
+
+  .crawler-bar {
+    height: 0.25rem;
+    border-radius: 999px;
+    background: var(--color-line);
+    overflow: hidden;
+  }
+  .crawler-fill {
+    display: block;
+    height: 100%;
+    border-radius: 999px;
+    background: var(--color-accent);
+    animation: crawl-fill 12s ease-out infinite;
+  }
+
+  @keyframes crawl-fill {
+    0% {
+      width: 0;
+    }
+    40%,
+    92% {
+      width: 100%;
+    }
+    96%,
+    100% {
+      width: 0;
+    }
+  }
+
+  /* ---- Duas colunas: colapsam sozinhas em palcos estreitos ---- */
+
+  .split {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14.5rem, 1fr));
+    gap: 0.6rem;
+    align-items: stretch;
+  }
+
+  /* ---- Folha de crawl ---- */
+
+  /* Coluna em flex para a janela do stream esticar até à altura do
+     diagnóstico ao lado — senão sobra um degrau vazio na coluna esquerda. */
+  .sheet {
+    display: flex;
+    flex-direction: column;
     background: var(--color-surface);
     border: 1px solid var(--color-line);
     border-radius: 0.5rem;
-    padding: 0.7rem 1rem;
-    animation: float-in 0.4s ease-out 100ms backwards;
+    overflow: hidden;
+    animation: float-in 0.4s ease-out 120ms backwards;
   }
-  .float-card strong {
+
+  .sheet-head,
+  .crow {
+    display: grid;
+    grid-template-columns: 1fr 2.2rem 1.2rem 1.2rem;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0 0.6rem;
+  }
+
+  .sheet-head {
+    height: 1.6rem;
+    border-bottom: 1px solid var(--color-line);
+    font-family: var(--font-family-mono);
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--color-text-muted);
+  }
+  .h-cell {
+    text-align: center;
+  }
+
+  /* Janela do stream. As linhas duplicadas fecham o loop em -50%. */
+  .sheet-body {
+    flex: 1;
+    min-height: calc(var(--r) * 7);
+    overflow: hidden;
+    mask-image: linear-gradient(
+      180deg,
+      transparent,
+      #000 10%,
+      #000 86%,
+      transparent
+    );
+  }
+
+  .sheet-stream {
+    animation: stream 22s linear infinite;
+  }
+
+  @keyframes stream {
+    to {
+      transform: translateY(-50%);
+    }
+  }
+
+  .crow {
+    height: var(--r);
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  .c-url {
+    font-family: var(--font-family-mono);
+    font-size: 0.62rem;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .c-code {
+    text-align: center;
+    font-family: var(--font-family-mono);
+    font-size: 0.6rem;
+    font-weight: 700;
+    border-radius: 0.25rem;
+    padding: 0.1rem 0;
+  }
+
+  .c-mark {
+    text-align: center;
+    font-family: var(--font-family-mono);
+    font-size: 0.68rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  /* Semáforo partilhado pela tabela, pelas contagens e pela legenda. */
+  .sev-bad {
+    color: var(--bad);
+  }
+  .sev-warn {
+    color: var(--warn);
+  }
+  .sev-ok {
+    color: var(--ok);
+  }
+
+  .c-code.sev-bad {
+    background: rgba(226, 85, 61, 0.16);
+    box-shadow: inset 0 0 0 1px rgba(226, 85, 61, 0.45);
+  }
+  .c-code.sev-warn {
+    background: rgba(237, 164, 42, 0.14);
+    box-shadow: inset 0 0 0 1px rgba(237, 164, 42, 0.4);
+  }
+  .c-code.sev-ok {
+    background: rgba(89, 176, 115, 0.12);
+    box-shadow: inset 0 0 0 1px rgba(89, 176, 115, 0.32);
+  }
+
+  /* ---- Diagnóstico ---- */
+
+  .board {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .gauge {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.7rem 0.85rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: 0.5rem;
+    animation: float-in 0.4s ease-out 200ms backwards;
+  }
+
+  .gauge-svg {
+    flex-shrink: 0;
+    width: 3.9rem;
+    height: 3.9rem;
+    transform: rotate(-90deg);
+  }
+
+  .gauge-svg circle {
+    fill: none;
+    stroke-width: 6;
+    stroke-linecap: butt;
+  }
+
+  .arc-track {
+    stroke: var(--color-line);
+  }
+
+  /* pathLength=100 normaliza o traço: o dasharray é lido em percentagem. */
+  .arc-warn {
+    stroke: var(--warn);
+    stroke-dasharray: 0 100;
+    animation: arc-warn 12s ease-out infinite;
+  }
+  .arc-ok {
+    stroke: var(--ok);
+    stroke-dasharray: 0 100;
+    animation: arc-ok 12s ease-out infinite;
+  }
+
+  @keyframes arc-warn {
+    0%,
+    8% {
+      stroke-dasharray: 0 100;
+    }
+    30%,
+    92% {
+      stroke-dasharray: 62 100;
+    }
+    96%,
+    100% {
+      stroke-dasharray: 0 100;
+    }
+  }
+
+  /* Arranca onde o âmbar parou (offset -62): é o ganho, não o total. */
+  @keyframes arc-ok {
+    0%,
+    40% {
+      stroke-dasharray: 0 100;
+    }
+    62%,
+    92% {
+      stroke-dasharray: 32 100;
+    }
+    96%,
+    100% {
+      stroke-dasharray: 0 100;
+    }
+  }
+
+  .gauge-text {
+    min-width: 0;
+  }
+
+  .gauge-reel {
+    display: block;
+    height: var(--gh);
+    overflow: hidden;
+    animation: gauge-roll 12s infinite;
+  }
+  .gauge-reel i {
+    display: block;
+    height: var(--gh);
+    font-family: var(--font-family-display);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.45rem;
+    line-height: var(--gh);
+  }
+  .v-warn {
+    color: var(--warn);
+  }
+  .v-ok {
+    color: var(--ok);
+  }
+
+  @keyframes gauge-roll {
+    0%,
+    45% {
+      transform: translateY(0);
+    }
+    52%,
+    95% {
+      transform: translateY(calc(var(--gh) * -1));
+    }
+    96%,
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .gauge-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.2;
+  }
+
+  .gauge-proj {
+    display: block;
+    font-family: var(--font-family-mono);
+    font-size: 0.58rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ok);
+  }
+
+  /* ---- Contagem por severidade: os números grandes e coloridos ---- */
+
+  .tally {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.4rem;
+  }
+
+  .tal {
+    padding: 0.5rem 0.5rem 0.55rem;
+    border-radius: 0.45rem;
+    background: var(--color-surface);
+    border: 1px solid currentColor;
+    animation: float-in 0.4s ease-out var(--d, 0ms) backwards;
+  }
+  .tal strong {
     display: block;
     font-family: var(--font-family-display);
     font-weight: 600;
-    color: var(--color-text);
-    font-size: 1.3rem;
-    line-height: 1.1;
+    font-size: 1.35rem;
+    line-height: 1;
+    color: inherit;
   }
-  .float-card small {
+  .tal small {
     font-family: var(--font-family-mono);
-    color: var(--color-text-muted);
-    font-size: 0.66rem;
+    font-size: 0.56rem;
     text-transform: uppercase;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+  }
+
+  /* Só o bloco crítico respira — é para onde o olho deve ir primeiro. */
+  .tal.sev-bad {
+    background: rgba(226, 85, 61, 0.1);
+    border-color: rgba(226, 85, 61, 0.45);
+    animation:
+      float-in 0.4s ease-out var(--d, 0ms) backwards,
+      alarm 2.4s ease-in-out infinite;
+  }
+
+  @keyframes alarm {
+    50% {
+      background: rgba(226, 85, 61, 0.22);
+      border-color: var(--bad);
+    }
+  }
+
+  /* ---- Lista de achados ---- */
+
+  .issues {
+    padding: 0.55rem 0.7rem 0.6rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: 0.5rem;
+    animation: float-in 0.4s ease-out 280ms backwards;
+  }
+
+  .issues-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .issues-sort {
+    font-family: var(--font-family-mono);
+    font-size: 0.55rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+  }
+
+  .iss {
+    display: grid;
+    grid-template-columns: 0.45rem 1fr auto;
+    align-items: center;
+    /* Linha estreita: a barra tem de colar ao rótulo que ela mede. */
+    gap: 0.2rem 0.45rem;
+    padding: 0.22rem 0;
+    animation: float-in 0.35s ease-out var(--d, 0ms) backwards;
+  }
+
+  .iss-dot {
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 999px;
+    background: currentColor;
+  }
+  /* O vermelho é o único que pisca: sinaliza a urgência sem legenda. */
+  .iss.sev-bad .iss-dot {
+    animation: dot-pulse 1.6s ease-in-out infinite;
+  }
+
+  .iss-label {
+    min-width: 0;
+    font-size: 0.66rem;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .iss-n {
+    font-family: var(--font-family-mono);
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: inherit;
+    text-transform: uppercase;
+  }
+
+  .iss-bar {
+    grid-column: 2 / -1;
+    height: 0.22rem;
+    border-radius: 999px;
+    background: var(--color-line);
+    overflow: hidden;
+  }
+  .iss-fill {
+    display: block;
+    height: 100%;
+    border-radius: 999px;
+    background: currentColor;
+    animation: iss-fill 12s ease-out var(--d, 0ms) infinite;
+  }
+
+  @keyframes iss-fill {
+    0% {
+      width: 0;
+    }
+    28%,
+    90% {
+      width: var(--fill, 50%);
+    }
+    96%,
+    100% {
+      width: 0;
+    }
+  }
+
+  /* ---- Legenda do código de cores ---- */
+
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    animation: float-in 0.4s ease-out 420ms backwards;
+  }
+
+  .leg {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-family: var(--font-family-mono);
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    padding: 0.15rem 0.5rem;
+  }
+  .leg i {
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 999px;
+    background: currentColor;
+  }
+  .leg.sev-bad i {
+    background: var(--bad);
+  }
+  .leg.sev-warn i {
+    background: var(--warn);
+  }
+  .leg.sev-ok i {
+    background: var(--ok);
+  }
+
+  .dot-live {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 999px;
+    background: var(--ok);
+    flex-shrink: 0;
+    animation: dot-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes dot-pulse {
+    50% {
+      opacity: 0.3;
+    }
   }
 
   @keyframes float-in {
@@ -172,8 +783,92 @@
     }
   }
 
+  /* Abaixo de 1280px o palco é estreito e as duas colunas empilham-se; sem
+     cortar a contagem, a pilha passa da altura disponível. */
+  @media (max-width: 1279px) {
+    .visual {
+      padding: 1.25rem;
+    }
+    .tally {
+      display: none;
+    }
+    .sheet-body {
+      min-height: calc(var(--r) * 5);
+    }
+  }
+
+  /* Ecrãs baixos: corta acessórios para a legenda do hero não ser empurrada. */
+  @media (max-height: 860px) {
+    .visual {
+      padding: 1.1rem 1.5rem;
+      min-height: 18rem;
+    }
+    .stack {
+      gap: 0.45rem;
+    }
+    .sheet-body {
+      min-height: calc(var(--r) * 5);
+    }
+    .legend {
+      display: none;
+    }
+  }
+
+  @media (max-height: 760px) {
+    .tally {
+      display: none;
+    }
+    .sheet-body {
+      min-height: calc(var(--r) * 4);
+    }
+    /* Última linha da lista (a 7.ª criança conta o cabeçalho). */
+    .iss:nth-child(7) {
+      display: none;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
-    .float-card {
+    .crawler,
+    .sheet,
+    .gauge,
+    .tal,
+    .issues,
+    .iss,
+    .legend,
+    .dot-live,
+    .iss-dot {
+      animation: none;
+    }
+
+    /* Sem animação, mostra já o estado final do relatório. */
+    .sheet-stream {
+      animation: none;
+    }
+    .count {
+      animation: none;
+      transform: translateY(calc(var(--ch) * -3));
+    }
+    .crawler-fill {
+      animation: none;
+      width: 100%;
+    }
+    .gauge-reel {
+      animation: none;
+      transform: translateY(calc(var(--gh) * -1));
+    }
+    .arc-warn {
+      animation: none;
+      stroke-dasharray: 62 100;
+    }
+    .arc-ok {
+      animation: none;
+      stroke-dasharray: 32 100;
+    }
+    .iss-fill {
+      animation: none;
+      width: var(--fill, 50%);
+    }
+    .tal.sev-bad {
       animation: none;
     }
   }

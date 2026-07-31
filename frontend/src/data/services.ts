@@ -3,7 +3,7 @@
  * (HeroServices.astro) e pelo JSON-LD da home.
  */
 
-export type ServiceId = 'sites' | 'ia' | 'automacoes' | 'seo' | 'auditoria';
+export type ServiceId = 'sites' | 'ia' | 'seo' | 'auditoria';
 
 export interface Service {
   id: ServiceId;
@@ -29,13 +29,6 @@ export const services: Service[] = [
     label: 'Implementação de IA',
     headline: 'IA a trabalhar no teu negócio',
     desc: 'Assistentes, chatbots e geração de conteúdo ligados aos teus dados reais.',
-    href: '/servicos',
-  },
-  {
-    id: 'automacoes',
-    label: 'Automações',
-    headline: 'Menos trabalho manual, mais resultado',
-    desc: 'Fluxos que capturam, qualificam e respondem a leads sozinhos, 24/7.',
     href: '/servicos',
   },
   {

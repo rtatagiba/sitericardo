@@ -1,33 +1,144 @@
 ---
-// Mockup de uma página de resultados de busca com o site em #1 + gráfico de tráfego.
+// Mockup de SERP em movimento: a busca é digitada, a IA responde citando o
+// site, e o resultado sobe da posição 7 até #1 empurrando os concorrentes.
+// Abaixo, tracker de palavras-chave, curva de tráfego e Core Web Vitals.
+const tracked = [
+  { kw: "consultor seo lisboa", pos: "1", delta: "6", fill: "96%" },
+  { kw: "criação de sites porto", pos: "2", delta: "4", fill: "82%" },
+  { kw: "agência de seo portugal", pos: "3", delta: "9", fill: "71%" },
+];
+const vitals = [
+  { label: "LCP", value: "1.1s" },
+  { label: "INP", value: "42ms" },
+  { label: "CLS", value: "0.01" },
+];
 ---
 
 <div class="visual" aria-hidden="true">
-  <div class="serp">
-    <div class="serp-search">
-      <span class="serp-search-icon">⌕</span>
-      <span class="serp-search-text">consultor seo lisboa</span>
-    </div>
+  <span class="scan"></span>
 
-    <div class="result result-1">
-      <span class="badge-1">1</span>
-      <div>
-        <span class="result-url">ricardotatagiba.com.br</span>
-        <span class="result-title">Ricardo Tatagiba — Consultor SEO</span>
+  <div class="stack">
+    <div class="browser">
+      <div class="browser-bar">
+        <span class="dot-live"></span>
+        <span class="browser-url">google.com/search</span>
+        <span class="browser-tag">indexado</span>
+      </div>
+
+      <div class="query">
+        <span class="query-icon">⌕</span>
+        <span class="query-text">consultor seo lisboa</span>
+        <span class="caret"></span>
+      </div>
+
+      <!-- Resposta gerada: a headline promete Google *e* IAs, então a citação
+           nas respostas de IA tem de aparecer antes dos links azuis. -->
+      <div class="aio">
+        <div class="aio-head">
+          <span class="aio-spark">✦</span>
+          <span class="aio-name">Resposta da IA</span>
+          <span class="aio-tag">AI Overview</span>
+        </div>
+        <div class="aio-lines">
+          <span class="aio-line aio-line-1"></span>
+          <span class="aio-line aio-line-2"></span>
+          <span class="aio-line aio-line-3"></span>
+        </div>
+        <div class="aio-cites">
+          <span class="cite cite-mine">ricardotatagiba.com.br</span>
+          <span class="cite">fonte 2</span>
+          <span class="cite">fonte 3</span>
+        </div>
+      </div>
+
+      <div class="results">
+        <div class="row row-a">
+          <span class="rank">
+            <span class="reel reel-a"><i>1</i><i>2</i></span>
+          </span>
+          <span class="row-body">
+            <span class="row-url dim">concorrente-a.com</span>
+            <span class="row-bar"></span>
+          </span>
+        </div>
+
+        <div class="row row-b">
+          <span class="rank">
+            <span class="reel reel-b"><i>2</i><i>3</i></span>
+          </span>
+          <span class="row-body">
+            <span class="row-url dim">concorrente-b.com</span>
+            <span class="row-bar row-bar-short"></span>
+          </span>
+        </div>
+
+        <div class="row row-mine">
+          <span class="rank rank-mine">
+            <span class="reel reel-mine">
+              <i>7</i><i>6</i><i>5</i><i>4</i><i>3</i><i>2</i><i>1</i>
+            </span>
+          </span>
+          <span class="row-body">
+            <span class="row-url">ricardotatagiba.com.br</span>
+            <span class="row-title">Ricardo Tatagiba — Consultor SEO</span>
+          </span>
+          <span class="row-delta">▲ 6</span>
+        </div>
       </div>
     </div>
 
-    <div class="result result-muted">
-      <div>
-        <span class="result-url dim">concorrente-a.com.br</span>
-        <span class="result-title dim"></span>
-      </div>
+    <div class="tracker">
+      {
+        tracked.map((t, i) => (
+          <div class="track" style={`--d:${520 + i * 110}ms; --fill:${t.fill}`}>
+            <span class="track-kw">{t.kw}</span>
+            <span class="track-meter">
+              <span class="track-meter-fill" />
+            </span>
+            <span class="track-pos">{t.pos}</span>
+            <span class="track-delta">▲{t.delta}</span>
+          </div>
+        ))
+      }
     </div>
 
-    <div class="result result-muted">
-      <div>
-        <span class="result-url dim">concorrente-b.com.br</span>
-        <span class="result-title dim"></span>
+    <div class="metrics">
+      <div class="metrics-head">
+        <span class="metrics-label">Tráfego orgânico · 6 meses</span>
+        <strong class="metrics-val">+184%</strong>
+      </div>
+
+      <svg class="chart" viewBox="0 0 240 56" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="seo-area" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#c98a2c" stop-opacity="0.32"></stop>
+            <stop offset="100%" stop-color="#c98a2c" stop-opacity="0"></stop>
+          </linearGradient>
+        </defs>
+        <path
+          class="chart-area"
+          d="M0 48 L40 42 L80 44 L120 30 L160 26 L200 15 L238 5 L238 56 L0 56 Z"
+          fill="url(#seo-area)"></path>
+        <path
+          class="chart-line"
+          d="M0 48 L40 42 L80 44 L120 30 L160 26 L200 15 L238 5"
+          fill="none"
+          stroke="#c98a2c"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
+        <circle class="chart-dot" cx="238" cy="5" r="3" fill="#c98a2c"></circle>
+      </svg>
+
+      <div class="vitals">
+        {
+          vitals.map((v) => (
+            <span class="vital">
+              <span class="vital-dot" />
+              {v.label} <b>{v.value}</b>
+            </span>
+          ))
+        }
       </div>
     </div>
   </div>
@@ -37,120 +148,803 @@
     <small>"consultor seo lisboa"</small>
   </div>
 
-  <div class="float-card card-chart">
-    <svg class="mini-chart" viewBox="0 0 80 32" fill="none">
-      <path
-        d="M2 28 L16 24 L30 25 L44 14 L58 16 L78 4"
-        stroke="#c98a2c"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      ></path>
-    </svg>
+  <div class="float-card card-ai">
+    <span class="aio-spark big">✦</span>
     <div>
-      <strong>+184%</strong>
-      <small>Tráfego orgânico</small>
+      <strong>4 IAs</strong>
+      <small>Citam o site</small>
     </div>
+  </div>
+
+  <div class="float-card card-kw">
+    <strong>68</strong>
+    <small>Keywords no top 3</small>
   </div>
 </div>
 
 <style>
+  /* Altura de uma linha da SERP — a coreografia da subida depende dela. */
   .visual {
+    --row: 2.7rem;
+    --rh: 1.45rem;
+    /* Passo do odómetro = altura útil dentro da borda de 1px do badge. Se
+       usasse --rh direto, cada degrau desalinhava 2px e ao 6.º saía do sítio. */
+    --rs: calc(var(--rh) - 2px);
     position: relative;
     width: 100%;
     min-height: 22rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2.5rem 2rem;
+    padding: 2rem;
+    overflow: hidden;
   }
 
-  .serp {
+  /* Malha de fundo, igual ao visual de IA — dá textura de prancheta. */
+  .visual::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    background-image:
+      linear-gradient(var(--color-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-line) 1px, transparent 1px);
+    background-size: 2.5rem 2.5rem;
+    opacity: 0.35;
+    mask-image: radial-gradient(
+      ellipse 70% 60% at 50% 45%,
+      #000 20%,
+      transparent 100%
+    );
+    pointer-events: none;
+  }
+
+  /* Varredura do crawler: uma linha que percorre o palco de alto a baixo. */
+  .scan {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 8rem;
+    pointer-events: none;
+    background: linear-gradient(
+      180deg,
+      transparent,
+      rgba(201, 138, 44, 0.07) 60%,
+      rgba(201, 138, 44, 0.16)
+    );
+    border-bottom: 1px solid rgba(201, 138, 44, 0.22);
+    animation: scan-down 12s linear infinite;
+  }
+
+  @keyframes scan-down {
+    0% {
+      top: -8rem;
+      opacity: 0;
+    }
+    8% {
+      opacity: 1;
+    }
+    45% {
+      opacity: 1;
+    }
+    55%,
+    100% {
+      top: 100%;
+      opacity: 0;
+    }
+  }
+
+  .stack {
+    position: relative;
     width: 100%;
-    max-width: 24rem;
+    max-width: 25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .browser {
     background: var(--color-surface);
     border: 1px solid var(--color-line);
-    border-radius: 0.5rem;
-    padding: 1.1rem 1.1rem 1.3rem;
+    border-radius: 0.6rem;
+    overflow: hidden;
+    animation: float-in 0.4s ease-out backwards;
   }
 
-  .serp-search {
+  .browser-bar {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    border: 1px solid var(--color-line);
-    border-radius: 0.4rem;
-    padding: 0.5rem 0.9rem;
-    margin-bottom: 1rem;
-    font-family: var(--font-family-mono);
-  }
-  .serp-search-icon {
-    color: var(--color-text-muted);
-    font-size: 0.85rem;
-  }
-  .serp-search-text {
-    font-size: 0.72rem;
-    color: var(--color-text-muted);
-  }
-
-  .result {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.6rem;
-    padding: 0.6rem 0;
+    padding: 0.5rem 0.85rem;
     border-bottom: 1px solid var(--color-line);
   }
-  .result:last-child {
-    border-bottom: none;
-  }
 
-  .badge-1 {
-    flex-shrink: 0;
-    width: 1.4rem;
-    height: 1.4rem;
-    border-radius: 0.3rem;
-    background: var(--color-accent);
-    color: var(--color-ink);
-    font-family: var(--font-family-mono);
-    font-size: 0.7rem;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 0.1rem;
-  }
-
-  .result-1 {
-    border-radius: 0.4rem;
-    padding: 0.65rem 0.6rem;
-    border-bottom: none;
-  }
-
-  .result-url {
-    display: block;
+  .browser-url {
     font-family: var(--font-family-mono);
     font-size: 0.66rem;
-    color: var(--color-accent);
-    margin-bottom: 0.15rem;
+    color: var(--color-text-muted);
   }
-  .result-title {
-    display: block;
-    font-size: 0.82rem;
+
+  .browser-tag {
+    margin-left: auto;
+    font-family: var(--font-family-mono);
+    font-size: 0.58rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-sage);
+  }
+
+  /* Campo de busca: o texto é "digitado" a cada ciclo, o que dá o arranque
+     narrativo para os resultados se reorganizarem a seguir. */
+  .query {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.8rem 0.85rem 0.7rem;
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    padding: 0.45rem 0.85rem;
+  }
+
+  .query-icon {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    line-height: 1;
+  }
+
+  .query-text {
+    font-family: var(--font-family-mono);
+    font-size: 0.72rem;
+    color: var(--color-text);
+    white-space: nowrap;
+    overflow: hidden;
+    width: 20ch;
+    animation: type 12s steps(20, end) infinite;
+  }
+
+  @keyframes type {
+    0% {
+      width: 0;
+    }
+    6%,
+    93% {
+      width: 20ch;
+    }
+    96%,
+    100% {
+      width: 0;
+    }
+  }
+
+  .caret {
+    width: 0.4rem;
+    height: 0.9rem;
+    flex-shrink: 0;
+    background: var(--color-accent);
+    animation: caret-blink 1s steps(1) infinite;
+  }
+
+  @keyframes caret-blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  /* Bloco de resposta gerada. */
+  .aio {
+    margin: 0 0.85rem 0.7rem;
+    padding: 0.6rem 0.7rem;
+    border: 1px solid rgba(201, 138, 44, 0.28);
+    border-radius: 0.45rem;
+    background: rgba(201, 138, 44, 0.06);
+    animation: float-in 0.4s ease-out 200ms backwards;
+  }
+
+  .aio-head {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .aio-spark {
+    color: var(--color-accent);
+    font-size: 0.7rem;
+    line-height: 1;
+    animation: spark 3s ease-in-out infinite;
+  }
+  .aio-spark.big {
+    font-size: 1.15rem;
+  }
+
+  @keyframes spark {
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.5;
+      transform: scale(0.85);
+    }
+  }
+
+  .aio-name {
+    font-size: 0.7rem;
     font-weight: 600;
     color: var(--color-text);
   }
 
-  .result-muted {
-    padding-left: 2rem;
+  .aio-tag {
+    margin-left: auto;
+    font-family: var(--font-family-mono);
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-muted);
   }
-  .dim {
-    opacity: 0.35;
+
+  /* Linhas que crescem em sequência: leitura de texto a ser gerado. */
+  .aio-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-bottom: 0.55rem;
   }
-  .result-title.dim {
-    height: 0.6rem;
-    width: 70%;
-    background: var(--color-line);
+
+  .aio-line {
+    height: 0.35rem;
     border-radius: 999px;
+    background: var(--color-line);
+    animation: line-grow 12s ease-out infinite;
+  }
+  .aio-line-1 {
+    --w: 100%;
+    animation-delay: 0.4s;
+  }
+  .aio-line-2 {
+    --w: 92%;
+    animation-delay: 0.75s;
+  }
+  .aio-line-3 {
+    --w: 58%;
+    animation-delay: 1.1s;
+  }
+
+  @keyframes line-grow {
+    0% {
+      width: 0;
+    }
+    8%,
+    92% {
+      width: var(--w);
+    }
+    96%,
+    100% {
+      width: 0;
+    }
+  }
+
+  .aio-cites {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+
+  .cite {
+    font-family: var(--font-family-mono);
+    font-size: 0.58rem;
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-line);
+    border-radius: 0.25rem;
+    padding: 0.15rem 0.4rem;
+    animation: float-in 0.35s ease-out 1.5s backwards;
+  }
+
+  .cite-mine {
+    color: var(--color-ink);
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    font-weight: 600;
+  }
+
+  /* Palco da subida: linhas em posição absoluta, movidas por translateY em
+     múltiplos de --row para a troca de posições ser exata. */
+  .results {
+    position: relative;
+    height: calc(var(--row) * 3);
+    margin: 0 0.85rem 0.85rem;
+  }
+
+  .row {
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    height: var(--row);
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0 0.4rem;
+    border-radius: 0.35rem;
+  }
+
+  .row-a {
+    animation: fall-a 12s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  }
+  .row-b {
+    animation: fall-b 12s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  }
+  .row-mine {
+    animation:
+      climb 12s cubic-bezier(0.65, 0, 0.35, 1) infinite,
+      win 12s ease-out infinite;
+  }
+
+  @keyframes climb {
+    0%,
+    12% {
+      transform: translateY(calc(var(--row) * 2));
+      opacity: 1;
+    }
+    30%,
+    92% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    95% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+    96% {
+      transform: translateY(calc(var(--row) * 2));
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(calc(var(--row) * 2));
+      opacity: 1;
+    }
+  }
+
+  @keyframes fall-a {
+    0%,
+    12% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    30%,
+    92% {
+      transform: translateY(var(--row));
+      opacity: 1;
+    }
+    95% {
+      transform: translateY(var(--row));
+      opacity: 0;
+    }
+    96% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fall-b {
+    0%,
+    12% {
+      transform: translateY(var(--row));
+      opacity: 1;
+    }
+    30%,
+    92% {
+      transform: translateY(calc(var(--row) * 2));
+      opacity: 1;
+    }
+    95% {
+      transform: translateY(calc(var(--row) * 2));
+      opacity: 0;
+    }
+    96% {
+      transform: translateY(var(--row));
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(var(--row));
+      opacity: 1;
+    }
+  }
+
+  /* Ao chegar ao topo a linha acende — o "prémio" da animação. */
+  @keyframes win {
+    0%,
+    24% {
+      background: transparent;
+      box-shadow: inset 0 0 0 1px transparent;
+    }
+    32%,
+    92% {
+      background: rgba(201, 138, 44, 0.09);
+      box-shadow: inset 0 0 0 1px rgba(201, 138, 44, 0.32);
+    }
+    96%,
+    100% {
+      background: transparent;
+      box-shadow: inset 0 0 0 1px transparent;
+    }
+  }
+
+  /* Odómetro do número de posição. */
+  .rank {
+    flex-shrink: 0;
+    width: 1.45rem;
+    height: var(--rh);
+    overflow: hidden;
+    border-radius: 0.3rem;
+    border: 1px solid var(--color-line);
+    color: var(--color-text-muted);
+  }
+
+  .rank-mine {
+    border-color: var(--color-accent);
+    background: var(--color-accent);
+    color: var(--color-ink);
+  }
+
+  .reel {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .reel i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    height: calc(var(--rh) - 2px);
+    font-family: var(--font-family-mono);
+    font-style: normal;
+    font-size: 0.7rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .reel-mine {
+    animation: reel-mine 12s infinite;
+  }
+
+  /* Um degrau por keyframe: 7→1 durante a janela da subida (12%–30%). */
+  @keyframes reel-mine {
+    0%,
+    12% {
+      transform: translateY(0);
+    }
+    15% {
+      transform: translateY(calc(var(--rs) * -1));
+    }
+    18% {
+      transform: translateY(calc(var(--rs) * -2));
+    }
+    21% {
+      transform: translateY(calc(var(--rs) * -3));
+    }
+    24% {
+      transform: translateY(calc(var(--rs) * -4));
+    }
+    27% {
+      transform: translateY(calc(var(--rs) * -5));
+    }
+    30%,
+    95% {
+      transform: translateY(calc(var(--rs) * -6));
+    }
+    96%,
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .reel-a,
+  .reel-b {
+    animation: reel-down 12s infinite;
+  }
+
+  @keyframes reel-down {
+    0%,
+    20% {
+      transform: translateY(0);
+    }
+    26%,
+    95% {
+      transform: translateY(calc(var(--rs) * -1));
+    }
+    96%,
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .row-body {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .row-url {
+    display: block;
+    font-family: var(--font-family-mono);
+    font-size: 0.62rem;
+    color: var(--color-accent);
+    margin-bottom: 0.15rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .row-title {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .row-url.dim {
+    color: var(--color-text-muted);
+    opacity: 0.5;
+  }
+
+  .row-bar {
+    display: block;
+    height: 0.4rem;
+    width: 72%;
+    border-radius: 999px;
+    background: var(--color-line);
+  }
+  .row-bar-short {
+    width: 54%;
+  }
+
+  .row-delta {
+    flex-shrink: 0;
+    font-family: var(--font-family-mono);
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: var(--color-sage);
+    animation: delta-in 12s ease-out infinite;
+  }
+
+  @keyframes delta-in {
+    0%,
+    28% {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    34%,
+    92% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    96%,
+    100% {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+  }
+
+  /* Tracker: prova de que não é uma keyword só. */
+  .tracker {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid var(--color-line);
+    border-radius: 0.5rem;
+    background: var(--color-surface);
+    animation: float-in 0.4s ease-out 400ms backwards;
+  }
+
+  .track {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    animation: float-in 0.4s ease-out var(--d, 0ms) backwards;
+  }
+
+  .track-kw {
+    flex: 1;
+    min-width: 0;
+    font-family: var(--font-family-mono);
+    font-size: 0.62rem;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .track-meter {
+    flex-shrink: 0;
+    width: 3.5rem;
+    height: 0.3rem;
+    border-radius: 999px;
+    background: var(--color-line);
+    overflow: hidden;
+  }
+
+  .track-meter-fill {
+    display: block;
+    height: 100%;
+    width: var(--fill, 60%);
+    border-radius: 999px;
+    background: var(--color-accent);
+    animation: meter-fill 1s ease-out var(--d, 0ms) backwards;
+  }
+
+  @keyframes meter-fill {
+    from {
+      width: 0;
+    }
+  }
+
+  .track-pos {
+    flex-shrink: 0;
+    width: 1.05rem;
+    text-align: center;
+    font-family: var(--font-family-mono);
+    font-size: 0.66rem;
+    font-weight: 700;
+    color: var(--color-accent);
+  }
+
+  .track-delta {
+    flex-shrink: 0;
+    font-family: var(--font-family-mono);
+    font-size: 0.56rem;
+    color: var(--color-sage);
+  }
+
+  /* Curva de tráfego + saúde técnica. */
+  .metrics {
+    padding: 0.65rem 0.75rem 0.7rem;
+    border: 1px solid var(--color-line);
+    border-radius: 0.5rem;
+    background: var(--color-surface);
+    animation: float-in 0.4s ease-out 320ms backwards;
+  }
+
+  .metrics-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .metrics-label {
+    font-family: var(--font-family-mono);
+    font-size: 0.58rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+  }
+
+  .metrics-val {
+    font-family: var(--font-family-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    line-height: 1;
+  }
+
+  .chart {
+    display: block;
+    width: 100%;
+    height: 3.1rem;
+    margin: 0.3rem 0 0.5rem;
+  }
+
+  /* Traço desenhado do zero a cada ciclo, sincronizado com a subida. */
+  .chart-line {
+    stroke-dasharray: 300;
+    animation: draw 12s ease-out infinite;
+  }
+
+  @keyframes draw {
+    0% {
+      stroke-dashoffset: 300;
+    }
+    35%,
+    92% {
+      stroke-dashoffset: 0;
+    }
+    96%,
+    100% {
+      stroke-dashoffset: 300;
+    }
+  }
+
+  .chart-area {
+    animation: area-in 12s ease-out infinite;
+  }
+
+  @keyframes area-in {
+    0%,
+    10% {
+      opacity: 0;
+    }
+    45%,
+    92% {
+      opacity: 1;
+    }
+    96%,
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .chart-dot {
+    animation: dot-arrive 12s ease-out infinite;
+  }
+
+  /* Só opacity: animar o atributo `r` via CSS não é fiável fora do Chromium. */
+  @keyframes dot-arrive {
+    0%,
+    33% {
+      opacity: 0;
+    }
+    38%,
+    92% {
+      opacity: 1;
+    }
+    96%,
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .vitals {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+
+  .vital {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.28rem;
+    font-family: var(--font-family-mono);
+    font-size: 0.56rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    padding: 0.16rem 0.45rem;
+  }
+
+  .vital b {
+    color: var(--color-sage);
+    font-weight: 700;
+  }
+
+  .vital-dot,
+  .dot-live {
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 999px;
+    background: var(--color-sage);
+    flex-shrink: 0;
+  }
+
+  .dot-live {
+    width: 0.5rem;
+    height: 0.5rem;
+    animation: dot-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes dot-pulse {
+    50% {
+      opacity: 0.35;
+    }
   }
 
   .float-card {
@@ -182,19 +976,18 @@
 
   .card-rank {
     top: 1.2rem;
-    right: 0.5rem;
+    right: 0.75rem;
     animation-delay: 60ms;
   }
-  .card-chart {
-    bottom: 1.5rem;
-    left: 0.5rem;
-    animation-delay: 140ms;
+  .card-ai {
+    top: 38%;
+    left: 0.75rem;
+    animation-delay: 220ms;
   }
-
-  .mini-chart {
-    width: 2.6rem;
-    height: 1.6rem;
-    flex-shrink: 0;
+  .card-kw {
+    bottom: 1.5rem;
+    right: 1rem;
+    animation-delay: 340ms;
   }
 
   @keyframes float-in {
@@ -208,9 +1001,91 @@
     }
   }
 
+  /* Palcos estreitos: os cartões flutuantes sobrepõem-se ao browser. */
+  @media (max-width: 1279px) {
+    .card-rank,
+    .card-ai,
+    .card-kw {
+      display: none;
+    }
+  }
+
+  /* Ecrãs baixos: corta o acessório para a legenda não ser empurrada. */
+  @media (max-height: 860px) {
+    .visual {
+      padding: 1.25rem 2rem;
+      min-height: 18rem;
+    }
+    .stack {
+      gap: 0.55rem;
+    }
+    .tracker {
+      display: none;
+    }
+    .card-kw {
+      display: none;
+    }
+    .chart {
+      height: 2.4rem;
+    }
+  }
+
+  @media (max-height: 720px) {
+    .aio-lines {
+      display: none;
+    }
+    .metrics {
+      display: none;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
-    .float-card {
+    .scan,
+    .browser,
+    .aio,
+    .aio-spark,
+    .aio-line,
+    .cite,
+    .caret,
+    .dot-live,
+    .tracker,
+    .track,
+    .track-meter-fill,
+    .metrics,
+    .float-card,
+    .chart-line,
+    .chart-area,
+    .chart-dot,
+    .row-delta,
+    .query-text {
       animation: none;
+    }
+
+    /* Sem animação a SERP tem de mostrar já o estado final: o site em #1. */
+    .row-mine {
+      animation: none;
+      background: rgba(201, 138, 44, 0.09);
+      box-shadow: inset 0 0 0 1px rgba(201, 138, 44, 0.32);
+    }
+    .row-a {
+      animation: none;
+      transform: translateY(var(--row));
+    }
+    .row-b {
+      animation: none;
+      transform: translateY(calc(var(--row) * 2));
+    }
+    .reel-mine {
+      animation: none;
+      transform: translateY(calc(var(--rs) * -6));
+    }
+    .reel-a,
+    .reel-b {
+      animation: none;
+      transform: translateY(calc(var(--rs) * -1));
+    }
+    .scan {
+      display: none;
     }
   }
 </style>

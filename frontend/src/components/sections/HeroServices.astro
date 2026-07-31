@@ -5,14 +5,12 @@ import { services, defaultServiceId, type ServiceId } from "../../data/services"
 import { bookingUrl } from "../../lib/booking";
 import SiteVisual from "./hero-visuals/SiteVisual.astro";
 import AiVisual from "./hero-visuals/AiVisual.astro";
-import AutomacoesVisual from "./hero-visuals/AutomacoesVisual.astro";
 import SeoVisual from "./hero-visuals/SeoVisual.astro";
 import AuditoriaVisual from "./hero-visuals/AuditoriaVisual.astro";
 
 const visualComponents: Record<ServiceId, any> = {
   sites: SiteVisual,
   ia: AiVisual,
-  automacoes: AutomacoesVisual,
   seo: SeoVisual,
   auditoria: AuditoriaVisual,
 };
@@ -328,6 +326,14 @@ const stats = [
     display: flex;
     flex-direction: column;
     animation: stage-in 260ms ease-out;
+  }
+
+  /* O visual de cada serviço tem de esticar até à legenda, senão cola-se ao
+     topo e sobra um vazio grande por baixo. `:global` porque o elemento vem
+     do componente filho. */
+  .stage-panel > :global(.visual) {
+    flex: 1;
+    min-height: 0;
   }
 
   @keyframes stage-in {
