@@ -10,7 +10,7 @@ description: "A discussão SEO vs PPC perdeu sentido porque a IA mudou onde a de
 image: "/images/o-clique-que-nao-aconteceu.webp"
 slug: "seo-vs-ppc-debate-acabou"
 keyword_principal: "seo vs ppc"
-data: 2026-07-21
+date: 2026-07-21
 ---
 
 # SEO vs PPC: por que essa discussão acabou em 2026

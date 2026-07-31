@@ -9,7 +9,7 @@ titulos_alternativos:
 description: "As quatro alavancas de receita de busca explicam por que o Google monetiza mais a SERP: volume, cobertura, cliques pagos e valor por clique."
 slug: "quatro-alavancas-receita-busca-google"
 keyword_principal: "alavancas de receita de busca"
-data: 2026-07-28
+date: 2026-07-28
 ---
 
 Existem quatro alavancas de receita de busca: volume de buscas, porcentagem de buscas monetizadas, porcentagem de cliques monetizados e valor por clique. Quando uma delas trava, a empresa que depende dela puxa as outras três. É esse mecanismo, não uma guerra contra a IA generativa, que explica por que a SERP do Google está mais cheia de anúncio e por que a Visão Geral de IA e o Modo IA ganharam tanto espaço.

@@ -1,7 +1,6 @@
 ---
-// Hero da home: painel de seleção de serviços (esquerda) + visual que troca
-// conforme o serviço escolhido (direita). Ver plano em
-// C:\Users\ricar\.claude\plans\quero-cmudar-a-home-elegant-taco.md
+// Hero da home: ficha técnica do consultor (esquerda) + visual que troca
+// conforme o serviço escolhido (direita).
 import { services, defaultServiceId, type ServiceId } from "../../data/services";
 import { bookingUrl } from "../../lib/booking";
 import SiteVisual from "./hero-visuals/SiteVisual.astro";
@@ -19,25 +18,42 @@ const visualComponents: Record<ServiceId, any> = {
 };
 
 const defaultService = services.find((s) => s.id === defaultServiceId)!;
+
+const stats = [
+  { value: "300+", label: "Sites entregues" },
+  { value: "12+", label: "Anos de experiência" },
+  { value: "5", label: "Frentes integradas" },
+];
 ---
 
-<section class="hero-services" aria-labelledby="hero-services-title">
-  <div class="hero-services-inner">
-    <div class="hero-panel">
-      <h1 id="hero-services-title" class="hero-title">
-        Sites, IA e SEO.<br />Tudo num só lugar.
+<section class="hero-doc" aria-labelledby="hero-doc-title">
+  <div class="hero-doc-inner">
+    <div class="doc-panel">
+      <p class="doc-eyebrow">// O que faço</p>
+
+      <h1 id="hero-doc-title" class="doc-title">
+        Sites, IA e SEO.<br /><em>Tudo num só lugar.</em>
       </h1>
-      <p class="hero-sub">
+      <p class="doc-sub">
         Consultor com mais de 12 anos de experiência, a construir, automatizar
         e ranquear negócios no Google e nas IAs.
       </p>
 
-      <p id="hero-picker-label" class="hero-picker-label">
-        O que gostarias de fazer?
-      </p>
-      <div class="hero-picker" role="radiogroup" aria-labelledby="hero-picker-label">
+      <dl class="doc-stats">
         {
-          services.map((service) => {
+          stats.map((stat) => (
+            <div class="stat">
+              <dd>{stat.value}</dd>
+              <dt>{stat.label}</dt>
+            </div>
+          ))
+        }
+      </dl>
+
+      <p id="doc-index-label" class="doc-index-label">O que gostarias de fazer?</p>
+      <div class="pill-tabs" role="radiogroup" aria-labelledby="doc-index-label">
+        {
+          services.map((service, i) => {
             const active = service.id === defaultServiceId;
             return (
               <button
@@ -46,9 +62,11 @@ const defaultService = services.find((s) => s.id === defaultServiceId)!;
                 data-service={service.id}
                 aria-checked={active ? "true" : "false"}
                 tabindex={active ? 0 : -1}
-                class={`hero-box ${active ? "is-active" : ""}`}
+                class={`pill-tab ${active ? "is-active" : ""}`}
               >
-                <span class="box-check" aria-hidden="true" />
+                <span class="pill-num" aria-hidden="true">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
                 <span data-label>{service.label}</span>
               </button>
             );
@@ -61,29 +79,26 @@ const defaultService = services.find((s) => s.id === defaultServiceId)!;
         href={bookingUrl(defaultService.label)}
         target="_blank"
         rel="noopener noreferrer"
-        class="hero-cta"
+        class="doc-cta"
       >
-        Agendar reunião
+        Agendar reunião <span aria-hidden="true">→</span>
       </a>
-
-      <ul class="hero-proof">
-        <li>+300 sites criados</li>
-        <li>12+ anos de experiência</li>
-        <li>Lisboa, Portugal</li>
-      </ul>
     </div>
 
-    <div class="hero-stage">
+    <div class="doc-stage">
       {
-        services.map((service) => {
+        services.map((service, i) => {
           const Visual = visualComponents[service.id];
           const active = service.id === defaultServiceId;
           return (
             <div class="stage-panel" data-panel={service.id} hidden={!active}>
               <Visual />
               <div class="stage-caption">
-                <h2>{service.headline}</h2>
-                <p>{service.desc}</p>
+                <span class="stage-caption-num">{String(i + 1).padStart(2, "0")}</span>
+                <div>
+                  <h2>{service.headline}</h2>
+                  <p>{service.desc}</p>
+                </div>
               </div>
             </div>
           );
@@ -95,19 +110,17 @@ const defaultService = services.find((s) => s.id === defaultServiceId)!;
 
 <style>
   /* Navbar é sticky com h-16 (4rem); a hero ocupa o resto da primeira dobra. */
-  .hero-services {
+  .hero-doc {
     padding: 1rem 1rem 2rem;
   }
 
   @media (min-width: 1024px) {
-    .hero-services {
-      /* 50px de margem lateral fixa + respiro maior embaixo antes da 2ª dobra. */
+    .hero-doc {
       padding: 1.25rem 50px 3rem;
     }
   }
 
-  /* Mobile: só o painel de opções aparece, com altura natural (sem cortes). */
-  .hero-services-inner {
+  .hero-doc-inner {
     max-width: 80rem;
     margin: 0 auto;
     display: grid;
@@ -115,23 +128,22 @@ const defaultService = services.find((s) => s.id === defaultServiceId)!;
     gap: 1rem;
   }
 
-  /* Desktop: os dois widgets voltam, lado a lado, preenchendo a dobra inteira. */
   @media (min-width: 1024px) {
-    .hero-services-inner {
+    .hero-doc-inner {
       max-width: none;
       height: calc(100vh - 8.25rem);
       height: calc(100dvh - 8.25rem);
-      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       align-items: stretch;
       gap: 2rem;
     }
   }
 
-  .hero-panel {
+  .doc-panel {
     position: relative;
-    border-radius: 1.5rem;
-    border: 1px solid #14532d;
-    background: linear-gradient(155deg, #071a11 0%, #0b2a1b 55%, #04100a 100%);
+    border-radius: 0.75rem;
+    border: 1px solid var(--color-line);
+    background: var(--color-surface);
     padding: clamp(1.1rem, 3vw, 3rem);
     display: flex;
     flex-direction: column;
@@ -140,164 +152,173 @@ const defaultService = services.find((s) => s.id === defaultServiceId)!;
   }
 
   @media (min-width: 1024px) {
-    .hero-panel {
-      /* Respiro pedido: mais espaço em cima e à direita do que à esquerda. */
-      padding: 200px 150px 1.5rem 50px;
+    .doc-panel {
+      padding: 2.75rem 3rem 2rem;
+      justify-content: center;
     }
   }
 
-  .hero-title {
-    color: #ffffff;
-    font-weight: 700;
-    font-size: clamp(2.1rem, 4.2vw, 3.5rem);
-    line-height: 1.08;
-    letter-spacing: -0.01em;
-    text-wrap: balance;
+  .doc-eyebrow {
+    font-family: var(--font-family-mono);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--color-accent);
     margin: 0 0 1rem;
   }
 
-  .hero-sub {
-    color: rgba(212, 212, 212, 0.85);
-    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
-    line-height: 1.6;
-    max-width: 32rem;
-    margin: 0 0 2rem;
+  .doc-title {
+    font-family: var(--font-family-display);
+    color: var(--color-text);
+    font-weight: 600;
+    font-size: clamp(2.4rem, 4.6vw, 4.2rem);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+    margin: 0 0 1.1rem;
   }
 
-  .hero-picker-label {
-    font-size: 0.8rem;
+  .doc-title em {
+    font-style: italic;
+    color: var(--color-text-muted);
+  }
+
+  .doc-sub {
+    color: rgba(232, 228, 220, 0.78);
+    font-size: clamp(1rem, 1.3vw, 1.15rem);
+    line-height: 1.6;
+    max-width: 34rem;
+    margin: 0 0 1.75rem;
+  }
+
+  /* Faixa de números nus — sem card, a prova vem primeiro. */
+  .doc-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem 2.5rem;
+    margin: 0 0 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-line);
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .stat dd {
+    margin: 0;
+    font-family: var(--font-family-display);
     font-weight: 600;
-    color: #7fd9a0;
+    font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+    color: var(--color-accent);
+    line-height: 1;
+  }
+
+  .stat dt {
+    font-family: var(--font-family-mono);
+    font-size: 0.68rem;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+  }
+
+  .doc-index-label {
+    font-family: var(--font-family-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
     margin: 0 0 0.9rem;
   }
 
-  /* Grid de 6 colunas: as 2 primeiras opções ocupam metade cada (span 3),
-     as 3 seguintes dividem o resto (span 2) — mesma assimetria do widget
-     de referência, sem precisar de classes extra no markup. */
-  .hero-picker {
-    display: grid;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    gap: 0.65rem;
-    margin-bottom: 1.75rem;
-  }
-
-  .hero-box:nth-child(1),
-  .hero-box:nth-child(2) {
-    grid-column: span 3;
-  }
-
-  .hero-box:nth-child(n + 3) {
-    grid-column: span 2;
-  }
-
-  .hero-box {
+  /* Seletor de serviço como pills sólidas — mais tátil que abas com linha fina. */
+  .pill-tabs {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
-    text-align: left;
-    padding: 1rem 1.1rem;
-    border-radius: 0.85rem;
-    border: 1px solid #14532d;
-    background: rgba(255, 255, 255, 0.04);
-    color: #d4d4d4;
-    font-size: 0.85rem;
-    font-weight: 600;
-    line-height: 1.3;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .pill-tab {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.6rem 1rem;
+    border-radius: 999px;
+    border: 1px solid var(--color-line);
+    background: transparent;
+    color: var(--color-text-muted);
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.2;
+    white-space: nowrap;
     cursor: pointer;
     transition:
-      border-color 150ms ease,
       background-color 150ms ease,
-      transform 150ms ease,
+      border-color 150ms ease,
       color 150ms ease;
   }
 
-  .hero-box:hover {
-    border-color: rgba(127, 217, 160, 0.6);
-    transform: translateY(-1px);
+  .pill-num {
+    font-family: var(--font-family-mono);
+    font-size: 0.68rem;
+    opacity: 0.7;
   }
 
-  .hero-box:focus-visible {
-    outline: 2px solid #34d874;
+  .pill-tab:hover {
+    border-color: rgba(201, 138, 44, 0.5);
+    color: var(--color-text);
+  }
+
+  .pill-tab:focus-visible {
+    outline: 2px solid var(--color-accent);
     outline-offset: 2px;
   }
 
-  .hero-box.is-active {
-    border-color: #34d874;
-    background: rgba(52, 216, 116, 0.12);
-    color: #ffffff;
+  .pill-tab.is-active {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-ink);
   }
 
-  .box-check {
-    flex-shrink: 0;
-    width: 1.05rem;
-    height: 1.05rem;
-    border-radius: 0.3rem;
-    border: 1.5px solid rgba(212, 212, 212, 0.4);
-    position: relative;
-    transition: all 150ms ease;
+  .pill-tab.is-active .pill-num {
+    opacity: 0.65;
   }
 
-  .hero-box.is-active .box-check {
-    background: #34d874;
-    border-color: #34d874;
-  }
-
-  .hero-box.is-active .box-check::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 42%;
-    width: 0.3rem;
-    height: 0.55rem;
-    border-right: 2px solid #04120a;
-    border-bottom: 2px solid #04120a;
-    transform: translate(-50%, -50%) rotate(45deg);
-  }
-
-  .hero-cta {
-    display: block;
-    align-self: stretch;
-    text-align: center;
-    background: #34d874;
-    color: #000000;
+  .doc-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    align-self: flex-start;
+    background: var(--color-accent);
+    color: var(--color-ink);
     font-weight: 600;
-    padding: 0.95rem 2.2rem;
-    border-radius: 999px;
-    transition: background-color 150ms ease;
-    margin-bottom: 1.75rem;
+    font-size: 0.95rem;
+    padding: 1rem 2rem;
+    border-radius: 0.6rem;
+    transition: background-color 150ms ease, transform 150ms ease;
   }
-  .hero-cta:hover {
-    background: #1fae5c;
-  }
-
-  .hero-proof {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem 1.25rem;
-    list-style: none;
-    padding: 1.25rem 0 0;
-    margin: auto 0 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    color: rgba(212, 212, 212, 0.6);
-    font-size: 0.78rem;
+  .doc-cta:hover {
+    background: var(--color-accent-dark);
+    transform: translateY(-1px);
   }
 
   /* Visual da direita só entra a partir do desktop; no mobile fica só o painel. */
-  .hero-stage {
+  .doc-stage {
     display: none;
     position: relative;
-    border-radius: 1.5rem;
-    border: 1px solid #14532d;
-    background: #050a07;
+    border-radius: 0.75rem;
+    border: 1px solid var(--color-line);
+    background: var(--color-ink);
     overflow: hidden;
     min-height: 0;
   }
 
   @media (min-width: 1024px) {
-    .hero-stage {
+    .doc-stage {
       display: flex;
     }
   }
@@ -321,156 +342,122 @@ const defaultService = services.find((s) => s.id === defaultServiceId)!;
   }
 
   .stage-caption {
+    display: flex;
+    gap: 1.1rem;
     padding: 0 clamp(1.5rem, 4vw, 2.5rem) clamp(1.5rem, 4vw, 2.5rem);
     margin-top: auto;
+    border-top: 1px solid var(--color-line);
+    padding-top: 1.5rem;
+  }
+
+  .stage-caption-num {
+    flex-shrink: 0;
+    font-family: var(--font-family-mono);
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--color-accent);
   }
 
   .stage-caption h2 {
-    color: #ffffff;
-    font-size: 1.15rem;
-    font-weight: 700;
+    font-family: var(--font-family-display);
+    color: var(--color-text);
+    font-size: 1.35rem;
+    font-weight: 600;
     margin: 0 0 0.4rem;
   }
 
   .stage-caption p {
-    color: rgba(212, 212, 212, 0.7);
-    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
     line-height: 1.55;
     margin: 0;
+    max-width: 30rem;
   }
 
-  /* Com o respiro de 200px no topo e 150px à direita, a altura útil do
-     painel encolhe — aperta-se as margens internas na mesma proporção
-     para o CTA e a prova social continuarem visíveis sem scroll. */
-  @media (min-width: 1024px) {
-    .hero-title {
-      font-size: clamp(2rem, 3vw, 2.75rem);
-      margin-bottom: 0.65rem;
+  /* Laptops mais baixos (ex: 1366×768): aperta-se para caber sem cortar o CTA. */
+  @media (min-width: 1024px) and (max-height: 820px) {
+    .doc-title {
+      font-size: clamp(2rem, 3.4vw, 2.9rem);
+      margin-bottom: 0.7rem;
     }
 
-    .hero-sub {
+    .doc-sub {
+      font-size: 0.9rem;
+      line-height: 1.45;
       margin-bottom: 1.1rem;
     }
 
-    .hero-picker-label {
-      margin-bottom: 0.55rem;
+    .doc-stats {
+      margin-bottom: 1.25rem;
+      padding-top: 1rem;
+      gap: 1rem 2rem;
     }
 
-    .hero-picker {
-      margin-bottom: 1rem;
+    .stat dd {
+      font-size: 1.4rem;
     }
 
-    .hero-box {
-      padding: 0.7rem 0.85rem;
-      gap: 0.5rem;
+    .pill-tabs {
+      margin-bottom: 1.1rem;
     }
 
-    .hero-cta {
-      padding: 0.75rem 2.2rem;
-      margin-bottom: 1rem;
+    .pill-tab {
+      padding: 0.45rem 0.8rem;
     }
 
-    .hero-proof {
-      padding-top: 0.85rem;
-    }
-  }
-
-  /* Laptops mais baixos (ex: 1366×768): o mesmo respiro de 200px sobra menos
-     altura útil, então aperta-se mais uma vez para caber sem cortar o CTA. */
-  @media (min-width: 1024px) and (max-height: 820px) {
-    .hero-title {
-      font-size: clamp(1.7rem, 2.4vw, 2.15rem);
-      margin-bottom: 0.4rem;
-    }
-
-    .hero-sub {
-      font-size: 0.85rem;
-      line-height: 1.45;
-      margin-bottom: 0.6rem;
-    }
-
-    .hero-picker-label {
-      margin-bottom: 0.4rem;
-    }
-
-    .hero-picker {
-      gap: 0.5rem;
-      margin-bottom: 0.6rem;
-    }
-
-    .hero-box {
-      padding: 0.55rem 0.7rem;
-      gap: 0.35rem;
-      font-size: 0.78rem;
-    }
-
-    .hero-cta {
-      padding: 0.6rem 2rem;
-      margin-bottom: 0.6rem;
-    }
-
-    .hero-proof {
-      padding-top: 0.5rem;
-      font-size: 0.72rem;
+    .doc-cta {
+      padding: 0.75rem 1.6rem;
     }
   }
 
   /* Abaixo de 1024px só o painel de opções aparece; versão compacta do conteúdo. */
   @media (max-width: 1023px) {
-    .hero-panel {
-      padding: 0.85rem 1rem;
+    .doc-panel {
+      padding: 1.1rem 1.1rem 1.25rem;
     }
 
-    .hero-title {
-      font-size: clamp(1.4rem, 6.5vw, 2.1rem);
-      line-height: 1.12;
-      margin-bottom: 0.4rem;
-    }
-
-    .hero-sub {
-      font-size: 0.78rem;
-      line-height: 1.4;
+    .doc-title {
+      font-size: clamp(1.9rem, 8vw, 2.6rem);
+      line-height: 1.06;
       margin-bottom: 0.6rem;
     }
 
-    .hero-picker-label {
-      font-size: 0.68rem;
-      margin-bottom: 0.4rem;
+    .doc-sub {
+      font-size: 0.88rem;
+      line-height: 1.45;
+      margin-bottom: 1.1rem;
     }
 
-    .hero-picker {
-      gap: 0.4rem;
-      margin-bottom: 0.6rem;
+    .doc-stats {
+      gap: 1rem 1.5rem;
+      margin-bottom: 1.25rem;
+      padding-top: 1rem;
     }
 
-    .hero-box {
-      padding: 0.55rem 0.6rem;
-      gap: 0.35rem;
-      font-size: 0.68rem;
-      border-radius: 0.6rem;
+    .stat dd {
+      font-size: 1.4rem;
     }
 
-    .box-check {
-      width: 0.85rem;
-      height: 0.85rem;
+    .pill-tabs {
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
     }
 
-    .hero-cta {
-      padding: 0.6rem 1.4rem;
-      margin-bottom: 0.6rem;
-      font-size: 0.85rem;
+    .pill-tab {
+      font-size: 0.76rem;
+      padding: 0.5rem 0.8rem;
     }
 
-    .hero-proof {
-      padding-top: 0.6rem;
-      gap: 0.3rem 0.85rem;
-      font-size: 0.65rem;
+    .doc-cta {
+      padding: 0.85rem 1.6rem;
+      font-size: 0.88rem;
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
     .stage-panel,
-    .hero-box {
+    .pill-tab,
+    .doc-cta {
       animation: none;
       transition: none;
     }
