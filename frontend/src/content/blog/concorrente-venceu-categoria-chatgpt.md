@@ -9,8 +9,8 @@ titulos_alternativos:
 description: "85% das categorias no ChatGPT ainda não têm marca dona. Veja o framework pra checar se a categoria do seu cliente já foi tomada por um concorrente."
 slug: "concorrente-venceu-categoria-chatgpt"
 keyword_principal: "visibilidade de marca no ChatGPT"
-image: "/images/concorrente-venceu-categoria-chatgpt/cover.webp"
-data: 2026-07-28
+image: "/images/capas/concorrente-venceu-categoria-chatgpt.webp"
+date: 2026-07-28
 ---
 
 # Seu concorrente não te venceu no Google. Ele venceu a categoria inteira no ChatGPT

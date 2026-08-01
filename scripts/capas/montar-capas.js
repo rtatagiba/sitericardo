@@ -12,7 +12,9 @@ const TEMA = {
   'a-oficializacao-do-grounding-o-futuro-do-trafego-organico-segundo-o-google': 'IA & GEO',
   'analise-de-concorrentes-em-seo-como-identificar-e-superar-seus-competidores-nos-resultados-de-busca': 'Estratégia',
   'autoridade-topic-clusters-de-conteudo-seo-geo': 'Conteúdo',
+  'clareza-e-a-nova-estrategia-seo-ia': 'Conteúdo',
   'como-aparecer-no-chatgpt-guia-aeo-geo': 'IA & GEO',
+  'concorrente-venceu-categoria-chatgpt': 'IA & GEO',
   'como-bloquear-treinamento-de-ia-sem-sumir-do-google-a-mudanca-que-a-cloudflare-fez-em-julho-de-2026': 'IA & GEO',
   'como-calcular-seu-orcamento-de-seo-um-guia-completo-para-empresas-brasileiras': 'Estratégia',
   'como-criar-conteudo-seo-friendly-que-converte': 'Conteúdo',
@@ -29,9 +31,11 @@ const TEMA = {
   'como-recuperar-de-mencoes-negativas-a-marca': 'Estratégia',
   'como-trabalhar-com-imagens-para-seo-e-melhorar-o-carregamento-do-site': 'SEO Técnico',
   'criacao-de-faqs-programadas-com-dados-estruturados-json-ld-um-guia-completo-para-seo-na-era-da-ia': 'SEO Técnico',
+  'diluicao-nao-autoridade-seo-local': 'SEO Local',
   'evento-de-marketing-digital-em-lisboa-digitalks': 'Notícia',
   'ferramentas-gratuitas-seo-para-ia-aeo-geo': 'Ferramentas',
   'graphify-como-economizar-tokens-ao-usar-ia': 'Ferramentas',
+  'janela-autoridade-topica-ia-generativa': 'IA & GEO',
   'lacuna-de-conteudo-comparar-sitemap-concorrente': 'Ferramentas',
   'meta-revoluciona-a-comunicacao-com-ia-que-converte-pensamentos-em-texto': 'Notícia',
   'o-experimento-que-provou-a-maior-parte-do-crawler-no-seu-log-e-fake': 'IA & GEO',
@@ -42,6 +46,7 @@ const TEMA = {
   'seo-vs-ppc-debate-acabou': 'Estratégia',
   'sucesso-em-seo-local-como-acompanhar-rankings-conversoes-e-chamadas': 'SEO Local',
   'title-tag-ideal-tem-de-50-a-60-caracteres-diz-estudo-com-81-mil-titulos': 'Conteúdo',
+  'trafego-organico-benchmark-real': 'Estratégia',
 };
 
 // Artigos assentes em números medidos levam barras em vez do grafo.
@@ -53,6 +58,7 @@ const BARRAS = new Set([
   'lacuna-de-conteudo-comparar-sitemap-concorrente',
   'o-experimento-que-provou-a-maior-parte-do-crawler-no-seu-log-e-fake',
   'title-tag-ideal-tem-de-50-a-60-caracteres-diz-estudo-com-81-mil-titulos',
+  'trafego-organico-benchmark-real',
 ]);
 
 // Cada retrato tem o rosto a uma altura ligeiramente diferente no recorte.

@@ -9,8 +9,8 @@ titulos_alternativos:
 description: "Um site removeu 4 milhões de páginas quase duplicadas e ganhou 600 mil cliques a mais. Veja por que menos páginas, bem escolhidas, constroem mais autoridade local."
 slug: "diluicao-nao-autoridade-seo-local"
 keyword_principal: "autoridade tópica SEO local"
-image: "/images/diluicao-nao-autoridade-seo-local/cover.webp"
-data: 2026-07-28
+image: "/images/capas/diluicao-nao-autoridade-seo-local.webp"
+date: 2026-07-28
 ---
 
 # Um site removeu 4 milhões de páginas e ganhou 600 mil cliques a mais

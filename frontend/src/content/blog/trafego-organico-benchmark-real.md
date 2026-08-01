@@ -9,8 +9,8 @@ titulos_alternativos:
 description: "O tráfego orgânico médio pra um site com DR 0 a 10 é de 11 cliques por mês, segundo dados reais do Ahrefs. Veja os benchmarks por autoridade e tamanho."
 slug: "trafego-organico-benchmark-real"
 keyword_principal: "benchmark de tráfego orgânico"
-image: "/images/trafego-organico-benchmark-real/cover.webp"
-data: 2026-07-28
+image: "/images/capas/trafego-organico-benchmark-real.webp"
+date: 2026-07-28
 ---
 
 # 11 cliques por mês: o benchmark real de tráfego orgânico pra sites com pouca autoridade

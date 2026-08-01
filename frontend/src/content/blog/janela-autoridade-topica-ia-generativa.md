@@ -9,8 +9,8 @@ titulos_alternativos:
 description: "Só 15,2% das categorias já têm marca dona no ChatGPT, e quem chega lá primeiro tende a ficar. Veja os dados de 50 mil marcas e por que a janela é curta."
 slug: "janela-autoridade-topica-ia-generativa"
 keyword_principal: "autoridade tópica em IA"
-image: "/images/janela-autoridade-topica-ia-generativa/cover.webp"
-data: 2026-07-28
+image: "/images/capas/janela-autoridade-topica-ia-generativa.webp"
+date: 2026-07-28
 ---
 
 # Você tem meses, não anos, pra virar a resposta padrão da IA no seu nicho

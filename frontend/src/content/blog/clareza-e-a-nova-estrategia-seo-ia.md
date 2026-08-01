@@ -9,8 +9,8 @@ titulos_alternativos:
 description: "Clareza deixou de ser só boa prática de UX e virou estratégia de SEO. Veja o que parar de fazer e o que priorizar pra ranquear em busca tradicional e com IA."
 slug: "clareza-e-a-nova-estrategia-seo-ia"
 keyword_principal: "clareza como estratégia de SEO"
-image: "/images/clareza-e-a-nova-estrategia-seo-ia/cover.webp"
-data: 2026-07-28
+image: "/images/capas/clareza-e-a-nova-estrategia-seo-ia.webp"
+date: 2026-07-28
 ---
 
 # Em 2026, clareza é a estratégia de SEO, não só um detalhe de UX

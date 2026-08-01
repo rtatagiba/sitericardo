@@ -1,20 +1,66 @@
 [
   {
+    "slug": "clareza-e-a-nova-estrategia-seo-ia",
+    "title": "Em 2026, clareza é a estratégia de SEO, não só um detalhe de UX",
+    "date": "28 JUL 2026",
+    "category": "Conteúdo",
+    "retrato": "cafe-laptop",
+    "photoPos": "50% 40%",
+    "titleSize": 48
+  },
+  {
+    "slug": "concorrente-venceu-categoria-chatgpt",
+    "title": "Seu concorrente não te venceu no Google. Ele venceu a categoria inteira no ChatGPT",
+    "date": "28 JUL 2026",
+    "category": "IA & GEO",
+    "retrato": "gesto",
+    "photoPos": "46% 38%",
+    "titleSize": 42
+  },
+  {
+    "slug": "diluicao-nao-autoridade-seo-local",
+    "title": "Um site removeu 4 milhões de páginas e ganhou 600 mil cliques a mais",
+    "date": "28 JUL 2026",
+    "category": "SEO Local",
+    "retrato": "de-pe",
+    "photoPos": "50% 34%",
+    "titleSize": 48
+  },
+  {
+    "slug": "janela-autoridade-topica-ia-generativa",
+    "title": "Você tem meses, não anos, pra virar a resposta padrão da IA no seu nicho",
+    "date": "28 JUL 2026",
+    "category": "IA & GEO",
+    "retrato": "blazer",
+    "photoPos": "52% 38%",
+    "titleSize": 48
+  },
+  {
     "slug": "quatro-alavancas-receita-busca-google",
     "title": "IA não está matando o Google:<br>a busca só ficou madura demais",
     "date": "28 JUL 2026",
     "category": "IA & GEO",
-    "retrato": "cafe-laptop",
-    "photoPos": "50% 40%",
+    "retrato": "apontar",
+    "photoPos": "48% 40%",
     "titleSize": 52
+  },
+  {
+    "slug": "trafego-organico-benchmark-real",
+    "title": "11 cliques por mês:<br>o benchmark real de tráfego orgânico pra sites com pouca autoridade",
+    "date": "28 JUL 2026",
+    "category": "Estratégia",
+    "retrato": "pensativo",
+    "photoPos": "50% 36%",
+    "titleSize": 42,
+    "graphic": "bars"
   },
   {
     "slug": "ferramentas-gratuitas-seo-para-ia-aeo-geo",
     "title": "Top 10 ferramentas gratuitas de SEO para IA (AEO/GEO): o guia definitivo",
     "date": "22 JUL 2026",
     "category": "Ferramentas",
-    "retrato": "gesto",
-    "photoPos": "46% 38%",
+    "retrato": "cafe-laptop",
+    "photoPos": "50% 40%",
     "titleSize": 48
   },
   {
@@ -22,8 +68,8 @@
     "title": "Graphify:<br>como a ferramenta open source economiza tokens ao usar IA no código",
     "date": "22 JUL 2026",
     "category": "Ferramentas",
-    "retrato": "de-pe",
-    "photoPos": "50% 34%",
+    "retrato": "gesto",
+    "photoPos": "46% 38%",
     "titleSize": 42
   },
   {
@@ -31,8 +77,8 @@
     "title": "SEO vs PPC:<br>por que essa discussão acabou em 2026",
     "date": "21 JUL 2026",
     "category": "Estratégia",
-    "retrato": "blazer",
-    "photoPos": "52% 38%",
+    "retrato": "de-pe",
+    "photoPos": "50% 34%",
     "titleSize": 52
   },
   {
@@ -40,8 +86,8 @@
     "title": "Autoridade tópica:<br>como estruturar clusters de conteúdo que Google e IA reconhecem",
     "date": "20 JUL 2026",
     "category": "Conteúdo",
-    "retrato": "perfil",
-    "photoPos": "50% 30%",
+    "retrato": "blazer",
+    "photoPos": "52% 38%",
     "titleSize": 42
   },
   {
@@ -49,8 +95,8 @@
     "title": "Como aparecer no ChatGPT:<br>guia AEO/GEO para sites e empresas",
     "date": "20 JUL 2026",
     "category": "IA & GEO",
-    "retrato": "pensativo",
-    "photoPos": "50% 36%",
+    "retrato": "apontar",
+    "photoPos": "48% 40%",
     "titleSize": 52
   },
   {
@@ -58,8 +104,8 @@
     "title": "Como comparar o sitemap do seu site com o de um concorrente",
     "date": "17 JUL 2026",
     "category": "Ferramentas",
-    "retrato": "cafe-laptop",
-    "photoPos": "50% 40%",
+    "retrato": "pensativo",
+    "photoPos": "50% 36%",
     "titleSize": 52,
     "graphic": "bars"
   },
@@ -68,8 +114,8 @@
     "title": "O experimento que provou:<br>a maior parte do 'crawler' no seu log é fake",
     "date": "14 JUL 2026",
     "category": "IA & GEO",
-    "retrato": "gesto",
-    "photoPos": "46% 38%",
+    "retrato": "cafe-laptop",
+    "photoPos": "50% 40%",
     "titleSize": 48,
     "graphic": "bars"
   },
@@ -78,8 +124,8 @@
     "title": "Title tag ideal tem de 50 a 60 caracteres, diz estudo com 81 mil títulos",
     "date": "14 JUL 2026",
     "category": "Conteúdo",
-    "retrato": "de-pe",
-    "photoPos": "50% 34%",
+    "retrato": "gesto",
+    "photoPos": "46% 38%",
     "titleSize": 48,
     "graphic": "bars"
   },
@@ -88,8 +134,8 @@
     "title": "Como bloquear treinamento de IA sem sumir do Google (a mudança que a Cloudflare fez em julho de 2026)",
     "date": "08 JUL 2026",
     "category": "IA & GEO",
-    "retrato": "blazer",
-    "photoPos": "52% 38%",
+    "retrato": "de-pe",
+    "photoPos": "50% 34%",
     "titleSize": 38
   },
   {
@@ -97,8 +143,8 @@
     "title": "A Oficialização do Grounding:<br>O Futuro do Tráfego Orgânico Segundo o Google",
     "date": "29 JUN 2026",
     "category": "IA & GEO",
-    "retrato": "perfil",
-    "photoPos": "50% 30%",
+    "retrato": "blazer",
+    "photoPos": "52% 38%",
     "titleSize": 48
   },
   {
@@ -106,8 +152,8 @@
     "title": "Evento de Marketing digital em Lisboa Digitalks",
     "date": "24 ABR 2025",
     "category": "Notícia",
-    "retrato": "pensativo",
-    "photoPos": "50% 36%",
+    "retrato": "apontar",
+    "photoPos": "48% 40%",
     "titleSize": 52
   },
   {
@@ -115,8 +161,8 @@
     "title": "Criação de FAQs programadas com dados estruturados JSON-LD: Um guia completo para SEO na era da IA",
     "date": "14 ABR 2025",
     "category": "SEO Técnico",
-    "retrato": "cafe-laptop",
-    "photoPos": "50% 40%",
+    "retrato": "pensativo",
+    "photoPos": "50% 36%",
     "titleSize": 38
   },
   {
@@ -124,8 +170,8 @@
     "title": "Por que seo local é fundamental para pequenos negócios",
     "date": "10 ABR 2025",
     "category": "SEO Local",
-    "retrato": "gesto",
-    "photoPos": "46% 38%",
+    "retrato": "cafe-laptop",
+    "photoPos": "50% 40%",
     "titleSize": 52
   },
   {
@@ -133,8 +179,8 @@
     "title": "Como Criar um Sitemap e Melhorar a Indexação do Seu Site",
     "date": "01 ABR 2025",
     "category": "SEO Técnico",
-    "retrato": "de-pe",
-    "photoPos": "50% 34%",
+    "retrato": "gesto",
+    "photoPos": "46% 38%",
     "titleSize": 52
   },
   {
@@ -142,8 +188,8 @@
     "title": "Como Fazer SEO para Sites de Turismo: Atraia Mais Visitantes",
     "date": "01 ABR 2025",
     "category": "Estratégia",
-    "retrato": "blazer",
-    "photoPos": "52% 38%",
+    "retrato": "de-pe",
+    "photoPos": "50% 34%",
     "titleSize": 52
   },
   {
@@ -151,8 +197,8 @@
     "title": "Como Monitorar o Desempenho de SEO do Seu Site com Ferramentas Gratuitas",
     "date": "01 ABR 2025",
     "category": "Ferramentas",
-    "retrato": "perfil",
-    "photoPos": "50% 30%",
+    "retrato": "blazer",
+    "photoPos": "52% 38%",
     "titleSize": 48,
     "graphic": "bars"
   },
@@ -161,8 +207,8 @@
     "title": "Como Calcular seu Orçamento de SEO: Um Guia Completo para Empresas Brasileiras",
     "date": "17 MAR 2025",
     "category": "Estratégia",
-    "retrato": "pensativo",
-    "photoPos": "50% 36%",
+    "retrato": "apontar",
+    "photoPos": "48% 40%",
     "titleSize": 42,
     "graphic": "bars"
   },
@@ -171,8 +217,8 @@
     "title": "Como Criar Conteúdo SEO-Friendly que Converte",
     "date": "17 MAR 2025",
     "category": "Conteúdo",
-    "retrato": "cafe-laptop",
-    "photoPos": "50% 40%",
+    "retrato": "pensativo",
+    "photoPos": "50% 36%",
     "titleSize": 58
   },
   {
@@ -180,8 +226,8 @@
     "title": "Como Escrever Títulos e Meta Descrições que Aumentam o CTR",
     "date": "17 MAR 2025",
     "category": "Conteúdo",
-    "retrato": "gesto",
-    "photoPos": "46% 38%",
+    "retrato": "cafe-laptop",
+    "photoPos": "50% 40%",
     "titleSize": 52
   },
   {
@@ -189,8 +235,8 @@
     "title": "Como Garantir Orçamento para SEO:<br>Estratégias para Justificar Investimentos em Marketing Orgânico",
     "date": "17 MAR 2025",
     "category": "Estratégia",
-    "retrato": "de-pe",
-    "photoPos": "50% 34%",
+    "retrato": "gesto",
+    "photoPos": "46% 38%",
     "titleSize": 38
   },
   {
@@ -198,8 +244,8 @@
     "title": "Como Fazer SEO para Hoteis na nova era da IA",
     "date": "14 MAR 2025",
     "category": "Estratégia",
-    "retrato": "blazer",
-    "photoPos": "52% 38%",
+    "retrato": "de-pe",
+    "photoPos": "50% 34%",
     "titleSize": 58
   },
   {
@@ -207,8 +253,8 @@
     "title": "Como Medir o Share of Search:<br>O GPS da Sua Relevância no Mercado Digital",
     "date": "14 MAR 2025",
     "category": "Estratégia",
-    "retrato": "perfil",
-    "photoPos": "50% 30%",
+    "retrato": "blazer",
+    "photoPos": "52% 38%",
     "titleSize": 48,
     "graphic": "bars"
   },
@@ -217,8 +263,8 @@
     "title": "Como trabalhar com Imagens para SEO e Melhorar o Carregamento do Site",
     "date": "14 MAR 2025",
     "category": "SEO Técnico",
-    "retrato": "pensativo",
-    "photoPos": "50% 36%",
+    "retrato": "apontar",
+    "photoPos": "48% 40%",
     "titleSize": 48
   },
   {
@@ -226,8 +272,8 @@
     "title": "A Mudança para o SEO Semântico:<br>O que os Vetores Significam para sua Estratégia",
     "date": "10 MAR 2025",
     "category": "IA & GEO",
-    "retrato": "cafe-laptop",
-    "photoPos": "50% 40%",
+    "retrato": "pensativo",
+    "photoPos": "50% 36%",
     "titleSize": 42
   },
   {
@@ -235,8 +281,8 @@
     "title": "Como Reparar e Recuperar de Menções Negativas à Marca: Guia Completo de SEO",
     "date": "10 MAR 2025",
     "category": "Estratégia",
-    "retrato": "gesto",
-    "photoPos": "46% 38%",
+    "retrato": "cafe-laptop",
+    "photoPos": "50% 40%",
     "titleSize": 48
   },
   {
@@ -244,8 +290,8 @@
     "title": "Sucesso em SEO Local:<br>Como acompanhar rankings, conversões e chamadas",
     "date": "10 MAR 2025",
     "category": "SEO Local",
-    "retrato": "de-pe",
-    "photoPos": "50% 34%",
+    "retrato": "gesto",
+    "photoPos": "46% 38%",
     "titleSize": 48
   },
   {
@@ -253,8 +299,8 @@
     "title": "Análise de Concorrentes em SEO:<br>Como Identificar e Superar seus Competidores nos Resultados de Busca",
     "date": "09 MAR 2025",
     "category": "Estratégia",
-    "retrato": "blazer",
-    "photoPos": "52% 38%",
+    "retrato": "de-pe",
+    "photoPos": "50% 34%",
     "titleSize": 38,
     "graphic": "bars"
   },
@@ -263,8 +309,8 @@
     "title": "Como Melhorar o Ranking do Seu Site no Google: Dicas Práticas",
     "date": "09 MAR 2025",
     "category": "Estratégia",
-    "retrato": "perfil",
-    "photoPos": "50% 30%",
+    "retrato": "blazer",
+    "photoPos": "52% 38%",
     "titleSize": 48
   },
   {
@@ -272,8 +318,8 @@
     "title": "O Impacto dos Core Web Vitals no SEO: Um Guia Completo",
     "date": "09 MAR 2025",
     "category": "SEO Técnico",
-    "retrato": "pensativo",
-    "photoPos": "50% 36%",
+    "retrato": "apontar",
+    "photoPos": "48% 40%",
     "titleSize": 52
   },
   {
@@ -281,8 +327,8 @@
     "title": "Como Escolher as Melhores Palavras-Chave para Seu Negócio Local",
     "date": "08 MAR 2025",
     "category": "SEO Local",
-    "retrato": "cafe-laptop",
-    "photoPos": "50% 40%",
+    "retrato": "pensativo",
+    "photoPos": "50% 36%",
     "titleSize": 48
   },
   {
@@ -290,8 +336,8 @@
     "title": "Como Fazer SEO para Pequenas Empresas: Um Guia Completo",
     "date": "08 MAR 2025",
     "category": "Estratégia",
-    "retrato": "gesto",
-    "photoPos": "46% 38%",
+    "retrato": "cafe-laptop",
+    "photoPos": "50% 40%",
     "titleSize": 52
   },
   {
@@ -299,8 +345,8 @@
     "title": "O Poder do Schema.org para Empresas de Serviços: Um Guia Completo para o SEO Local",
     "date": "26 FEV 2025",
     "category": "SEO Técnico",
-    "retrato": "de-pe",
-    "photoPos": "50% 34%",
+    "retrato": "gesto",
+    "photoPos": "46% 38%",
     "titleSize": 42
   },
   {
@@ -308,8 +354,8 @@
     "title": "Meta Revoluciona a Comunicação com IA que Converte Pensamentos em Texto",
     "date": "16 FEV 2025",
     "category": "Notícia",
-    "retrato": "blazer",
-    "photoPos": "52% 38%",
+    "retrato": "de-pe",
+    "photoPos": "50% 34%",
     "titleSize": 48
   }
 ]
