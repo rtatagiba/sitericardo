@@ -2,7 +2,7 @@
 title: "Como Melhorar o Ranking do Seu Site no Google: Dicas Práticas"
 date: 2025-03-09
 description: "Ranking no Google é a posição do seu site nos resultados de busca, definida por mais de 200 fatores. Veja como otimizar SEO on-page, off-page e técnico."
-image: "/images/2.webp"
+image: "/images/capas/como-melhorar-o-ranking-do-seu-site-no-google-dicas-praticas.webp"
 category: "SEO"
 ---
 

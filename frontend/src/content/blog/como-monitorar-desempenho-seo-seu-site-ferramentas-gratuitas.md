@@ -2,7 +2,7 @@
 title: "Como Monitorar o Desempenho de SEO do Seu Site com Ferramentas Gratuitas"
 date: 2025-04-01
 description: "Monitorar o desempenho de SEO é acompanhar posições, tráfego e conversões com ferramentas gratuitas como Search Console, GA4 e Bing Webmaster Tools."
-image: "/images/Como-Monitorar-o-Desempenho-de-SEO-do-Seu-Site-com-Ferramentas-Gratuitas.webp"
+image: "/images/capas/como-monitorar-desempenho-seo-seu-site-ferramentas-gratuitas.webp"
 category: "SEO"
 ---
 

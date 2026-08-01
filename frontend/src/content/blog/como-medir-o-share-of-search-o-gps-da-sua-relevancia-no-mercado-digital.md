@@ -2,7 +2,7 @@
 title: "Como Medir o Share of Search: O GPS da Sua Relevância no Mercado Digital"
 date: 2025-03-14
 description: "Share of Search mede a fatia de buscas orgânicas que sua marca captura e prevê o Market Share com até 3 meses de antecedência, segundo dados da IPA e Kantar."
-image: /images/como-medir-o-share-of-search-o-gps-da-sua-relevancia-no-mercado-digital/img-1782732824449.webp
+image: "/images/capas/como-medir-o-share-of-search-o-gps-da-sua-relevancia-no-mercado-digital.webp"
 category: "SEO"
 draft: false
 tags: []

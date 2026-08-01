@@ -2,7 +2,7 @@
 title: "Como Criar Conteúdo SEO-Friendly que Converte"
 date: 2025-03-17
 description: "Conteúdo SEO-friendly que converte responde à intenção de busca e persuade ao mesmo tempo. Veja o processo, ferramentas e o papel das entidades no SEO."
-image: "/images/Como-Criar-Conteudo-SEO-Friendly-que-Converte.webp"
+image: "/images/capas/como-criar-conteudo-seo-friendly-que-converte.webp"
 category: "SEO"
 ---
 

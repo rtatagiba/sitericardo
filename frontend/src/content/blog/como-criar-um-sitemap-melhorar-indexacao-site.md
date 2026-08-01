@@ -2,7 +2,7 @@
 title: "Como Criar um Sitemap e Melhorar a Indexação do Seu Site"
 date: 2025-04-01
 description: "Sitemap XML é o arquivo que lista as páginas do seu site para o Google indexar. Veja como criá-lo, validá-lo e enviá-lo ao Search Console corretamente."
-image: "/images/sitemap-xml.webp"
+image: "/images/capas/como-criar-um-sitemap-melhorar-indexacao-site.webp"
 category: "SEO"
 ---
 

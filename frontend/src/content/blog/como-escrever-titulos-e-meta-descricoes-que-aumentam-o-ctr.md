@@ -2,7 +2,7 @@
 title: "Como Escrever Títulos e Meta Descrições que Aumentam o CTR"
 date: 2025-03-17
 description: "Títulos e meta descrições fracos derrubam o CTR mesmo com bom ranking. Veja como escrever, o tamanho ideal e os erros mais comuns que prejudicam cliques."
-image: "/images/Como-criar-titulos-em-meta-descricao-otimizada-para-SEO.webp"
+image: "/images/capas/como-escrever-titulos-e-meta-descricoes-que-aumentam-o-ctr.webp"
 category: "SEO"
 ---
 

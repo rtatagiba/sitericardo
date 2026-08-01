@@ -2,7 +2,7 @@
 title: "Análise de Concorrentes em SEO: Como Identificar e Superar seus Competidores nos Resultados de Busca"
 date: 2025-03-09
 description: "Análise de concorrentes em SEO compara LCP, INP e CLS ponto a ponto. Veja como usar PageSpeed Insights e CrUX para encontrar brechas reais no site rival."
-image: "/images/1.webp"
+image: "/images/capas/analise-de-concorrentes-em-seo-como-identificar-e-superar-seus-competidores-nos-resultados-de-busca.webp"
 category: "SEO"
 ---
 

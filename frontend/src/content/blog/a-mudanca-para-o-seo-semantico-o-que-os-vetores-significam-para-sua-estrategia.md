@@ -2,7 +2,7 @@
 title: "A Mudança para o SEO Semântico: O que os Vetores Significam para sua Estratégia"
 date: 2025-03-10
 description: "SEO semântico usa incorporações vetoriais para entender o significado por trás das buscas, não só palavras-chave exatas. Veja como adaptar sua estratégia."
-image: "/images/Firefly-palavras-flutuando-no-ar-num-ambiente-tecnologico.webp"
+image: "/images/capas/a-mudanca-para-o-seo-semantico-o-que-os-vetores-significam-para-sua-estrategia.webp"
 category: "SEO"
 ---
 

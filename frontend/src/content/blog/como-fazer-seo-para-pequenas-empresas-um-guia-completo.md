@@ -2,7 +2,7 @@
 title: "Como Fazer SEO para Pequenas Empresas: Um Guia Completo"
 date: 2025-03-08
 description: "Um guia completo de SEO para pequenas empresas: palavras-chave locais, otimização técnica, Google Meu Negócio e métricas para acompanhar resultados."
-image: /images/como-fazer-seo-para-pequenas-empresas-um-guia-completo/img-1782729813382.webp
+image: "/images/capas/como-fazer-seo-para-pequenas-empresas-um-guia-completo.webp"
 category: "SEO"
 draft: false
 tags: []

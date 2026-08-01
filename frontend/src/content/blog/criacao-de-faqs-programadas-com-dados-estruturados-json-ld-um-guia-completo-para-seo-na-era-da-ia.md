@@ -2,7 +2,7 @@
 title: "Criação de FAQs programadas com dados estruturados JSON-LD: Um guia completo para SEO na era da IA"
 date: 2025-04-14
 description: "FAQs com dados estruturados JSON-LD aumentam o tráfego orgânico e destacam seu site com rich results no Google. Veja como criar e validar o código."
-image: "/images/dados-estrutiras-em-paginas-de-FAQ-com-jason.webp"
+image: "/images/capas/criacao-de-faqs-programadas-com-dados-estruturados-json-ld-um-guia-completo-para-seo-na-era-da-ia.webp"
 category: "SEO"
 ---
 

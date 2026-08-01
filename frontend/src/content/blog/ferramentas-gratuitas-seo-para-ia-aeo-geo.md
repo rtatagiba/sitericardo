@@ -11,7 +11,7 @@ titulos_alternativos:
   - "SEO para IA sem pagar nada: as ferramentas gratuitas que valem o teste"
   - "Query fan-out, llms.txt e citação por IA: o kit de ferramentas gratuitas"
 description: "Lista com 11 ferramentas gratuitas de AEO/GEO: query fan-out, monitoramento de citação por IA, geração de llms.txt, robots.txt para bots de IA e mais. Sem ChatGPT, sem LLM."
-image: "/images/crawler-de-ia-escaneando-conteudo-do-site.webp"
+image: "/images/capas/ferramentas-gratuitas-seo-para-ia-aeo-geo.webp"
 category: ""
 slug: ferramentas-gratuitas-seo-para-ia-aeo-geo
 keyword_principal: "ferramentas gratuitas de seo para ia"

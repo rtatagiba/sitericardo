@@ -18,7 +18,9 @@ AFILIADO_BASE:
 
 IMAGENS_ATIVAS: sim
 REPLICATE_ATIVO: sim
-ESTILO_IMAGEM: render 3D estilo cyberpunk/hacker de dados: hologramas verdes, chuva de código estilo Matrix, iluminação escura com destaque neon verde. Não tentar reproduzir gráficos, dashboards ou texto de UI legível embutido na cena (modelos de imagem renderizam texto de forma inconsistente); focar no personagem e no cenário temático.
+ESTILO_IMAGEM: fotografia documental sóbria, luz natural difusa, grafite quente e ocre desaturado (#c98a2c) como único acento — nada de verde, néon, holograma ou chuva de código. Cenas reais de trabalho (secretária, ecrã, papel, cidade), não ficção científica. Não tentar reproduzir gráficos, dashboards ou texto de UI legível embutido na cena (modelos de imagem renderizam texto de forma inconsistente).
+
+NOTA_CAPAS: a imagem de capa (frontmatter `image:`) NÃO se gera por aqui. Ver scripts/capas/README.md — as capas são compostas em HTML a partir de um retrato real do Ricardo. Este estilo aplica-se só às imagens dentro do corpo do artigo.
 
 PERSONAGEM_ATIVO: sim
 PERSONAGEM_REF_IMAGES: frontend/public/images/como-o-google-reescreve-sua-title-tag.jpeg,frontend/public/images/estudo-mostra-que-mais-de-80-por-cento-do-seu-trafego-de-ia-e-fake.jpeg

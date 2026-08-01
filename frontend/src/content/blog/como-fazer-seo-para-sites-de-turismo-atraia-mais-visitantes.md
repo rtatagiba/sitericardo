@@ -2,7 +2,7 @@
 title: "Como Fazer SEO para Sites de Turismo: Atraia Mais Visitantes"
 date: 2025-04-01
 description: "SEO para turismo é a otimização de sites de viagem para atrair o viajante certo, unindo comportamento do usuário, adaptação cultural e visibilidade em IA."
-image: /images/como-fazer-seo-para-sites-de-turismo-atraia-mais-visitantes/img-1782732880663.webp
+image: "/images/capas/como-fazer-seo-para-sites-de-turismo-atraia-mais-visitantes.webp"
 category: "SEO"
 draft: false
 tags: []

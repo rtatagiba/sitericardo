@@ -2,7 +2,7 @@
 title: "Como Fazer SEO para Hotéis na Nova Era da IA"
 date: 2025-03-14
 description: "SEO para hotéis na era da IA vai além de keywords: veja como Marriott, Hilton e IHG usam branding, multilíngue e IA generativa para ganhar reservas diretas."
-image: "/images/como-fazer-seo-para-sites-de-turismo.webp"
+image: "/images/capas/como-fazer-seo-para-hoteis-na-nova-era-da-ia.webp"
 category: "SEO"
 ---
 

@@ -2,7 +2,7 @@
 title: "Evento de Marketing Digital em Lisboa: Digitalks 2025"
 date: 2025-04-24
 description: "O Digitalks Lisboa 2025 reuniu palestras e painéis sobre marketing digital nos dias 22 e 23 de abril. Veja os destaques e o que aprendi no evento."
-image: "/images/1.webp"
+image: "/images/capas/evento-de-marketing-digital-em-lisboa-digitalks.webp"
 category: "SEO"
 ---
 

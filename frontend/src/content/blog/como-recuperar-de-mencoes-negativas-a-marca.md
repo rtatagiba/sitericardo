@@ -2,7 +2,7 @@
 title: "Como Reparar e Recuperar de Menções Negativas à Marca: Guia Completo de SEO"
 date: 2025-03-10
 description: "Aprenda a recuperar menções negativas à marca e fortaleça seu SEO. Implemente estratégias eficazes de gestão de reputação hoje!"
-image: "/images/pessoa-fazendo-um-comentario-num-produto-pelo-google-e-3-estrelas-de-avaliacao-em-sequencia.webp"
+image: "/images/capas/como-recuperar-de-mencoes-negativas-a-marca.webp"
 category: "SEO"
 ---
 

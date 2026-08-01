@@ -2,7 +2,7 @@
 title: "Sucesso em SEO Local: Como acompanhar rankings, conversões e chamadas"
 date: 2025-03-10
 description: "Descubra como acompanhar SEO Local no Brasil: rankings por região, ações no Google Meu Negócio, chamadas e conversões que realmente geram vendas."
-image: "/images/Firefly-personagem-de-terno-com-cores-do-google-com-um-mapa-na-mao-num-cenario.webp"
+image: "/images/capas/sucesso-em-seo-local-como-acompanhar-rankings-conversoes-e-chamadas.webp"
 category: "SEO"
 ---
 

@@ -1,0 +1,862 @@
+{
+  "blog": {
+    "a-mudanca-para-o-seo-semantico-o-que-os-vetores-significam-para-sua-estrategia": [
+      {
+        "id": "como-criar-conteudo-seo-friendly-que-converte",
+        "score": 0.8460396089938634
+      },
+      {
+        "id": "como-fazer-seo-para-pequenas-empresas-um-guia-completo",
+        "score": 0.8318698126343649
+      },
+      {
+        "id": "sucesso-em-seo-local-como-acompanhar-rankings-conversoes-e-chamadas",
+        "score": 0.825592973126063
+      },
+      {
+        "id": "clareza-e-a-nova-estrategia-seo-ia",
+        "score": 0.8221797843335258
+      },
+      {
+        "id": "por-que-seo-local-e-fundamental-para-pequenos-negocios",
+        "score": 0.8169893375602676
+      }
+    ],
+    "a-oficializacao-do-grounding-o-futuro-do-trafego-organico-segundo-o-google": [
+      {
+        "id": "como-bloquear-treinamento-de-ia-sem-sumir-do-google-a-mudanca-que-a-cloudflare-fez-em-julho-de-2026",
+        "score": 0.8220041007231209
+      },
+      {
+        "id": "ferramentas-gratuitas-seo-para-ia-aeo-geo",
+        "score": 0.8099394336874157
+      },
+      {
+        "id": "como-monitorar-desempenho-seo-seu-site-ferramentas-gratuitas",
+        "score": 0.8078533341466333
+      },
+      {
+        "id": "como-aparecer-no-chatgpt-guia-aeo-geo",
+        "score": 0.8062656948958875
+      },
+      {
+        "id": "criacao-de-faqs-programadas-com-dados-estruturados-json-ld-um-guia-completo-para-seo-na-era-da-ia",
+        "score": 0.8008300270651966
+      }
+    ],
+    "analise-de-concorrentes-em-seo-como-identificar-e-superar-seus-competidores-nos-resultados-de-busca": [
+      {
+        "id": "o-impacto-dos-core-web-vitals-no-seo-um-guia-completo",
+        "score": 0.9074224997526443
+      },
+      {
+        "id": "como-fazer-seo-para-pequenas-empresas-um-guia-completo",
+        "score": 0.8243770803706216
+      },
+      {
+        "id": "o-poder-do-schema-org-para-empresas-de-servicos-um-guia-completo-para-o-seo-local",
+        "score": 0.8213692002835556
+      },
+      {
+        "id": "como-monitorar-desempenho-seo-seu-site-ferramentas-gratuitas",
+        "score": 0.8193807760515879
+      },
+      {
+        "id": "como-melhorar-o-ranking-do-seu-site-no-google-dicas-praticas",
+        "score": 0.818504695623378
+      }
+    ],
+    "autoridade-topic-clusters-de-conteudo-seo-geo": [
+      {
+        "id": "como-criar-um-sitemap-melhorar-indexacao-site",
+        "score": 0.8283692982721996
+      },
+      {
+        "id": "como-melhorar-o-ranking-do-seu-site-no-google-dicas-praticas",
+        "score": 0.8200562037265176
+      },
+      {
+        "id": "como-aparecer-no-chatgpt-guia-aeo-geo",
+        "score": 0.8176845629940793
+      },
+      {
+        "id": "como-fazer-seo-para-pequenas-empresas-um-guia-completo",
+        "score": 0.8162878153211852
+      },
+      {
+        "id": "lacuna-de-conteudo-comparar-sitemap-concorrente",
+        "score": 0.8141124423865189
+      }
+    ],
+    "clareza-e-a-nova-estrategia-seo-ia": [
+      {
+        "id": "como-bloquear-treinamento-de-ia-sem-sumir-do-google-a-mudanca-que-a-cloudflare-fez-em-julho-de-2026",
+        "score": 0.8588363518037856
+      },
+      {
+        "id": "seo-vs-ppc-debate-acabou",
+        "score": 0.8563332675309332
+      },
+      {
+        "id": "quatro-alavancas-receita-busca-google",
+        "score": 0.8455487139568288
+      },
+      {
+        "id": "ferramentas-gratuitas-seo-para-ia-aeo-geo",
+        "score": 0.8323675270676243
+      },
+      {
+        "id": "janela-autoridade-topica-ia-generativa",
+        "score": 0.8320146246663015
+      }
+    ],
+    "como-aparecer-no-chatgpt-guia-aeo-geo": [
+      {
+        "id": "ferramentas-gratuitas-seo-para-ia-aeo-geo",
+        "score": 0.8516214237599832
+      },
+      {
+        "id": "clareza-e-a-nova-estrategia-seo-ia",
+        "score": 0.8203610724956798
+      },
+      {
+        "id": "autoridade-topic-clusters-de-conteudo-seo-geo",
+        "score": 0.8176845629940793
+      },
+      {
+        "id": "como-bloquear-treinamento-de-ia-sem-sumir-do-google-a-mudanca-que-a-cloudflare-fez-em-julho-de-2026",
+        "score": 0.811365879361759
+      },
+      {
+        "id": "a-oficializacao-do-grounding-o-futuro-do-trafego-organico-segundo-o-google",
+        "score": 0.8062656948958875
+      }
+    ],
+    "como-bloquear-treinamento-de-ia-sem-sumir-do-google-a-mudanca-que-a-cloudflare-fez-em-julho-de-2026": [
+      {
+        "id": "clareza-e-a-nova-estrategia-seo-ia",
+        "score": 0.8588363518037856
+      },
+      {
+        "id": "quatro-alavancas-receita-busca-google",
+        "score": 0.8438294424100038
+      },
+      {
+        "id": "ferramentas-gratuitas-seo-para-ia-aeo-geo",
+        "score": 0.8412364630756602
+      },
+      {
+        "id": "seo-vs-ppc-debate-acabou",
+        "score": 0.8333181389406293
+      },
+      {
+        "id": "como-trabalhar-com-imagens-para-seo-e-melhorar-o-carregamento-do-site",
+        "score": 0.8278839812353953
+      }
+    ],
+    "como-calcular-seu-orcamento-de-seo-um-guia-completo-para-empresas-brasileiras": [
+      {
+        "id": "como-garantir-orcamento-para-seo-estrategias-para-justificar-investimentos-em-marketing-organico",
+        "score": 0.8838560537499528
+      },
+      {
+        "id": "como-fazer-seo-para-pequenas-empresas-um-guia-completo",
+        "score": 0.8807204658310378
+      },
+      {
+        "id": "como-monitorar-desempenho-seo-seu-site-ferramentas-gratuitas",
+        "score": 0.8508353808633766
+      },
+      {
+        "id": "como-medir-o-share-of-search-o-gps-da-sua-relevancia-no-mercado-digital",
+        "score": 0.8303999351087894
+      },
+      {
+        "id": "sucesso-em-seo-local-como-acompanhar-rankings-conversoes-e-chamadas",
+        "score": 0.827725779506149
+      }
+    ],
+    "como-criar-conteudo-seo-friendly-que-converte": [
+      {
+        "id": "a-mudanca-para-o-seo-semantico-o-que-os-vetores-significam-para-sua-estrategia",
+        "score": 0.8460396089938634
+      },
+      {
+        "id": "como-trabalhar-com-imagens-para-seo-e-melhorar-o-carregamento-do-site",
+        "score": 0.8309710369991887
+      },
+      {
+        "id": "como-bloquear-treinamento-de-ia-sem-sumir-do-google-a-mudanca-que-a-cloudflare-fez-em-julho-de-2026",
+        "score": 0.8220127253647511
+      },
+      {
+        "id": "clareza-e-a-nova-estrategia-seo-ia",
+        "score": 0.8188309186767572
+      },
+      {
+        "id": "seo-vs-ppc-debate-acabou",
+        "score": 0.808506361550037
+      }
+    ],
+    "como-criar-um-sitemap-melhorar-indexacao-site": [
+      {
+        "id": "lacuna-de-conteudo-comparar-sitemap-concorrente",
+        "score": 0.8711665483307371
+      },
+      {
+        "id": "autoridade-topic-clusters-de-conteudo-seo-geo",
+        "score": 0.8283692982721996
+      },
+      {
+        "id": "como-escrever-titulos-e-meta-descricoes-que-aumentam-o-ctr",
+        "score": 0.8205719547913346
+      },
+      {
+        "id": "como-melhorar-o-ranking-do-seu-site-no-google-dicas-praticas",
+        "score": 0.8199309462942512
+      },
+      {
+        "id": "o-poder-do-schema-org-para-empresas-de-servicos-um-guia-completo-para-o-seo-local",
+        "score": 0.815829496284839
+      }
+    ],
+    "como-escolher-as-melhores-palavras-chave-para-seu-negocio-local": [
+      {
+        "id": "por-que-seo-local-e-fundamental-para-pequenos-negocios",
+        "score": 0.8716441034208462
+      },
+      {
+        "id": "sucesso-em-seo-local-como-acompanhar-rankings-conversoes-e-chamadas",
+        "score": 0.8187757559567921
+      },
+      {
+        "id": "a-mudanca-para-o-seo-semantico-o-que-os-vetores-significam-para-sua-estrategia",
+        "score": 0.8122434038364377
+      },
+      {
+        "id": "clareza-e-a-nova-estrategia-seo-ia",
+        "score": 0.8054230033859984
+      },
+      {
+        "id": "como-fazer-seo-para-pequenas-empresas-um-guia-completo",
+        "score": 0.7997551277742404
+      }
+    ],
+    "como-escrever-titulos-e-meta-descricoes-que-aumentam-o-ctr": [
+      {
+        "id": "como-criar-um-sitemap-melhorar-indexacao-site",
+        "score": 0.8205719547913346
+      },
+      {
+        "id": "como-criar-conteudo-seo-friendly-que-converte",
+        "score": 0.7997344042509325
+      },
+      {
+        "id": "title-tag-ideal-tem-de-50-a-60-caracteres-diz-estudo-com-81-mil-titulos",
+        "score": 0.7888804315272377
+      },
+      {
+        "id": "clareza-e-a-nova-estrategia-seo-ia",
+        "score": 0.7888011952679025
+      },
+      {
+        "id": "como-bloquear-treinamento-de-ia-sem-sumir-do-google-a-mudanca-que-a-cloudflare-fez-em-julho-de-2026",
+        "score": 0.7847742436264477
+      }
+    ],
+    "como-fazer-seo-para-hoteis-na-nova-era-da-ia": [
+      {
+        "id": "como-fazer-seo-para-sites-de-turismo-atraia-mais-visitantes",
+        "score": 0.8157806926579672
+      },
+      {
+        "id": "analise-de-concorrentes-em-seo-como-identificar-e-superar-seus-competidores-nos-resultados-de-busca",
+        "score": 0.802307239311704
+      },
+      {
+        "id": "como-fazer-seo-para-pequenas-empresas-um-guia-completo",
+        "score": 0.8004995957190058
+      },
+      {
+        "id": "sucesso-em-seo-local-como-acompanhar-rankings-conversoes-e-chamadas",
+        "score": 0.8000251708747697
+      },
+      {
+        "id": "como-medir-o-share-of-search-o-gps-da-sua-relevancia-no-mercado-digital",
+        "score": 0.7924630990512385
+      }
+    ],
+    "como-fazer-seo-para-pequenas-empresas-um-guia-completo": [
+      {
+        "id": "como-calcular-seu-orcamento-de-seo-um-guia-completo-para-empresas-brasileiras",
+        "score": 0.8807204658310378
+      },
+      {
+        "id": "como-garantir-orcamento-para-seo-estrategias-para-justificar-investimentos-em-marketing-organico",
+        "score": 0.8732254005531296
+      },
+      {
+        "id": "como-monitorar-desempenho-seo-seu-site-ferramentas-gratuitas",
+        "score": 0.8678164902144002
+      },
+      {
+        "id": "por-que-seo-local-e-fundamental-para-pequenos-negocios",
+        "score": 0.8641613195794314
+      },
+      {
+        "id": "sucesso-em-seo-local-como-acompanhar-rankings-conversoes-e-chamadas",
+        "score": 0.8356072255762329
+      }
+    ],
+    "como-fazer-seo-para-sites-de-turismo-atraia-mais-visitantes": [
+      {
+        "id": "como-fazer-seo-para-hoteis-na-nova-era-da-ia",
+        "score": 0.8157806926579672
+      },
+      {
+        "id": "como-fazer-seo-para-pequenas-empresas-um-guia-completo",
+        "score": 0.7810088734499392
+      },
+      {
+        "id": "evento-de-marketing-digital-em-lisboa-digitalks",
+        "score": 0.7724961151967383
+      },
+      {
+        "id": "por-que-seo-local-e-fundamental-para-pequenos-negocios",
+        "score": 0.7644473016072835
+      },
+      {
+        "id": "como-trabalhar-com-imagens-para-seo-e-melhorar-o-carregamento-do-site",
+        "score": 0.7529506061928006
+      }
+    ],
+    "como-garantir-orcamento-para-seo-estrategias-para-justificar-investimentos-em-marketing-organico": [
+      {
+        "id": "como-calcular-seu-orcamento-de-seo-um-guia-completo-para-empresas-brasileiras",
+        "score": 0.8838560537499528
+      },
+      {
+        "id": "como-fazer-seo-para-pequenas-empresas-um-guia-completo",
+        "score": 0.8732254005531296
+      },
+      {
+        "id": "como-monitorar-desempenho-seo-seu-site-ferramentas-gratuitas",
+        "score": 0.8429152016419533
+      },
+      {
+        "id": "como-medir-o-share-of-search-o-gps-da-sua-relevancia-no-mercado-digital",
+        "score": 0.8279741683424241
+      },
+      {
+        "id": "concorrente-venceu-categoria-chatgpt",
+        "score": 0.8167454079356096
+      }
+    ],
+    "como-medir-o-share-of-search-o-gps-da-sua-relevancia-no-mercado-digital": [
+      {
+        "id": "como-calcular-seu-orcamento-de-seo-um-guia-completo-para-empresas-brasileiras",
+        "score": 0.8303999351087894
+      },
+      {
+        "id": "como-garantir-orcamento-para-seo-estrategias-para-justificar-investimentos-em-marketing-organico",
+        "score": 0.8279741683424241
+      },
+      {
+        "id": "como-monitorar-desempenho-seo-seu-site-ferramentas-gratuitas",
+        "score": 0.8201783554777984
+      },
+      {
+        "id": "como-fazer-seo-para-pequenas-empresas-um-guia-completo",
+        "score": 0.8154181199084326
+      },
+      {
+        "id": "concorrente-venceu-categoria-chatgpt",
+        "score": 0.8085711937219972
+      }
+    ],
+    "como-melhorar-o-ranking-do-seu-site-no-google-dicas-praticas": [
+      {
+        "id": "como-monitorar-desempenho-seo-seu-site-ferramentas-gratuitas",
+        "score": 0.8627779790992246
+      },
+      {
+        "id": "diluicao-nao-autoridade-seo-local",
+        "score": 0.8349039348177635
+      },
+      {
+        "id": "como-fazer-seo-para-pequenas-empresas-um-guia-completo",
+        "score": 0.8306591934461404
+      },
+      {
+        "id": "o-impacto-dos-core-web-vitals-no-seo-um-guia-completo",
+        "score": 0.8264332165393957
+      },
+      {
+        "id": "autoridade-topic-clusters-de-conteudo-seo-geo",
+        "score": 0.8200562037265176
+      }
+    ],
+    "como-monitorar-desempenho-seo-seu-site-ferramentas-gratuitas": [
+      {
+        "id": "como-fazer-seo-para-pequenas-empresas-um-guia-completo",
+        "score": 0.8678164902144002
+      },
+      {
+        "id": "como-melhorar-o-ranking-do-seu-site-no-google-dicas-praticas",
+        "score": 0.8627779790992246
+      },
+      {
+        "id": "como-calcular-seu-orcamento-de-seo-um-guia-completo-para-empresas-brasileiras",
+        "score": 0.8508353808633766
+      },
+      {
+        "id": "como-garantir-orcamento-para-seo-estrategias-para-justificar-investimentos-em-marketing-organico",
+        "score": 0.8429152016419533
+      },
+      {
+        "id": "como-medir-o-share-of-search-o-gps-da-sua-relevancia-no-mercado-digital",
+        "score": 0.8201783554777984
+      }
+    ],
+    "como-recuperar-de-mencoes-negativas-a-marca": [
+      {
+        "id": "concorrente-venceu-categoria-chatgpt",
+        "score": 0.8092989455571955
+      },
+      {
+        "id": "como-monitorar-desempenho-seo-seu-site-ferramentas-gratuitas",
+        "score": 0.8054513489899354
+      },
+      {
+        "id": "como-fazer-seo-para-pequenas-empresas-um-guia-completo",
+        "score": 0.8010849490021135
+      },
+      {
+        "id": "sucesso-em-seo-local-como-acompanhar-rankings-conversoes-e-chamadas",
+        "score": 0.7993777791562362
+      },
+      {
+        "id": "clareza-e-a-nova-estrategia-seo-ia",
+        "score": 0.7964758908479684
+      }
+    ],
+    "como-trabalhar-com-imagens-para-seo-e-melhorar-o-carregamento-do-site": [
+      {
+        "id": "como-criar-conteudo-seo-friendly-que-converte",
+        "score": 0.8309710369991887
+      },
+      {
+        "id": "como-bloquear-treinamento-de-ia-sem-sumir-do-google-a-mudanca-que-a-cloudflare-fez-em-julho-de-2026",
+        "score": 0.8278839812353953
+      },
+      {
+        "id": "como-calcular-seu-orcamento-de-seo-um-guia-completo-para-empresas-brasileiras",
+        "score": 0.8260208597355624
+      },
+      {
+        "id": "clareza-e-a-nova-estrategia-seo-ia",
+        "score": 0.8238113315934219
+      },
+      {
+        "id": "evento-de-marketing-digital-em-lisboa-digitalks",
+        "score": 0.8140466066853533
+      }
+    ],
+    "concorrente-venceu-categoria-chatgpt": [
+      {
+        "id": "janela-autoridade-topica-ia-generativa",
+        "score": 0.8869373465238662
+      },
+      {
+        "id": "ferramentas-gratuitas-seo-para-ia-aeo-geo",
+        "score": 0.8287034576712993
+      },
+      {
+        "id": "lacuna-de-conteudo-comparar-sitemap-concorrente",
+        "score": 0.8200379850153594
+      },
+      {
+        "id": "como-garantir-orcamento-para-seo-estrategias-para-justificar-investimentos-em-marketing-organico",
+        "score": 0.8167454079356096
+      },
+      {
+        "id": "como-calcular-seu-orcamento-de-seo-um-guia-completo-para-empresas-brasileiras",
+        "score": 0.8150211130668193
+      }
+    ],
+    "criacao-de-faqs-programadas-com-dados-estruturados-json-ld-um-guia-completo-para-seo-na-era-da-ia": [
+      {
+        "id": "o-poder-do-schema-org-para-empresas-de-servicos-um-guia-completo-para-o-seo-local",
+        "score": 0.8466913590068547
+      },
+      {
+        "id": "a-oficializacao-do-grounding-o-futuro-do-trafego-organico-segundo-o-google",
+        "score": 0.8008300270651966
+      },
+      {
+        "id": "como-melhorar-o-ranking-do-seu-site-no-google-dicas-praticas",
+        "score": 0.7982747270884111
+      },
+      {
+        "id": "como-aparecer-no-chatgpt-guia-aeo-geo",
+        "score": 0.7949433314313191
+      },
+      {
+        "id": "como-criar-um-sitemap-melhorar-indexacao-site",
+        "score": 0.7905233430945966
+      }
+    ],
+    "diluicao-nao-autoridade-seo-local": [
+      {
+        "id": "como-melhorar-o-ranking-do-seu-site-no-google-dicas-praticas",
+        "score": 0.8349039348177635
+      },
+      {
+        "id": "janela-autoridade-topica-ia-generativa",
+        "score": 0.812331280524525
+      },
+      {
+        "id": "como-monitorar-desempenho-seo-seu-site-ferramentas-gratuitas",
+        "score": 0.8078243229549426
+      },
+      {
+        "id": "autoridade-topic-clusters-de-conteudo-seo-geo",
+        "score": 0.8048097093035017
+      },
+      {
+        "id": "como-fazer-seo-para-pequenas-empresas-um-guia-completo",
+        "score": 0.8003109049860991
+      }
+    ],
+    "evento-de-marketing-digital-em-lisboa-digitalks": [
+      {
+        "id": "como-trabalhar-com-imagens-para-seo-e-melhorar-o-carregamento-do-site",
+        "score": 0.8140466066853533
+      },
+      {
+        "id": "como-bloquear-treinamento-de-ia-sem-sumir-do-google-a-mudanca-que-a-cloudflare-fez-em-julho-de-2026",
+        "score": 0.8069236491995236
+      },
+      {
+        "id": "ferramentas-gratuitas-seo-para-ia-aeo-geo",
+        "score": 0.7941076144924443
+      },
+      {
+        "id": "como-criar-conteudo-seo-friendly-que-converte",
+        "score": 0.7934393925403324
+      },
+      {
+        "id": "a-oficializacao-do-grounding-o-futuro-do-trafego-organico-segundo-o-google",
+        "score": 0.7789576064799594
+      }
+    ],
+    "ferramentas-gratuitas-seo-para-ia-aeo-geo": [
+      {
+        "id": "como-aparecer-no-chatgpt-guia-aeo-geo",
+        "score": 0.8516214237599832
+      },
+      {
+        "id": "como-bloquear-treinamento-de-ia-sem-sumir-do-google-a-mudanca-que-a-cloudflare-fez-em-julho-de-2026",
+        "score": 0.8412364630756602
+      },
+      {
+        "id": "janela-autoridade-topica-ia-generativa",
+        "score": 0.8355699565662901
+      },
+      {
+        "id": "clareza-e-a-nova-estrategia-seo-ia",
+        "score": 0.8323675270676243
+      },
+      {
+        "id": "lacuna-de-conteudo-comparar-sitemap-concorrente",
+        "score": 0.8289894646290904
+      }
+    ],
+    "graphify-como-economizar-tokens-ao-usar-ia": [
+      {
+        "id": "a-oficializacao-do-grounding-o-futuro-do-trafego-organico-segundo-o-google",
+        "score": 0.7835677893882401
+      },
+      {
+        "id": "autoridade-topic-clusters-de-conteudo-seo-geo",
+        "score": 0.7569335063639866
+      },
+      {
+        "id": "como-escolher-as-melhores-palavras-chave-para-seu-negocio-local",
+        "score": 0.7468591786807328
+      },
+      {
+        "id": "como-aparecer-no-chatgpt-guia-aeo-geo",
+        "score": 0.7429347036186076
+      },
+      {
+        "id": "criacao-de-faqs-programadas-com-dados-estruturados-json-ld-um-guia-completo-para-seo-na-era-da-ia",
+        "score": 0.7413854726370697
+      }
+    ],
+    "janela-autoridade-topica-ia-generativa": [
+      {
+        "id": "concorrente-venceu-categoria-chatgpt",
+        "score": 0.8869373465238662
+      },
+      {
+        "id": "ferramentas-gratuitas-seo-para-ia-aeo-geo",
+        "score": 0.8355699565662901
+      },
+      {
+        "id": "clareza-e-a-nova-estrategia-seo-ia",
+        "score": 0.8320146246663015
+      },
+      {
+        "id": "lacuna-de-conteudo-comparar-sitemap-concorrente",
+        "score": 0.8202283379556005
+      },
+      {
+        "id": "seo-vs-ppc-debate-acabou",
+        "score": 0.8183451242186489
+      }
+    ],
+    "lacuna-de-conteudo-comparar-sitemap-concorrente": [
+      {
+        "id": "como-criar-um-sitemap-melhorar-indexacao-site",
+        "score": 0.8711665483307371
+      },
+      {
+        "id": "ferramentas-gratuitas-seo-para-ia-aeo-geo",
+        "score": 0.8289894646290904
+      },
+      {
+        "id": "janela-autoridade-topica-ia-generativa",
+        "score": 0.8202283379556005
+      },
+      {
+        "id": "concorrente-venceu-categoria-chatgpt",
+        "score": 0.8200379850153594
+      },
+      {
+        "id": "autoridade-topic-clusters-de-conteudo-seo-geo",
+        "score": 0.8141124423865189
+      }
+    ],
+    "meta-revoluciona-a-comunicacao-com-ia-que-converte-pensamentos-em-texto": [
+      {
+        "id": "analise-de-concorrentes-em-seo-como-identificar-e-superar-seus-competidores-nos-resultados-de-busca",
+        "score": 0.6516937020625224
+      },
+      {
+        "id": "o-impacto-dos-core-web-vitals-no-seo-um-guia-completo",
+        "score": 0.6439348389724814
+      },
+      {
+        "id": "a-oficializacao-do-grounding-o-futuro-do-trafego-organico-segundo-o-google",
+        "score": 0.6363058291892136
+      },
+      {
+        "id": "ferramentas-gratuitas-seo-para-ia-aeo-geo",
+        "score": 0.6223204124489694
+      },
+      {
+        "id": "a-mudanca-para-o-seo-semantico-o-que-os-vetores-significam-para-sua-estrategia",
+        "score": 0.6177790726275533
+      }
+    ],
+    "o-experimento-que-provou-a-maior-parte-do-crawler-no-seu-log-e-fake": [
+      {
+        "id": "como-bloquear-treinamento-de-ia-sem-sumir-do-google-a-mudanca-que-a-cloudflare-fez-em-julho-de-2026",
+        "score": 0.7365090959701798
+      },
+      {
+        "id": "concorrente-venceu-categoria-chatgpt",
+        "score": 0.7275312709272775
+      },
+      {
+        "id": "como-criar-um-sitemap-melhorar-indexacao-site",
+        "score": 0.7236920620668522
+      },
+      {
+        "id": "o-poder-do-schema-org-para-empresas-de-servicos-um-guia-completo-para-o-seo-local",
+        "score": 0.7154810018150736
+      },
+      {
+        "id": "ferramentas-gratuitas-seo-para-ia-aeo-geo",
+        "score": 0.7074407298301133
+      }
+    ],
+    "o-impacto-dos-core-web-vitals-no-seo-um-guia-completo": [
+      {
+        "id": "analise-de-concorrentes-em-seo-como-identificar-e-superar-seus-competidores-nos-resultados-de-busca",
+        "score": 0.9074224997526443
+      },
+      {
+        "id": "como-melhorar-o-ranking-do-seu-site-no-google-dicas-praticas",
+        "score": 0.8264332165393957
+      },
+      {
+        "id": "como-monitorar-desempenho-seo-seu-site-ferramentas-gratuitas",
+        "score": 0.8197129094868699
+      },
+      {
+        "id": "como-fazer-seo-para-pequenas-empresas-um-guia-completo",
+        "score": 0.7924722423806081
+      },
+      {
+        "id": "como-trabalhar-com-imagens-para-seo-e-melhorar-o-carregamento-do-site",
+        "score": 0.788208447368756
+      }
+    ],
+    "o-poder-do-schema-org-para-empresas-de-servicos-um-guia-completo-para-o-seo-local": [
+      {
+        "id": "criacao-de-faqs-programadas-com-dados-estruturados-json-ld-um-guia-completo-para-seo-na-era-da-ia",
+        "score": 0.8466913590068547
+      },
+      {
+        "id": "sucesso-em-seo-local-como-acompanhar-rankings-conversoes-e-chamadas",
+        "score": 0.8368777990274524
+      },
+      {
+        "id": "como-fazer-seo-para-pequenas-empresas-um-guia-completo",
+        "score": 0.828561820329636
+      },
+      {
+        "id": "analise-de-concorrentes-em-seo-como-identificar-e-superar-seus-competidores-nos-resultados-de-busca",
+        "score": 0.8213692002835556
+      },
+      {
+        "id": "como-criar-um-sitemap-melhorar-indexacao-site",
+        "score": 0.815829496284839
+      }
+    ],
+    "por-que-seo-local-e-fundamental-para-pequenos-negocios": [
+      {
+        "id": "como-escolher-as-melhores-palavras-chave-para-seu-negocio-local",
+        "score": 0.8716441034208462
+      },
+      {
+        "id": "como-fazer-seo-para-pequenas-empresas-um-guia-completo",
+        "score": 0.8641613195794314
+      },
+      {
+        "id": "sucesso-em-seo-local-como-acompanhar-rankings-conversoes-e-chamadas",
+        "score": 0.8393668827630043
+      },
+      {
+        "id": "a-mudanca-para-o-seo-semantico-o-que-os-vetores-significam-para-sua-estrategia",
+        "score": 0.8169893375602676
+      },
+      {
+        "id": "seo-vs-ppc-debate-acabou",
+        "score": 0.8083592342675456
+      }
+    ],
+    "quatro-alavancas-receita-busca-google": [
+      {
+        "id": "clareza-e-a-nova-estrategia-seo-ia",
+        "score": 0.8455487139568288
+      },
+      {
+        "id": "como-bloquear-treinamento-de-ia-sem-sumir-do-google-a-mudanca-que-a-cloudflare-fez-em-julho-de-2026",
+        "score": 0.8438294424100038
+      },
+      {
+        "id": "seo-vs-ppc-debate-acabou",
+        "score": 0.8385953340198908
+      },
+      {
+        "id": "como-calcular-seu-orcamento-de-seo-um-guia-completo-para-empresas-brasileiras",
+        "score": 0.8112939389747258
+      },
+      {
+        "id": "ferramentas-gratuitas-seo-para-ia-aeo-geo",
+        "score": 0.8062332496266855
+      }
+    ],
+    "seo-vs-ppc-debate-acabou": [
+      {
+        "id": "clareza-e-a-nova-estrategia-seo-ia",
+        "score": 0.8563332675309332
+      },
+      {
+        "id": "quatro-alavancas-receita-busca-google",
+        "score": 0.8385953340198908
+      },
+      {
+        "id": "como-bloquear-treinamento-de-ia-sem-sumir-do-google-a-mudanca-que-a-cloudflare-fez-em-julho-de-2026",
+        "score": 0.8333181389406293
+      },
+      {
+        "id": "como-calcular-seu-orcamento-de-seo-um-guia-completo-para-empresas-brasileiras",
+        "score": 0.8256824286275455
+      },
+      {
+        "id": "janela-autoridade-topica-ia-generativa",
+        "score": 0.8183451242186489
+      }
+    ],
+    "sucesso-em-seo-local-como-acompanhar-rankings-conversoes-e-chamadas": [
+      {
+        "id": "por-que-seo-local-e-fundamental-para-pequenos-negocios",
+        "score": 0.8393668827630043
+      },
+      {
+        "id": "o-poder-do-schema-org-para-empresas-de-servicos-um-guia-completo-para-o-seo-local",
+        "score": 0.8368777990274524
+      },
+      {
+        "id": "como-fazer-seo-para-pequenas-empresas-um-guia-completo",
+        "score": 0.8356072255762329
+      },
+      {
+        "id": "como-calcular-seu-orcamento-de-seo-um-guia-completo-para-empresas-brasileiras",
+        "score": 0.827725779506149
+      },
+      {
+        "id": "a-mudanca-para-o-seo-semantico-o-que-os-vetores-significam-para-sua-estrategia",
+        "score": 0.825592973126063
+      }
+    ],
+    "title-tag-ideal-tem-de-50-a-60-caracteres-diz-estudo-com-81-mil-titulos": [
+      {
+        "id": "como-escrever-titulos-e-meta-descricoes-que-aumentam-o-ctr",
+        "score": 0.7888804315272377
+      },
+      {
+        "id": "como-criar-um-sitemap-melhorar-indexacao-site",
+        "score": 0.7549702617933871
+      },
+      {
+        "id": "como-melhorar-o-ranking-do-seu-site-no-google-dicas-praticas",
+        "score": 0.753306941330486
+      },
+      {
+        "id": "como-aparecer-no-chatgpt-guia-aeo-geo",
+        "score": 0.7505125368593772
+      },
+      {
+        "id": "janela-autoridade-topica-ia-generativa",
+        "score": 0.7502859234972241
+      }
+    ],
+    "trafego-organico-benchmark-real": [
+      {
+        "id": "como-melhorar-o-ranking-do-seu-site-no-google-dicas-praticas",
+        "score": 0.7498828186716948
+      },
+      {
+        "id": "como-monitorar-desempenho-seo-seu-site-ferramentas-gratuitas",
+        "score": 0.7435887674381321
+      },
+      {
+        "id": "diluicao-nao-autoridade-seo-local",
+        "score": 0.74075132151175
+      },
+      {
+        "id": "como-fazer-seo-para-pequenas-empresas-um-guia-completo",
+        "score": 0.7306404843092071
+      },
+      {
+        "id": "lacuna-de-conteudo-comparar-sitemap-concorrente",
+        "score": 0.7157972403047884
+      }
+    ]
+  }
+}

@@ -2,7 +2,7 @@
 title: "O Poder do Schema.org para Empresas de Serviços: Um Guia Completo para o SEO Local"
 date: 2025-02-26
 description: "Empresas de serviços locais usam o Schema.org para ganhar visibilidade nos resultados de busca e nas respostas de IA. Veja como implementar na prática."
-image: "/images/2025/02/a-photo-of-a-restaurant-with-a-beautiful-1.jpeg"
+image: "/images/capas/o-poder-do-schema-org-para-empresas-de-servicos-um-guia-completo-para-o-seo-local.webp"
 category: "SEO"
 ---
 
