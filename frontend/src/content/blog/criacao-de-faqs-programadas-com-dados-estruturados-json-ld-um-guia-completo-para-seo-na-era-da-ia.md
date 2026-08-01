@@ -14,7 +14,7 @@ Os dados estruturados são códigos implementados em seu site que fornecem conte
 
 O JSON-LD (JavaScript Object Notation for Linked Data) é o formato recomendado pelo Google para implementação de dados estruturados, por ser mais limpo e fácil de implementar. Ele é inserido diretamente no código HTML da página, sem interferir na formatação visual do conteúdo.
 
-Na era da inteligência artificial, quando os algoritmos de busca estão cada vez mais sofisticados, fornecer dados estruturados claros é praticamente obrigatório se você quer se destacar nos resultados de pesquisa — inclusive nas respostas de [ChatGPT, Gemini e Perplexity](/blog/como-aparecer-no-chatgpt-guia-aeo-geo/).
+Na era da inteligência artificial, com algoritmos de busca cada vez mais sofisticados, fornecer dados estruturados claros é praticamente obrigatório para se destacar nos resultados de pesquisa, inclusive nas respostas de [ChatGPT, Gemini e Perplexity](/blog/como-aparecer-no-chatgpt-guia-aeo-geo/).
 
 ## Por que as FAQs estruturadas importam na era da IA?
 

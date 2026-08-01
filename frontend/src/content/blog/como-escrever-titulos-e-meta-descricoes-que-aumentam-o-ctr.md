@@ -1,8 +1,9 @@
 ---
 title: "Como Escrever Títulos e Meta Descrições que Aumentam o CTR"
 date: 2025-03-17
-description: "Em um oceano de resultados de busca, sua página é apenas mais um barco esperando ser descoberto. O farol que guia os navegantes até você? Seus títulos e meta"
+description: "Títulos e meta descrições fracos derrubam o CTR mesmo com bom ranking. Veja como escrever, o tamanho ideal e os erros mais comuns que prejudicam cliques."
 image: "/images/Como-criar-titulos-em-meta-descricao-otimizada-para-SEO.webp"
+category: "SEO"
 ---
 
 Em um oceano de resultados de busca, sua página é apenas mais um barco esperando ser descoberto. O farol que guia os navegantes até você? Seus títulos e meta descrições. Estas pequenas porções de texto são, muitas vezes, o primeiro (e talvez único) contato entre seu conteúdo e um potencial visitante.
@@ -15,13 +16,13 @@ Imagine-se entrando em uma livraria. Você não tem tempo para ler cada livro, e
 
 As **tags de título** (ou title tags) são o equivalente digital ao título do seu livro. São o texto que aparece como link clicável nos resultados de busca do Google. Tecnicamente, são inseridas no código HTML da sua página através da tag <title>, dentro da seção <head>.
 
-Já as **meta descrições** são sua sinopse digital — aqueles breves parágrafos descritivos que aparecem abaixo do título nos resultados de busca. São implementadas através da tag <meta name=”description”> também na seção <head> do seu HTML.
+Já as **meta descrições** são sua sinopse digital: aqueles breves parágrafos descritivos que aparecem abaixo do título nos resultados de busca. São implementadas através da tag <meta name=”description”> também na seção <head> do seu HTML.
 
 Estes elementos não são visíveis na sua página em si, mas são fundamentais para como ela é apresentada nos resultados de busca.
 
 ### Por que as metadescrições e as tags de título são importantes para SEO?
 
-“Na publicidade moderna, a verdadeira competição ocorre na mente do consumidor, não nas prateleiras das lojas.” Esta outra máxima de Ogilvy nos lembra que antes mesmo de alguém visitar seu site, você já está competindo — competindo por atenção.
+“Na publicidade moderna, a verdadeira competição ocorre na mente do consumidor, não nas prateleiras das lojas.” Esta outra máxima de Ogilvy nos lembra que antes mesmo de alguém visitar seu site, você já está competindo por atenção.
 
 As tags de título e meta descrições são importantes por três razões principais:
 
@@ -38,7 +39,7 @@ Um [estudo da Sistrix](https://www.sistrix.com/) mostrou que os primeiros result
 
 ### Para Tags de Título:
 
-**1\. Seja conciso e direto** O espaço é limitado — o Google geralmente exibe apenas os primeiros 50-60 caracteres. Como diria Ogilvy: “Use linguagem simples. Escreva como seu cliente fala.”
+**1\. Seja conciso e direto** O espaço é limitado: o Google geralmente exibe apenas os primeiros 50-60 caracteres. Como diria Ogilvy: “Use linguagem simples. Escreva como seu cliente fala.”
 
 **2\. Inclua sua palavra-chave principal** Posicione-a preferencialmente no início do título. Isto comunica imediatamente ao usuário (e ao Google) do que se trata sua página.
 
@@ -64,15 +65,13 @@ Um [estudo da Sistrix](https://www.sistrix.com/) mostrou que os primeiros result
 
 **Exemplo de uma meta descrição forte:** “Descubra as 5 técnicas de SEO que revolucionaram nosso tráfego orgânico. Aplicável para iniciantes e experts. Resultados garantidos em 30 dias.”
 
-### O comprimento adequado das title tags
+### Qual o tamanho ideal de uma title tag?
 
-Embora tecnicamente não haja um limite de caracteres para as tags de título, o Google geralmente exibe apenas 50-60 caracteres nos resultados de busca de desktop e ainda menos em dispositivos móveis.
+50 a 60 caracteres é a faixa ideal de uma title tag, segundo estudos da Moz, confirmada por um [estudo mais recente com 81 mil títulos](/blog/title-tag-ideal-tem-de-50-a-60-caracteres-diz-estudo-com-81-mil-titulos/) que cruza o tamanho do título com dados reais de tráfego do Google. Tecnicamente não há limite de caracteres, mas o Google geralmente exibe só essa faixa nos resultados de desktop, e ainda menos em dispositivos móveis.
 
-Estudos da Moz indicam que títulos com 50-60 caracteres têm maior chance de serem exibidos completamente. No entanto, o Google não corta exatamente por número de caracteres, mas sim por pixels — aproximadamente 600 pixels de largura. Um [estudo mais recente com 81 mil títulos](/blog/title-tag-ideal-tem-de-50-a-60-caracteres-diz-estudo-com-81-mil-titulos/) confirma essa faixa e cruza o tamanho do título com dados reais de tráfego do Google.
+O corte, porém, não é por número de caracteres, e sim por pixels: aproximadamente 600 pixels de largura. Letras maiúsculas e certos caracteres ocupam mais espaço, então um título com muitas maiúsculas pode ser cortado antes dos 60 caracteres.
 
-Letras maiúsculas e certos caracteres ocupam mais espaço, então um título com muitas letras maiúsculas poderá ser cortado antes dos 60 caracteres.
-
-Uma regra prática é manter seu título principal em até 55 caracteres para garantir que ele seja exibido corretamente na maioria das situações. Porém, se seu título realmente necessitar de mais caracteres para transmitir valor, não sacrifique a qualidade apenas para caber no limite — é melhor um título ligeiramente cortado que comunique bem do que um título completo mas ineficaz.
+Uma regra prática é manter seu título principal em até 55 caracteres para garantir que ele seja exibido corretamente na maioria das situações. Se ele realmente precisar de mais caracteres para transmitir valor, não sacrifique a qualidade só para caber no limite: um título levemente cortado que comunique bem vale mais que um título completo, porém ineficaz.
 
 ### Como testar e otimizar suas meta descrições e tags de título?
 

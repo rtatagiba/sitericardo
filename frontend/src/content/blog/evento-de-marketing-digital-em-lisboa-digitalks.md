@@ -27,7 +27,7 @@ Tiveram muitas palestras boas, mas a de Dennis Yu foi a mais marcante do primeir
 
 ### ![Dennis Yu, CEO da BlitzMetrics, foi um dos principais destaques do evento. Na sua palestra "AI Warfare: Winning in SEO + Social in 2025](/images/2025/04/Deniz-Yu.jpg)Dennis Yu: O Destaque do primeiro dia de Evento do Digitalks
 
-[Dennis Yu](https://www.linkedin.com/in/dennisyu/), CEO da [BlitzMetrics](https://blitzmetrics.com/), foi um dos principais destaques do evento. Na sua palestra “AI Warfare: Winning in SEO + Social in 2025”, Yu explorou como a inteligência artificial está a transformar as [estratégias de SEO](/blog/como-garantir-orcamento-para-seo-estrategias-para-justificar-investimentos-em-marketing-organico/) e redes sociais — um tema que também exploramos no nosso [guia de como aparecer no ChatGPT e em outras IAs (AEO/GEO)](/blog/como-aparecer-no-chatgpt-guia-aeo-geo/) — oferecendo insights valiosos sobre como as empresas podem adaptar-se a estas mudanças para manterem-se competitivas.
+[Dennis Yu](https://www.linkedin.com/in/dennisyu/), CEO da [BlitzMetrics](https://blitzmetrics.com/), foi um dos principais destaques do evento. Na sua palestra “AI Warfare: Winning in SEO + Social in 2025”, Yu explorou como a inteligência artificial está a transformar as [estratégias de SEO](/blog/como-garantir-orcamento-para-seo-estrategias-para-justificar-investimentos-em-marketing-organico/) e redes sociais, um tema que também exploramos no nosso [guia de como aparecer no ChatGPT e em outras IAs (AEO/GEO)](/blog/como-aparecer-no-chatgpt-guia-aeo-geo/), oferecendo insights valiosos sobre como as empresas podem adaptar-se a essas mudanças para se manterem competitivas.
 
 ### Inovação no Marketing: Estratégias Digitais
 
@@ -54,8 +54,8 @@ Entrei em contato com ele depois pelo LinkedIn. Ele foi um dos fundadores do [Po
 
 ### Networking e Diplomacia com Linda Pereira
 
-Sepois foi a vez da [Linda Pereira](https://www.linkedin.com/in/linda-pereira-phd-68a36a8/), representante da Women in Tech, conduziu a sessão especial “Networking e diplomacia”, onde enfatizou a importância das relações interpessoais e da diplomacia no ambiente empresarial atual. A sua abordagem destacou como o networking estratégico pode abrir portas e criar oportunidades significativas no mundo dos negócios, justamente dando aquele soco no estômago de tudo que eu não fiz por lá.
+Depois foi a vez de [Linda Pereira](https://www.linkedin.com/in/linda-pereira-phd-68a36a8/), representante da Women in Tech, que conduziu a sessão especial "Networking e diplomacia", enfatizando a importância das relações interpessoais no ambiente empresarial. A sessão reforçou, na prática, tudo que eu tinha deixado passar nos meus próprios erros de networking no evento.
 
-O Digitalks Lisboa 2025 consolidou-se como um evento essencial para profissionais interessados nas tendências e inovações do marketing digital. Com palestras inspiradoras e painéis informativos, o evento proporcionou uma plataforma para a troca de conhecimentos e experiências, preparando os participantes para os desafios e oportunidades do futuro digital.
+### O que fica do Digitalks Lisboa 2025
 
-E foi isso, lições aprendidas e muito conteúdo legal
+Três lições para a próxima edição: pesquisar os palestrantes antes (hoje um prompt no ChatGPT resolve isso em minutos), levar equipamento para registrar entrevistas e conversas, e sentar à mesa com desconhecidos em vez de ficar só com quem já conheço. No conteúdo, os destaques do primeiro dia foram a palestra de Dennis Yu, "AI Warfare: Winning in SEO + Social in 2025", o painel sobre inovação em marketing digital moderado por Tiago Senna e a sessão de Linda Pereira sobre networking e diplomacia. Marketing digital em 2025 passa cada vez mais por IA aplicada a SEO e redes sociais, e por relações construídas cara a cara, algo que nenhuma ferramenta substitui.
