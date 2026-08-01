@@ -2,7 +2,7 @@
 title: "Como trabalhar com Imagens para SEO e Melhorar o Carregamento do Site"
 date: 2025-03-14
 description: "Você já se perguntou por que seu concorrente aparece acima de você nos resultados de busca, mesmo quando seu conteúdo parece superior? A resposta pode estar"
-image: "/images/Como-trabalhar-com-Imagens-para-SEO-e-Melhorar-o-Carregamento-do-Site.webp"
+image: "/images/capas/como-trabalhar-com-imagens-para-seo-e-melhorar-o-carregamento-do-site.webp"
 ---
 
 Você já se perguntou por que seu concorrente aparece acima de você nos resultados de busca, mesmo quando seu conteúdo parece superior? A resposta pode estar escondida onde você menos espera: nas suas imagens.
@@ -228,7 +228,7 @@ A verdade é que a otimização de imagens não é glamorosa. É minuciosa, téc
 
 Enquanto seus concorrentes continuam sobrecarregando seus sites com imagens não otimizadas, você tem agora o conhecimento para transformar suas imagens de um peso morto em uma vantagem competitiva.
 
-O Google já disse claramente: a velocidade é um fator de classificação. Com Core Web Vitals agora parte do algoritmo, otimizar suas imagens não é opcional – é essencial para se manter competitivo. Para imagens importantes do seu catálogo ou portfólio, considere também um [sitemap de imagens dedicado](/blog/como-criar-um-sitemap-melhorar-indexacao-site/), que ajuda o Google a descobri-las mais rápido.
+O Google já disse claramente: a velocidade é um fator de classificação, o mesmo princípio que orienta [outros fatores de ranking do Google](/blog/como-melhorar-o-ranking-do-seu-site-no-google-dicas-praticas). Com Core Web Vitals agora parte do algoritmo, otimizar suas imagens não é opcional – é essencial para se manter competitivo. Para imagens importantes do seu catálogo ou portfólio, considere também um [sitemap de imagens dedicado](/blog/como-criar-um-sitemap-melhorar-indexacao-site/), que ajuda o Google a descobri-las mais rápido.
 
 Agora, você tem duas opções:
 

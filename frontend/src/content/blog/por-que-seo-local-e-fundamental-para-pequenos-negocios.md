@@ -2,10 +2,10 @@
 title: "Por que seo local é fundamental para pequenos negócios"
 date: 2025-04-10
 description: "SEO local é fundamental para pequenos negócios que atendem a uma região específica. Quase 46% de todas as buscas no Google já têm intenção local, e 72% dos"
-image: "/images/Design-sem-nome-3.webp"
+image: "/images/capas/por-que-seo-local-e-fundamental-para-pequenos-negocios.webp"
 ---
 
-**SEO local é fundamental para pequenos negócios que atendem a uma região específica.** Quase 46% de todas as buscas no Google já têm intenção local, e 72% dos consumidores que realizam uma pesquisa local visitam uma loja física próxima em pouco tempo.
+**[SEO local](https://en.wikipedia.org/wiki/Search_engine_optimization) é fundamental para pequenos negócios que atendem a uma região específica.** Quase 46% de todas as buscas no Google já têm intenção local, e 72% dos consumidores que realizam uma pesquisa local visitam uma loja física próxima em pouco tempo.
 
 Estes prompts atendem a diversos tipos de negócios físicos – lojas, restaurantes, clínicas, prestadores de serviços etc. – e abordam pesquisa de palavras-chave, otimização on-page, conteúdo local, Google Meu Negócio, backlinks, análise de concorrentes e FAQs “perto de mim”. Cada seção contém dicas importantes respaldadas por especialistas e exemplos de prompts prontos para você utilizar.
 
@@ -54,7 +54,7 @@ Lembre-se de também promover esses posts localmente (redes sociais de bairros, 
 
 ### 4\. Otimização do Perfil no Google Meu Negócio
 
-Ter um Perfil do Google Meu Negócio (Google Business Profile) bem otimizado é indispensável no SEO local. Certifique-se de preencher todas as informações da ficha: endereço completo, telefone, horário de funcionamento, site, categoria do negócio, descrição e imagens de qualidade do estabelecimento.
+Ter um [Perfil do Google Meu Negócio (Google Business Profile)](https://support.google.com/business/) bem otimizado é indispensável no SEO local. Certifique-se de preencher todas as informações da ficha: endereço completo, telefone, horário de funcionamento, site, categoria do negócio, descrição e imagens de qualidade do estabelecimento.
 
 Perfis completos têm muito mais chance de atrair visitas – clientes têm 70% mais probabilidade de visitar negócios com perfil do GMB completo e atualizado. Mantenha tudo sempre atualizado: se mudar horário ou endereço, atualize imediatamente, e aproveite para adicionar novidades (fotos recentes, novos serviços, posts de eventos/promos) regularmente.
 
@@ -82,7 +82,7 @@ Use o ChatGPT para brainstorm de sites e estratégias de link building locais e 
 
 ### 6\. Análise de Concorrência Local
 
-Entender a estratégia dos concorrentes na sua cidade pode revelar oportunidades valiosas. Verifique quem aparece nas primeiras posições para as palavras-chave locais do seu setor e analise os pontos fortes deles: conteúdo do site, uso de palavras-chave locais, perfil de backlinks, presença no Google Meu Negócio (número de avaliações, nota média), entre outros.
+Entender a estratégia dos concorrentes na sua cidade pode revelar oportunidades valiosas, um processo que o [Search Engine Land](https://searchengineland.com/library/seo) cobre com frequência em suas análises de SEO. Verifique quem aparece nas primeiras posições para as palavras-chave locais do seu setor e analise os pontos fortes deles: conteúdo do site, uso de palavras-chave locais, perfil de backlinks, presença no Google Meu Negócio (número de avaliações, nota média), entre outros.
 
 Avaliar o conteúdo dos concorrentes e identificar brechas ou áreas de melhoria é uma prática essencial. Use ferramentas de SEO (como Semrush, Ahrefs, Moz) para descobrir para quais palavras-chave locais seus rivais estão ranqueando e quais sites estão linkando para eles.
 

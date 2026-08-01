@@ -2,7 +2,7 @@
 title: "O Impacto dos Core Web Vitals no SEO: Um Guia Completo"
 date: 2025-03-09
 description: "Existe uma verdade inconveniente que muitos especialistas em SEO preferem ignorar: não importa quão brilhante seja sua estratégia de palavras-chave ou quantos"
-image: "/images/3.webp"
+image: "/images/capas/o-impacto-dos-core-web-vitals-no-seo-um-guia-completo.webp"
 ---
 
 Existe uma verdade inconveniente que muitos especialistas em SEO preferem ignorar: não importa quão brilhante seja sua estratégia de palavras-chave ou quantos backlinks você conquistou, se seu site oferece uma experiência lamentável, o Google irá penalizá-lo.
@@ -115,7 +115,7 @@ Agora que entendemos o que são os Core Web Vitals e como medi-los, vamos às es
 
 ### 1\. Otimização de imagens
 
-As imagens são frequentemente o maior elemento visível e, portanto, o elemento LCP em muitas páginas.
+As imagens são frequentemente o maior elemento visível e, portanto, o elemento LCP em muitas páginas, tema que aprofundamos em [como trabalhar com imagens para SEO e melhorar o carregamento do site](/blog/como-trabalhar-com-imagens-para-seo-e-melhorar-o-carregamento-do-site).
 
 **Estratégia implementável:**
 
@@ -363,7 +363,7 @@ O Google continua evoluindo suas métricas, com mudanças importantes no horizon
 4.  **Maior peso para experiências em dispositivos móveis**
     
 
-Estar à frente dessas mudanças não é apenas uma questão técnica – é uma vantagem competitiva que separará os líderes dos seguidores em cada segmento.
+Estar à frente dessas mudanças não é apenas uma questão técnica – é uma vantagem competitiva que separará os líderes dos seguidores em cada segmento, o mesmo tipo de sinal técnico que também aparece em [como criar um sitemap e melhorar a indexação do site](/blog/como-criar-um-sitemap-melhorar-indexacao-site).
 
 ### Conclusão: Além das Métricas
 

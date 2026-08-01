@@ -2,7 +2,7 @@
 title: "Como Garantir Orçamento para SEO: Estratégias para Justificar Investimentos em Marketing Orgânico"
 date: 2025-03-17
 description: "Um orçamento eficiente para SEO é fundamental não apenas para planejar estratégias de otimização, mas também para demonstrar valor aos clientes e justificar"
-image: "/images/Uma-equipe-de-marketing-de-5-pessoas-parecendo-estressada-com-documentos-financeiros-estilo-minimalista-limi.webp"
+image: "/images/capas/como-garantir-orcamento-para-seo-estrategias-para-justificar-investimentos-em-marketing-organico.webp"
 ---
 
 Um orçamento eficiente para SEO é fundamental não apenas para planejar estratégias de otimização, mas também para demonstrar valor aos clientes e justificar os investimentos necessários para alcançá-lo. Antes de defender o orçamento, veja também [como calculá-lo na prática](/blog/como-calcular-seu-orcamento-de-seo-um-guia-completo-para-empresas-brasileiras/).
@@ -13,7 +13,7 @@ Um orçamento eficiente para SEO é fundamental não apenas para planejar estrat
 
 Tipicamente, o orçamento de SEO é determinado por stakeholders na empresa, que também são responsáveis pela aprovação de gastos em outros canais de marketing.
 
-Muitos canais de marketing, como links patrocinados, enquadram-se na categoria de marketing de performance. O ROI e os leads gerados por esses canais são muito mais claros em um balanço financeiro em comparação com o valor agregado e os objetivos do SEO.
+Muitos canais de marketing, como links patrocinados, enquadram-se na categoria de [marketing de performance](https://en.wikipedia.org/wiki/Performance_marketing). O ROI e os leads gerados por esses canais são muito mais claros em um balanço financeiro em comparação com o valor agregado e os objetivos do SEO.
 
 Ao justificar o orçamento de SEO, é essencial diferenciá-lo dos canais clássicos de publicidade paga. O SEO faz parte de uma estratégia de marketing de performance, mas seu objetivo não é uma relação direta de entrada-saída.
 
@@ -115,7 +115,7 @@ Por exemplo, alguém buscando “comprar ar condicionado em Salvador com entrega
 
 ### Potencial de Crescimento (Headroom)
 
-O headroom representa o espaço disponível para crescimento e expansão dentro de um segmento:
+O [headroom](https://www.growth-memo.com/), conceito bastante explorado por Kevin Indig na Growth Memo, representa o espaço disponível para crescimento e expansão dentro de um segmento:
 
 -   **Tamanho total do mercado acessível**: O número total de clientes potenciais no segmento
     
@@ -164,7 +164,7 @@ Ninguém realmente quer tráfego apenas por ter tráfego.
 
 ### Defina KPIs Claros
 
-Você pode alinhar suas áreas de orçamento com os indicadores-chave de desempenho (KPIs) do negócio e aqueles específicos para o canal de marketing de SEO.
+Você pode alinhar suas áreas de orçamento com os indicadores-chave de desempenho (KPIs) do negócio e aqueles específicos para o canal de marketing de SEO, acompanhados no [Google Search Console](https://developers.google.com/search/docs/monitor-debug/search-console-start), a ferramenta oficial de monitoramento do Google.
 
 Um KPI é uma métrica que deve refletir os objetivos gerais de marketing, e esses podem ser qualquer coisa, desde taxas de conversão até valores de vida útil do cliente, pontuações e custos de aquisição de clientes.
 

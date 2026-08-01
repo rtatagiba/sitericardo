@@ -2,12 +2,12 @@
 title: "Title tag ideal tem de 50 a 60 caracteres, diz estudo com 81 mil títulos"
 date: 2026-07-14
 description: "O tamanho ideal do title tag é de 50 a 60 caracteres, segundo análise de 81 mil títulos da Zyppy. Veja os dados de reescrita do Google e como aplicar."
-image: "/images/como-o-google-reescreve-sua-title-tag-4.jpeg"
+image: "/images/capas/title-tag-ideal-tem-de-50-a-60-caracteres-diz-estudo-com-81-mil-titulos.webp"
 ---
 
 **Resumo rápido:** o tamanho ideal do title tag é de 50 a 60 caracteres, o equivalente a cerca de 580 a 600 pixels no desktop. A faixa de 51 a 55 caracteres é a que o Google menos reescreve: só 40% dos títulos nesse intervalo foram alterados, contra quase 100% dos títulos com mais de 70 caracteres.
 
-Os números vêm de uma análise de 81 mil title tags feita pela [Zyppy](https://zyppy.com/seo/google-title-rewrite-study/), de Cyrus Shepard, que também cruzou tamanho de título com tráfego real do Google.
+Os números vêm de uma análise de 81 mil title tags feita pela [Zyppy](https://zyppy.com/seo/google-title-rewrite-study/), de Cyrus Shepard, que também cruzou tamanho de título com tráfego real do Google. O tema se conecta diretamente com o que já cobrimos em [como escrever títulos e meta descrições que aumentam o CTR](/blog/como-escrever-titulos-e-meta-descricoes-que-aumentam-o-ctr).
 
 Agora, o detalhe que quase todo mundo erra: o Google não tem limite de caracteres para o título. O limite é de exibição, não de indexação. E essa diferença muda a forma de escrever títulos. 
 
@@ -53,11 +53,11 @@ Aplicar esses números no dia a dia se resume a quatro decisões práticas:
 1. **Mire em 51 a 55 caracteres** quando quiser minimizar reescritas. Até 60 ainda é zona segura de exibição no desktop.
 2. **Coloque a palavra-chave principal no começo.** Se o Google truncar, a parte importante sobrevive. E o usuário escaneando resultados bate o olho primeiro nas primeiras palavras.
 3. **Corte boilerplate.** Aquele "\| Blog da Empresa X \| Soluções em Tecnologia" no fim de todo título come pixels e não convence ninguém a clicar\.
-4. **Público majoritariamente mobile? Você tem folga.** Dá para ir até uns 70 caracteres antes de a truncagem virar problema. Só não vale encurtar demais: título vago é reescrito em qualquer tela.
+4. **Público majoritariamente mobile? Você tem folga.** Dá para ir até uns 70 caracteres antes de a truncagem virar problema. Só não vale encurtar demais: título vago é reescrito em qualquer tela, o mesmo tipo de fator técnico que pesa no [ranking geral do site no Google](/blog/como-melhorar-o-ranking-do-seu-site-no-google-dicas-praticas).
 
 O trabalho chato é medir isso em escala. Contar caracteres um a um não escala, e caractere nem é a medida certa: "WWW" ocupa muito mais pixel que "iii", então dois títulos de 58 caracteres podem ter destinos diferentes na SERP. Ferramentas como o Screaming Frog calculam largura em pixels de todos os títulos de um crawl, mas param na medição. Elas dizem se o título cabe, não se ele é bom.
 
-É exatamente esse buraco que estou atacando com o ´Title Scout (ainda em construção), que estou construindo agora. A ideia: você aponta a ferramenta para uma página, ela analisa o title tag atual, mede caracteres e largura em pixels, estima o risco de reescrita com base nas faixas do estudo da Zyppy e, a parte que nenhum contador de pixel faz, lê o conteúdo da página para sugerir um título que reflita o que ela realmente entrega. Porque título perfeito de 53 caracteres que promete uma coisa e abre outra é CTR alto com pogo-sticking na sequência, e isso ninguém quer.
+É exatamente esse buraco que estou atacando com o ´Title Scout (ainda em construção), que estou construindo agora, na mesma linha do que já discutimos em [como criar conteúdo SEO-friendly que converte](/blog/como-criar-conteudo-seo-friendly-que-converte). A ideia: você aponta a ferramenta para uma página, ela analisa o title tag atual, mede caracteres e largura em pixels, estima o risco de reescrita com base nas faixas do estudo da Zyppy e, a parte que nenhum contador de pixel faz, lê o conteúdo da página para sugerir um título que reflita o que ela realmente entrega. Porque título perfeito de 53 caracteres que promete uma coisa e abre outra é CTR alto com pogo-sticking na sequência, e isso ninguém quer.
 
 ## Resumo: os números que importam
 
