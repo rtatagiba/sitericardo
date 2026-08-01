@@ -24,7 +24,12 @@
       "Bash(gh pr *)",
       "Bash(xargs -I{} sh -c 'echo {}; stat -c \"%y %s\" \"{}\"')",
       "Bash(identify -verbose \"C:\\\\Users\\\\ricar\\\\Videos\\\\Material\\\\20250406_170336.jpg\")",
-      "Bash(node \"C:\\\\Users\\\\ricar\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-ricar-Documents-Projetos-SITES-sitericardo\\\\f7bf264f-3ddd-44c0-a7e0-e74c7aa10c2d\\\\scratchpad\\\\make-perfil.mjs\")"
+      "Bash(node \"C:\\\\Users\\\\ricar\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-ricar-Documents-Projetos-SITES-sitericardo\\\\f7bf264f-3ddd-44c0-a7e0-e74c7aa10c2d\\\\scratchpad\\\\make-perfil.mjs\")",
+      "Bash(git status *)",
+      "Bash(git merge *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(tasklist)"
     ]
   }
 }
