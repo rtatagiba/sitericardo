@@ -10,23 +10,20 @@ O [Digitalks](https://dgtinnovation.com/) é um evento de marketing digital que 
 
 ![Ricardo e Elaine Tatagiba na entrada do Digitalks](/images/2025/04/1.jpg)
 
-Infelizmente eu só consegui estar presente no primeiro dia, mas já valeu muito a pena. Foi meu primeiro evento de Marketing digital, apesar de já atuar com Marketing a cerca de 10 anos, nunca tive a oportunidade de estar em um dessa magnitude.
+Consegui estar presente só no primeiro dia, mas já valeu a pena. Foi meu primeiro evento de marketing digital desse porte: apesar de já atuar com marketing há cerca de 10 anos, entre a mudança do Brasil para Portugal e outros desencontros, nunca tinha tido a oportunidade antes. E se aprendi algo de forma incisiva foi que networking é uma peça fundamental, exatamente por ter deixado passar boa parte dele.
 
-Isso devido a vários problemas, desde a mudança do Brasil para Portugal entre outros desencontros, mas de fato eu sempre soube que o Networking é uma peça fundamental, e aprendi isso de uma maniera bem incisiva.
+### Os erros de networking que não vou repetir na próxima edição
 
-Mas isso é uma outra história! No evento do [Digitalks](https://dgtinnovation.com/) apensa de ser bem comunicativo, e devido a ferrugem em fazer conexões cometi erros graves que eu prometo que nuca mais cometerei.
+Fui comunicativo no Digitalks, mas a falta de prática em fazer conexões me custou erros que prometo não repetir:
 
-Primeiro, não se preparara antes para ver quem ia estar palestrando, quem são essas pessoas na fila do pão e como posso extrair o máximo de informações para poder tirtar máximo proveito dessas conexões. Hoje com o chatGPT ia ser super fácil extrair dados relevantes e poder ter assunto para conversar com qualquer umd eles
+1.  **Não me preparar antes** para saber quem ia palestrar, quem eram as pessoas na fila do café e como extrair o máximo de cada conversa. Hoje um prompt no ChatGPT resolveria isso em minutos, com um resumo de cada palestrante e pontos em comum para puxar assunto.
+2.  **Não levar equipamento para gravar entrevistas** com os palestrantes.
+3.  **Não tirar fotos nem conversar** diretamente com quem palestrou.
+4.  **Não sentar com desconhecidos** no almoço, em vez de ficar só com quem eu já conhecia.
 
-Segundo erro, não ir preparado para gravar entrevistas com os palestrantes
+Foram erros que travaram boa parte do potencial de networking do evento, mas ficou a lição para a próxima edição.
 
-Terceiro erro: Não tirar foto e nem conversar com os palestrantes
-
-Quarto erro: Não sentar na mesa de estranhos para almoçar com gente diferente
-
-Enfim, vamos parar de contar por aqui por que eu já to aqui quase cortando os pulsos tentando lembrar, foram erros graves e eu juro que tive a lição aprendida! Eu juro!
-
-Tiveram muitas palestras boas, mas a primeira do Dennis Yu foi incrível, foi bem em cheio naquilo que eu precisava, para quem nunca ouoviu falar:
+Tiveram muitas palestras boas, mas a de Dennis Yu foi a mais marcante do primeiro dia, direto no que eu precisava. Para quem nunca ouviu falar dele:
 
 ### ![Dennis Yu, CEO da BlitzMetrics, foi um dos principais destaques do evento. Na sua palestra "AI Warfare: Winning in SEO + Social in 2025](/images/2025/04/Deniz-Yu.jpg)Dennis Yu: O Destaque do primeiro dia de Evento do Digitalks
 
@@ -43,9 +40,11 @@ Outro momento marcante foi o painel “Inovação no marketing: as estratégias 
 
 ![Inovação no Marketing: Estratégias Digitais Marta Lousada (Perfumes & Companhia) Inês Saad (Endless Retail Media @MC) Miguel Simões (Galp) Daniel Risi (Sioux digital )](/images/2025/04/2.jpg)Os palestrantes discutiram como as ferramentas digitais estão a permitir uma personalização mais eficaz das campanhas de marketing, melhorando a experiência do cliente e impulsionando os resultados empresariais.
 
-Apesar do moderador Tiago Senna não ser um entrevistado direto, ele teve uma participação muito interessante, trazendo opiniões incríveis do mercado global, coisas que só alguem com tanta bagagem poderia traduzir numa linguagem simples e impactante, em resumo, o cara tem um cérebro invejável.
+Apesar de o moderador Tiago Senna não ser um entrevistado direto, teve uma participação muito interessante, trazendo opiniões do mercado global que só alguém com bastante bagagem consegue traduzir numa linguagem simples e impactante.
 
-Entrei com contato com ele depois via Linkedin, e ele foi um dos fundadores do [Portal SAPO](https://www.sapo.pt/), não puder perder a oportunidade de lhe perguntar o por que do nome SAPO, e ele me respondeu com maior boa vontade:
+### A origem do nome SAPO, contada por Tiago Senna
+
+Entrei em contato com ele depois pelo LinkedIn. Ele foi um dos fundadores do [Portal SAPO](https://www.sapo.pt/), e não pude perder a oportunidade de perguntar a origem do nome. Ele respondeu com boa vontade:
 
 > “SAPO é um acrónimo de Serviço de Apontadores Portugueses Online 🙂
 > 

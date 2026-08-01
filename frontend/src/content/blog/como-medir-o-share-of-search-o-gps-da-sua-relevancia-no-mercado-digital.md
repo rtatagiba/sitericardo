@@ -221,16 +221,14 @@ Empresas líderes em seus segmentos, como Nike e Apple, elevaram o Share of Sear
 
 A razão é clara: ele funciona como um “indicador transitório” que conecta esforços de marketing com resultados financeiros, demonstrando ROI de forma mais clara e antecipada.
 
-### Medindo o Impacto do Share of Search no ROI
+### Qual o impacto do Share of Search no ROI?
 
 ### Modelos de Atribuição
 
-Para quantificar o impacto do Share of Search nos resultados:
+Para quantificar o impacto do Share of Search nos resultados, duas abordagens se destacam:
 
-1.  **Modelo de Correlação Histórica**:
-    
-2.  **Modelo de Incrementalidade**:
-    
+1.  **Modelo de Correlação Histórica**: compara a série temporal de Share of Search com a de vendas ou Market Share para identificar o intervalo em que uma antecede a outra.
+2.  **Modelo de Incrementalidade**: isola o efeito de campanhas específicas testando variações de investimento e medindo a resposta em Share of Search.
 
 A consultoria Gain Theory desenvolveu um modelo econométrico para a Adidas que demonstrou que cada ponto percentual ganho em Share of Search resultou em um incremento médio de 2.4% nas vendas diretas ao consumidor em um período de três meses.
 
@@ -316,7 +314,7 @@ O Share of Search transcende o status de simples métrica para se tornar uma fil
 -   Capacidade de traduzir insights de busca em ações estratégicas
     
 
-Como disse Jeff Bezos: “A busca é a interface para a intenção do cliente.” Dominar seu Share of Search significa, em última análise, conquistar um espaço privilegiado na mente do consumidor — o verdadeiro campo de batalha do marketing moderno.
+Como disse Jeff Bezos: “A busca é a interface para a intenção do cliente.” Dominar seu Share of Search significa, em última análise, conquistar um espaço privilegiado na mente do consumidor: o verdadeiro campo de batalha do marketing moderno.
 
 Para transformar essa presença mental em posições reais no Google, veja nosso guia de [como melhorar o ranking do seu site](/blog/como-melhorar-o-ranking-do-seu-site-no-google-dicas-praticas/).
 
