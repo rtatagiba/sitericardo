@@ -139,9 +139,9 @@ Para uma meta descrição verdadeiramente otimizada para SEO:
 
 Ogilvy disse: “O consumidor não compra um produto. Ele compra o que o produto faz por ele.” Sua meta descrição deve vender o benefício, não apenas descrever a página.
 
-### Erros de SEO nas title tags
+### Quais são os erros mais comuns nas title tags?
 
-Mesmo os profissionais mais experientes cometem erros. Aqui estão os mais comuns:
+Títulos duplicados, genéricos demais ou sem palavra-chave estão entre os erros mais comuns, mesmo entre profissionais experientes:
 
 1.  **Títulos duplicados** Cada página deve ter um título único. Títulos duplicados confundem tanto os usuários quanto os mecanismos de busca sobre qual página é mais relevante para determinada consulta.
     
@@ -163,9 +163,9 @@ Exemplo:
 -   Consistente: “Técnicas de SEO | Aumentando tráfego | Guia completo”
     
 
-### Ferramentas online úteis para checar suas title tags
+### Quais ferramentas ajudam a checar title tags e meta descrições?
 
-Como Ogilvy sempre enfatizou, o trabalho meticuloso é o que separa o amador do profissional. Estas ferramentas podem ajudar:
+Screaming Frog, Moz, SERP Simulator, Yoast e SEMrush são as ferramentas mais usadas para essa checagem. Como Ogilvy sempre enfatizou, o trabalho meticuloso é o que separa o amador do profissional:
 
 1.  [**Screaming Frog SEO Spider**](https://www.screamingfrog.co.uk/seo-spider/) Ideal para analisar todas as tags de título e meta descrições do seu site de uma vez.
     
@@ -180,15 +180,16 @@ Como Ogilvy sempre enfatizou, o trabalho meticuloso é o que separa o amador do 
 
 Estas ferramentas não substituem o julgamento humano, mas fornecem insights valiosos e economizam tempo.
 
-### Conclusão: O Poder das Primeiras Impressões
+### Resumo: o que muda o CTR na prática
 
-“Você não tem uma segunda chance de causar uma primeira impressão.” Esta frase atribuída a Will Rogers resume perfeitamente a importância das tags de título e meta descrições.
+“Você não tem uma segunda chance de causar uma primeira impressão”, frase atribuída a Will Rogers, resume bem o peso de tags de título e meta descrições. Na prática, o que move o ponteiro é:
 
-Em um mundo onde cada segundo conta e a atenção é o bem mais escasso, estas pequenas porções de texto são os embaixadores do seu conteúdo. Invista tempo nelas. Refine-as. Teste-as. Os resultados compensarão o esforço.
+- **Tamanho**: title tags de 50 a 60 caracteres, meta descrições de 155 a 160 caracteres.
+- **Palavra-chave posicionada cedo**, sem keyword stuffing.
+- **CTA e valor único** na meta descrição, em vez de apenas descrever o conteúdo.
+- **Teste A/B constante**: o estudo da Sistrix mostra CTR caindo de 28,5% na primeira posição para 2,5% na décima. Título e descrição fracos custam cliques mesmo com bom ranking.
 
-Como Ogilvy sempre insistiu: “Não conte. Venda.” Suas tags de título e meta descrições não devem apenas descrever seu conteúdo, mas vendê-lo de maneira irresistível.
-
-Um bom título é só a porta de entrada — depois do clique, é o [conteúdo em si que precisa converter](/blog/como-criar-conteudo-seo-friendly-que-converte/). E lembre-se: CTR mais alto é apenas um dos [muitos fatores que o Google considera no ranking](/blog/como-melhorar-o-ranking-do-seu-site-no-google-dicas-praticas/).
+Como Ogilvy insistia: “Não conte. Venda.” Um bom título é só a porta de entrada, depois do clique, é o [conteúdo em si que precisa converter](/blog/como-criar-conteudo-seo-friendly-que-converte/). E CTR mais alto é apenas um dos [muitos fatores que o Google considera no ranking](/blog/como-melhorar-o-ranking-do-seu-site-no-google-dicas-praticas/).
 
 ---
 
