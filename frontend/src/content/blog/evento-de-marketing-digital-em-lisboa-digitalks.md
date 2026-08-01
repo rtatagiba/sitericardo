@@ -1,11 +1,12 @@
 ---
-title: "Evento de Marketing digital em Lisboa Digitalks"
+title: "Evento de Marketing Digital em Lisboa: Digitalks 2025"
 date: 2025-04-24
-description: "O Digitalks realizado em LIsboa nos dias 22-23 de Abril foi um encontro que discutiu a inovação do Marketing digital em 2025! O que eu aprendi lá"
+description: "O Digitalks Lisboa 2025 reuniu palestras e painéis sobre marketing digital nos dias 22 e 23 de abril. Veja os destaques e o que aprendi no evento."
 image: "/images/1.webp"
+category: "SEO"
 ---
 
-Nos dias 22 e 23 de abril tivemos em LIsboa um evento super interessante, o Digitalks, num modelo Ted Talks com palestrantes e pain\[eis de discussão o evento trouxe insights poderosos para o Marketing digitral em 2025 e próximos anos.
+O [Digitalks](https://dgtinnovation.com/) é um evento de marketing digital que aconteceu em Lisboa nos dias 22 e 23 de abril de 2025, no formato TED Talks: palestras curtas seguidas de painéis de discussão. A edição trouxe insights sobre o marketing digital para 2025 e os próximos anos, com destaque para o uso de IA em SEO e redes sociais.
 
 ![Ricardo e Elaine Tatagiba na entrada do Digitalks](/images/2025/04/1.jpg)
 
