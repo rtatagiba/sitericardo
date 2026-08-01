@@ -2,7 +2,7 @@
 title: "Como Medir o Share of Search: O GPS da Sua Relevância no Mercado Digital"
 date: 2025-03-14
 description: Imagine que você pudesse prever o futuro do seu negócio com meses de antecedência. Parece ficção científica? Não é. O Share of Search surgiu como um dos
-image: /images/como-medir-o-share-of-search-o-gps-da-sua-relevancia-no-mercado-digital/img-1782732824449.webp
+image: "/images/capas/como-medir-o-share-of-search-o-gps-da-sua-relevancia-no-mercado-digital.webp"
 category: ""
 draft: false
 tags: []

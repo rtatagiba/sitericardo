@@ -2,7 +2,7 @@
 title: "Sucesso em SEO Local: Como acompanhar rankings, conversões e chamadas"
 date: 2025-03-10
 description: "O SEO Local é uma estratégia essencial para empresas que dependem de clientes em suas regiões específicas. Seja você um restaurante em São Paulo, uma clínica"
-image: "/images/Firefly-personagem-de-terno-com-cores-do-google-com-um-mapa-na-mao-num-cenario.webp"
+image: "/images/capas/sucesso-em-seo-local-como-acompanhar-rankings-conversoes-e-chamadas.webp"
 ---
 
 ## A importância de acompanhar métricas em SEO Local

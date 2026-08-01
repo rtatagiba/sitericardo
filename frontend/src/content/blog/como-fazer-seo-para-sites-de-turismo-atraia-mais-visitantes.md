@@ -2,7 +2,7 @@
 title: "Como Fazer SEO para Sites de Turismo: Atraia Mais Visitantes"
 date: 2025-04-01
 description: O SEO para turismo transcendeu a simples otimização de palavras-chave e meta descrições. Hoje, é uma ciência de comportamento humano, adaptação cultural e
-image: /images/como-fazer-seo-para-sites-de-turismo-atraia-mais-visitantes/img-1782732880663.webp
+image: "/images/capas/como-fazer-seo-para-sites-de-turismo-atraia-mais-visitantes.webp"
 category: ""
 draft: false
 tags: []

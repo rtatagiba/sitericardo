@@ -2,7 +2,7 @@
 title: Como Escolher as Melhores Palavras-Chave para Seu Negócio Local
 date: 2025-03-08
 description: Escolher as palavras-chave certas é fundamental para que seu negócio local seja encontrado online. Quando bem selecionadas, elas conectam sua empresa às
-image: /images/como-escolher-as-melhores-palavras-chave-para-seu-negocio-local/img-1782729773793.webp
+image: "/images/capas/como-escolher-as-melhores-palavras-chave-para-seu-negocio-local.webp"
 category: ""
 draft: false
 tags: []

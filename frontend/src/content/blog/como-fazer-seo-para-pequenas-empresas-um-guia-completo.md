@@ -2,7 +2,7 @@
 title: "Como Fazer SEO para Pequenas Empresas: Um Guia Completo"
 date: 2025-03-08
 description: Ter uma presença online forte é essencial para qualquer pequena empresa nos dias de hoje. No entanto, apenas ter um site não é suficiente – você precisa que
-image: /images/como-fazer-seo-para-pequenas-empresas-um-guia-completo/img-1782729813382.webp
+image: "/images/capas/como-fazer-seo-para-pequenas-empresas-um-guia-completo.webp"
 category: ""
 draft: false
 tags: []

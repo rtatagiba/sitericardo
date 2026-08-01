@@ -2,7 +2,7 @@
 title: "Como comparar o sitemap do seu site com o de um concorrente"
 date: 2026-07-17
 description: "Comparar o sitemap do seu site com o de um concorrente revela pautas que ferramentas de keyword gap não mostram. Veja como funciona a análise de lacuna de conteúdo."
-image: "/images/lacuna-de-conteudo.webp"
+image: "/images/capas/lacuna-de-conteudo-comparar-sitemap-concorrente.webp"
 ---
 
 **Resumo rápido:** comparar o sitemap do seu site com o de um concorrente direto é um jeito de achar pautas que passam batido em ferramentas de keyword gap como o [Ahrefs Content Gap](https://ahrefs.com/content-gap) ou o [SEMrush Keyword Gap](https://www.semrush.com/analytics/keywordgap/), porque a comparação parte da estrutura real de URLs publicadas, não de um banco de palavras-chave. O cruzamento normalmente separa os temas em três grupos: o que só o concorrente cobre, o que os dois cobrem, e onde você já tem mais profundidade. Cada grupo aponta uma decisão editorial diferente.

@@ -7,7 +7,7 @@ titulos_alternativos:
   - "Pare de escolher entre SEO e PPC: como a IA uniu os dois canais"
   - "SEO, PPC e GEO: o novo tripé da visibilidade em busca"
 description: "A discussão SEO vs PPC perdeu sentido porque a IA mudou onde a decisão de compra acontece. Veja os dados que provam isso e como integrar SEO, PPC e GEO."
-image: "/images/o-clique-que-nao-aconteceu.webp"
+image: "/images/capas/seo-vs-ppc-debate-acabou.webp"
 slug: "seo-vs-ppc-debate-acabou"
 keyword_principal: "seo vs ppc"
 date: 2026-07-21
