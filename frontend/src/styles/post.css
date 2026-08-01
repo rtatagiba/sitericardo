@@ -71,17 +71,36 @@
 
 .post-hero {
   position: relative;
-  margin: 0 0 2.5rem;
+  margin: 40px 20px 2.5rem;
   overflow: hidden;
-  background-color: var(--color-surface);
+  /* Cor da página, não do card (--color-surface): se o object-fit: contain
+     sobrar tarja, ela precisa se fundir com o fundo, não destacar como um
+     retângulo à parte. */
+  background-color: var(--color-ink);
+}
+
+@media (min-width: 640px) {
+  .post-hero {
+    margin-inline: 100px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .post-hero {
+    margin-inline: 200px;
+  }
 }
 
 .post-hero img {
   display: block;
   width: 100%;
-  aspect-ratio: 21 / 9;
+  /* Casa com a proporção nativa das capas (1200×675 = 16/9). */
+  aspect-ratio: 16 / 9;
   max-height: 60vh;
-  object-fit: cover;
+  /* contain, não cover: se a altura for espremida pelo max-height, a
+     imagem encolhe inteira (com tarja da cor de fundo) em vez de recortar
+     o título embutido nela. */
+  object-fit: contain;
 }
 
 .post-hero-caption {

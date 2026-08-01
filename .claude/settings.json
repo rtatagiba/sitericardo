@@ -29,7 +29,10 @@
       "Bash(git merge *)",
       "Bash(git add *)",
       "Bash(git commit *)",
-      "Bash(tasklist)"
+      "Bash(tasklist)",
+      "Bash(git -C \"c:\\\\Users\\\\ricar\\\\Documents\\\\Projetos\\\\SITES\\\\sitericardo\" branch --show-current)",
+      "Bash(git -C \"c:\\\\Users\\\\ricar\\\\Documents\\\\Projetos\\\\SITES\\\\sitericardo\" status --short)",
+      "Bash(git -C \"c:\\\\Users\\\\ricar\\\\Documents\\\\Projetos\\\\SITES\\\\sitericardo\" log --oneline -5)"
     ]
   }
 }
