@@ -2,7 +2,7 @@
 title: "Meta Revoluciona a Comunicação com IA que Converte Pensamentos em Texto"
 date: 2025-02-16
 description: "A Meta revelou um sistema inovador de inteligência artificial capaz de transformar pensamentos em texto digitado com até 80% de precisão. Essa tecnologia, no"
-image: "/images/meta-cria-AI-para-conectar-cerebro-ao-computador.webp"
+image: "/images/capas/meta-revoluciona-a-comunicacao-com-ia-que-converte-pensamentos-em-texto.webp"
 ---
 
 A Meta revelou um sistema inovador de inteligência artificial capaz de transformar pensamentos em texto digitado com até 80% de precisão. Essa tecnologia, no entanto, ainda depende de um scanner cerebral volumoso e não portátil, além de operar apenas em condições laboratoriais controladas.
@@ -19,7 +19,7 @@ O sistema, chamado Brain2Qwerty, opera capturando sinais magnéticos gerados pel
 
 ![aparelho da meta que escaneia a mente por meio de fios e um scanner dentor do laboratorio](/images/2025/02/Meta-cria-aparelho-para-ler-mentes.jpg)
 
-A tecnologia utiliza deep learning para mapear os sinais cerebrais em pressionamentos de teclas. Treinado com milhares de caracteres digitados pelos participantes, o modelo consegue reconhecer padrões cerebrais associados a diferentes letras e palavras, resultando em uma conversão precisa do pensamento em texto exibido na tela.
+A tecnologia utiliza deep learning para mapear os sinais cerebrais em pressionamentos de teclas. Treinado com milhares de caracteres digitados pelos participantes, o modelo consegue reconhecer padrões cerebrais associados a diferentes letras e palavras, resultando em uma conversão precisa do pensamento em texto exibido na tela, o mesmo tipo de mapeamento de padrões que sustenta a [oficialização do grounding como futuro do tráfego orgânico](/blog/a-oficializacao-do-grounding-o-futuro-do-trafego-organico-segundo-o-google).
 
 ### Potencial e Desafios
 

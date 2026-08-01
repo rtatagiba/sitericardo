@@ -2,7 +2,7 @@
 title: "Como Calcular seu Orçamento de SEO: Um Guia Completo para Empresas Brasileiras"
 date: 2025-03-17
 description: "O digital é o principal canal de marketing para muitas empresas hoje em dia."
-image: "/images/Como fazer calculo.webp"
+image: "/images/capas/como-calcular-seu-orcamento-de-seo-um-guia-completo-para-empresas-brasileiras.webp"
 ---
 
 ## Como Calcular seu Orçamento de SEO: Um Guia Completo para Empresas Brasileiras
@@ -37,7 +37,7 @@ Participo de vários grupos de marketing digital no Facebook. É realmente assus
 
 É comum ver perguntas como: “Acabei de conseguir um cliente que quer ranking para \[palavra-chave x\] – como faço isso?”
 
-Um segundo problema comum são pessoas usando esquemas de links, especificamente redes de blogs privados e páginas de terceiros conhecidas como SEO parasita, sem nunca explicar o risco aos clientes. Muitos usam IA para gerar conteúdo em massa sem verificação de fatos.
+Um segundo problema comum são pessoas usando esquemas de links, especificamente redes de blogs privados e páginas de terceiros conhecidas como SEO parasita, práticas que violam diretamente as [políticas de spam do Google](https://developers.google.com/search/docs/essentials/spam-policies), sem nunca explicar o risco aos clientes. Muitos usam IA para gerar conteúdo em massa sem verificação de fatos.
 
 No entanto, a [IA pode ser uma ferramenta poderosa](/blog/meta-revoluciona-a-comunicacao-com-ia-que-converte-pensamentos-em-texto/) quando usada eticamente no SEO.
 
@@ -167,7 +167,7 @@ A falha na calculadora acima é que não leva em consideração o valor vitalíc
 
 Varejistas online precisam de negócios repetidos para crescer. Ao não calcular o valor vitalício de um novo cliente, o verdadeiro ROI é grosseiramente subestimado.
 
-A maneira certa de calcular o ROI é incorporar o valor vitalício à calculadora.
+A maneira certa de calcular o [ROI](https://en.wikipedia.org/wiki/Return_on_investment) é incorporar o valor vitalício à calculadora.
 
 Para calcular o custo do SEO e seu verdadeiro ROI, use esta fórmula:
 
