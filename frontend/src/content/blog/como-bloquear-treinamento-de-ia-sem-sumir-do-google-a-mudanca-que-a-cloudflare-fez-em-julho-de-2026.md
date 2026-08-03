@@ -7,7 +7,7 @@ draft: false
 title: Como bloquear treinamento de IA sem sumir do Google (a mudança que a Cloudflare fez em julho de 2026)
 description: "A Cloudflare separou bots de IA em três categorias: busca, agente e treinamento. A partir de 15 de setembro de 2026, todo domínio novo criado na plataforma nasce com treinamento e agente bloqueados por padrão"
 category: ""
-image: /images/como-bloquear-treinamento-de-ia-sem-sumir-do-google-a-mudanca-que-a-cloudflare-fez-em-julho-de-2026/img-1783531885540.jpeg
+image: "/images/capas/como-bloquear-treinamento-de-ia-sem-sumir-do-google-a-mudanca-que-a-cloudflare-fez-em-julho-de-2026.webp"
 tags:
   - IA
 ---
@@ -16,9 +16,9 @@ A Cloudflare separou bots de IA em três categorias: busca, agente e treinamento
 
 O botão de bloquear tudo nunca resolveu o problema certo Até julho de 2026, a Cloudflare oferecia uma solução de bot de IA: um botão. Ligado ou desligado. Bloqueia tudo ou deixa tudo passar. O problema é que essa lógica binária ignorava uma diferença enorme.
 
-O Googlebot passando pelo seu site pra te indexar e te mandar visitante de volta não tem nada a ver com um crawler que suga seu conteúdo pra treinar um modelo e nunca mais aparece. Tratar os dois do mesmo jeito sempre foi ruim pra quem produz conteúdo, e pior ainda pra site pequeno.
+O Googlebot passando pelo seu site pra te indexar e te mandar visitante de volta não tem nada a ver com um crawler que suga seu conteúdo pra treinar um modelo e nunca mais aparece. Tratar os dois do mesmo jeito sempre foi ruim pra quem produz conteúdo, e pior ainda pra site pequeno, tema que já aparece na [oficialização do grounding como futuro do tráfego orgânico segundo o Google](/blog/a-oficializacao-do-grounding-o-futuro-do-trafego-organico-segundo-o-google).
 
-Se ninguém encontra seu site, você é obrigado a escolher entre aparecer na busca (aceitando que seu texto vire dado de treinamento) ou proteger o conteúdo e correr o risco de ninguém nunca mais te achar. Quem sai ganhando nessa armadilha é sempre quem já tem posição consolidada, porque os mesmos bots que indexam também treinam.
+Se ninguém encontra seu site, você é obrigado a escolher entre aparecer na busca (aceitando que seu texto vire dado de treinamento) ou proteger o conteúdo e correr o risco de ninguém nunca mais te achar. Quem sai ganhando nessa armadilha é sempre quem já tem posição consolidada, porque os mesmos bots que indexam também treinam, um desequilíbrio que também aparece nas [ferramentas gratuitas de SEO para IA, AEO e GEO](/blog/ferramentas-gratuitas-seo-para-ia-aeo-geo).
 
 As três categorias que a Cloudflare criou Em vez de continuar tentando definir o que é ou não IA (essa linha já ficou impossível de traçar), a Cloudflare passou a classificar o comportamento de cada bot. Vale pra todo cliente, inclusive quem está no plano gratuito. 
 
@@ -46,4 +46,6 @@ Confiança transitiva: um cabeçalho técnico chamado Forwarded garante que a co
 
 Fecha a brecha de contornar a regra usando proxy. O que fazer com essa informação A Cloudflare está atrás de mais de um quinto dos domínios da internet, então isso não é ajuste cosmético.
 
-Se você administra um site, vale entrar no painel antes de setembro chegar e revisar suas regras de bot uma por uma. Decidir o que liberar em busca, o que travar em treinamento e como tratar agente autônomo é o tipo de escolha que separa um site que continua trazendo visitante de um que só alimenta modelo em troca de nada.
+Se você administra um site, vale entrar no painel antes de setembro chegar e revisar suas regras de bot uma por uma. Decidir o que liberar em busca, o que travar em treinamento e como tratar agente autônomo é o tipo de escolha que separa um site que continua trazendo visitante de um que só alimenta modelo em troca de nada, o mesmo dilema que discutimos em [como monitorar o desempenho de SEO do seu site com ferramentas gratuitas](/blog/como-monitorar-desempenho-seo-seu-site-ferramentas-gratuitas).
+
+A própria [documentação de crawlers do Google Search Central](https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers) explica como o Googlebot distingue rastreamento para indexação de outros usos, o que reforça por que separar categorias de bot faz diferença prática. A discussão sobre limites entre treinamento de IA e indexação também aparece com frequência no [Search Engine Land](https://searchengineland.com/library/seo), que cobre atualizações desse tipo assim que saem.

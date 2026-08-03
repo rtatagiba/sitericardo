@@ -1,0 +1,48 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e ' *)",
+      "Bash(node build-page.js)",
+      "Bash(env)",
+      "Bash(cp expressoes.js expressoes.mjs)",
+      "Bash(sed -i \"s|from '/c/Users/ricar/Documents/Projetos/SITES/sitericardo/Plugins/conteudo-geo/skills/gerar-artigos-geo/scripts/node_modules/replicate/index.js'|from 'file:///C:/Users/ricar/Documents/Projetos/SITES/sitericardo/Plugins/conteudo-geo/skills/gerar-artigos-geo/scripts/node_modules/replicate/index.js'|; s\\\\|'/c/Users/ricar/Documents/Projetos/SITES/sitericardo/frontend/.env'\\\\|'C:/Users/ricar/Documents/Projetos/SITES/sitericardo/frontend/.env'\\\\|\" expressoes.mjs)",
+      "Bash(node expressoes.mjs)",
+      "Bash(node amostra.js)",
+      "Bash(node scripts/capas/gerar-capas.js)",
+      "Bash(node novas-expressoes.mjs)",
+      "Bash(node scripts/capas/gerar-capas.js --forcar)",
+      "Bash(node apontar-frontmatter.js)",
+      "Bash(cd \"c:/Users/ricar/Documents/Projetos/SITES/sitericardo/frontend/src/content/blog\" && grep -L \"^image: \\\\\"/images/capas/\" *.md | head; echo \"--- contagem ---\"; grep -c \"\" /dev/null; grep -l \"^image: \\\\\"/images/capas/\" *.md | wc -l)",
+      "Read(//dev/**)",
+      "Bash(node scripts/capas/montar-capas.js)",
+      "Bash(node scripts/capas/aplicar-frontmatter.js)",
+      "Skill(schedule)",
+      "Skill(schedule:*)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(git fetch *)",
+      "Bash(gh pr *)",
+      "Bash(xargs -I{} sh -c 'echo {}; stat -c \"%y %s\" \"{}\"')",
+      "Bash(identify -verbose \"C:\\\\Users\\\\ricar\\\\Videos\\\\Material\\\\20250406_170336.jpg\")",
+      "Bash(node \"C:\\\\Users\\\\ricar\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-ricar-Documents-Projetos-SITES-sitericardo\\\\f7bf264f-3ddd-44c0-a7e0-e74c7aa10c2d\\\\scratchpad\\\\make-perfil.mjs\")",
+      "Bash(git status *)",
+      "Bash(git merge *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(tasklist)",
+      "Skill(update-config)",
+      "Skill(update-config:*)",
+      "Bash(python -c ' *)",
+      "Bash(claude mcp *)",
+      "Bash(node scripts/capas/gerar-faq.js)",
+      "Bash(grep -iE \"^ws$|remote-interface|puppeteer\")",
+      "Bash(rm -f \"C:/Users/ricar/Documents/Projetos/SITES/sitericardo/scripts/capas/.trabalho/home-screenshot\"*.png \"C:/Users/ricar/Documents/Projetos/SITES/sitericardo/scripts/capas/.trabalho/faq\"*.png \"C:/Users/ricar/Documents/Projetos/SITES/sitericardo/scripts/capas/.trabalho/band_\"*.png \"C:/Users/ricar/Documents/Projetos/SITES/sitericardo/scripts/capas/.trabalho/contact-sheet.png\" \"C:/Users/ricar/Documents/Projetos/SITES/sitericardo/scripts/capas/.trabalho/crop1.png\")",
+      "Bash(cp \"/c/Users/ricar/Videos/Material/Dia a dia/Man_in_light_social_attire_202608010020 \\(2\\).jpeg\" \"C:/Users/ricar/Documents/Projetos/SITES/sitericardo/frontend/public/images/faq/o-que-um-consultor-faz-raw.jpeg\" && file \"C:/Users/ricar/Documents/Projetos/SITES/sitericardo/frontend/public/images/faq/o-que-um-consultor-faz-raw.jpeg\" 2>&1 | head -5)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\ricar\\.claude",
+      "C:\\Users\\ricar\\Documents\\Projetos\\SITES\\sitericardo\\scripts\\capas\\.trabalho",
+      "C:\\Users\\ricar\\Videos\\Material\\Dia a dia"
+    ]
+  }
+}

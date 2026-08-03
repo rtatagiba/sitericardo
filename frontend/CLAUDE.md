@@ -21,6 +21,53 @@ Consult these guides before working on related tasks:
 - [Adding styles or using Tailwind](https://docs.astro.build/en/guides/styling/)
 - [Supporting multiple languages](https://docs.astro.build/en/guides/internationalization/)
 
+## Blocos de destaque nos posts
+
+Os posts são `.md` puro (a coleção, o `lastmod` do sitemap e o editor do
+`/admin` assumem essa extensão — não migrar para `.mdx`). Os blocos de corpo
+vêm de `src/lib/markdown/satteri-boxes.mjs`, ligado em `astro.config.mjs` via
+`markdown.processor`.
+
+Callouts — o rótulo ("Aviso", "Dica"…) é gerado em CSS, não se escreve:
+
+```md
+> [!AVISO]
+> Texto do aviso.
+```
+
+Tipos: `NOTA`, `AVISO`, `DICA`, `DESTAQUE` e `CITACAO` (esta vira citação em
+destaque, centrada e fora da coluna de texto; um segundo parágrafo dentro dela
+é formatado como atribuição).
+
+Prós e contras — o contentor de fora leva **quatro** dois-pontos, senão o de
+dentro fecha-o antes do tempo:
+
+```md
+::::pros-contras
+
+:::pros
+
+**Prós**
+
+- Ponto a favor
+
+:::
+
+:::contras
+
+**Contras**
+
+- Ponto contra
+
+:::
+
+::::
+```
+
+Os `:::` precisam de linha em branco antes e depois, e têm de estar sozinhos na
+linha. O cabeçalho de cada lado é `**negrito**`, não `###` — um heading entraria
+no sumário como se fosse secção do artigo.
+
 ## WhatTheyAsk (`/ferramentas/whattheyask`)
 
 Keyword question explorer — expands seeds into real questions via Google Suggest.

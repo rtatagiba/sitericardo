@@ -10,7 +10,7 @@ description: "Graphify é uma ferramenta open source que transforma qualquer có
 slug: "graphify-como-economizar-tokens-ao-usar-ia"
 keyword_principal: "graphify"
 date: 2026-07-22
-image: "/images/grafo-de-conhecimento-do-codigo.webp"
+image: "/images/capas/graphify-como-economizar-tokens-ao-usar-ia.webp"
 category: "Ferramentas de IA"
 author: Editorial
 draft: true
@@ -20,7 +20,7 @@ draft: true
 
 Graphify é uma ferramenta open source que transforma qualquer projeto, código, documentação, esquemas de banco de dados, configurações e PDFs, em um grafo de conhecimento consultável. Em vez de um assistente de IA reler arquivos brutos a cada pergunta, ele passa a consultar esse grafo já pronto, o que reduz a quantidade de tokens gastos por consulta.
 
-O projeto é mantido pela Graphify-Labs, tem licença MIT, é apoiado pela Y Combinator (turma S26) e já passou de 93 mil estrelas no GitHub.
+O projeto é mantido pela Graphify-Labs, tem [licença MIT](https://en.wikipedia.org/wiki/MIT_License), é apoiado pela [Y Combinator](https://www.ycombinator.com/) (turma S26) e já passou de 93 mil estrelas no GitHub.
 
 ## O que é o Graphify?
 
@@ -28,7 +28,7 @@ Graphify é um skill de linha de comando para assistentes de codificação por I
 
 ## Como o Graphify funciona?
 
-O Graphify analisa código com tree-sitter, o mesmo parser que o GitHub usa para o realce de sintaxe. Essa etapa roda inteiramente local, é determinística e não consome token nenhum, porque não depende de LLM para extrair a estrutura do código. Documentos, PDFs, imagens e vídeos são a exceção: para esses formatos, o Graphify usa o modelo do próprio assistente de IA, ou uma chave de API configurada à parte, numa passada semântica.
+O Graphify analisa código com [tree-sitter](https://tree-sitter.github.io/tree-sitter/), o mesmo parser que o GitHub usa para o realce de sintaxe. Essa etapa roda inteiramente local, é determinística e não consome token nenhum, porque não depende de LLM para extrair a estrutura do código. Documentos, PDFs, imagens e vídeos são a exceção: para esses formatos, o Graphify usa o modelo do próprio assistente de IA, ou uma chave de API configurada à parte, numa passada semântica.
 
 Cada conexão do grafo recebe uma etiqueta: EXTRACTED, quando está explícita no código-fonte, ou INFERRED, quando foi deduzida pela análise. Essa distinção separa o que é fato direto do arquivo do que é interpretação da ferramenta, algo que uma busca por similaridade de texto não entrega.
 
@@ -74,7 +74,7 @@ E rodar dentro do assistente, apontando para a pasta do projeto:
 
 ## Quais assistentes de IA funcionam com o Graphify?
 
-A lista de integrações inclui Claude Code, Cursor, Codex, Gemini CLI, GitHub Copilot e OpenCode, entre outros. A instalação é a mesma em todos: registrar o skill uma vez com `graphify install` e chamar `/graphify` de dentro do assistente escolhido.
+A lista de integrações inclui Claude Code, Cursor, Codex, Gemini CLI, GitHub Copilot e OpenCode, entre outros. A instalação é a mesma em todos: registrar o skill uma vez com `graphify install` e chamar `/graphify` de dentro do assistente escolhido, o tipo de ferramenta que também aparece na nossa lista de [ferramentas gratuitas de SEO para IA, AEO e GEO](/blog/ferramentas-gratuitas-seo-para-ia-aeo-geo). Quem usa Claude Code no dia a dia para produzir conteúdo otimizado para citação em IA também se beneficia do [guia para aparecer no ChatGPT (AEO/GEO)](/blog/como-aparecer-no-chatgpt-guia-aeo-geo).
 
 ## O Graphify é seguro para código proprietário?
 

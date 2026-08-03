@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Hero from "../components/sections/Hero.astro";
+import HeroServices from "../components/sections/HeroServices.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 
@@ -13,62 +13,160 @@ const posts = (await getCollection("blog"))
 ---
 
 <BaseLayout
-  title="Ricardo Tatagiba — Consultor SEO Freelancer"
-  description="Consultor SEO Freelancer com mais de 10 anos de experiência. Ajudo empresas brasileiras a crescer no Google com estratégias de SEO e marketing digital eficazes."
+  title="Ricardo Tatagiba — Sites, IA, Automações e SEO"
+  description="Consultor freelancer com mais de 12 anos de experiência: criação de sites, implementação de IA, automações e SEO para o teu negócio crescer no Google."
 >
   <!-- Hero -->
-  <Hero />
+  <HeroServices />
 
-  <!-- Serviços -->
-  <section class="py-20 px-4 bg-black">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-4">O que eu faço</h2>
-      <p class="text-neutral-300 text-center mb-12 max-w-xl mx-auto">
-        Estratégias completas para aumentar sua visibilidade online e atrair
-        mais clientes.
-      </p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  <!-- Sobre mim -->
+  <section class="py-24 px-4 border-t border-line">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-start">
+      <div>
+        <p class="font-mono text-sm text-accent mb-3">// Quem sou eu</p>
+        <h2 class="font-display text-4xl md:text-5xl font-semibold text-primary mb-6 leading-tight">
+          Ricardo Tatagiba
+        </h2>
+        <div class="space-y-5 text-text-muted text-lg leading-relaxed max-w-xl">
+          <p>
+            Consultor freelancer com mais de 12 anos de experiência, a trabalhar com
+            empresas brasileiras que querem crescer no Google — e agora também nas
+            respostas das IAs — sem depender só de anúncios pagos.
+          </p>
+          <p>
+            Combino SEO técnico com desenvolvimento full stack e automações, o que
+            significa que não só identifico o problema: implemento a solução. Sem
+            intermediários, sem relatórios genéricos — cada projeto tem atenção
+            direta e estratégia pensada para o seu negócio.
+          </p>
+        </div>
+        <a
+          href="/sobre"
+          class="inline-flex items-center gap-2 mt-8 font-semibold text-accent hover:text-accent-dark transition-colors"
+        >
+          Conhecer minha trajetória <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <dl class="grid grid-cols-2 gap-6">
         {
           [
-            {
-              title: "SEO Técnico",
-              desc: "Auditoria completa e otimização técnica para melhorar indexação e velocidade.",
-            },
-            {
-              title: "SEO Local",
-              desc: "Domínio do Google Maps e resultados locais para atrair clientes da sua região.",
-            },
-            {
-              title: "Criação de Conteúdo",
-              desc: "Conteúdo otimizado que educa, converte e ranqueia no Google.",
-            },
-            {
-              title: "Google Ads",
-              desc: "Campanhas pagas com foco em conversão e redução do custo por lead.",
-            },
-            {
-              title: "Google My Business",
-              desc: "Otimização do perfil GMB para dominar buscas locais.",
-            },
-            {
-              title: "Automação com IA",
-              desc: "Processos inteligentes para escalar resultados com menos esforço manual.",
-            },
-          ].map(({ title, desc }) => (
-            <div class="bg-black rounded-xl p-6 shadow-sm border border-green-900 hover:shadow-md transition-shadow">
-              <h3 class="font-bold text-lg mb-2 text-primary">{title}</h3>
-              <p class="text-neutral-300 text-sm leading-relaxed">{desc}</p>
+            { value: "12+", label: "Anos de experiência" },
+            { value: "300+", label: "Sites entregues" },
+            { value: "100%", label: "Direto comigo, sem intermediários" },
+            { value: "5", label: "Frentes integradas: site, SEO, IA, automações e ads" },
+          ].map((item) => (
+            <div class="border border-line rounded-lg p-6 bg-surface">
+              <dd class="font-display text-3xl font-semibold text-accent mb-2">
+                {item.value}
+              </dd>
+              <dt class="font-mono text-xs text-text-muted uppercase tracking-wide leading-relaxed">
+                {item.label}
+              </dt>
             </div>
           ))
         }
+      </dl>
+    </div>
+  </section>
+
+  <!-- Perguntas sobre consultoria de SEO -->
+  <section class="py-24 px-4 border-t border-line">
+    <div class="max-w-6xl mx-auto space-y-20 md:space-y-28">
+      <div>
+        <p class="font-mono text-sm text-accent mb-3">// Perguntas frequentes</p>
+        <h2 class="font-display text-4xl md:text-5xl font-semibold text-primary mb-16 leading-tight max-w-2xl">
+          Consultoria de SEO, em detalhe
+        </h2>
+
+        <!-- Bloco 1: título ao lado do texto, sem foto -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+          <h3 class="font-display text-2xl md:text-3xl font-semibold text-primary leading-snug">
+            O que é consultoria de SEO?
+          </h3>
+          <div class="space-y-4 text-text-muted text-lg leading-relaxed">
+            <p>
+              Consultoria de SEO é o serviço de analisar, planear e implementar tudo o que
+              faz um site aparecer melhor no Google e, cada vez mais, nas respostas de
+              ferramentas como ChatGPT e Gemini. Cobre a parte técnica (velocidade,
+              indexação, estrutura), a de conteúdo (o que escrever e como) e a de
+              autoridade (quem fala do seu negócio online).
+            </p>
+            <p>
+              E não é só sobre o Google de hoje: cada vez mais gente pergunta primeiro à
+              IA antes de abrir um site, e essas respostas só citam empresas que já têm
+              autoridade e conteúdo estruturado online. Investir em SEO agora é garantir
+              que a IA encontra e cita o seu negócio, não o do concorrente ao lado.
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="text-center mt-10">
-        <a
-          href="/servicos"
-          class="inline-block bg-black border border-green-900 text-white font-semibold px-8 py-3 rounded-lg hover:bg-neutral-900 transition-colors"
-        >
-          Ver todos os serviços
-        </a>
+
+      <!-- Bloco 2: foto ao lado do texto -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <img
+          src="/images/faq/o-que-um-consultor-faz.webp"
+          alt=""
+          class="w-full h-auto rounded-lg border border-line order-1"
+          loading="lazy"
+        />
+        <div class="order-2">
+          <h3 class="font-display text-2xl md:text-3xl font-semibold text-primary mb-4 leading-snug">
+            O que um consultor de SEO faz?
+          </h3>
+          <div class="space-y-4 text-text-muted text-lg leading-relaxed">
+            <p>
+              Audita o site à procura de erros técnicos que travam o rastreio do Google,
+              define a estrutura de conteúdo em torno das perguntas que os clientes
+              realmente fazem, e acompanha os concorrentes para saber onde estão a ganhar
+              terreno.
+            </p>
+            <p>
+              Também mede resultados com dados reais — tráfego orgânico, posições,
+              cliques — em vez de relatórios genéricos que não dizem nada sobre o
+              negócio. No final, entrega ações concretas: o que mudar no site, que
+              conteúdo publicar, que problema técnico corrigir primeiro.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bloco 3: título em cima, dois textos lado a lado, sem foto -->
+      <div>
+        <h3 class="font-display text-2xl md:text-3xl font-semibold text-primary mb-8 leading-snug max-w-2xl">
+          Consultor freelancer ou agência de SEO?
+        </h3>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+          <div>
+            <p class="font-mono text-sm text-accent mb-3">Por que um consultor</p>
+            <div class="space-y-4 text-text-muted text-lg leading-relaxed">
+              <p>
+                Uma agência normalmente distribui a sua conta por vários analistas
+                juniores, geridos por um gestor de contas que nunca mexe no código nem no
+                conteúdo diretamente.
+              </p>
+              <p>
+                Com um consultor freelancer a trabalhar sozinho, é a mesma pessoa que
+                analisa o problema, escreve o conteúdo e implementa a correção técnica —
+                sem passar por três camadas de comunicação até a mudança acontecer.
+              </p>
+            </div>
+          </div>
+          <div>
+            <p class="font-mono text-sm text-accent mb-3">Vantagens em relação a uma agência</p>
+            <div class="space-y-4 text-text-muted text-lg leading-relaxed">
+              <p>
+                Custo mais baixo, porque não paga a estrutura de escritório, comercial e
+                gestores de conta que uma agência tem de embutir no preço.
+              </p>
+              <p>
+                Comunicação direta — fala sempre com quem faz o trabalho, nunca com um
+                intermediário que repassa a mensagem. E flexibilidade: ajusta prioridades
+                numa conversa, sem reunião marcada nem aprovação de escopo.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -76,15 +174,18 @@ const posts = (await getCollection("blog"))
   <!-- Blog recente -->
   {
     posts.length > 0 && (
-      <section class="py-20 px-4">
+      <section class="py-24 px-4">
         <div class="max-w-6xl mx-auto">
-          <h2 class="text-3xl font-bold mb-4">Artigos recentes</h2>
-          <p class="text-neutral-300 mb-12">
+          <p class="font-mono text-sm text-accent mb-3">// Últimos artigos</p>
+          <h2 class="font-display text-4xl md:text-5xl font-semibold text-primary mb-4 leading-tight">
+            Artigos recentes
+          </h2>
+          <p class="text-text-muted mb-14 max-w-xl">
             Conteúdo prático sobre SEO, marketing digital e visibilidade online.
           </p>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             {posts.map((post: CollectionEntry<"blog">) => (
-              <article class="border border-green-900 rounded-xl overflow-hidden hover:shadow-md transition-shadow">
+              <article class="border border-line rounded-lg overflow-hidden hover:border-accent transition-colors">
                 {post.data.image && (
                   <img
                     src={post.data.image}
@@ -94,14 +195,14 @@ const posts = (await getCollection("blog"))
                   />
                 )}
                 <div class="p-6">
-                  <time class="text-xs text-neutral-400 mb-2 block">
+                  <time class="font-mono text-xs text-text-muted mb-2 block">
                     {(post.data.date ?? post.data.pubDate ?? new Date(0)).toLocaleDateString("pt-BR", {
                       day: "2-digit",
                       month: "long",
                       year: "numeric",
                     })}
                   </time>
-                  <h3 class="font-bold text-lg mb-2 text-primary leading-snug">
+                  <h3 class="font-display font-semibold text-xl mb-2 text-primary leading-snug">
                     <a
                       href={`/blog/${post.id}`}
                       class="hover:text-accent transition-colors"
@@ -109,19 +210,19 @@ const posts = (await getCollection("blog"))
                       {post.data.title}
                     </a>
                   </h3>
-                  <p class="text-neutral-300 text-sm leading-relaxed line-clamp-3">
+                  <p class="text-text-muted text-sm leading-relaxed line-clamp-3">
                     {post.data.description}
                   </p>
                 </div>
               </article>
             ))}
           </div>
-          <div class="text-center mt-10">
+          <div class="mt-12">
             <a
               href="/blog"
-              class="inline-block border border-primary text-primary font-semibold px-8 py-3 rounded-lg hover:bg-neutral-900 transition-colors"
+              class="inline-flex items-center gap-2 bg-accent text-ink font-semibold px-8 py-3.5 rounded-md hover:bg-accent-dark transition-colors"
             >
-              Ver todos os artigos
+              Ver todos os artigos <span aria-hidden="true">→</span>
             </a>
           </div>
         </div>
@@ -130,20 +231,21 @@ const posts = (await getCollection("blog"))
   }
 
   <!-- CTA -->
-  <section class="bg-accent py-16 px-4">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-black mb-4">
-        Pronto para crescer no Google?
+  <section class="py-24 px-4">
+    <div class="max-w-4xl mx-auto border border-line rounded-lg px-8 py-16 md:py-20 bg-surface">
+      <p class="font-mono text-sm text-accent mb-3">// Próximo passo</p>
+      <h2 class="font-display text-4xl md:text-5xl font-semibold text-primary mb-5 leading-tight max-w-2xl">
+        Pronto para dar o próximo passo?
       </h2>
-      <p class="text-black/80 mb-8 max-w-xl mx-auto">
-        Vamos conversar sobre o seu negócio e como posso ajudá-lo a conseguir
-        mais visibilidade orgânica.
+      <p class="text-text-muted mb-10 max-w-xl text-lg">
+        Vamos conversar sobre o seu negócio e como posso ajudá-lo com site,
+        automação, IA ou SEO.
       </p>
       <a
         href="/contato"
-        class="inline-block bg-black text-white font-semibold px-10 py-3 rounded-lg hover:bg-neutral-900 transition-colors"
+        class="inline-flex items-center gap-2 bg-accent text-ink font-semibold px-10 py-4 rounded-md hover:bg-accent-dark transition-colors"
       >
-        Entrar em contato
+        Entrar em contato <span aria-hidden="true">→</span>
       </a>
     </div>
   </section>

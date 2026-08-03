@@ -1,0 +1,547 @@
+---
+// Hero da home: ficha técnica do consultor (esquerda) + visual que troca
+// conforme o serviço escolhido (direita).
+import { services, defaultServiceId, type ServiceId } from "../../data/services";
+import { bookingUrl } from "../../lib/booking";
+import SiteVisual from "./hero-visuals/SiteVisual.astro";
+import AiVisual from "./hero-visuals/AiVisual.astro";
+import SeoVisual from "./hero-visuals/SeoVisual.astro";
+import AuditoriaVisual from "./hero-visuals/AuditoriaVisual.astro";
+
+const visualComponents: Record<ServiceId, any> = {
+  sites: SiteVisual,
+  ia: AiVisual,
+  seo: SeoVisual,
+  auditoria: AuditoriaVisual,
+};
+
+const defaultService = services.find((s) => s.id === defaultServiceId)!;
+
+const stats = [
+  { value: "300+", label: "Sites entregues" },
+  { value: "12+", label: "Anos de experiência" },
+  { value: "5", label: "Frentes integradas" },
+];
+---
+
+<section class="hero-doc" aria-labelledby="hero-doc-title">
+  <div class="hero-doc-inner">
+    <div class="doc-panel">
+      <p class="doc-eyebrow">// O que faço</p>
+
+      <h1 id="hero-doc-title" class="doc-title">
+        Sites, IA e SEO.<br /><em>Tudo num só lugar.</em>
+      </h1>
+      <p class="doc-sub">
+        Consultor com mais de 12 anos de experiência, a construir, automatizar
+        e ranquear negócios no Google e nas IAs.
+      </p>
+
+      <dl class="doc-stats">
+        {
+          stats.map((stat) => (
+            <div class="stat">
+              <dd>{stat.value}</dd>
+              <dt>{stat.label}</dt>
+            </div>
+          ))
+        }
+      </dl>
+
+      <p id="doc-index-label" class="doc-index-label">O que gostarias de fazer?</p>
+      <div class="pill-tabs" role="radiogroup" aria-labelledby="doc-index-label">
+        {
+          services.map((service, i) => {
+            const active = service.id === defaultServiceId;
+            return (
+              <button
+                type="button"
+                role="radio"
+                data-service={service.id}
+                aria-checked={active ? "true" : "false"}
+                tabindex={active ? 0 : -1}
+                class={`pill-tab ${active ? "is-active" : ""}`}
+              >
+                <span class="pill-num" aria-hidden="true">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span data-label>{service.label}</span>
+              </button>
+            );
+          })
+        }
+      </div>
+
+      <a
+        id="hero-cta"
+        href={bookingUrl(defaultService.label)}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="doc-cta"
+      >
+        Agendar reunião <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <div class="doc-stage">
+      {
+        services.map((service, i) => {
+          const Visual = visualComponents[service.id];
+          const active = service.id === defaultServiceId;
+          return (
+            <div class="stage-panel" data-panel={service.id} hidden={!active}>
+              <Visual />
+              <div class="stage-caption">
+                <span class="stage-caption-num">{String(i + 1).padStart(2, "0")}</span>
+                <div>
+                  <h2>{service.headline}</h2>
+                  <p>{service.desc}</p>
+                </div>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Navbar é sticky com h-16 (4rem); a hero ocupa o resto da primeira dobra. */
+  .hero-doc {
+    padding: 1rem 1rem 2rem;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-doc {
+      padding: 1.25rem 50px 3rem;
+    }
+  }
+
+  .hero-doc-inner {
+    max-width: 80rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-doc-inner {
+      max-width: none;
+      height: calc(100vh - 8.25rem);
+      height: calc(100dvh - 8.25rem);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      align-items: stretch;
+      gap: 2rem;
+    }
+  }
+
+  .doc-panel {
+    position: relative;
+    border-radius: 0.75rem;
+    border: 1px solid var(--color-line);
+    background: var(--color-surface);
+    padding: clamp(1.1rem, 3vw, 3rem);
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow-y: auto;
+  }
+
+  @media (min-width: 1024px) {
+    .doc-panel {
+      padding: 2.75rem 3rem 2rem;
+      justify-content: center;
+    }
+  }
+
+  .doc-eyebrow {
+    font-family: var(--font-family-mono);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--color-accent);
+    margin: 0 0 1rem;
+  }
+
+  .doc-title {
+    font-family: var(--font-family-display);
+    color: var(--color-text);
+    font-weight: 600;
+    font-size: clamp(2.4rem, 4.6vw, 4.2rem);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+    margin: 0 0 1.1rem;
+  }
+
+  .doc-title em {
+    font-style: italic;
+    color: var(--color-text-muted);
+  }
+
+  .doc-sub {
+    color: rgba(232, 228, 220, 0.78);
+    font-size: clamp(1rem, 1.3vw, 1.15rem);
+    line-height: 1.6;
+    max-width: 34rem;
+    margin: 0 0 1.75rem;
+  }
+
+  /* Faixa de números nus — sem card, a prova vem primeiro. */
+  .doc-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem 2.5rem;
+    margin: 0 0 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-line);
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .stat dd {
+    margin: 0;
+    font-family: var(--font-family-display);
+    font-weight: 600;
+    font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+    color: var(--color-accent);
+    line-height: 1;
+  }
+
+  .stat dt {
+    font-family: var(--font-family-mono);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+  }
+
+  .doc-index-label {
+    font-family: var(--font-family-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0 0 0.9rem;
+  }
+
+  /* Seletor de serviço como pills sólidas — mais tátil que abas com linha fina. */
+  .pill-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .pill-tab {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.6rem 1rem;
+    border-radius: 999px;
+    border: 1px solid var(--color-line);
+    background: transparent;
+    color: var(--color-text-muted);
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.2;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+      background-color 150ms ease,
+      border-color 150ms ease,
+      color 150ms ease;
+  }
+
+  .pill-num {
+    font-family: var(--font-family-mono);
+    font-size: 0.68rem;
+    opacity: 0.7;
+  }
+
+  .pill-tab:hover {
+    border-color: rgba(201, 138, 44, 0.5);
+    color: var(--color-text);
+  }
+
+  .pill-tab:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  .pill-tab.is-active {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-ink);
+  }
+
+  .pill-tab.is-active .pill-num {
+    opacity: 0.65;
+  }
+
+  .doc-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    align-self: flex-start;
+    background: var(--color-accent);
+    color: var(--color-ink);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 1rem 2rem;
+    border-radius: 0.6rem;
+    transition: background-color 150ms ease, transform 150ms ease;
+  }
+  .doc-cta:hover {
+    background: var(--color-accent-dark);
+    transform: translateY(-1px);
+  }
+
+  /* Visual da direita só entra a partir do desktop; no mobile fica só o painel. */
+  .doc-stage {
+    display: none;
+    position: relative;
+    border-radius: 0.75rem;
+    border: 1px solid var(--color-line);
+    background: var(--color-ink);
+    overflow: hidden;
+    min-height: 0;
+  }
+
+  @media (min-width: 1024px) {
+    .doc-stage {
+      display: flex;
+    }
+  }
+
+  .stage-panel {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    animation: stage-in 260ms ease-out;
+  }
+
+  /* O visual de cada serviço tem de esticar até à legenda, senão cola-se ao
+     topo e sobra um vazio grande por baixo. `:global` porque o elemento vem
+     do componente filho. */
+  .stage-panel > :global(.visual) {
+    flex: 1;
+    min-height: 0;
+  }
+
+  @keyframes stage-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .stage-caption {
+    display: flex;
+    gap: 1.1rem;
+    padding: 0 clamp(1.5rem, 4vw, 2.5rem) clamp(1.5rem, 4vw, 2.5rem);
+    margin-top: auto;
+    border-top: 1px solid var(--color-line);
+    padding-top: 1.5rem;
+  }
+
+  .stage-caption-num {
+    flex-shrink: 0;
+    font-family: var(--font-family-mono);
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--color-accent);
+  }
+
+  .stage-caption h2 {
+    font-family: var(--font-family-display);
+    color: var(--color-text);
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin: 0 0 0.4rem;
+  }
+
+  .stage-caption p {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.55;
+    margin: 0;
+    max-width: 30rem;
+  }
+
+  /* Laptops mais baixos (ex: 1366×768): aperta-se para caber sem cortar o CTA. */
+  @media (min-width: 1024px) and (max-height: 820px) {
+    .doc-title {
+      font-size: clamp(2rem, 3.4vw, 2.9rem);
+      margin-bottom: 0.7rem;
+    }
+
+    .doc-sub {
+      font-size: 0.9rem;
+      line-height: 1.45;
+      margin-bottom: 1.1rem;
+    }
+
+    .doc-stats {
+      margin-bottom: 1.25rem;
+      padding-top: 1rem;
+      gap: 1rem 2rem;
+    }
+
+    .stat dd {
+      font-size: 1.4rem;
+    }
+
+    .pill-tabs {
+      margin-bottom: 1.1rem;
+    }
+
+    .pill-tab {
+      padding: 0.45rem 0.8rem;
+    }
+
+    .doc-cta {
+      padding: 0.75rem 1.6rem;
+    }
+  }
+
+  /* Abaixo de 1024px só o painel de opções aparece; versão compacta do conteúdo. */
+  @media (max-width: 1023px) {
+    .doc-panel {
+      padding: 1.1rem 1.1rem 1.25rem;
+    }
+
+    .doc-title {
+      font-size: clamp(1.9rem, 8vw, 2.6rem);
+      line-height: 1.06;
+      margin-bottom: 0.6rem;
+    }
+
+    .doc-sub {
+      font-size: 0.88rem;
+      line-height: 1.45;
+      margin-bottom: 1.1rem;
+    }
+
+    .doc-stats {
+      gap: 1rem 1.5rem;
+      margin-bottom: 1.25rem;
+      padding-top: 1rem;
+    }
+
+    .stat dd {
+      font-size: 1.4rem;
+    }
+
+    .pill-tabs {
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .pill-tab {
+      font-size: 0.76rem;
+      padding: 0.5rem 0.8rem;
+    }
+
+    .doc-cta {
+      padding: 0.85rem 1.6rem;
+      font-size: 0.88rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .stage-panel,
+    .pill-tab,
+    .doc-cta {
+      animation: none;
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  import { bookingUrl } from "../../lib/booking";
+
+  // Componente é único na página (hero da home), por isso consulta o documento inteiro.
+  const radios = Array.from(
+    document.querySelectorAll<HTMLButtonElement>('[role="radio"][data-service]'),
+  );
+  const panels = Array.from(
+    document.querySelectorAll<HTMLElement>("[data-panel]"),
+  );
+  const cta = document.querySelector<HTMLAnchorElement>("#hero-cta");
+
+  declare global {
+    interface Window {
+      dataLayer?: unknown[];
+    }
+  }
+
+  function labelFor(id: string): string {
+    const radio = radios.find((r) => r.dataset.service === id);
+    return radio?.querySelector("[data-label]")?.textContent?.trim() ?? "";
+  }
+
+  function select(id: string, opts: { focus?: boolean } = {}): void {
+    radios.forEach((r) => {
+      const active = r.dataset.service === id;
+      r.setAttribute("aria-checked", String(active));
+      r.tabIndex = active ? 0 : -1;
+      r.classList.toggle("is-active", active);
+      if (active && opts.focus) r.focus();
+    });
+
+    panels.forEach((p) => {
+      p.hidden = p.dataset.panel !== id;
+    });
+
+    if (cta) cta.href = bookingUrl(labelFor(id));
+
+    window.dataLayer = window.dataLayer ?? [];
+    window.dataLayer.push({ event: "hero_service_select", service_id: id });
+  }
+
+  radios.forEach((radio, index) => {
+    radio.addEventListener("click", () => {
+      if (radio.dataset.service) select(radio.dataset.service);
+    });
+
+    radio.addEventListener("keydown", (e: KeyboardEvent) => {
+      let nextIndex: number | null = null;
+      if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+        nextIndex = (index + 1) % radios.length;
+      } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+        nextIndex = (index - 1 + radios.length) % radios.length;
+      } else if (e.key === "Home") {
+        nextIndex = 0;
+      } else if (e.key === "End") {
+        nextIndex = radios.length - 1;
+      }
+
+      if (nextIndex !== null) {
+        e.preventDefault();
+        const next = radios[nextIndex];
+        if (next?.dataset.service) select(next.dataset.service, { focus: true });
+      }
+    });
+  });
+
+  cta?.addEventListener("click", () => {
+    const activeId = radios.find(
+      (r) => r.getAttribute("aria-checked") === "true",
+    )?.dataset.service;
+    window.dataLayer = window.dataLayer ?? [];
+    window.dataLayer.push({ event: "hero_cta_click", service_id: activeId });
+  });
+</script>
