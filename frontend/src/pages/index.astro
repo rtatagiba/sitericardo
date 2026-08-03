@@ -19,6 +19,158 @@ const posts = (await getCollection("blog"))
   <!-- Hero -->
   <HeroServices />
 
+  <!-- Sobre mim -->
+  <section class="py-24 px-4 border-t border-line">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-start">
+      <div>
+        <p class="font-mono text-sm text-accent mb-3">// Quem sou eu</p>
+        <h2 class="font-display text-4xl md:text-5xl font-semibold text-primary mb-6 leading-tight">
+          Ricardo Tatagiba
+        </h2>
+        <div class="space-y-5 text-text-muted text-lg leading-relaxed max-w-xl">
+          <p>
+            Consultor freelancer com mais de 12 anos de experiência, a trabalhar com
+            empresas brasileiras que querem crescer no Google — e agora também nas
+            respostas das IAs — sem depender só de anúncios pagos.
+          </p>
+          <p>
+            Combino SEO técnico com desenvolvimento full stack e automações, o que
+            significa que não só identifico o problema: implemento a solução. Sem
+            intermediários, sem relatórios genéricos — cada projeto tem atenção
+            direta e estratégia pensada para o seu negócio.
+          </p>
+        </div>
+        <a
+          href="/sobre"
+          class="inline-flex items-center gap-2 mt-8 font-semibold text-accent hover:text-accent-dark transition-colors"
+        >
+          Conhecer minha trajetória <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <dl class="grid grid-cols-2 gap-6">
+        {
+          [
+            { value: "12+", label: "Anos de experiência" },
+            { value: "300+", label: "Sites entregues" },
+            { value: "100%", label: "Direto comigo, sem intermediários" },
+            { value: "5", label: "Frentes integradas: site, SEO, IA, automações e ads" },
+          ].map((item) => (
+            <div class="border border-line rounded-lg p-6 bg-surface">
+              <dd class="font-display text-3xl font-semibold text-accent mb-2">
+                {item.value}
+              </dd>
+              <dt class="font-mono text-xs text-text-muted uppercase tracking-wide leading-relaxed">
+                {item.label}
+              </dt>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </section>
+
+  <!-- Perguntas sobre consultoria de SEO -->
+  <section class="py-24 px-4 border-t border-line">
+    <div class="max-w-6xl mx-auto space-y-20 md:space-y-28">
+      <div>
+        <p class="font-mono text-sm text-accent mb-3">// Perguntas frequentes</p>
+        <h2 class="font-display text-4xl md:text-5xl font-semibold text-primary mb-16 leading-tight max-w-2xl">
+          Consultoria de SEO, em detalhe
+        </h2>
+
+        <!-- Bloco 1: título ao lado do texto, sem foto -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+          <h3 class="font-display text-2xl md:text-3xl font-semibold text-primary leading-snug">
+            O que é consultoria de SEO?
+          </h3>
+          <div class="space-y-4 text-text-muted text-lg leading-relaxed">
+            <p>
+              Consultoria de SEO é o serviço de analisar, planear e implementar tudo o que
+              faz um site aparecer melhor no Google e, cada vez mais, nas respostas de
+              ferramentas como ChatGPT e Gemini. Cobre a parte técnica (velocidade,
+              indexação, estrutura), a de conteúdo (o que escrever e como) e a de
+              autoridade (quem fala do seu negócio online).
+            </p>
+            <p>
+              E não é só sobre o Google de hoje: cada vez mais gente pergunta primeiro à
+              IA antes de abrir um site, e essas respostas só citam empresas que já têm
+              autoridade e conteúdo estruturado online. Investir em SEO agora é garantir
+              que a IA encontra e cita o seu negócio, não o do concorrente ao lado.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bloco 2: foto ao lado do texto -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <img
+          src="/images/faq/o-que-um-consultor-faz.webp"
+          alt=""
+          class="w-full h-auto rounded-lg border border-line order-1"
+          loading="lazy"
+        />
+        <div class="order-2">
+          <h3 class="font-display text-2xl md:text-3xl font-semibold text-primary mb-4 leading-snug">
+            O que um consultor de SEO faz?
+          </h3>
+          <div class="space-y-4 text-text-muted text-lg leading-relaxed">
+            <p>
+              Audita o site à procura de erros técnicos que travam o rastreio do Google,
+              define a estrutura de conteúdo em torno das perguntas que os clientes
+              realmente fazem, e acompanha os concorrentes para saber onde estão a ganhar
+              terreno.
+            </p>
+            <p>
+              Também mede resultados com dados reais — tráfego orgânico, posições,
+              cliques — em vez de relatórios genéricos que não dizem nada sobre o
+              negócio. No final, entrega ações concretas: o que mudar no site, que
+              conteúdo publicar, que problema técnico corrigir primeiro.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bloco 3: título em cima, dois textos lado a lado, sem foto -->
+      <div>
+        <h3 class="font-display text-2xl md:text-3xl font-semibold text-primary mb-8 leading-snug max-w-2xl">
+          Consultor freelancer ou agência de SEO?
+        </h3>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+          <div>
+            <p class="font-mono text-sm text-accent mb-3">Por que um consultor</p>
+            <div class="space-y-4 text-text-muted text-lg leading-relaxed">
+              <p>
+                Uma agência normalmente distribui a sua conta por vários analistas
+                juniores, geridos por um gestor de contas que nunca mexe no código nem no
+                conteúdo diretamente.
+              </p>
+              <p>
+                Com um consultor freelancer a trabalhar sozinho, é a mesma pessoa que
+                analisa o problema, escreve o conteúdo e implementa a correção técnica —
+                sem passar por três camadas de comunicação até a mudança acontecer.
+              </p>
+            </div>
+          </div>
+          <div>
+            <p class="font-mono text-sm text-accent mb-3">Vantagens em relação a uma agência</p>
+            <div class="space-y-4 text-text-muted text-lg leading-relaxed">
+              <p>
+                Custo mais baixo, porque não paga a estrutura de escritório, comercial e
+                gestores de conta que uma agência tem de embutir no preço.
+              </p>
+              <p>
+                Comunicação direta — fala sempre com quem faz o trabalho, nunca com um
+                intermediário que repassa a mensagem. E flexibilidade: ajusta prioridades
+                numa conversa, sem reunião marcada nem aprovação de escopo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Blog recente -->
   {
     posts.length > 0 && (
