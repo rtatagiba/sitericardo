@@ -2,9 +2,12 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
+import astroRelatedContent from '@philnash/astro-related-content';
 import { execSync } from 'node:child_process';
 import { existsSync, readdirSync } from 'node:fs';
 import { indexNow } from './src/lib/seo/indexnow.mjs';
+import { satteri } from '@astrojs/markdown-satteri';
+import { satteriBoxes } from './src/lib/markdown/satteri-boxes.mjs';
 
 const SITE_URL = 'https://ricardotatagiba.com.br';
 // IndexNow keys are public by design (served at /{key}.txt)
@@ -107,6 +110,13 @@ const legacyRedirects = Object.fromEntries(
 export default defineConfig({
   site: SITE_URL,
   redirects: legacyRedirects,
+  markdown: {
+    processor: satteri({
+      // `directive` liga a sintaxe `:::nome … :::` usada pelos blocos prós/contras.
+      features: { directive: true },
+      mdastPlugins: [satteriBoxes],
+    }),
+  },
   vite: {
     plugins: [tailwindcss(), devFetchUrlProxy()],
   },
@@ -131,5 +141,8 @@ export default defineConfig({
       },
     }),
     indexNow({ key: INDEXNOW_KEY, siteUrl: SITE_URL }),
+    astroRelatedContent({
+      collections: [{ collection: 'blog' }],
+    }),
   ],
 });

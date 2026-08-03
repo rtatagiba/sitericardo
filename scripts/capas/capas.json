@@ -1,0 +1,379 @@
+[
+  {
+    "slug": "consultoria-seo-vs-agencia",
+    "title": "Consultoria de SEO vs agência:<br>qual a diferença e quando escolher cada uma?",
+    "date": "31 JUL 2026",
+    "category": "Estratégia",
+    "retrato": "cafe-laptop",
+    "photoPos": "50% 40%",
+    "titleSize": 48
+  },
+  {
+    "slug": "o-que-e-consultoria-de-seo",
+    "title": "O que é consultoria de SEO (e o que ela resolve que um tutorial não resolve)",
+    "date": "31 JUL 2026",
+    "category": "Estratégia",
+    "retrato": "gesto",
+    "photoPos": "46% 38%",
+    "titleSize": 42
+  },
+  {
+    "slug": "clareza-e-a-nova-estrategia-seo-ia",
+    "title": "Em 2026, clareza é a estratégia de SEO, não só um detalhe de UX",
+    "date": "28 JUL 2026",
+    "category": "Conteúdo",
+    "retrato": "de-pe",
+    "photoPos": "50% 34%",
+    "titleSize": 48
+  },
+  {
+    "slug": "concorrente-venceu-categoria-chatgpt",
+    "title": "Seu concorrente não te venceu no Google. Ele venceu a categoria inteira no ChatGPT",
+    "date": "28 JUL 2026",
+    "category": "IA & GEO",
+    "retrato": "blazer",
+    "photoPos": "52% 38%",
+    "titleSize": 42
+  },
+  {
+    "slug": "diluicao-nao-autoridade-seo-local",
+    "title": "Um site removeu 4 milhões de páginas e ganhou 600 mil cliques a mais",
+    "date": "28 JUL 2026",
+    "category": "SEO Local",
+    "retrato": "apontar",
+    "photoPos": "48% 40%",
+    "titleSize": 48
+  },
+  {
+    "slug": "janela-autoridade-topica-ia-generativa",
+    "title": "Você tem meses, não anos, pra virar a resposta padrão da IA no seu nicho",
+    "date": "28 JUL 2026",
+    "category": "IA & GEO",
+    "retrato": "pensativo",
+    "photoPos": "50% 36%",
+    "titleSize": 48
+  },
+  {
+    "slug": "quatro-alavancas-receita-busca-google",
+    "title": "IA não está matando o Google:<br>a busca só ficou madura demais",
+    "date": "28 JUL 2026",
+    "category": "IA & GEO",
+    "retrato": "cafe-laptop",
+    "photoPos": "50% 40%",
+    "titleSize": 52
+  },
+  {
+    "slug": "trafego-organico-benchmark-real",
+    "title": "11 cliques por mês:<br>o benchmark real de tráfego orgânico pra sites com pouca autoridade",
+    "date": "28 JUL 2026",
+    "category": "Estratégia",
+    "retrato": "gesto",
+    "photoPos": "46% 38%",
+    "titleSize": 42,
+    "graphic": "bars"
+  },
+  {
+    "slug": "ferramentas-gratuitas-seo-para-ia-aeo-geo",
+    "title": "Top 10 ferramentas gratuitas de SEO para IA (AEO/GEO): o guia definitivo",
+    "date": "22 JUL 2026",
+    "category": "Ferramentas",
+    "retrato": "de-pe",
+    "photoPos": "50% 34%",
+    "titleSize": 48
+  },
+  {
+    "slug": "graphify-como-economizar-tokens-ao-usar-ia",
+    "title": "Graphify:<br>como a ferramenta open source economiza tokens ao usar IA no código",
+    "date": "22 JUL 2026",
+    "category": "Ferramentas",
+    "retrato": "blazer",
+    "photoPos": "52% 38%",
+    "titleSize": 42
+  },
+  {
+    "slug": "seo-vs-ppc-debate-acabou",
+    "title": "SEO vs PPC:<br>por que essa discussão acabou em 2026",
+    "date": "21 JUL 2026",
+    "category": "Estratégia",
+    "retrato": "apontar",
+    "photoPos": "48% 40%",
+    "titleSize": 52
+  },
+  {
+    "slug": "autoridade-topic-clusters-de-conteudo-seo-geo",
+    "title": "Autoridade tópica:<br>como estruturar clusters de conteúdo que Google e IA reconhecem",
+    "date": "20 JUL 2026",
+    "category": "Conteúdo",
+    "retrato": "pensativo",
+    "photoPos": "50% 36%",
+    "titleSize": 42
+  },
+  {
+    "slug": "como-aparecer-no-chatgpt-guia-aeo-geo",
+    "title": "Como aparecer no ChatGPT:<br>guia AEO/GEO para sites e empresas",
+    "date": "20 JUL 2026",
+    "category": "IA & GEO",
+    "retrato": "cafe-laptop",
+    "photoPos": "50% 40%",
+    "titleSize": 52
+  },
+  {
+    "slug": "lacuna-de-conteudo-comparar-sitemap-concorrente",
+    "title": "Como comparar o sitemap do seu site com o de um concorrente",
+    "date": "17 JUL 2026",
+    "category": "Ferramentas",
+    "retrato": "gesto",
+    "photoPos": "46% 38%",
+    "titleSize": 52,
+    "graphic": "bars"
+  },
+  {
+    "slug": "o-experimento-que-provou-a-maior-parte-do-crawler-no-seu-log-e-fake",
+    "title": "O experimento que provou:<br>a maior parte do 'crawler' no seu log é fake",
+    "date": "14 JUL 2026",
+    "category": "IA & GEO",
+    "retrato": "de-pe",
+    "photoPos": "50% 34%",
+    "titleSize": 48,
+    "graphic": "bars"
+  },
+  {
+    "slug": "title-tag-ideal-tem-de-50-a-60-caracteres-diz-estudo-com-81-mil-titulos",
+    "title": "Title tag ideal tem de 50 a 60 caracteres, diz estudo com 81 mil títulos",
+    "date": "14 JUL 2026",
+    "category": "Conteúdo",
+    "retrato": "blazer",
+    "photoPos": "52% 38%",
+    "titleSize": 48,
+    "graphic": "bars"
+  },
+  {
+    "slug": "como-bloquear-treinamento-de-ia-sem-sumir-do-google-a-mudanca-que-a-cloudflare-fez-em-julho-de-2026",
+    "title": "Como bloquear treinamento de IA sem sumir do Google (a mudança que a Cloudflare fez em julho de 2026)",
+    "date": "08 JUL 2026",
+    "category": "IA & GEO",
+    "retrato": "apontar",
+    "photoPos": "48% 40%",
+    "titleSize": 38
+  },
+  {
+    "slug": "a-oficializacao-do-grounding-o-futuro-do-trafego-organico-segundo-o-google",
+    "title": "A Oficialização do Grounding:<br>O Futuro do Tráfego Orgânico Segundo o Google",
+    "date": "29 JUN 2026",
+    "category": "IA & GEO",
+    "retrato": "pensativo",
+    "photoPos": "50% 36%",
+    "titleSize": 48
+  },
+  {
+    "slug": "evento-de-marketing-digital-em-lisboa-digitalks",
+    "title": "Evento de Marketing digital em Lisboa Digitalks",
+    "date": "24 ABR 2025",
+    "category": "Notícia",
+    "retrato": "cafe-laptop",
+    "photoPos": "50% 40%",
+    "titleSize": 52
+  },
+  {
+    "slug": "criacao-de-faqs-programadas-com-dados-estruturados-json-ld-um-guia-completo-para-seo-na-era-da-ia",
+    "title": "Criação de FAQs programadas com dados estruturados JSON-LD: Um guia completo para SEO na era da IA",
+    "date": "14 ABR 2025",
+    "category": "SEO Técnico",
+    "retrato": "gesto",
+    "photoPos": "46% 38%",
+    "titleSize": 38
+  },
+  {
+    "slug": "por-que-seo-local-e-fundamental-para-pequenos-negocios",
+    "title": "Por que seo local é fundamental para pequenos negócios",
+    "date": "10 ABR 2025",
+    "category": "SEO Local",
+    "retrato": "de-pe",
+    "photoPos": "50% 34%",
+    "titleSize": 52
+  },
+  {
+    "slug": "como-criar-um-sitemap-melhorar-indexacao-site",
+    "title": "Como Criar um Sitemap e Melhorar a Indexação do Seu Site",
+    "date": "01 ABR 2025",
+    "category": "SEO Técnico",
+    "retrato": "blazer",
+    "photoPos": "52% 38%",
+    "titleSize": 52
+  },
+  {
+    "slug": "como-fazer-seo-para-sites-de-turismo-atraia-mais-visitantes",
+    "title": "Como Fazer SEO para Sites de Turismo: Atraia Mais Visitantes",
+    "date": "01 ABR 2025",
+    "category": "Estratégia",
+    "retrato": "apontar",
+    "photoPos": "48% 40%",
+    "titleSize": 52
+  },
+  {
+    "slug": "como-monitorar-desempenho-seo-seu-site-ferramentas-gratuitas",
+    "title": "Como Monitorar o Desempenho de SEO do Seu Site com Ferramentas Gratuitas",
+    "date": "01 ABR 2025",
+    "category": "Ferramentas",
+    "retrato": "pensativo",
+    "photoPos": "50% 36%",
+    "titleSize": 48,
+    "graphic": "bars"
+  },
+  {
+    "slug": "como-calcular-seu-orcamento-de-seo-um-guia-completo-para-empresas-brasileiras",
+    "title": "Como Calcular seu Orçamento de SEO: Um Guia Completo para Empresas Brasileiras",
+    "date": "17 MAR 2025",
+    "category": "Estratégia",
+    "retrato": "cafe-laptop",
+    "photoPos": "50% 40%",
+    "titleSize": 42,
+    "graphic": "bars"
+  },
+  {
+    "slug": "como-criar-conteudo-seo-friendly-que-converte",
+    "title": "Como Criar Conteúdo SEO-Friendly que Converte",
+    "date": "17 MAR 2025",
+    "category": "Conteúdo",
+    "retrato": "gesto",
+    "photoPos": "46% 38%",
+    "titleSize": 58
+  },
+  {
+    "slug": "como-escrever-titulos-e-meta-descricoes-que-aumentam-o-ctr",
+    "title": "Como Escrever Títulos e Meta Descrições que Aumentam o CTR",
+    "date": "17 MAR 2025",
+    "category": "Conteúdo",
+    "retrato": "de-pe",
+    "photoPos": "50% 34%",
+    "titleSize": 52
+  },
+  {
+    "slug": "como-garantir-orcamento-para-seo-estrategias-para-justificar-investimentos-em-marketing-organico",
+    "title": "Como Garantir Orçamento para SEO:<br>Estratégias para Justificar Investimentos em Marketing Orgânico",
+    "date": "17 MAR 2025",
+    "category": "Estratégia",
+    "retrato": "blazer",
+    "photoPos": "52% 38%",
+    "titleSize": 38
+  },
+  {
+    "slug": "como-fazer-seo-para-hoteis-na-nova-era-da-ia",
+    "title": "Como Fazer SEO para Hoteis na nova era da IA",
+    "date": "14 MAR 2025",
+    "category": "Estratégia",
+    "retrato": "apontar",
+    "photoPos": "48% 40%",
+    "titleSize": 58
+  },
+  {
+    "slug": "como-medir-o-share-of-search-o-gps-da-sua-relevancia-no-mercado-digital",
+    "title": "Como Medir o Share of Search:<br>O GPS da Sua Relevância no Mercado Digital",
+    "date": "14 MAR 2025",
+    "category": "Estratégia",
+    "retrato": "pensativo",
+    "photoPos": "50% 36%",
+    "titleSize": 48,
+    "graphic": "bars"
+  },
+  {
+    "slug": "como-trabalhar-com-imagens-para-seo-e-melhorar-o-carregamento-do-site",
+    "title": "Como trabalhar com Imagens para SEO e Melhorar o Carregamento do Site",
+    "date": "14 MAR 2025",
+    "category": "SEO Técnico",
+    "retrato": "cafe-laptop",
+    "photoPos": "50% 40%",
+    "titleSize": 48
+  },
+  {
+    "slug": "a-mudanca-para-o-seo-semantico-o-que-os-vetores-significam-para-sua-estrategia",
+    "title": "A Mudança para o SEO Semântico:<br>O que os Vetores Significam para sua Estratégia",
+    "date": "10 MAR 2025",
+    "category": "IA & GEO",
+    "retrato": "gesto",
+    "photoPos": "46% 38%",
+    "titleSize": 42
+  },
+  {
+    "slug": "como-recuperar-de-mencoes-negativas-a-marca",
+    "title": "Como Reparar e Recuperar de Menções Negativas à Marca: Guia Completo de SEO",
+    "date": "10 MAR 2025",
+    "category": "Estratégia",
+    "retrato": "de-pe",
+    "photoPos": "50% 34%",
+    "titleSize": 48
+  },
+  {
+    "slug": "sucesso-em-seo-local-como-acompanhar-rankings-conversoes-e-chamadas",
+    "title": "Sucesso em SEO Local:<br>Como acompanhar rankings, conversões e chamadas",
+    "date": "10 MAR 2025",
+    "category": "SEO Local",
+    "retrato": "blazer",
+    "photoPos": "52% 38%",
+    "titleSize": 48
+  },
+  {
+    "slug": "analise-de-concorrentes-em-seo-como-identificar-e-superar-seus-competidores-nos-resultados-de-busca",
+    "title": "Análise de Concorrentes em SEO:<br>Como Identificar e Superar seus Competidores nos Resultados de Busca",
+    "date": "09 MAR 2025",
+    "category": "Estratégia",
+    "retrato": "apontar",
+    "photoPos": "48% 40%",
+    "titleSize": 38,
+    "graphic": "bars"
+  },
+  {
+    "slug": "como-melhorar-o-ranking-do-seu-site-no-google-dicas-praticas",
+    "title": "Como Melhorar o Ranking do Seu Site no Google: Dicas Práticas",
+    "date": "09 MAR 2025",
+    "category": "Estratégia",
+    "retrato": "pensativo",
+    "photoPos": "50% 36%",
+    "titleSize": 48
+  },
+  {
+    "slug": "o-impacto-dos-core-web-vitals-no-seo-um-guia-completo",
+    "title": "O Impacto dos Core Web Vitals no SEO: Um Guia Completo",
+    "date": "09 MAR 2025",
+    "category": "SEO Técnico",
+    "retrato": "cafe-laptop",
+    "photoPos": "50% 40%",
+    "titleSize": 52
+  },
+  {
+    "slug": "como-escolher-as-melhores-palavras-chave-para-seu-negocio-local",
+    "title": "Como Escolher as Melhores Palavras-Chave para Seu Negócio Local",
+    "date": "08 MAR 2025",
+    "category": "SEO Local",
+    "retrato": "gesto",
+    "photoPos": "46% 38%",
+    "titleSize": 48
+  },
+  {
+    "slug": "como-fazer-seo-para-pequenas-empresas-um-guia-completo",
+    "title": "Como Fazer SEO para Pequenas Empresas: Um Guia Completo",
+    "date": "08 MAR 2025",
+    "category": "Estratégia",
+    "retrato": "de-pe",
+    "photoPos": "50% 34%",
+    "titleSize": 52
+  },
+  {
+    "slug": "o-poder-do-schema-org-para-empresas-de-servicos-um-guia-completo-para-o-seo-local",
+    "title": "O Poder do Schema.org para Empresas de Serviços: Um Guia Completo para o SEO Local",
+    "date": "26 FEV 2025",
+    "category": "SEO Técnico",
+    "retrato": "blazer",
+    "photoPos": "52% 38%",
+    "titleSize": 42
+  },
+  {
+    "slug": "meta-revoluciona-a-comunicacao-com-ia-que-converte-pensamentos-em-texto",
+    "title": "Meta Revoluciona a Comunicação com IA que Converte Pensamentos em Texto",
+    "date": "16 FEV 2025",
+    "category": "Notícia",
+    "retrato": "apontar",
+    "photoPos": "48% 40%",
+    "titleSize": 48
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "name": "conteudo-geo-local",
+  "owner": { "name": "Ricardo" },
+  "plugins": [
+    {
+      "name": "conteudo-geo",
+      "source": "./Plugins/conteudo-geo",
+      "description": "Pipeline de conteúdo GEO/AEO agnóstico de nicho: escreve posts, humaniza, orquestra silo de links internos e imagens. Configurável por site via /setup-conteudo."
+    }
+  ]
+}

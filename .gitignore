@@ -8,6 +8,9 @@ node_modules/
 .astro/
 .astro-related-content/
 
+# HTML/PNG intermédios do gerador de capas
+scripts/capas/.trabalho/
+
 # build output
 dist/
 

@@ -2,7 +2,7 @@
 title: "O experimento que provou: a maior parte do 'crawler' no seu log é fake"
 date: 2026-07-14
 description: "Um teste com IPs revelou que a maioria dos bots de IA e do Googlebot em um site novo eram falsos. Veja o método e como aplicá-lo nos seus próprios logs."
-image: "/images/seu-trafego-e-mesmo-real.jpeg"
+image: "/images/capas/o-experimento-que-provou-a-maior-parte-do-crawler-no-seu-log-e-fake.webp"
 ---
 
 Todo bot que acessa uma página se identifica com um nome no cabeçalho da requisição: ChatGPT-User, Claude-User, CCBot, Googlebot. Esse nome é uma string autodeclarada. 
@@ -35,7 +35,7 @@ As quatro checagens bateram na mesma conclusão: as 20 eram impostoras, rodando 
 
 ## Retrieval e treinamento são dois jogos diferentes
 
-Vale separar dois tipos de crawler que costumam ser tratados como a mesma coisa. Bots como ChatGPT-User e Claude-User fazem busca em tempo real: disparam quando uma pessoa está numa conversa e o assistente vai buscar uma fonte pra responder. 
+Vale separar dois tipos de crawler que costumam ser tratados como a mesma coisa. Bots como ChatGPT-User e Claude-User fazem busca em tempo real: disparam quando uma pessoa está numa conversa e o assistente vai buscar uma fonte pra responder, o mesmo mecanismo de citação que detalhamos no [guia para aparecer no ChatGPT (AEO/GEO)](/blog/como-aparecer-no-chatgpt-guia-aeo-geo). 
 
 Já GPTBot e ClaudeBot fazem indexação em background, o material que pode acabar dentro do peso de um modelo treinado no futuro, sem gerar tráfego de referência nenhum hoje.
 
@@ -45,7 +45,7 @@ No levantamento verificado de Forrester, o crawler mais ativo no domínio não f
 
 Diferente de OpenAI, Anthropic e Perplexity, que expõem crawlers separados e verificáveis para treinamento, indexação e busca ao vivo, o Google concentra tudo num único Googlebot. 
 
-O que decide se o conteúdo alimenta o treinamento do Gemini é uma tag de robots.txt chamada Google-Extended, que não é um crawler: é uma permissão sobre uma coleta que já aconteceu, sem fetch próprio. Forrester encontrou quatro requisições se identificando como Google-Extended, e como esse nome não deveria nunca fazer uma requisição direta, as quatro já nascem desmascaradas, sem precisar checar IP. 
+O que decide se o conteúdo alimenta o treinamento do Gemini é uma tag de robots.txt chamada Google-Extended, a mesma lógica de categorias de bot que a Cloudflare adotou e que detalhamos em [como bloquear treinamento de IA sem sumir do Google](/blog/como-bloquear-treinamento-de-ia-sem-sumir-do-google-a-mudanca-que-a-cloudflare-fez-em-julho-de-2026); ela não é um crawler, é uma permissão sobre uma coleta que já aconteceu, sem fetch próprio. Forrester encontrou quatro requisições se identificando como Google-Extended, e como esse nome não deveria nunca fazer uma requisição direta, as quatro já nascem desmascaradas, sem precisar checar IP. 
 
 A consequência prática é que dá pra confirmar o Googlebot e nada além disso. O resto, mais uma vez, "não é fornecido", numa repetição do que aconteceu em 2011 quando o Google encriptou os referrers de busca.
 
@@ -57,6 +57,4 @@ Uma versão funcional precisa ler as linhas reais do seu log, mapear cada nome d
 
 O próprio Forrester reforça: os números dele valem pouco fora do contexto, porque são duas semanas de dados num site sem tráfego promovido. O valor está no método, não na estatística. 
 
-Se seu site tem tráfego de verdade, o dataset nos seus logs de acesso é bem melhor que o dele, e a checagem pode ser feita ainda hoje. Puxe um intervalo de datas, cruze os nomes contra as listas oficiais e veja qual fração do seu "tráfego de IA" resiste à prova do IP. Depois olhe pra linha do Googlebot e se prepare.
-
-Saber quais bots são reais é só metade do trabalho. A outra metade é decidir o que cada um pode fazer no seu site, e como estruturar o conteúdo para o crawler certo levar ele até a resposta de uma IA. O guia [como aparecer no ChatGPT, Gemini e Perplexity](/blog/como-aparecer-no-chatgpt-guia-aeo-geo) detalha os dois lados dessa equação.
+Se seu site tem tráfego de verdade, o dataset nos seus logs de acesso é bem melhor que o dele, e a checagem pode ser feita ainda hoje. Puxe um intervalo de datas, cruze os nomes contra as listas oficiais e veja qual fração do seu "tráfego de IA" resiste à prova do IP. Depois olhe pra linha do Googlebot, lembre que ele é a mesma peça central da [oficialização do grounding como futuro do tráfego orgânico](/blog/a-oficializacao-do-grounding-o-futuro-do-trafego-organico-segundo-o-google), e se prepare.

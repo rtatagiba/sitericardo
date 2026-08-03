@@ -55,11 +55,13 @@ Schema.org é o vocabulário compartilhado que descreve o conteúdo de uma pági
 
 Para AEO, três marcações rendem mais retorno:
 
-`Article` ou `BlogPosting`, com autor, data de publicação e data de atualização. Isso ajuda o modelo a avaliar se a informação ainda é atual, um critério cada vez mais relevante à medida que IAs generativas priorizam fontes recentes.
+[`Article` ou `BlogPosting`](https://schema.org/Article), com autor, data de publicação e data de atualização. Isso ajuda o modelo a avaliar se a informação ainda é atual, um critério cada vez mais relevante à medida que IAs generativas priorizam fontes recentes.
 
-`FAQPage`, marcando pares de pergunta e resposta que já existem no texto. É o mesmo princípio do post sobre FAQs programadas: cada pergunta vira um H2 literal, e a resposta logo abaixo é o trecho que o modelo tem mais chance de extrair e citar.
+[`FAQPage`](https://developers.google.com/search/docs/appearance/structured-data/faqpage), marcando pares de pergunta e resposta que já existem no texto. É o mesmo princípio do post sobre FAQs programadas: cada pergunta vira um H2 literal, e a resposta logo abaixo é o trecho que o modelo tem mais chance de extrair e citar. Vale notar que o Google removeu o rich result de FAQ dos resultados de busca em 2026; a marcação continua útil para retrieval de IA generativa, mas não volta a gerar o destaque visual que tinha na SERP.
 
-`Organization`, declarando nome, site oficial e perfis verificados da empresa. Isso ajuda o modelo a associar o conteúdo a uma entidade reconhecível, em vez de tratá-lo como texto anônimo.
+[`Organization`](https://developers.google.com/search/docs/appearance/structured-data/organization), declarando nome, site oficial e perfis verificados da empresa. Isso ajuda o modelo a associar o conteúdo a uma entidade reconhecível, em vez de tratá-lo como texto anônimo. O [guia de schema.org para empresas de serviços](/blog/o-poder-do-schema-org-para-empresas-de-servicos-um-guia-completo-para-o-seo-local) detalha essa marcação passo a passo para negócios locais.
+
+![Blocos de dados conectados representando a estrutura de schema e JSON-LD de uma página](/images/dados-estruturados-schema-json-ld.webp)
 
 Nenhuma dessas marcações garante citação. Elas reduzem a ambiguidade que a IA precisa resolver sozinha, e menos ambiguidade aumenta a chance de o trecho certo ser escolhido.
 
@@ -67,19 +69,21 @@ Nenhuma dessas marcações garante citação. Elas reduzem a ambiguidade que a I
 
 Cada empresa de IA opera o próprio crawler, com nome e comportamento distintos, e liberar "IA" como categoria genérica no seu firewall não é suficiente para saber o que realmente está passando. Os principais hoje:
 
-GPTBot e OAI-SearchBot, da OpenAI. O primeiro coleta dado para treinar modelos; o segundo faz busca em tempo real para alimentar respostas do ChatGPT com informação atual. São comportamentos diferentes e, seguindo a lógica de categorização que a Cloudflare adotou (busca, agente, treinamento), fazem sentido tratamentos diferentes para cada um.
+[GPTBot e OAI-SearchBot](https://developers.openai.com/api/docs/bots), da OpenAI. O primeiro coleta dado para treinar modelos; o segundo faz busca em tempo real para alimentar respostas do ChatGPT com informação atual. São comportamentos diferentes e, seguindo a lógica de categorização que a Cloudflare adotou (busca, agente, treinamento), fazem sentido tratamentos diferentes para cada um.
 
-ClaudeBot, da Anthropic, com papel equivalente ao GPTBot para o Claude.
+[ClaudeBot](https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler), da Anthropic, com papel equivalente ao GPTBot para o Claude.
 
-PerplexityBot, do Perplexity, cujo modelo de produto depende fortemente de citar fontes em tempo real, o que torna esse crawler particularmente relevante para quem quer aparecer citado com link.
+[PerplexityBot](https://docs.perplexity.ai/docs/resources/perplexity-crawlers), do Perplexity, cujo modelo de produto depende fortemente de citar fontes em tempo real, o que torna esse crawler particularmente relevante para quem quer aparecer citado com link.
 
-Google-Extended, um sinal específico do Google para controlar se o conteúdo alimenta o treinamento de modelos Gemini, separado do Googlebot tradicional que indexa para a busca.
+[Google-Extended](https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers), um sinal específico do Google para controlar se o conteúdo alimenta o treinamento de modelos Gemini, separado do Googlebot tradicional que indexa para a busca.
+
+![Robô representando um crawler de inteligência artificial analisando o conteúdo de um site](/images/crawler-de-ia-escaneando-conteudo-do-site.webp)
 
 A tentação é bloquear tudo que parece bot desconhecido no log do servidor. O post sobre [o experimento que provou que a maior parte do crawler no log é fake](/blog/o-experimento-que-provou-a-maior-parte-do-crawler-no-seu-log-e-fake) mostra por que essa suposição costuma estar errada: boa parte do tráfego que se apresenta como crawler de IA num log bruto não é o crawler oficial, e decisões de bloqueio tomadas em cima desse dado ruidoso acabam barrando o bot certo pelo motivo errado.
 
 ## O que é o llms.txt e vale a pena implementar?
 
-llms.txt é um arquivo de texto simples, hospedado na raiz do domínio, que lista os documentos e seções mais relevantes de um site para que um modelo de linguagem os priorize ao processar o conteúdo. Funciona como um sumário dirigido a IAs, parecido em espírito com o sitemap.xml dirigido a mecanismos de busca tradicionais, mas sem o mesmo nível de adoção formal ainda.
+[llms.txt](https://llmstxt.org/) é um arquivo de texto simples, hospedado na raiz do domínio, que lista os documentos e seções mais relevantes de um site para que um modelo de linguagem os priorize ao processar o conteúdo. Funciona como um sumário dirigido a IAs, parecido em espírito com o [sitemap.xml](/blog/como-criar-um-sitemap-melhorar-indexacao-site) dirigido a mecanismos de busca tradicionais, mas sem o mesmo nível de adoção formal ainda.
 
 A adoção do padrão por crawlers de IA como GPTBot (OpenAI), o crawler da Anthropic e o do Perplexity está em estágio inicial e mudou rápido ao longo de 2026. Antes de investir tempo relevante nisso, vale checar a documentação oficial de cada crawler que importa para o seu negócio, porque o suporte real pode estar à frente ou atrás do que o arquivo promete.
 
@@ -87,7 +91,7 @@ Dito isso, o custo de criar um llms.txt básico é baixo: um arquivo markdown si
 
 ## Como saber se sua marca já está sendo citada por IAs?
 
-Citação por IA ainda não tem um painel oficial equivalente ao Google Search Console. O caminho manual e gratuito é perguntar diretamente: abrir ChatGPT, Gemini e Perplexity e testar perguntas que um cliente em potencial faria sobre o seu nicho, sem mencionar sua marca, e ver se o nome aparece na resposta.
+Citação por IA ainda não tem um painel oficial equivalente ao Google Search Console. O caminho manual e gratuito é perguntar diretamente: abrir ChatGPT, Gemini e Perplexity e testar perguntas que um cliente em potencial faria sobre o seu nicho, sem mencionar sua marca, e ver se o nome aparece na resposta. As mesmas [ferramentas gratuitas de monitoramento de SEO](/blog/como-monitorar-desempenho-seo-seu-site-ferramentas-gratuitas) que já acompanham ranking e tráfego ajudam a cruzar esse sinal manual com dados de referência (referral) vindos de domínios de IA.
 
 Outro sinal indireto vem do próprio Google. A [oficialização do grounding pelo Google](/blog/a-oficializacao-do-grounding-o-futuro-do-trafego-organico-segundo-o-google) mudou a forma como o AI Overviews escolhe e cita fontes dentro dos resultados de busca, e monitorar se o seu domínio aparece nesses blocos é um proxy razoável de citabilidade, já que a lógica de retrieval do AI Overviews e a das IAs conversacionais compartilham princípios parecidos: densidade de entidades, definição clara, estrutura de resposta direta.
 
@@ -108,3 +112,5 @@ Conteúdo no formato de resposta, não de narrativa. Definição direta logo no 
 Sinalização experimental via llms.txt. Baixo custo de implementação, adoção ainda em construção pelos principais crawlers, mas alinhado com a direção que o setor está tomando.
 
 Nenhum desses quatro pontos funciona sozinho. Site sem schema mas com llms.txt perfeito continua ambíguo para o modelo. Site bem marcado mas bloqueando o crawler certo nunca chega a ser lido. O ganho aparece quando os quatro andam juntos.
+
+Vale reforçar que esses quatro pontos operam por artigo. O ganho composto aparece quando o domínio inteiro constrói [autoridade tópica com clusters de conteúdo conectados](/blog/autoridade-topic-clusters-de-conteudo-seo-geo): um post isolado, por mais bem marcado que esteja, pesa menos do que o mesmo post cercado de conteúdo relacionado que demonstra cobertura completa do assunto.
