@@ -28,6 +28,10 @@
         "score": 0.8220041007231209
       },
       {
+        "id": "o-que-e-geo-seo-para-ia",
+        "score": 0.8168235727204605
+      },
+      {
         "id": "ferramentas-gratuitas-seo-para-ia-aeo-geo",
         "score": 0.8099394336874157
       },
@@ -38,10 +42,6 @@
       {
         "id": "como-aparecer-no-chatgpt-guia-aeo-geo",
         "score": 0.8062656948958875
-      },
-      {
-        "id": "criacao-de-faqs-programadas-com-dados-estruturados-json-ld-um-guia-completo-para-seo-na-era-da-ia",
-        "score": 0.8008300270651966
       }
     ],
     "analise-de-concorrentes-em-seo-como-identificar-e-superar-seus-competidores-nos-resultados-de-busca": [
@@ -112,6 +112,10 @@
     ],
     "como-aparecer-no-chatgpt-guia-aeo-geo": [
       {
+        "id": "o-que-e-geo-seo-para-ia",
+        "score": 0.8723417803638126
+      },
+      {
         "id": "ferramentas-gratuitas-seo-para-ia-aeo-geo",
         "score": 0.8516214237599832
       },
@@ -126,10 +130,6 @@
       {
         "id": "como-bloquear-treinamento-de-ia-sem-sumir-do-google-a-mudanca-que-a-cloudflare-fez-em-julho-de-2026",
         "score": 0.811365879361759
-      },
-      {
-        "id": "a-oficializacao-do-grounding-o-futuro-do-trafego-organico-segundo-o-google",
-        "score": 0.8062656948958875
       }
     ],
     "como-bloquear-treinamento-de-ia-sem-sumir-do-google-a-mudanca-que-a-cloudflare-fez-em-julho-de-2026": [
@@ -768,6 +768,28 @@
       {
         "id": "lacuna-de-conteudo-comparar-sitemap-concorrente",
         "score": 0.825651034903944
+      }
+    ],
+    "o-que-e-geo-seo-para-ia": [
+      {
+        "id": "como-aparecer-no-chatgpt-guia-aeo-geo",
+        "score": 0.8723417803638126
+      },
+      {
+        "id": "a-oficializacao-do-grounding-o-futuro-do-trafego-organico-segundo-o-google",
+        "score": 0.8168235727204605
+      },
+      {
+        "id": "ferramentas-gratuitas-seo-para-ia-aeo-geo",
+        "score": 0.7906415848381827
+      },
+      {
+        "id": "criacao-de-faqs-programadas-com-dados-estruturados-json-ld-um-guia-completo-para-seo-na-era-da-ia",
+        "score": 0.775623698880329
+      },
+      {
+        "id": "como-bloquear-treinamento-de-ia-sem-sumir-do-google-a-mudanca-que-a-cloudflare-fez-em-julho-de-2026",
+        "score": 0.7750887642812088
       }
     ],
     "por-que-seo-local-e-fundamental-para-pequenos-negocios": [
