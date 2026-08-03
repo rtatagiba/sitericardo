@@ -71,17 +71,36 @@
 
 .post-hero {
   position: relative;
-  margin: 0 0 2.5rem;
+  margin: 40px 20px 2.5rem;
   overflow: hidden;
-  background-color: var(--color-surface);
+  /* Cor da página, não do card (--color-surface): se o object-fit: contain
+     sobrar tarja, ela precisa se fundir com o fundo, não destacar como um
+     retângulo à parte. */
+  background-color: var(--color-ink);
+}
+
+@media (min-width: 640px) {
+  .post-hero {
+    margin-inline: 100px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .post-hero {
+    margin-inline: 200px;
+  }
 }
 
 .post-hero img {
   display: block;
   width: 100%;
-  aspect-ratio: 21 / 9;
+  /* Casa com a proporção nativa das capas (1200×675 = 16/9). */
+  aspect-ratio: 16 / 9;
   max-height: 60vh;
-  object-fit: cover;
+  /* contain, não cover: se a altura for espremida pelo max-height, a
+     imagem encolhe inteira (com tarja da cor de fundo) em vez de recortar
+     o título embutido nela. */
+  object-fit: contain;
 }
 
 .post-hero-caption {
@@ -230,7 +249,7 @@
 .author-byline-label,
 .post-meta dt {
   font-family: var(--font-family-mono);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.3em;
@@ -238,7 +257,7 @@
 }
 
 .author-byline-name {
-  font-size: 0.9375rem;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--color-text);
@@ -268,7 +287,7 @@
 
 .post-meta dd {
   margin: 0;
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--color-text);
@@ -284,7 +303,7 @@
   padding: 0.2em 0.6em;
   border: 1px solid var(--color-line);
   font-family: var(--font-family-mono);
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -308,7 +327,7 @@
   border: 0;
   cursor: pointer;
   font-family: var(--font-family-mono);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.3em;
@@ -321,7 +340,7 @@
 }
 
 .toc-toggle-icon {
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 0;
   line-height: 1;
 }
@@ -362,7 +381,7 @@
   /* A guia vertical é o que dá ao sumário a leitura de índice de dossiê;
      o item ativo troca a hairline por ocre em vez de ganhar fundo. */
   border-left: 1px solid var(--color-line);
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   line-height: 1.35;
   color: var(--color-text-muted);
   text-decoration: none;
@@ -382,7 +401,7 @@
 
 .toc-depth-3 .toc-link {
   padding-left: 2rem;
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
 }
 
 /* ── Corpo ────────────────────────────────────────────── */
