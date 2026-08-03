@@ -11,7 +11,7 @@ titulos_alternativos:
   - "SEO para IA sem pagar nada: as ferramentas gratuitas que valem o teste"
   - "Query fan-out, llms.txt e citação por IA: o kit de ferramentas gratuitas"
 description: "Lista com 11 ferramentas gratuitas de AEO/GEO: query fan-out, monitoramento de citação por IA, geração de llms.txt, robots.txt para bots de IA e mais. Sem ChatGPT, sem LLM."
-image: "/images/capas/ferramentas-gratuitas-seo-para-ia-aeo-geo.webp"
+image: "/images/crawler-de-ia-escaneando-conteudo-do-site.webp"
 category: ""
 slug: ferramentas-gratuitas-seo-para-ia-aeo-geo
 keyword_principal: "ferramentas gratuitas de seo para ia"
@@ -95,4 +95,4 @@ Nenhuma ferramenta de terceiro substitui o dado de primeira mão dos dois motore
 
 A ordem que rende mais sinal em menos tempo costuma ser: primeiro validar o schema das páginas mais importantes do site (Rich Results Test e Schema Validator), porque estrutura ambígua atrapalha qualquer outro esforço depois. Em seguida, gerar ou revisar o robots.txt contra bots de IA com o Known Agents ou a lista aberta do GitHub, garantindo que o crawler certo consiga entrar. Só depois disso faz sentido rodar o AI Citation Tracker para ter uma linha de base de quem já cita você hoje, e usar WhatTheyAsk, Answer Socrates e o Query Fan-Out Generator da LLMrefs para achar as lacunas de pergunta que ainda não têm resposta nenhuma no seu conteúdo.
 
-Nenhuma dessas ferramentas troca conteúdo bem escrito por atalho técnico. Elas reduzem o trabalho manual de descobrir onde investir e de confirmar se o investimento já apareceu numa resposta de IA — o que só importa se o texto por trás continuar denso, direto e sustentado por [Tropical topic cluster](/blog/autoridade-topic-clusters-de-conteudo-seo-geo), não por marcação isolada.
+Nenhuma dessas ferramentas troca conteúdo bem escrito por atalho técnico. Elas reduzem o trabalho manual de descobrir onde investir e de confirmar se o investimento já apareceu numa resposta de IA — o que só importa se o texto por trás continuar denso, direto e sustentado por [autoridade tópica de verdade](/blog/autoridade-topic-clusters-de-conteudo-seo-geo), não por marcação isolada.
