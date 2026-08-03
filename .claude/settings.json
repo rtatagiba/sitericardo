@@ -35,19 +35,30 @@
       "Bash(git -C \"c:\\\\Users\\\\ricar\\\\Documents\\\\Projetos\\\\SITES\\\\sitericardo\" log --oneline -5)",
       "Bash(node scripts/capas/gerar-capas.js o-que-e-consultoria-de-seo)",
       "Bash(node scripts/capas/gerar-capas.js consultoria-seo-vs-agencia)",
-      "Skill(update-config)",
-      "Skill(update-config:*)",
-      "Bash(python -c ' *)",
-      "Bash(claude mcp *)",
-      "Bash(node scripts/capas/gerar-faq.js)",
-      "Bash(grep -iE \"^ws$|remote-interface|puppeteer\")",
-      "Bash(rm -f \"C:/Users/ricar/Documents/Projetos/SITES/sitericardo/scripts/capas/.trabalho/home-screenshot\"*.png \"C:/Users/ricar/Documents/Projetos/SITES/sitericardo/scripts/capas/.trabalho/faq\"*.png \"C:/Users/ricar/Documents/Projetos/SITES/sitericardo/scripts/capas/.trabalho/band_\"*.png \"C:/Users/ricar/Documents/Projetos/SITES/sitericardo/scripts/capas/.trabalho/contact-sheet.png\" \"C:/Users/ricar/Documents/Projetos/SITES/sitericardo/scripts/capas/.trabalho/crop1.png\")",
-      "Bash(cp \"/c/Users/ricar/Videos/Material/Dia a dia/Man_in_light_social_attire_202608010020 \\(2\\).jpeg\" \"C:/Users/ricar/Documents/Projetos/SITES/sitericardo/frontend/public/images/faq/o-que-um-consultor-faz-raw.jpeg\" && file \"C:/Users/ricar/Documents/Projetos/SITES/sitericardo/frontend/public/images/faq/o-que-um-consultor-faz-raw.jpeg\" 2>&1 | head -5)"
+      "Bash(git -C c:/Users/ricar/Documents/Projetos/SITES/sitericardo-merge-check show :2:.claude/settings.json)",
+      "Bash(git -C c:/Users/ricar/Documents/Projetos/SITES/sitericardo-merge-check show :3:.claude/settings.json)",
+      "Read(//c/Users/ricar/Documents/Projetos/SITES/**)",
+      "Bash(mkdir -p c:/Users/ricar/Documents/Projetos/SITES/tmp_merge)",
+      "Bash(git -C c:/Users/ricar/Documents/Projetos/SITES/sitericardo-merge-check show :1:.claude/settings.json)",
+      "Bash(git merge-file *)",
+      "Bash(sed -e *)",
+      "Bash(cat c:/Users/ricar/Documents/Projetos/SITES/tmp_merge/resolved.json)",
+      "Bash(echo \"=== validate JSON ===\")",
+      "Bash(node -e 'JSON.parse\\(require\\('\\\\''fs'\\\\''\\).readFileSync\\('\\\\''c:/Users/ricar/Documents/Projetos/SITES/tmp_merge/resolved.json'\\\\'','\\\\''utf8'\\\\''\\)\\); console.log\\('\\\\''OK'\\\\''\\)')",
+      "Bash(sed -i '0,/consultoria-seo-vs-agencia\\)\"$/s//consultoria-seo-vs-agencia\\)\",/' c:/Users/ricar/Documents/Projetos/SITES/tmp_merge/resolved.json)",
+      "Bash(cp c:/Users/ricar/Documents/Projetos/SITES/tmp_merge/resolved.json c:/Users/ricar/Documents/Projetos/SITES/sitericardo-merge-check/.claude/settings.json)",
+      "Bash(cat c:/Users/ricar/Documents/Projetos/SITES/sitericardo-merge-check/.claude/settings.json)",
+      "Bash(git -C c:/Users/ricar/Documents/Projetos/SITES/sitericardo-merge-check add .claude/settings.json)",
+      "Bash(git -C c:/Users/ricar/Documents/Projetos/SITES/sitericardo-merge-check status --short)",
+      "Bash(git -C c:/Users/ricar/Documents/Projetos/SITES/sitericardo-merge-check diff --cached --stat)",
+      "Bash(git -C c:/Users/ricar/Documents/Projetos/SITES/sitericardo-merge-check commit -m 'Merge branch '\\\\''main'\\\\'' into Updates-nova, resolve .claude/settings.json permissions conflict')",
+      "Bash(git update-ref *)",
+      "Bash(git reset *)",
+      "Bash(git worktree *)",
+      "Bash(rm -rf \"c:/Users/ricar/Documents/Projetos/SITES/tmp_merge\")"
     ],
     "additionalDirectories": [
-      "C:\\Users\\ricar\\.claude",
-      "C:\\Users\\ricar\\Documents\\Projetos\\SITES\\sitericardo\\scripts\\capas\\.trabalho",
-      "C:\\Users\\ricar\\Videos\\Material\\Dia a dia"
+      "c:\\Users\\ricar\\Documents\\Projetos\\SITES\\sitericardo-merge-check\\.claude"
     ]
   }
 }
