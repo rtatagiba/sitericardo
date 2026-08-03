@@ -50,6 +50,10 @@
         "score": 0.9074224997526443
       },
       {
+        "id": "o-que-e-consultoria-de-seo",
+        "score": 0.8359572537007456
+      },
+      {
         "id": "como-fazer-seo-para-pequenas-empresas-um-guia-completo",
         "score": 0.8243770803706216
       },
@@ -60,10 +64,6 @@
       {
         "id": "como-monitorar-desempenho-seo-seu-site-ferramentas-gratuitas",
         "score": 0.8193807760515879
-      },
-      {
-        "id": "como-melhorar-o-ranking-do-seu-site-no-google-dicas-praticas",
-        "score": 0.818504695623378
       }
     ],
     "autoridade-topic-clusters-de-conteudo-seo-geo": [
@@ -138,6 +138,10 @@
         "score": 0.8588363518037856
       },
       {
+        "id": "o-que-e-consultoria-de-seo",
+        "score": 0.8443199822927712
+      },
+      {
         "id": "quatro-alavancas-receita-busca-google",
         "score": 0.8438294424100038
       },
@@ -148,10 +152,6 @@
       {
         "id": "seo-vs-ppc-debate-acabou",
         "score": 0.8333181389406293
-      },
-      {
-        "id": "como-trabalhar-com-imagens-para-seo-e-melhorar-o-carregamento-do-site",
-        "score": 0.8278839812353953
       }
     ],
     "como-calcular-seu-orcamento-de-seo-um-guia-completo-para-empresas-brasileiras": [
@@ -304,8 +304,8 @@
         "score": 0.8641613195794314
       },
       {
-        "id": "sucesso-em-seo-local-como-acompanhar-rankings-conversoes-e-chamadas",
-        "score": 0.8356072255762329
+        "id": "o-que-e-consultoria-de-seo",
+        "score": 0.8391103607714618
       }
     ],
     "como-fazer-seo-para-sites-de-turismo-atraia-mais-visitantes": [
@@ -484,6 +484,28 @@
         "score": 0.8150211130668193
       }
     ],
+    "consultoria-seo-vs-agencia": [
+      {
+        "id": "o-que-e-consultoria-de-seo",
+        "score": 0.872885420603833
+      },
+      {
+        "id": "clareza-e-a-nova-estrategia-seo-ia",
+        "score": 0.8265915830486457
+      },
+      {
+        "id": "como-fazer-seo-para-pequenas-empresas-um-guia-completo",
+        "score": 0.8194340341746742
+      },
+      {
+        "id": "como-calcular-seu-orcamento-de-seo-um-guia-completo-para-empresas-brasileiras",
+        "score": 0.8114768597327734
+      },
+      {
+        "id": "como-bloquear-treinamento-de-ia-sem-sumir-do-google-a-mudanca-que-a-cloudflare-fez-em-julho-de-2026",
+        "score": 0.8112655287789917
+      }
+    ],
     "criacao-de-faqs-programadas-com-dados-estruturados-json-ld-um-guia-completo-para-seo-na-era-da-ia": [
       {
         "id": "o-poder-do-schema-org-para-empresas-de-servicos-um-guia-completo-para-o-seo-local",
@@ -502,8 +524,8 @@
         "score": 0.7949433314313191
       },
       {
-        "id": "como-criar-um-sitemap-melhorar-indexacao-site",
-        "score": 0.7905233430945966
+        "id": "o-que-e-consultoria-de-seo",
+        "score": 0.7913717291872923
       }
     ],
     "diluicao-nao-autoridade-seo-local": [
@@ -520,12 +542,12 @@
         "score": 0.8078243229549426
       },
       {
-        "id": "autoridade-topic-clusters-de-conteudo-seo-geo",
-        "score": 0.8048097093035017
+        "id": "o-que-e-consultoria-de-seo",
+        "score": 0.8066702255878615
       },
       {
-        "id": "como-fazer-seo-para-pequenas-empresas-um-guia-completo",
-        "score": 0.8003109049860991
+        "id": "autoridade-topic-clusters-de-conteudo-seo-geo",
+        "score": 0.8048097093035017
       }
     ],
     "evento-de-marketing-digital-em-lisboa-digitalks": [
@@ -626,16 +648,16 @@
         "score": 0.8289894646290904
       },
       {
+        "id": "o-que-e-consultoria-de-seo",
+        "score": 0.825651034903944
+      },
+      {
         "id": "janela-autoridade-topica-ia-generativa",
         "score": 0.8202283379556005
       },
       {
         "id": "concorrente-venceu-categoria-chatgpt",
         "score": 0.8200379850153594
-      },
-      {
-        "id": "autoridade-topic-clusters-de-conteudo-seo-geo",
-        "score": 0.8141124423865189
       }
     ],
     "meta-revoluciona-a-comunicacao-com-ia-que-converte-pensamentos-em-texto": [
@@ -652,12 +674,12 @@
         "score": 0.6363058291892136
       },
       {
-        "id": "ferramentas-gratuitas-seo-para-ia-aeo-geo",
-        "score": 0.6223204124489694
+        "id": "o-que-e-consultoria-de-seo",
+        "score": 0.6314184403846501
       },
       {
-        "id": "a-mudanca-para-o-seo-semantico-o-que-os-vetores-significam-para-sua-estrategia",
-        "score": 0.6177790726275533
+        "id": "consultoria-seo-vs-agencia",
+        "score": 0.6223965120132083
       }
     ],
     "o-experimento-que-provou-a-maior-parte-do-crawler-no-seu-log-e-fake": [
@@ -674,12 +696,12 @@
         "score": 0.7236920620668522
       },
       {
-        "id": "o-poder-do-schema-org-para-empresas-de-servicos-um-guia-completo-para-o-seo-local",
-        "score": 0.7154810018150736
+        "id": "o-que-e-consultoria-de-seo",
+        "score": 0.7235579220639592
       },
       {
-        "id": "ferramentas-gratuitas-seo-para-ia-aeo-geo",
-        "score": 0.7074407298301133
+        "id": "o-poder-do-schema-org-para-empresas-de-servicos-um-guia-completo-para-o-seo-local",
+        "score": 0.7154810018150736
       }
     ],
     "o-impacto-dos-core-web-vitals-no-seo-um-guia-completo": [
@@ -724,6 +746,28 @@
       {
         "id": "como-criar-um-sitemap-melhorar-indexacao-site",
         "score": 0.815829496284839
+      }
+    ],
+    "o-que-e-consultoria-de-seo": [
+      {
+        "id": "consultoria-seo-vs-agencia",
+        "score": 0.872885420603833
+      },
+      {
+        "id": "como-bloquear-treinamento-de-ia-sem-sumir-do-google-a-mudanca-que-a-cloudflare-fez-em-julho-de-2026",
+        "score": 0.8443199822927712
+      },
+      {
+        "id": "como-fazer-seo-para-pequenas-empresas-um-guia-completo",
+        "score": 0.8391103607714618
+      },
+      {
+        "id": "analise-de-concorrentes-em-seo-como-identificar-e-superar-seus-competidores-nos-resultados-de-busca",
+        "score": 0.8359572537007456
+      },
+      {
+        "id": "lacuna-de-conteudo-comparar-sitemap-concorrente",
+        "score": 0.825651034903944
       }
     ],
     "por-que-seo-local-e-fundamental-para-pequenos-negocios": [
@@ -854,8 +898,8 @@
         "score": 0.7306404843092071
       },
       {
-        "id": "lacuna-de-conteudo-comparar-sitemap-concorrente",
-        "score": 0.7157972403047884
+        "id": "o-que-e-consultoria-de-seo",
+        "score": 0.7256238625595828
       }
     ]
   }
