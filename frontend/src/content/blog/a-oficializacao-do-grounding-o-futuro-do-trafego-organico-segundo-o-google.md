@@ -155,3 +155,7 @@ O tráfego orgânico do futuro não vem de palavras-chave ranqueadas,vem de ser 
 A IA só vai usar os seus dados se a sua marca for irrefutável. E construir essa irrefutabilidade,com consistência, autoridade e atualização constante,é exatamente o trabalho do GEO.
 
 O relatório oficial está disponível em: [\[A Pragmatic Approach to AI Governance in America,Google, junho 2026\]](https://blog.google/company-news/outreach-and-initiatives/public-policy/white-paper-ai-regulation/)
+
+* * *
+
+Grounding explica por que o Google cita uma fonte. O guia [como aparecer no ChatGPT, Gemini e Perplexity](/blog/como-aparecer-no-chatgpt-guia-aeo-geo) cobre a mesma lógica aplicada aos mecanismos conversacionais, com os passos técnicos (schema, JSON-LD, crawlers, llms.txt) para chegar lá.

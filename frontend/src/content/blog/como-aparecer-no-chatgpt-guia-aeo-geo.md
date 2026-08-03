@@ -12,7 +12,6 @@ titulos_alternativos:
   - "5 passos para sua marca ser citada por ChatGPT, Gemini e Perplexity"
   - "GEO vs SEO: o que muda quando quem lê seu site é uma IA"
 description: "AEO é o conjunto de práticas para um site ser lido e citado por ChatGPT, Gemini e Perplexity. Veja como schema, JSON-LD, crawlers e llms.txt entram nisso."
-image: "/images/capas/como-aparecer-no-chatgpt-guia-aeo-geo.webp"
 category: ""
 slug: como-aparecer-no-chatgpt-guia-aeo-geo
 keyword_principal: "como aparecer no ChatGPT"
@@ -21,7 +20,7 @@ tags:
   - SEO
 ---
 
-AEO (Answer Engine Optimization) é o conjunto de práticas para estruturar um site de forma que ChatGPT, Gemini, Perplexity e Copilot consigam ler, entender e citar o conteúdo nas respostas que dão ao usuário. GEO (Generative Engine Optimization) é o termo irmão, cunhado no [paper acadêmico que criou o termo](https://arxiv.org/abs/2311.09735), de pesquisadores de Princeton, Georgia Tech e IIT Delhi, e na prática os dois nomes descrevem o mesmo movimento: sair da lista de 10 links azuis e entrar na resposta que a IA já formulou.
+AEO (Answer Engine Optimization) é o conjunto de práticas para estruturar um site de forma que ChatGPT, Gemini, Perplexity e Copilot consigam ler, entender e citar o conteúdo nas respostas que dão ao usuário. GEO (Generative Engine Optimization) é o termo irmão, cunhado por pesquisadores da Cornell University, e na prática os dois nomes descrevem o mesmo movimento: sair da lista de 10 links azuis e entrar na resposta que a IA já formulou.
 
 A diferença central para o SEO tradicional é o alvo do texto. O Google manda um visitante até a sua página. Uma IA generativa lê a sua página, extrai o que precisa e entrega a resposta pronta, às vezes sem nenhum clique de volta. Isso muda o que "ranquear bem" significa: não basta aparecer, é preciso ser a fonte que o modelo escolhe citar dentro da resposta.
 
@@ -36,11 +35,11 @@ SEO otimiza para ranquear numa lista de resultados que o usuário ainda vai clic
 | Mecanismos alvo | Google, Bing | Google Featured Snippets, Alexa, Siri | ChatGPT, Gemini, Perplexity, Copilot |
 | O que o texto precisa fazer | Convencer o algoritmo de relevância | Responder em 1-2 frases extraíveis | Fornecer trecho autocontido e denso o suficiente para ser reescrito ou citado |
 
-Na prática, os três não competem entre si. Um post bem estruturado para AEO e GEO, com definição direta e schema correto, também tende a performar melhor em SEO tradicional, porque os sinais de clareza e estrutura que ajudam uma IA a extrair uma resposta são os mesmos que ajudam o Google a entender do que a página trata. É o mesmo princípio por trás da [mudança para o SEO semântico e o uso de vetores de embedding](/blog/a-mudanca-para-o-seo-semantico-o-que-os-vetores-significam-para-sua-estrategia) para representar significado em vez de apenas casar palavras-chave.
+Na prática, os três não competem entre si. Um post bem estruturado para AEO e GEO, com definição direta e schema correto, também tende a performar melhor em SEO tradicional, porque os sinais de clareza e estrutura que ajudam uma IA a extrair uma resposta são os mesmos que ajudam o Google a entender do que a página trata.
 
 ## Por que meu site não aparece no ChatGPT mesmo rankeando bem no Google?
 
-Rankear no Google e ser citado por uma IA são processos diferentes, mesmo que compartilhem parte da base técnica. O Google usa PageRank e [centenas de sinais de ranking](/blog/como-melhorar-o-ranking-do-seu-site-no-google-dicas-praticas) para ordenar links. Uma IA generativa faz retrieval: busca trechos de texto semanticamente próximos da pergunta do usuário e decide, com base em densidade de entidades e clareza da definição, qual trecho vale citar.
+Rankear no Google e ser citado por uma IA são processos diferentes, mesmo que compartilhem parte da base técnica. O Google usa PageRank e centenas de sinais de ranking para ordenar links. Uma IA generativa faz retrieval: busca trechos de texto semanticamente próximos da pergunta do usuário e decide, com base em densidade de entidades e clareza da definição, qual trecho vale citar.
 
 Três causas comuns para um site que ranqueia mas não é citado:
 

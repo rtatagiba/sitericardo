@@ -218,6 +218,8 @@ A combinação de [ferramentas de IA como o ChatGPT](https://openai.com/index/ch
 
 Comece hoje mesmo a implementar FAQs estruturadas em seu site e monitore os resultados. O investimento em dados estruturados é um dos com melhor relação custo-benefício na atual paisagem do SEO.
 
+FAQPage é uma das três marcações que mais rendem retorno para citação por IA, ao lado de Article/BlogPosting e Organization. O guia [como aparecer no ChatGPT, Gemini e Perplexity](/blog/como-aparecer-no-chatgpt-guia-aeo-geo) mostra como essas três se encaixam numa estratégia de AEO completa.
+
 ---
 
 **Meta Description:** Domine a criação de FAQs com JSON-LD para conquistar rich results e aumente seu tráfego orgânico com técnicas de IA e dados estruturados.
