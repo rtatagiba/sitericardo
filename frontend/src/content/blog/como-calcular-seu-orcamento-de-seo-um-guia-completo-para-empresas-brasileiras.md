@@ -19,7 +19,7 @@ Este artigo explora os principais componentes de preços de SEO e como calcular 
 
 ### O Que as Empresas Não Entendem Sobre Investimento em SEO
 
-SEO é uma área onde você realmente recebe o que paga. Investir adequadamente em [serviços de SEO](/seo-audity-free/) pode impactar significativamente sua presença online e o crescimento do seu negócio.
+SEO é uma área onde você realmente recebe o que paga. Investir adequadamente em [serviços de SEO](/contato/) pode impactar significativamente sua presença online e o crescimento do seu negócio.
 
 De acordo com dados recentes, mais da metade de todos os profissionais de SEO trabalham com orçamentos mensais variando de R$2.500 a R$25.000, com 28,6% relatando orçamentos na faixa de R$5.000-R$25.000.
 
@@ -143,7 +143,7 @@ O orçamento provavelmente será maior para uma campanha nacional ou internacion
 
 Algumas empresas oferecem um “pacote de teste” a um preço mais baixo sem contrato. Isso permite que clientes em potencial testem seus serviços enquanto minimizam o risco.
 
-Existem algumas opções se você não pode pagar para contratar um profissional de SEO de alto nível. A mais comum é uma [auditoria única de SEO do site com recomendações acionáveis](/seo-audity-free/).
+Existem algumas opções se você não pode pagar para contratar um profissional de SEO de alto nível. A mais comum é uma [auditoria única de SEO do site com recomendações acionáveis](/contato/).
 
 Apenas consertar seu site muitas vezes levará a um aumento significativo no tráfego orgânico. Desenvolvimento de conteúdo e análise de palavras-chave são outras áreas onde você pode obter ajuda de um profissional por uma taxa fixa única.
 

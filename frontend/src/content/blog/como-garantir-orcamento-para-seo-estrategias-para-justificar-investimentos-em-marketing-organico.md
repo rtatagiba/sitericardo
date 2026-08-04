@@ -13,7 +13,7 @@ Um orçamento eficiente para SEO é fundamental não apenas para planejar estrat
 
 Tipicamente, o orçamento de SEO é determinado por stakeholders na empresa, que também são responsáveis pela aprovação de gastos em outros canais de marketing.
 
-Muitos canais de marketing, como links patrocinados, enquadram-se na categoria de [marketing de performance](https://en.wikipedia.org/wiki/Performance_marketing). O ROI e os leads gerados por esses canais são muito mais claros em um balanço financeiro em comparação com o valor agregado e os objetivos do SEO.
+Muitos canais de marketing, como links patrocinados, enquadram-se na categoria de [marketing de performance](https://en.wikipedia.org/wiki/Performance-based_advertising). O ROI e os leads gerados por esses canais são muito mais claros em um balanço financeiro em comparação com o valor agregado e os objetivos do SEO.
 
 Ao justificar o orçamento de SEO, é essencial diferenciá-lo dos canais clássicos de publicidade paga. O SEO faz parte de uma estratégia de marketing de performance, mas seu objetivo não é uma relação direta de entrada-saída.
 

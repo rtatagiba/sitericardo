@@ -135,4 +135,4 @@ Se você tem dúvidas sobre qualquer aspecto do seu conteúdo ou estratégia dig
 
 Seu site merece mais do que apenas tráfego. Ele merece visitantes engajados que se transformam em clientes fiéis. Nosso time de especialistas está pronto para analisar minuciosamente sua presença digital e identificar oportunidades inexploradas.
 
-[**Clique aqui para solicitar uma auditoria completa do seu site**](/seo-audity-free/) e descubra como podemos transformar seu conteúdo em uma poderosa ferramenta de conversão. Não espere que seus concorrentes descubram primeiro os segredos do conteúdo que realmente converte.
+[**Clique aqui para solicitar uma auditoria completa do seu site**](/contato/) e descubra como podemos transformar seu conteúdo em uma poderosa ferramenta de conversão. Não espere que seus concorrentes descubram primeiro os segredos do conteúdo que realmente converte.

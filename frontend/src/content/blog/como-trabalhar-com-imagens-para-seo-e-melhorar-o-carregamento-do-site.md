@@ -244,6 +244,6 @@ Mas conhecimento sem ação é apenas informação. E informação sozinha nunca
 
 **Você está pronto para transformar a velocidade do seu site e deixar seus concorrentes para trás?**
 
-Clique [aqui para fazer uma auditoria gratuita do seu site](/seo-audity-free/) e descobrir exatamente como suas imagens estão afetando seu desempenho e quais oportunidades específicas de otimização existem para o seu caso.
+Clique [aqui para fazer uma auditoria gratuita do seu site](/contato/) e descobrir exatamente como suas imagens estão afetando seu desempenho e quais oportunidades específicas de otimização existem para o seu caso.
 
 Seu site merece ser visto. Não deixe que imagens mal otimizadas o mantenham escondido.

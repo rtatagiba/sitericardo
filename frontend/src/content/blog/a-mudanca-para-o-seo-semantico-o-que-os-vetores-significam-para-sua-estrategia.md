@@ -35,7 +35,7 @@ A tecnologia de vetores está impulsionando recursos como as [AI Overviews do Go
 
 ### Concentre-se em tópicos, não apenas em palavras-chave
 
-Em vez de criar conteúdo em torno de palavras-chave específicas, desenvolva um entendimento abrangente dos tópicos relevantes para seu público — o que hoje chamamos de [autoridade tópica e clusters de conteúdo](/blog/autoridade-topic-clusters-de-conteudo-seo-geo/). Por exemplo, uma imobiliária em Belo Horizonte deve criar conteúdo que aborde todos os aspectos do mercado imobiliário local, não apenas páginas otimizadas para “apartamentos à venda em Belo Horizonte”.
+Em vez de criar conteúdo em torno de palavras-chave específicas, desenvolva um entendimento abrangente dos tópicos relevantes para seu público — o que hoje chamamos de [autoridade tópica e clusters de conteúdo](/blog/autoridade-topica-clusters-de-conteudo-seo-geo/). Por exemplo, uma imobiliária em Belo Horizonte deve criar conteúdo que aborde todos os aspectos do mercado imobiliário local, não apenas páginas otimizadas para “apartamentos à venda em Belo Horizonte”.
 
 ### Priorize a qualidade e a profundidade do conteúdo
 

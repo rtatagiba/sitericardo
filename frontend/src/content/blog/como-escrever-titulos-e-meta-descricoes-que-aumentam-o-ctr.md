@@ -193,4 +193,4 @@ Um bom título é só a porta de entrada — depois do clique, é o [conteúdo e
 
 ---
 
-**Quer saber como seu site está se saindo neste e em outros aspectos cruciais de SEO?** [Clique aqui para solicitar uma auditoria completa do seu site](/seo-audity-free/) e descubra oportunidades escondidas para impulsionar seu tráfego orgânico.
+**Quer saber como seu site está se saindo neste e em outros aspectos cruciais de SEO?** [Clique aqui para solicitar uma auditoria completa do seu site](/contato/) e descubra oportunidades escondidas para impulsionar seu tráfego orgânico.

@@ -13,9 +13,8 @@ titulos_alternativos:
   a que decide se você é citado como referência"
   - "Pilar e satélites: por que blogs sem estrutura perdem para IA e Google"
 description: "Autoridade tópica é o reconhecimento que um site ganha num assunto ao cobri-lo em profundidade e de forma conectada. Veja como montar um cluster pilar e satélites."
-image: "/images/capas/autoridade-topic-clusters-de-conteudo-seo-geo.webp"
+image: "/images/capas/autoridade-topica-clusters-de-conteudo-seo-geo.webp"
 category: ""
-slug: autoridade-topica-clusters-de-conteudo-seo-geo
 keyword_principal: "autoridade tópica"
 tags:
   - SEO

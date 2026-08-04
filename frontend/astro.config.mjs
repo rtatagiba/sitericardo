@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 import astroRelatedContent from '@philnash/astro-related-content';
 import { execSync } from 'node:child_process';
-import { existsSync, readdirSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { indexNow } from './src/lib/seo/indexnow.mjs';
 import { satteri } from '@astrojs/markdown-satteri';
 import { satteriBoxes } from './src/lib/markdown/satteri-boxes.mjs';
@@ -94,22 +94,54 @@ function devFetchUrlProxy() {
   };
 }
 
+const blogFilenames = readdirSync('src/content/blog')
+  .filter((f) => f.endsWith('.md'))
+  .map((f) => f.replace(/\.md$/, ''));
+
+// The content collection derives each post's route from its filename, not
+// from any `slug:` field in the frontmatter (the schema doesn't declare that
+// field, so Zod silently drops it). A stray `slug:` that disagrees with the
+// filename is therefore not just dead weight — every internal link written
+// against it 404s. Fail the build instead of letting that drift back in.
+for (const filename of blogFilenames) {
+  const raw = readFileSync(`src/content/blog/${filename}.md`, 'utf-8');
+  const match = raw.match(/^slug:\s*['"]?([^'"\n]+?)['"]?\s*$/m);
+  if (match && match[1].trim() !== filename) {
+    throw new Error(
+      `src/content/blog/${filename}.md declares slug: "${match[1].trim()}" but the file is named "${filename}.md". ` +
+        `The route is derived from the filename — rename the file (or remove the slug: field) so they match.`,
+    );
+  }
+}
+
 // Old WordPress permalinks lived at the root (/{slug}/); posts now live
 // under /blog/. Emits a 301 for every post so legacy URLs keep working.
 const legacyRedirects = Object.fromEntries(
-  readdirSync('src/content/blog')
-    .filter((f) => f.endsWith('.md'))
-    .map((f) => f.replace(/\.md$/, ''))
-    .map((slug) => [
-      `/${slug}`,
-      { status: /** @type {301} */ (301), destination: `/blog/${slug}/` },
-    ]),
+  blogFilenames.map((slug) => [
+    `/${slug}`,
+    { status: /** @type {301} */ (301), destination: `/blog/${slug}/` },
+  ]),
 );
+
+// One-off redirects for slugs that changed after publication (e.g. a typo fix)
+// and kept picking up inbound/internal links under the old spelling.
+const manualRedirects = {
+  '/blog/autoridade-topic-clusters-de-conteudo-seo-geo': {
+    status: /** @type {301} */ (301),
+    destination: '/blog/autoridade-topica-clusters-de-conteudo-seo-geo/',
+  },
+  // '/seo-audity-free/' never existed as a real page — it was a WordPress-era
+  // CTA typo linked from several posts. Redirect it in case it got indexed.
+  '/seo-audity-free': {
+    status: /** @type {301} */ (301),
+    destination: '/contato/',
+  },
+};
 
 // https://astro.build/config
 export default defineConfig({
   site: SITE_URL,
-  redirects: legacyRedirects,
+  redirects: { ...legacyRedirects, ...manualRedirects },
   markdown: {
     processor: satteri({
       // `directive` liga a sintaxe `:::nome … :::` usada pelos blocos prós/contras.

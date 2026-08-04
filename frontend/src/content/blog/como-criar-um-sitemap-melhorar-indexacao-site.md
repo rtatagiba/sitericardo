@@ -178,9 +178,9 @@ Se você utiliza um CMS popular como [WordPress](https://wordpress.com/), [Jooml
 5.  Salve as alterações
     
 
-O sitemap geralmente fica disponível em um endereço como www.seusite.com.br/sitemap\_index.xml
+O sitemap geralmente fica disponível em um endereço como `www.seusite.com.br/sitemap_index.xml`
 
-**Para Shopify:** Os sitemaps são gerados automaticamente e ficam disponíveis em www.sualoja.com.br/sitemap.xml
+**Para Shopify:** Os sitemaps são gerados automaticamente e ficam disponíveis em `www.sualoja.com.br/sitemap.xml`
 
 ### Método 2: Usando Geradores Online
 
@@ -626,6 +626,6 @@ Se você chegou até aqui, provavelmente entende a importância de uma boa estra
 
 **Que tal fazer uma auditoria completa do seu site?** Nossa equipe de especialistas em SEO pode analisar a estrutura atual do seu site, identificar problemas de indexação e criar um plano personalizado de otimização, incluindo a implementação de um sitemap perfeitamente adaptado às necessidades do seu negócio.
 
-[Clique aqui para solicitar sua auditoria SEO completa agora mesmo!](/seo-audity-free/)
+[Clique aqui para solicitar sua auditoria SEO completa agora mesmo!](/contato/)
 
 Não deixe que páginas valiosas do seu site permaneçam invisíveis aos mecanismos de busca. Uma indexação eficiente é o primeiro passo para dominar os resultados orgânicos e alcançar seu público-alvo.

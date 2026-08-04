@@ -1173,10 +1173,10 @@
         0.02820965219942305
       ]
     },
-    "blog:autoridade-topic-clusters-de-conteudo-seo-geo": {
+    "blog:autoridade-topica-clusters-de-conteudo-seo-geo": {
       "collection": "blog",
       "hash": "4b2cc43bcc413d0bcbec3b41c914a64fb529a0c56cf9f9799dde46b01de1b62c",
-      "id": "autoridade-topic-clusters-de-conteudo-seo-geo",
+      "id": "autoridade-topica-clusters-de-conteudo-seo-geo",
       "vector": [
         0.012084154766832611,
         -0.05389732323471586,
@@ -3521,7 +3521,7 @@
     },
     "blog:como-criar-um-sitemap-melhorar-indexacao-site": {
       "collection": "blog",
-      "hash": "b3b8d534bb32013be66edd86e21dc720b56a80aa0a8a3887bf1de556b03ee084",
+      "hash": "b82501f153380c6e07f3f848c1e71ae4fae18b9e68405d42ef637bac0abb553d",
       "id": "como-criar-um-sitemap-melhorar-indexacao-site",
       "vector": [
         0.04063071396453554,
@@ -4303,7 +4303,7 @@
     },
     "blog:como-escrever-titulos-e-meta-descricoes-que-aumentam-o-ctr": {
       "collection": "blog",
-      "hash": "1c4441b70470cd20109039d7e425d114764e6ed09f4c219bbd0c602b822ae56d",
+      "hash": "940dcd0fc97796eb8983a0d8891fd791207fbf62134a4af62490e6fa367b5605",
       "id": "como-escrever-titulos-e-meta-descricoes-que-aumentam-o-ctr",
       "vector": [
         0.014920678666567076,

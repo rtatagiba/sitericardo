@@ -312,6 +312,6 @@ Lembre-se: o objetivo final não é apenas melhorar métricas, mas [construir um
 
 Está pronto para elevar o desempenho do seu site a outro nível? Descubra oportunidades inexploradas e problemas ocultos que podem estar limitando seu potencial online.
 
-[Solicite agora uma auditoria completa e gratuita do seu site](/seo-audity-free/) e receba um relatório personalizado com recomendações específicas para o seu negócio.
+[Solicite agora uma auditoria completa e gratuita do seu site](/contato/) e receba um relatório personalizado com recomendações específicas para o seu negócio.
 
 Não deixe para amanhã o que pode impulsionar seus resultados hoje. Sua concorrência não está esperando!
