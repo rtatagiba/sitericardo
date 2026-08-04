@@ -371,4 +371,4 @@ Veja também como usar essas métricas para [analisar e superar seus concorrente
 
 Seu site está perdendo posições para concorrentes com melhores métricas de Core Web Vitals? Não deixe que frações de segundo determinem o futuro do seu negócio digital.
 
-[**Clique aqui para realizar uma auditoria completa e gratuita**](https://seusite.com.br/auditoria) e descubra exatamente o que está impedindo seu site de alcançar seu potencial máximo nos resultados de busca. Nossa análise vai além das métricas superficiais, oferecendo um plano de ação personalizado e priorizado para transformar seu site em uma máquina de conversão otimizada para os algoritmos modernos do Google.
+[**Clique aqui para realizar uma auditoria completa e gratuita**](/contato/) e descubra exatamente o que está impedindo seu site de alcançar seu potencial máximo nos resultados de busca. Nossa análise vai além das métricas superficiais, oferecendo um plano de ação personalizado e priorizado para transformar seu site em uma máquina de conversão otimizada para os algoritmos modernos do Google.

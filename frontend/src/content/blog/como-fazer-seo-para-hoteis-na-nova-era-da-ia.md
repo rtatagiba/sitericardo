@@ -22,7 +22,7 @@ O SEO Branding para hotéis exige:
 
 2.  **Consistência visual e narrativa**: A Hyatt mantém uma linguagem visual e verbal unificada em todos os canais, reforçando o reconhecimento da marca nos resultados de busca.
 
-3.  **[Autoridade temática](/blog/autoridade-topic-clusters-de-conteudo-seo-geo/)**: Ao criar conteúdo aprofundado sobre experiências locais, gastronomia e cultura, o hotel se posiciona como especialista no destino, não apenas como um lugar para dormir.
+3.  **[Autoridade temática](/blog/autoridade-topica-clusters-de-conteudo-seo-geo/)**: Ao criar conteúdo aprofundado sobre experiências locais, gastronomia e cultura, o hotel se posiciona como especialista no destino, não apenas como um lugar para dormir.
 
 A Accor demonstrou a eficácia dessa abordagem quando reorganizou sua estratégia digital em torno de pilares de conteúdo que refletem os valores da marca. O resultado foi uma melhoria de 32% no engajamento orgânico e um aumento de 18% nas reservas diretas, segundo relatório da Phocuswright.
 

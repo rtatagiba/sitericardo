@@ -113,4 +113,4 @@ Sinalização experimental via llms.txt. Baixo custo de implementação, adoçã
 
 Nenhum desses quatro pontos funciona sozinho. Site sem schema mas com llms.txt perfeito continua ambíguo para o modelo. Site bem marcado mas bloqueando o crawler certo nunca chega a ser lido. O ganho aparece quando os quatro andam juntos.
 
-Vale reforçar que esses quatro pontos operam por artigo. O ganho composto aparece quando o domínio inteiro constrói [autoridade tópica com clusters de conteúdo conectados](/blog/autoridade-topic-clusters-de-conteudo-seo-geo): um post isolado, por mais bem marcado que esteja, pesa menos do que o mesmo post cercado de conteúdo relacionado que demonstra cobertura completa do assunto.
+Vale reforçar que esses quatro pontos operam por artigo. O ganho composto aparece quando o domínio inteiro constrói [autoridade tópica com clusters de conteúdo conectados](/blog/autoridade-topica-clusters-de-conteudo-seo-geo/): um post isolado, por mais bem marcado que esteja, pesa menos do que o mesmo post cercado de conteúdo relacionado que demonstra cobertura completa do assunto.

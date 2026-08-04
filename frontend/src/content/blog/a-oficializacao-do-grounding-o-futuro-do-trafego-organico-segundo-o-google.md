@@ -88,7 +88,7 @@ Ancorar respostas generativas
 
 Se o grounding é a nova moeda, então **a credibilidade da entidade por trás do conteúdo é a nova infraestrutura**.
 
-O [E-E-A-T](https://developers.google.com/search/docs/fundamentals/creating-helpful-content),sigla em inglês para **Experiência, Especialidade, Autoridade e Confiabilidade**,deixou de ser um critério subjetivo de qualidade editorial e passou a ser, na prática, o filtro que os LLMs usam para decidir se um conteúdo merece ser citado ou ignorado. É o mesmo princípio por trás dos [topic clusters de autoridade](/blog/autoridade-topic-clusters-de-conteudo-seo-geo).
+O [E-E-A-T](https://developers.google.com/search/docs/fundamentals/creating-helpful-content),sigla em inglês para **Experiência, Especialidade, Autoridade e Confiabilidade**,deixou de ser um critério subjetivo de qualidade editorial e passou a ser, na prática, o filtro que os LLMs usam para decidir se um conteúdo merece ser citado ou ignorado. É o mesmo princípio por trás dos [topic clusters de autoridade](/blog/autoridade-topica-clusters-de-conteudo-seo-geo/).
 
 Aqui está o raciocínio:
 

@@ -22,7 +22,7 @@ As FAQs (Perguntas Frequentes) com schema markup oferecem diversas vantagens:
 
 1.  **Maior visibilidade nos resultados de pesquisa**: FAQs estruturadas podem aparecer como rich results (resultados enriquecidos), ocupando mais espaço na página de resultados e aumentando suas chances de cliques.
 2.  **Respostas diretas às perguntas dos usuários**: Com o crescimento das pesquisas por voz e dos assistentes de IA, ter conteúdo marcado como FAQ ajuda a posicionar seu site como fonte de respostas diretas.
-3.  **[Maior autoridade temática](/blog/autoridade-topic-clusters-de-conteudo-seo-geo/)**: Ao responder perguntas específicas do seu nicho, você demonstra expertise para o Google, fortalecendo seu posicionamento.
+3.  **[Maior autoridade temática](/blog/autoridade-topica-clusters-de-conteudo-seo-geo/)**: Ao responder perguntas específicas do seu nicho, você demonstra expertise para o Google, fortalecendo seu posicionamento.
 4.  **Melhoria na experiência do usuário**: FAQs bem estruturadas facilitam a navegação e compreensão do conteúdo pelos visitantes.
 
 Segundo um estudo da SEMrush, páginas com rich results têm, em média, uma taxa de cliques 58% maior do que resultados normais. Isso representa um ganho significativo de tráfego apenas com a implementação correta dos dados estruturados.

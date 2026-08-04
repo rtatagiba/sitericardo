@@ -156,4 +156,4 @@ Contar essa história com dados para a equipe, e não só compartilhar números 
 
 Depois de otimizar a experiência técnica, vale revisar os [demais fatores que o Google usa para ranquear seu site](/blog/como-melhorar-o-ranking-do-seu-site-no-google-dicas-praticas/) e acompanhar o progresso com [ferramentas gratuitas de monitoramento de SEO](/blog/como-monitorar-desempenho-seo-seu-site-ferramentas-gratuitas/).
 
-**Está pronto para deixar seus concorrentes para trás nas buscas?** [Clique aqui para solicitar uma auditoria completa do seu site](/seo-audity-free/) e descubra exatamente o que você precisa fazer para superar a concorrência nos resultados de busca.
+**Está pronto para deixar seus concorrentes para trás nas buscas?** [Clique aqui para solicitar uma auditoria completa do seu site](/contato/) e descubra exatamente o que você precisa fazer para superar a concorrência nos resultados de busca.
