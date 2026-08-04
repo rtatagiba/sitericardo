@@ -1,35 +1,33 @@
 ---
-title: "Evento de Marketing digital em Lisboa Digitalks"
+title: "Evento de Marketing Digital em Lisboa: Digitalks 2025"
 date: 2025-04-24
-description: "O Digitalks realizado em LIsboa nos dias 22-23 de Abril foi um encontro que discutiu a inovação do Marketing digital em 2025! O que eu aprendi lá"
+description: "O Digitalks Lisboa 2025 reuniu palestras e painéis sobre marketing digital nos dias 22 e 23 de abril. Veja os destaques e o que aprendi no evento."
 image: "/images/capas/evento-de-marketing-digital-em-lisboa-digitalks.webp"
+category: "SEO"
 ---
 
-Nos dias 22 e 23 de abril tivemos em LIsboa um evento super interessante, o Digitalks, num modelo Ted Talks com palestrantes e pain\[eis de discussão o evento trouxe insights poderosos para o Marketing digitral em 2025 e próximos anos.
+O [Digitalks](https://dgtinnovation.com/) é um evento de marketing digital que aconteceu em Lisboa nos dias 22 e 23 de abril de 2025, no formato TED Talks: palestras curtas seguidas de painéis de discussão. A edição trouxe insights sobre o marketing digital para 2025 e os próximos anos, com destaque para o uso de IA em SEO e redes sociais.
 
 ![Ricardo e Elaine Tatagiba na entrada do Digitalks](/images/2025/04/1.jpg)
 
-Infelizmente eu só consegui estar presente no primeiro dia, mas já valeu muito a pena. Foi meu primeiro evento de Marketing digital, apesar de já atuar com Marketing a cerca de 10 anos, nunca tive a oportunidade de estar em um dessa magnitude.
+Consegui estar presente só no primeiro dia, mas já valeu a pena. Foi meu primeiro evento de marketing digital desse porte: apesar de já atuar com marketing há cerca de 10 anos, entre a mudança do Brasil para Portugal e outros desencontros, nunca tinha tido a oportunidade antes. E se aprendi algo de forma incisiva foi que networking é uma peça fundamental, exatamente por ter deixado passar boa parte dele.
 
-Isso devido a vários problemas, desde a mudança do Brasil para Portugal entre outros desencontros, mas de fato eu sempre soube que o Networking é uma peça fundamental, e aprendi isso de uma maniera bem incisiva.
+### Os erros de networking que não vou repetir na próxima edição
 
-Mas isso é uma outra história! No evento do [Digitalks](https://dgtinnovation.com/) apensa de ser bem comunicativo, e devido a ferrugem em fazer conexões cometi erros graves que eu prometo que nuca mais cometerei.
+Fui comunicativo no Digitalks, mas a falta de prática em fazer conexões me custou erros que prometo não repetir:
 
-Primeiro, não se preparara antes para ver quem ia estar palestrando, quem são essas pessoas na fila do pão e como posso extrair o máximo de informações para poder tirtar máximo proveito dessas conexões. Hoje com o chatGPT ia ser super fácil extrair dados relevantes e poder ter assunto para conversar com qualquer umd eles
+1.  **Não me preparar antes** para saber quem ia palestrar, quem eram as pessoas na fila do café e como extrair o máximo de cada conversa. Hoje um prompt no ChatGPT resolveria isso em minutos, com um resumo de cada palestrante e pontos em comum para puxar assunto.
+2.  **Não levar equipamento para gravar entrevistas** com os palestrantes.
+3.  **Não tirar fotos nem conversar** diretamente com quem palestrou.
+4.  **Não sentar com desconhecidos** no almoço, em vez de ficar só com quem eu já conhecia.
 
-Segundo erro, não ir preparado para gravar entrevistas com os palestrantes
+Foram erros que travaram boa parte do potencial de networking do evento, mas ficou a lição para a próxima edição.
 
-Terceiro erro: Não tirar foto e nem conversar com os palestrantes
-
-Quarto erro: Não sentar na mesa de estranhos para almoçar com gente diferente
-
-Enfim, vamos parar de contar por aqui por que eu já to aqui quase cortando os pulsos tentando lembrar, foram erros graves e eu juro que tive a lição aprendida! Eu juro!
-
-Tiveram muitas palestras boas, mas a primeira do Dennis Yu foi incrível, foi bem em cheio naquilo que eu precisava, para quem nunca ouoviu falar:
+Tiveram muitas palestras boas, mas a de Dennis Yu foi a mais marcante do primeiro dia, direto no que eu precisava. Para quem nunca ouviu falar dele:
 
 ### ![Dennis Yu, CEO da BlitzMetrics, foi um dos principais destaques do evento. Na sua palestra "AI Warfare: Winning in SEO + Social in 2025](/images/2025/04/Deniz-Yu.jpg)Dennis Yu: O Destaque do primeiro dia de Evento do Digitalks
 
-[Dennis Yu](https://www.linkedin.com/in/dennisyu/), CEO da [BlitzMetrics](https://blitzmetrics.com/), foi um dos principais destaques do evento. Na sua palestra “AI Warfare: Winning in SEO + Social in 2025”, Yu explorou como a inteligência artificial está a transformar as [estratégias de SEO](/blog/como-garantir-orcamento-para-seo-estrategias-para-justificar-investimentos-em-marketing-organico/) e redes sociais — um tema que também exploramos no nosso [guia de como aparecer no ChatGPT e em outras IAs (AEO/GEO)](/blog/como-aparecer-no-chatgpt-guia-aeo-geo/) — oferecendo insights valiosos sobre como as empresas podem adaptar-se a estas mudanças para manterem-se competitivas.
+[Dennis Yu](https://www.linkedin.com/in/dennisyu/), CEO da [BlitzMetrics](https://blitzmetrics.com/), foi um dos principais destaques do evento. Na sua palestra “AI Warfare: Winning in SEO + Social in 2025”, Yu explorou como a inteligência artificial está a transformar as [estratégias de SEO](/blog/como-garantir-orcamento-para-seo-estrategias-para-justificar-investimentos-em-marketing-organico/) e redes sociais, um tema que também exploramos no nosso [guia de como aparecer no ChatGPT e em outras IAs (AEO/GEO)](/blog/como-aparecer-no-chatgpt-guia-aeo-geo/), oferecendo insights valiosos sobre como as empresas podem adaptar-se a essas mudanças para se manterem competitivas.
 
 ### Inovação no Marketing: Estratégias Digitais
 
@@ -42,9 +40,11 @@ Outro momento marcante foi o painel “Inovação no marketing: as estratégias 
 
 ![Inovação no Marketing: Estratégias Digitais Marta Lousada (Perfumes & Companhia) Inês Saad (Endless Retail Media @MC) Miguel Simões (Galp) Daniel Risi (Sioux digital )](/images/2025/04/2.jpg)Os palestrantes discutiram como as ferramentas digitais estão a permitir uma personalização mais eficaz das campanhas de marketing, melhorando a experiência do cliente e impulsionando os resultados empresariais.
 
-Apesar do moderador Tiago Senna não ser um entrevistado direto, ele teve uma participação muito interessante, trazendo opiniões incríveis do mercado global, coisas que só alguem com tanta bagagem poderia traduzir numa linguagem simples e impactante, em resumo, o cara tem um cérebro invejável.
+Apesar de o moderador Tiago Senna não ser um entrevistado direto, teve uma participação muito interessante, trazendo opiniões do mercado global que só alguém com bastante bagagem consegue traduzir numa linguagem simples e impactante.
 
-Entrei com contato com ele depois via Linkedin, e ele foi um dos fundadores do [Portal SAPO](https://www.sapo.pt/), não puder perder a oportunidade de lhe perguntar o por que do nome SAPO, e ele me respondeu com maior boa vontade:
+### A origem do nome SAPO, contada por Tiago Senna
+
+Entrei em contato com ele depois pelo LinkedIn. Ele foi um dos fundadores do [Portal SAPO](https://www.sapo.pt/), e não pude perder a oportunidade de perguntar a origem do nome. Ele respondeu com boa vontade:
 
 > “SAPO é um acrónimo de Serviço de Apontadores Portugueses Online 🙂
 > 
@@ -54,8 +54,8 @@ Entrei com contato com ele depois via Linkedin, e ele foi um dos fundadores do [
 
 ### Networking e Diplomacia com Linda Pereira
 
-Sepois foi a vez da [Linda Pereira](https://www.linkedin.com/in/linda-pereira-phd-68a36a8/), representante da Women in Tech, conduziu a sessão especial “Networking e diplomacia”, onde enfatizou a importância das relações interpessoais e da diplomacia no ambiente empresarial atual. A sua abordagem destacou como o networking estratégico pode abrir portas e criar oportunidades significativas no mundo dos negócios, justamente dando aquele soco no estômago de tudo que eu não fiz por lá.
+Depois foi a vez de [Linda Pereira](https://www.linkedin.com/in/linda-pereira-phd-68a36a8/), representante da Women in Tech, que conduziu a sessão especial "Networking e diplomacia", enfatizando a importância das relações interpessoais no ambiente empresarial. A sessão reforçou, na prática, tudo que eu tinha deixado passar nos meus próprios erros de networking no evento.
 
-O Digitalks Lisboa 2025 consolidou-se como um evento essencial para profissionais interessados nas tendências e inovações do marketing digital. Com palestras inspiradoras e painéis informativos, o evento proporcionou uma plataforma para a troca de conhecimentos e experiências, preparando os participantes para os desafios e oportunidades do futuro digital.
+### O que fica do Digitalks Lisboa 2025
 
-E foi isso, lições aprendidas e muito conteúdo legal
+Três lições para a próxima edição: pesquisar os palestrantes antes (hoje um prompt no ChatGPT resolve isso em minutos), levar equipamento para registrar entrevistas e conversas, e sentar à mesa com desconhecidos em vez de ficar só com quem já conheço. No conteúdo, os destaques do primeiro dia foram a palestra de Dennis Yu, "AI Warfare: Winning in SEO + Social in 2025", o painel sobre inovação em marketing digital moderado por Tiago Senna e a sessão de Linda Pereira sobre networking e diplomacia. Marketing digital em 2025 passa cada vez mais por IA aplicada a SEO e redes sociais, e por relações construídas cara a cara, algo que nenhuma ferramenta substitui.
