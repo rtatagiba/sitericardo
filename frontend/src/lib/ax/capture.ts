@@ -6,10 +6,13 @@ import type { AxDivSoupProbe, AxPageMeta, AxSnapshot, AxSnapshotNode } from '../
 const NAV_TIMEOUT_MS = 20_000;
 export const DEFAULT_VIEWPORT = { width: 1280, height: 800 };
 
+export type CaptureStep = 'abrindo-browser' | 'carregando-pagina' | 'lendo-arvore' | 'rodando-sondas';
+
 export interface CaptureOptions {
   url: string;
   javaScriptEnabled?: boolean;
   viewport?: { width: number; height: number };
+  onProgress?: (step: CaptureStep) => void;
 }
 
 // Nó cru do CDP: role/name vêm como { type, value } (às vezes ausentes em nós
@@ -50,6 +53,9 @@ export async function captureAx(browserBinding: BrowserWorker, options: CaptureO
   // Valida a URL de entrada antes de gastar um lançamento de browser com ela.
   await assertUrlIsSafe(options.url);
 
+  const onProgress = options.onProgress ?? (() => {});
+
+  onProgress('abrindo-browser');
   const browser = await puppeteer.launch(browserBinding);
   try {
     const capture = async (): Promise<AxSnapshot> => {
@@ -80,6 +86,7 @@ export async function captureAx(browserBinding: BrowserWorker, options: CaptureO
 
       const cdp = await page.createCDPSession();
       await cdp.send('Accessibility.enable');
+      onProgress('carregando-pagina');
       try {
         await page.goto(options.url, { waitUntil: 'networkidle0', timeout: NAV_TIMEOUT_MS });
       } catch (err) {
@@ -87,8 +94,10 @@ export async function captureAx(browserBinding: BrowserWorker, options: CaptureO
         throw err;
       }
 
+      onProgress('lendo-arvore');
       const { nodes } = (await cdp.send('Accessibility.getFullAXTree')) as { nodes: RawAxNode[] };
 
+      onProgress('rodando-sondas');
       // Com JS desligado, page.evaluate ainda roda (é o motor da página
       // executando nosso script, não script da própria página).
       const divSoup = (await page.evaluate(DIV_SOUP_PROBE)) as AxDivSoupProbe;

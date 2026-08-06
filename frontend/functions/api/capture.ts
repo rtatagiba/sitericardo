@@ -83,20 +83,45 @@ export const onRequestPost = async ({
     throw err;
   }
 
-  try {
-    const snapshot = await captureAx(env.MYBROWSER, { url: target, javaScriptEnabled });
-    await putCachedSnapshot(env.AX_TOOL_KV, cacheKey, snapshot);
-    return json({ snapshot, findings: analyze(snapshot) }, 200, { 'X-Cache': 'MISS' });
-  } catch (err) {
-    if (err instanceof SsrfBlockedError) {
-      return json({ error: err.message }, 400);
-    }
-    const retryAfter = upstreamRetryAfterSeconds(err);
-    if (retryAfter !== null) {
-      return json({ error: 'servidor de captura temporariamente sobrecarregado' }, 429, {
-        'Retry-After': String(retryAfter),
-      });
-    }
-    return json({ error: err instanceof Error ? err.message : 'capture failed' }, 502);
-  }
+  // Daqui pra frente é captura de verdade (5-15s) — os checks acima já
+  // resolveram o resto em milissegundos. Streaming honesto de progresso em
+  // vez de barra falsa: cada etapa só chega quando aconteceu de fato.
+  const encoder = new TextEncoder();
+  const stream = new ReadableStream({
+    async start(controller) {
+      const send = (event: Record<string, unknown>) => {
+        controller.enqueue(encoder.encode(`data: ${JSON.stringify(event)}\n\n`));
+      };
+      try {
+        const snapshot = await captureAx(env.MYBROWSER, {
+          url: target,
+          javaScriptEnabled,
+          onProgress: (step) => send({ step }),
+        });
+        send({ step: 'calculando-score' });
+        const findings = analyze(snapshot);
+        await putCachedSnapshot(env.AX_TOOL_KV, cacheKey, snapshot);
+        send({ step: 'concluido', snapshot, findings });
+      } catch (err) {
+        if (err instanceof SsrfBlockedError) {
+          send({ step: 'erro', error: err.message });
+        } else {
+          const retryAfter = upstreamRetryAfterSeconds(err);
+          send({
+            step: 'erro',
+            error: retryAfter !== null
+              ? 'servidor de captura temporariamente sobrecarregado, tente de novo em instantes'
+              : err instanceof Error ? err.message : 'falha na captura',
+          });
+        }
+      } finally {
+        controller.close();
+      }
+    },
+  });
+
+  return new Response(stream, {
+    status: 200,
+    headers: { 'Content-Type': 'text/event-stream', 'Cache-Control': 'no-cache' },
+  });
 };

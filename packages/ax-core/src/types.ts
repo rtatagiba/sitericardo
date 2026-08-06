@@ -54,6 +54,8 @@ export interface Finding {
   severity: Severity;
   category: FindingCategory;
   message: string;
+  /** Exemplos concretos (até 3) por trás do finding — pra evidência colapsável na UI. */
+  evidence?: string[];
 }
 
 export interface AxFindings {

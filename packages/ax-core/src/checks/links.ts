@@ -22,6 +22,7 @@ export function checkLinks(snapshot: AxSnapshot): Finding[] {
       severity: 'minor',
       category: 'links',
       message: `${generic.length} link(s) com texto genérico ("${generic[0].name}") — fora de contexto, não diz pra onde leva.`,
+      evidence: generic.slice(0, 3).map((n) => `"${n.name}" (nodeId ${n.nodeId})`),
     },
   ];
 }

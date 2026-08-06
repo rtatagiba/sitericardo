@@ -13,6 +13,7 @@ export function checkForms(snapshot: AxSnapshot): Finding[] {
       severity: 'critical',
       category: 'forms',
       message: `${unnamed.length} campo(s) de formulário sem label associado.`,
+      evidence: unnamed.slice(0, 3).map((n) => `role "${n.role}" (nodeId ${n.nodeId}), sem label`),
     },
   ];
 }

@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Auditor from "../../components/AxAudit/Auditor.astro";
+---
+
+<BaseLayout
+  title="Extrator de Árvore de Acessibilidade — veja o que um agente enxerga no seu site"
+  description="Ferramenta gratuita que captura a árvore de acessibilidade real do seu site (via CDP, sem filtro), calcula um score de prioridade e mostra o que some quando o JavaScript é desligado."
+>
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h1 class="text-4xl font-bold text-primary mb-3">Extrator de Árvore de Acessibilidade</h1>
+      <p class="text-lg text-text-muted max-w-2xl mx-auto">
+        Não é só a árvore — é score, prioridade e o diff de JavaScript ligado/desligado num
+        clique. Em português, sem cadastro.
+      </p>
+    </div>
+    <Auditor />
+  </section>
+</BaseLayout>
