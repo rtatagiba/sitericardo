@@ -36,6 +36,13 @@ export const onRequestPost = async ({
   request: Request;
   env: Env;
 }): Promise<Response> => {
+  if (!env.AX_TOOL_KV || !env.MYBROWSER) {
+    return json(
+      { error: `binding ausente: ${!env.AX_TOOL_KV ? 'AX_TOOL_KV' : 'MYBROWSER'} não configurado no dashboard do Pages` },
+      500,
+    );
+  }
+
   let body: { url?: string; javaScriptEnabled?: boolean };
   try {
     body = await request.json();
