@@ -68,6 +68,21 @@ Os `:::` precisam de linha em branco antes e depois, e têm de estar sozinhos na
 linha. O cabeçalho de cada lado é `**negrito**`, não `###` — um heading entraria
 no sumário como se fosse secção do artigo.
 
+## Extrator de Árvore de Acessibilidade (`/ferramentas/arvore-de-acessibilidade`)
+
+Usa Cloudflare Pages Functions (`functions/api/capture.ts`, `functions/api/lead.ts`) com
+bindings de Browser Rendering (`MYBROWSER`) e KV (`AX_TOOL_KV`). **`astro dev` não executa
+Pages Functions** — `/api/capture` vai dar 404 nele. Pra testar de verdade:
+
+```
+npm run build
+npx wrangler pages dev
+```
+
+Isso sobe em `http://127.0.0.1:8788` (não 4321) com o browser remoto real conectado. Os
+bindings de produção (`MYBROWSER`, `AX_TOOL_KV`) ainda precisam ser configurados manualmente
+no dashboard do Cloudflare Pages — deploy é via integração Git, não `wrangler deploy`.
+
 ## WhatTheyAsk (`/ferramentas/whattheyask`)
 
 Keyword question explorer — expands seeds into real questions via Google Suggest.
