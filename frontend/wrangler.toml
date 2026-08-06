@@ -1,0 +1,15 @@
+# Config só pra `wrangler pages dev` local (bindings das Pages Functions).
+# O deploy em produção é via integração Git do Cloudflare Pages — o binding
+# MYBROWSER também precisa ser adicionado manualmente no dashboard:
+# Pages project → Settings → Functions → Browser Rendering bindings.
+# account_id aqui é só a conta usada pra testar Browser Rendering localmente
+# (mesma do ax-spike) — não precisa ser a conta que hospeda o Pages de produção.
+name = "sitericardo-frontend"
+account_id = "8c908063ae111ab2da3236363710ff35"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-08-06"
+compatibility_flags = ["nodejs_compat"]
+
+[browser]
+binding = "MYBROWSER"
+remote = true
