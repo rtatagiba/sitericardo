@@ -87,13 +87,30 @@ configuration file`) — então não dá pra manter um `wrangler.toml` separado 
 com bindings remotos.
 
 Pra testar a captura de verdade (browser remoto real), edite `wrangler.toml` **temporariamente**,
-adicionando `account_id = "8c908063ae111ab2da3236363710ff35"` no topo e `remote = true` dentro
-dos blocos `[browser]` e `[[kv_namespaces]]`, rode `wrangler pages dev dist`, e **reverta antes
-de commitar** — o build de produção do Cloudflare Pages rejeita esses campos (erros vistos:
-`Configuration file for Pages projects does not support "account_id"` e `Unexpected fields
-found ...: "remote"`). Os bindings de produção (`MYBROWSER`, `AX_TOOL_KV`) ainda precisam ser
-configurados manualmente no dashboard do Cloudflare Pages — deploy é via integração Git, não
-`wrangler deploy`.
+adicionando:
+
+```toml
+account_id = "8c908063ae111ab2da3236363710ff35"
+
+[browser]
+binding = "MYBROWSER"
+remote = true
+
+[[kv_namespaces]]
+binding = "AX_TOOL_KV"
+id = "8fe76921e8e74281956febf322f0f42b"
+remote = true
+```
+
+(`account_id` e o id do KV são da conta de teste, não da conta de produção — servem só pra rodar
+`Accessibility.getFullAXTree` local de verdade.) Rode `wrangler pages dev dist`, e **reverta antes
+de commitar**: o build de produção do Cloudflare Pages não só rejeita `account_id`/`remote` como
+campos desconhecidos, como também tenta resolver o `id` do KV contra a conta que hospeda o
+projeto — um id de outra conta quebra o deploy (`KV namespace 'xxx' not found`). Por isso
+`MYBROWSER` e `AX_TOOL_KV` não ficam declarados no `wrangler.toml` versionado: são configurados
+manualmente no dashboard do projeto Pages (Settings → Functions → Bindings — mesmo lugar onde já
+existe o `SITE_KV`), não pelo `wrangler pages dev`/`--remote`/`--config`, que não existem como
+flags nessa versão do wrangler.
 
 ## WhatTheyAsk (`/ferramentas/whattheyask`)
 
