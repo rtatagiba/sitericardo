@@ -1,12 +1,72 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Auditor from "../../components/AxAudit/Auditor.astro";
+import { SITE_URL } from "../../lib/seo/site";
+
+const PAGE_URL = new URL("/ferramentas/arvore-de-acessibilidade/", SITE_URL).href;
+
+const faq = [
+  {
+    q: "A árvore de acessibilidade é a mesma coisa que o HTML?",
+    a: "Não. O HTML é o código-fonte; a árvore de acessibilidade é a interpretação que o navegador faz dele para expor a leitores de tela e a agentes automatizados — roles, nomes acessíveis e hierarquia, com nós marcados como \"ignorados\" quando são só decoração. Duas páginas com HTML parecido podem gerar árvores bem diferentes dependendo de como usam (ou não) elementos e atributos semânticos.",
+  },
+  {
+    q: "Por que isso importa para agentes de IA, e não só para leitores de tela?",
+    a: "Um agente que navega uma página programaticamente (Operator, browser-use, e afins) tende a usar a mesma estrutura que um leitor de tela usa, porque é mais barata e mais confiável do que interpretar pixels. Uma página cheia de <div> genéricos sem role, sem landmarks e com botões sem nome é literalmente mais difícil de operar por um agente — não é só uma questão de inclusão, é usabilidade para máquina.",
+  },
+  {
+    q: "Por que meu score aqui é diferente do Lighthouse ou do axe?",
+    a: "Ferramentas como Lighthouse e axe auditam um conjunto amplo de regras WCAG automatizáveis a partir do DOM. Esta ferramenta foca especificamente no que chega na árvore de acessibilidade via CDP (Accessibility.getFullAXTree) — o que um agente ou leitor de tela efetivamente recebe como estrutura navegável. São lentes diferentes sobre o mesmo problema; nenhuma substitui a outra.",
+  },
+  {
+    q: "Essa ferramenta substitui um teste com leitor de tela real?",
+    a: "Não. É um diagnóstico automatizado rápido que pega os problemas estruturais mais comuns — falta de landmark, heading fora de ordem, botão sem nome, div soup. Teste manual com NVDA, VoiceOver ou JAWS continua sendo o critério final para qualquer avaliação séria de acessibilidade.",
+  },
+  {
+    q: "Por que desligar o JavaScript muda o resultado?",
+    a: "Muitos sites renderizam conteúdo — inclusive landmarks, headings e botões — só depois que o JavaScript roda. Se um agente (ou um crawler) não executa JS, ou executa com timeout curto, ele vê uma árvore bem mais pobre do que a que aparece no navegador do desenvolvedor. A comparação com JS desligado mostra exatamente o que depende de script pra existir.",
+  },
+  {
+    q: "Vocês guardam a URL que eu auditei?",
+    a: "O resultado fica em cache por até 12 horas (só a URL, o modo e o snapshot capturado) pra evitar recapturar a mesma página repetidamente — é o que mantém a ferramenta gratuita. Não há venda de dados nem rastreamento além disso.",
+  },
+];
+
+const softwareApplicationSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Extrator de Árvore de Acessibilidade",
+  url: PAGE_URL,
+  applicationCategory: "DeveloperApplication",
+  operatingSystem: "Web",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "BRL",
+  },
+  description:
+    "Captura a árvore de acessibilidade real de um site via CDP (Accessibility.getFullAXTree), calcula um score de prioridade por severidade e compara o resultado com JavaScript ligado e desligado.",
+  inLanguage: "pt-BR",
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faq.map(({ q, a }) => ({
+    "@type": "Question",
+    name: q,
+    acceptedAnswer: { "@type": "Answer", text: a },
+  })),
+};
 ---
 
 <BaseLayout
   title="Extrator de Árvore de Acessibilidade — veja o que um agente enxerga no seu site"
   description="Ferramenta gratuita que captura a árvore de acessibilidade real do seu site (via CDP, sem filtro), calcula um score de prioridade e mostra o que some quando o JavaScript é desligado."
 >
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(softwareApplicationSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
   <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="text-center mb-10">
       <h1 class="text-4xl font-bold text-primary mb-3">Extrator de Árvore de Acessibilidade</h1>
@@ -16,5 +76,53 @@ import Auditor from "../../components/AxAudit/Auditor.astro";
       </p>
     </div>
     <Auditor />
+  </section>
+
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-4 space-y-12">
+    <div>
+      <h2 class="text-2xl font-bold text-primary mb-4">O que é a árvore de acessibilidade</h2>
+      <p class="text-text-muted leading-relaxed mb-3">
+        A árvore de acessibilidade é a representação estruturada que o navegador constrói a
+        partir do HTML pra expor a leitores de tela, testes automatizados e agentes de
+        software — não o código-fonte, e não a árvore de acessibilidade filtrada que a maioria
+        das ferramentas mostra (que já esconde os nós marcados como irrelevantes).
+      </p>
+      <p class="text-text-muted leading-relaxed">
+        Esta ferramenta usa <code class="text-sm bg-surface px-1.5 py-0.5 rounded">Accessibility.getFullAXTree</code>
+        via CDP — o protocolo que o Chrome DevTools usa por baixo — pra capturar a árvore
+        crua, com <code class="text-sm bg-surface px-1.5 py-0.5 rounded">ignored</code> e
+        <code class="text-sm bg-surface px-1.5 py-0.5 rounded">ignoredReasons</code> visíveis em
+        cada nó. É a mesma informação que uma auditoria séria de acessibilidade usaria.
+      </p>
+    </div>
+
+    <div>
+      <h2 class="text-2xl font-bold text-primary mb-4">Por que isso importa pra agentes de IA</h2>
+      <p class="text-text-muted leading-relaxed mb-3">
+        Agentes que navegam páginas programaticamente — pra preencher formulário, comparar
+        preço, extrair informação — tendem a usar a árvore de acessibilidade em vez de
+        interpretar pixels, porque é mais barato e mais confiável. Uma página com landmarks
+        claros, headings em ordem e nomes acessíveis em cada botão é mais fácil de operar tanto
+        por um leitor de tela quanto por um agente.
+      </p>
+      <p class="text-text-muted leading-relaxed">
+        O inverso também é verdade: <code class="text-sm bg-surface px-1.5 py-0.5 rounded">&lt;div&gt;</code>
+        genérico sem role, botão sem nome e conteúdo que só aparece depois de JavaScript rodar
+        não são só problemas de inclusão — são fricção real pra qualquer coisa que não seja um
+        humano com mouse e visão.
+      </p>
+    </div>
+
+    <div>
+      <h2 class="text-2xl font-bold text-primary mb-4">Perguntas frequentes</h2>
+      <div class="space-y-4">
+        {faq.map(({ q, a }) => (
+          <details class="border border-line bg-ink rounded-lg p-4">
+            <summary class="font-semibold text-primary cursor-pointer">{q}</summary>
+            <p class="text-text-muted text-sm leading-relaxed mt-2">{a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
   </section>
 </BaseLayout>

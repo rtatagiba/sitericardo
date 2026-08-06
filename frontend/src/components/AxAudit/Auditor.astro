@@ -90,6 +90,33 @@
         Baixar relatório .md
       </button>
     </div>
+
+    <!-- Lead opcional — o resultado acima já está completo, isso aqui é só
+         interesse em recursos futuros (multi-página, monitoramento). -->
+    <div class="border border-line bg-ink rounded-xl p-6">
+      <h2 class="font-semibold text-primary mb-1">Quer relatório de várias páginas ou monitoramento recorrente?</h2>
+      <p class="text-xs text-text-muted mb-3">
+        O resultado acima já é o relatório completo — isso é só pra avisar quando essas
+        funcionalidades (ainda não existem) estiverem prontas.
+      </p>
+      <form id="ax-lead-form" class="flex flex-col sm:flex-row gap-2">
+        <input
+          id="ax-lead-email"
+          type="email"
+          aria-label="Seu e-mail"
+          placeholder="seu@email.com"
+          class="flex-1 px-3 py-2 border border-line bg-surface rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent text-sm text-text placeholder-neutral-600"
+        />
+        <button
+          type="submit"
+          id="ax-lead-submit"
+          class="px-4 py-2 text-sm border border-accent/40 text-accent rounded-lg hover:bg-accent/10 transition-colors whitespace-nowrap"
+        >
+          Avisar quando sair
+        </button>
+      </form>
+      <p id="ax-lead-status" class="text-xs mt-2"></p>
+    </div>
   </div>
 </div>
 
@@ -125,6 +152,9 @@
   const treeEl = document.getElementById('ax-tree')!;
   const downloadJsonBtn = document.getElementById('ax-download-json') as HTMLButtonElement;
   const downloadMdBtn = document.getElementById('ax-download-md') as HTMLButtonElement;
+  const leadForm = document.getElementById('ax-lead-form') as HTMLFormElement;
+  const leadEmailInput = document.getElementById('ax-lead-email') as HTMLInputElement;
+  const leadStatus = document.getElementById('ax-lead-status')!;
 
   const STEP_LABELS: Record<string, string> = {
     'abrindo-browser': 'Abrindo o browser',
@@ -443,6 +473,38 @@
   downloadMdBtn.addEventListener('click', () => {
     if (!lastResult) return;
     downloadBlob(buildMarkdownReport(lastResult.snapshot, lastResult.findings), 'auditoria-acessibilidade.md', 'text/markdown');
+  });
+
+  leadForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = leadEmailInput.value.trim();
+    if (!email) return;
+
+    const submitLeadBtn = document.getElementById('ax-lead-submit') as HTMLButtonElement;
+    submitLeadBtn.disabled = true;
+    leadStatus.textContent = '';
+
+    try {
+      const res = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email,
+          url: lastResult?.snapshot.url,
+          interest: 'multi-pagina-ou-monitoramento',
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error ?? 'falha ao registrar');
+      leadStatus.className = 'text-xs mt-2 text-emerald-400';
+      leadStatus.textContent = 'Registrado — avisamos por e-mail quando sair.';
+      leadForm.reset();
+    } catch (err) {
+      leadStatus.className = 'text-xs mt-2 text-red-400';
+      leadStatus.textContent = err instanceof Error ? err.message : 'falha ao registrar';
+    } finally {
+      submitLeadBtn.disabled = false;
+    }
   });
 
   async function handleAudit() {
