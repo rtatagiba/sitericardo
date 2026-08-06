@@ -1,9 +1,10 @@
-import puppeteer, { type BrowserWorker } from '@cloudflare/puppeteer';
+import puppeteer, { type BrowserWorker, type HTTPRequest } from '@cloudflare/puppeteer';
 import { DIV_SOUP_PROBE, PAGE_META_PROBE } from './probes';
+import { assertUrlIsSafe, SsrfBlockedError } from './ssrf';
 import type { AxDivSoupProbe, AxPageMeta, AxSnapshot, AxSnapshotNode } from './types';
 
 const NAV_TIMEOUT_MS = 20_000;
-const DEFAULT_VIEWPORT = { width: 1280, height: 800 };
+export const DEFAULT_VIEWPORT = { width: 1280, height: 800 };
 
 export interface CaptureOptions {
   url: string;
@@ -46,6 +47,9 @@ export async function captureAx(browserBinding: BrowserWorker, options: CaptureO
   const viewport = options.viewport ?? DEFAULT_VIEWPORT;
   const javaScriptEnabled = options.javaScriptEnabled !== false;
 
+  // Valida a URL de entrada antes de gastar um lançamento de browser com ela.
+  await assertUrlIsSafe(options.url);
+
   const browser = await puppeteer.launch(browserBinding);
   try {
     const capture = async (): Promise<AxSnapshot> => {
@@ -57,9 +61,31 @@ export async function captureAx(browserBinding: BrowserWorker, options: CaptureO
         await page.setJavaScriptEnabled(false);
       }
 
+      // Revalida a cada navegação de frame principal (inclui redirects) —
+      // validar só a URL de entrada deixa passar redirect pra IP interno.
+      let blockedBy: SsrfBlockedError | undefined;
+      await page.setRequestInterception(true);
+      page.on('request', (request: HTTPRequest) => {
+        if (!request.isNavigationRequest()) {
+          request.continue();
+          return;
+        }
+        assertUrlIsSafe(request.url())
+          .then(() => request.continue())
+          .catch((err) => {
+            blockedBy = err instanceof SsrfBlockedError ? err : new SsrfBlockedError('navegação redirecionou pra destino bloqueado');
+            request.abort('blockedbyclient');
+          });
+      });
+
       const cdp = await page.createCDPSession();
       await cdp.send('Accessibility.enable');
-      await page.goto(options.url, { waitUntil: 'networkidle0', timeout: NAV_TIMEOUT_MS });
+      try {
+        await page.goto(options.url, { waitUntil: 'networkidle0', timeout: NAV_TIMEOUT_MS });
+      } catch (err) {
+        if (blockedBy) throw blockedBy;
+        throw err;
+      }
 
       const { nodes } = (await cdp.send('Accessibility.getFullAXTree')) as { nodes: RawAxNode[] };
 
