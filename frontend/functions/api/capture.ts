@@ -3,6 +3,7 @@
 // orçamento diário. Endpoint público com browser headless é proxy de
 // scraping grátis por padrão — nada disso é opcional antes de publicar.
 import type { BrowserWorker } from '@cloudflare/puppeteer';
+import { analyze } from '../../../packages/ax-core/src/analyze';
 import { buildCacheKey, getCachedSnapshot, putCachedSnapshot } from '../../src/lib/ax/cache';
 import { captureAx, DEFAULT_VIEWPORT } from '../../src/lib/ax/capture';
 import type { KVNamespaceLike } from '../../src/lib/ax/kv';
@@ -58,7 +59,7 @@ export const onRequestPost = async ({
 
   const cached = await getCachedSnapshot(env.AX_TOOL_KV, cacheKey);
   if (cached) {
-    return json(cached, 200, { 'X-Cache': 'HIT' });
+    return json({ snapshot: cached, findings: analyze(cached) }, 200, { 'X-Cache': 'HIT' });
   }
 
   try {
@@ -85,7 +86,7 @@ export const onRequestPost = async ({
   try {
     const snapshot = await captureAx(env.MYBROWSER, { url: target, javaScriptEnabled });
     await putCachedSnapshot(env.AX_TOOL_KV, cacheKey, snapshot);
-    return json(snapshot, 200, { 'X-Cache': 'MISS' });
+    return json({ snapshot, findings: analyze(snapshot) }, 200, { 'X-Cache': 'MISS' });
   } catch (err) {
     if (err instanceof SsrfBlockedError) {
       return json({ error: err.message }, 400);

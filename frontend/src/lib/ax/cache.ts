@@ -1,7 +1,7 @@
 // Fase 2.3 — cache por hash(url + modo + viewport). Duas pessoas auditando a
 // mesma home popular não devem custar duas sessões de browser.
 import type { KVNamespaceLike } from './kv';
-import type { AxSnapshot } from './types';
+import type { AxSnapshot } from '../../../../packages/ax-core/src/types';
 
 const CACHE_TTL_S = 12 * 3600; // meio do range 6-24h do plano
 

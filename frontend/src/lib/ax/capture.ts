@@ -1,7 +1,7 @@
 import puppeteer, { type BrowserWorker, type HTTPRequest } from '@cloudflare/puppeteer';
 import { DIV_SOUP_PROBE, PAGE_META_PROBE } from './probes';
 import { assertUrlIsSafe, SsrfBlockedError } from './ssrf';
-import type { AxDivSoupProbe, AxPageMeta, AxSnapshot, AxSnapshotNode } from './types';
+import type { AxDivSoupProbe, AxPageMeta, AxSnapshot, AxSnapshotNode } from '../../../../packages/ax-core/src/types';
 
 const NAV_TIMEOUT_MS = 20_000;
 export const DEFAULT_VIEWPORT = { width: 1280, height: 800 };

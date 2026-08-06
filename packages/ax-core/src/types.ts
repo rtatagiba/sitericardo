@@ -1,5 +1,6 @@
-// Schema ax-snapshot/1 — contrato entre a captura (Worker) e a análise
-// (ax-core, Fase 3). Mudar isso depois de a Fase 3 existir quebra os dois lados.
+// Contrato canônico entre captura e análise. ax-core não depende de runtime
+// nenhum (nem do Worker, nem de Node) — só desses tipos e funções puras, pra
+// poder ser consumido tanto pelo Worker quanto por uma skill local via node.
 
 export interface AxSnapshotNode {
   nodeId: string;
@@ -42,4 +43,23 @@ export interface AxSnapshot {
     pageMeta: AxPageMeta;
     divSoup: AxDivSoupProbe;
   };
+}
+
+export type Severity = 'critical' | 'serious' | 'moderate' | 'minor';
+
+export type FindingCategory = 'landmarks' | 'headings' | 'names' | 'div-soup' | 'links' | 'forms' | 'noise';
+
+export interface Finding {
+  id: string;
+  severity: Severity;
+  category: FindingCategory;
+  message: string;
+}
+
+export interface AxFindings {
+  schema: 'ax-findings/1';
+  url: string;
+  score: number;
+  band: string;
+  findings: Finding[];
 }
