@@ -1,20 +1,18 @@
-# Config só pra `wrangler pages dev` local (bindings das Pages Functions).
-# O deploy em produção é via integração Git do Cloudflare Pages — o binding
-# MYBROWSER e o KV AX_TOOL_KV também precisam ser adicionados manualmente no
-# dashboard: Pages project → Settings → Functions → Bindings.
-# account_id aqui é só a conta usada pra testar Browser Rendering localmente
-# (mesma do ax-spike) — não precisa ser a conta que hospeda o Pages de produção.
+# Config lida tanto pelo build de produção do Cloudflare Pages quanto por
+# `wrangler pages dev` local. Campos como account_id e remote (usados só pra
+# apontar `wrangler pages dev` pra recursos remotos durante teste local) NÃO
+# são aceitos aqui pelo validador de config do Pages — ficam só no comando
+# local, veja CLAUDE.md. O binding MYBROWSER e o KV AX_TOOL_KV de produção
+# precisam ser adicionados manualmente no dashboard: Pages project →
+# Settings → Functions → Bindings.
 name = "sitericardo-frontend"
-account_id = "8c908063ae111ab2da3236363710ff35"
 pages_build_output_dir = "dist"
 compatibility_date = "2026-08-06"
 compatibility_flags = ["nodejs_compat"]
 
 [browser]
 binding = "MYBROWSER"
-remote = true
 
 [[kv_namespaces]]
 binding = "AX_TOOL_KV"
 id = "8fe76921e8e74281956febf322f0f42b"
-remote = true

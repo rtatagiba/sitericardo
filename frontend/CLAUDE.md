@@ -76,12 +76,24 @@ Pages Functions** — `/api/capture` vai dar 404 nele. Pra testar de verdade:
 
 ```
 npm run build
-npx wrangler pages dev
+npx wrangler pages dev dist
 ```
 
-Isso sobe em `http://127.0.0.1:8788` (não 4321) com o browser remoto real conectado. Os
-bindings de produção (`MYBROWSER`, `AX_TOOL_KV`) ainda precisam ser configurados manualmente
-no dashboard do Cloudflare Pages — deploy é via integração Git, não `wrangler deploy`.
+Isso sobe em `http://127.0.0.1:8788` (não 4321), mas com bindings **locais** (KV emulado em
+disco, browser sem emulação real — a captura vai crashar). `wrangler pages dev` não aceita
+`--remote` nem `--account-id` como flags, e também não aceita `-c`/`--config` pra apontar outro
+arquivo de config (erro visto: `Pages does not support custom paths for the Wrangler
+configuration file`) — então não dá pra manter um `wrangler.toml` separado só pra teste local
+com bindings remotos.
+
+Pra testar a captura de verdade (browser remoto real), edite `wrangler.toml` **temporariamente**,
+adicionando `account_id = "8c908063ae111ab2da3236363710ff35"` no topo e `remote = true` dentro
+dos blocos `[browser]` e `[[kv_namespaces]]`, rode `wrangler pages dev dist`, e **reverta antes
+de commitar** — o build de produção do Cloudflare Pages rejeita esses campos (erros vistos:
+`Configuration file for Pages projects does not support "account_id"` e `Unexpected fields
+found ...: "remote"`). Os bindings de produção (`MYBROWSER`, `AX_TOOL_KV`) ainda precisam ser
+configurados manualmente no dashboard do Cloudflare Pages — deploy é via integração Git, não
+`wrangler deploy`.
 
 ## WhatTheyAsk (`/ferramentas/whattheyask`)
 
