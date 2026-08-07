@@ -12,7 +12,6 @@ keyword_principal: "graphify"
 date: 2026-07-22
 image: "/images/capas/graphify-como-economizar-tokens-ao-usar-ia.webp"
 category: "Ferramentas de IA"
-author: Editorial
 draft: true
 ---
 

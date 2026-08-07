@@ -2,7 +2,6 @@
 pubDate: 2026-07-20T12:00:00.000Z
 date: 2026-07-20
 updatedDate: 2026-07-20T12:00:00.000Z
-author: Editorial
 draft: false
 title: "Como aparecer no ChatGPT: guia AEO/GEO para sites e empresas"
 titulos_alternativos:

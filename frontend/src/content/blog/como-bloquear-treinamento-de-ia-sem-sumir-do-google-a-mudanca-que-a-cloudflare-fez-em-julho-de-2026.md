@@ -2,7 +2,6 @@
 pubDate: 2026-07-08T17:33:59.422Z
 date: 2026-07-08
 updatedDate: 2026-07-08T18:40:37.084Z
-author: Editorial
 draft: false
 title: Como bloquear treinamento de IA sem sumir do Google (a mudança que a Cloudflare fez em julho de 2026)
 description: "A Cloudflare separou bots de IA em três categorias: busca, agente e treinamento. A partir de 15 de setembro de 2026, todo domínio novo criado na plataforma nasce com treinamento e agente bloqueados por padrão"

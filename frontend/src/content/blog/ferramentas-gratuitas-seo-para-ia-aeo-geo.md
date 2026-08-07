@@ -2,7 +2,6 @@
 pubDate: 2026-07-22T12:00:00.000Z
 date: 2026-07-22
 updatedDate: 2026-07-22T12:00:00.000Z
-author: Editorial
 draft: false
 title: "Top 10 ferramentas gratuitas de SEO para IA (AEO/GEO): o guia definitivo"
 titulos_alternativos:

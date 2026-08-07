@@ -2,7 +2,6 @@
 pubDate: 2026-07-20T13:00:00.000Z
 date: 2026-07-20
 updatedDate: 2026-07-20T13:00:00.000Z
-author: Editorial
 draft: false
 title: "Autoridade tópica: como estruturar clusters de conteúdo que Google e IA reconhecem"
 titulos_alternativos:

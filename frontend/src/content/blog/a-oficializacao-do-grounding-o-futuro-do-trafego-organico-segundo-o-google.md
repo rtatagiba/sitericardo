@@ -1,7 +1,6 @@
 ---
 pubDate: 2026-06-29T14:29:46.461Z
 updatedDate: 2026-06-29T15:25:09.931Z
-author: Editorial
 draft: false
 title: "A Oficialização do Grounding: O Futuro do Tráfego Orgânico Segundo o Google"
 description: O E-E-A-T do site e do redator passam a ter peso inegociável. Entramos definitivamente na era das entidades.
