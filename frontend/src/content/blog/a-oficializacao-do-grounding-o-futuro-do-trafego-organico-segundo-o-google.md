@@ -1,6 +1,6 @@
 ---
 pubDate: 2026-06-29T14:29:46.461Z
-updatedDate: 2026-06-29T15:25:09.931Z
+updatedDate: 2026-08-07T00:00:00.000Z
 draft: false
 title: "A Oficialização do Grounding: O Futuro do Tráfego Orgânico Segundo o Google"
 description: O E-E-A-T do site e do redator passam a ter peso inegociável. Entramos definitivamente na era das entidades.
@@ -9,7 +9,7 @@ image: "/images/capas/a-oficializacao-do-grounding-o-futuro-do-trafego-organico-
 tags: []
 ---
 
-O recente relatório **"A Pragmatic Approach to AI Governance in America"**, publicado pelo Google em junho de 2026, não é apenas um documento de política pública. Para quem trabalha com conteúdo digital, SEO e posicionamento de marca, é um roteiro de como o Generative Engine Optimization (GEO) vai operar daqui para a frente.
+O recente relatório [**"A Pragmatic Approach to AI Governance in America"**](https://static.googleusercontent.com/media/publicpolicy.google/en//resources/a-pragmatic-approach-to-ai-governance-in-america.pdf), publicado pelo Google em junho de 2026, não é apenas um documento de política pública. Para quem trabalha com conteúdo digital, SEO e posicionamento de marca, é um roteiro de como o Generative Engine Optimization (GEO) vai operar daqui para a frente.
 
 Mas antes de mergulharmos nas implicações práticas, vamos entender o que o documento diz, em linguagem simples.
 
@@ -67,6 +67,26 @@ Isso representa uma mudança fundamental na lógica da otimização:
 | Ranquear páginas | Ser citado em respostas |
 | Atrair cliques | Ser a fonte que a IA usa |
 | Aparecer em SERPs | Ancorar respostas generativas |
+
+Os números já confirmam essa virada, e vêm de quem mede o mercado de perto:
+
+-   Um estudo do [Pew Research Center](https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/) com 900 usuários americanos mostrou que a taxa de cliques cai de **15% para 8%** quando o Google exibe uma AI Overview,e apenas **1%** dos usuários clica em algum link dentro do próprio resumo.
+
+![Gráfico do Pew Research Center mostrando que usuários clicam menos em links quando o Google exibe uma AI Overview: 8% contra 15% sem o resumo de IA](/images/a-oficializacao-do-grounding-o-futuro-do-trafego-organico-segundo-o-google/pew-ctr-ai-overviews.webp)
+*Fonte: [Pew Research Center, julho de 2025](https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/)*
+
+-   A [Ahrefs](https://ahrefs.com/blog/ai-overviews-reduce-clicks-update) analisou 300 mil palavras-chave e encontrou uma queda de **58% no CTR da posição 1** quando há AI Overview,uma piora em relação aos 34,5% medidos em abril de 2025. Em números absolutos, o CTR médio dessas buscas caiu de 7,3% para 1,6% em menos de dois anos.
+
+![Gráfico da Ahrefs mostrando a queda do CTR da posição 1 em palavras-chave com AI Overview: de 0,073 em dezembro de 2023 para 0,016 em dezembro de 2025](/images/a-oficializacao-do-grounding-o-futuro-do-trafego-organico-segundo-o-google/ahrefs-ctr-queda-ai-overviews.webp)
+*Fonte: [Ahrefs, dezembro de 2025](https://ahrefs.com/blog/ai-overviews-reduce-clicks-update)*
+
+-   Segundo a [BrightEdge](https://www.brightedge.com/news/press-releases/one-year-google-ai-overviews-brightedge-data-reveals-google-search-usage), as AI Overviews já aparecem em cerca de **48% das buscas rastreadas**,um crescimento de 58% ano a ano.
+-   Do outro lado da equação, um estudo da [SE Ranking](https://seranking.com/blog/ai-traffic-research-study/) com mais de 100 mil sites mostrou o tráfego de referência vindo de motores de IA generativa a saltar de 0,02% (2024) para 0,32% (2026) do total de visitas,um crescimento de **16 vezes**.
+
+![Gráfico mostrando que o tráfego de sites vindo de motores de IA cresceu 16 vezes entre 2024 e 2026, saltando de 0,02% para 0,32% do total de visitas](/images/a-oficializacao-do-grounding-o-futuro-do-trafego-organico-segundo-o-google/seranking-crescimento-trafego-ia.webp)
+*Fonte: [SE Ranking, AI Traffic Research 2026](https://seranking.com/blog/ai-traffic-research-study/)*
+
+O padrão é claro: o clique no link azul está a desaparecer,e o volume está a migrar para quem consegue ser a fonte citada dentro da resposta.
 
 * * *
 
