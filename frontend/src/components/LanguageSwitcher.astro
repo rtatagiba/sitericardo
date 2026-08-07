@@ -1,0 +1,58 @@
+---
+import { locales, defaultLocale, type Locale } from '../i18n/ui';
+import { routes, type RouteKey } from '../i18n/routes';
+import { getDictionary } from '../i18n/translations';
+
+interface Props {
+  lang?: Locale;
+  routeKey?: RouteKey;
+}
+
+const { lang = defaultLocale, routeKey } = Astro.props;
+const label = getDictionary(lang).languageSwitcher.label;
+
+const options = locales.map((locale) => ({
+  locale,
+  href: routeKey ? routes[routeKey][locale] : routes.home[locale],
+}));
+---
+
+<ul class="lang-switcher" aria-label={label}>
+  {options.map(({ locale, href }) => (
+    <li>
+      <a
+        href={href}
+        aria-current={locale === lang ? 'page' : undefined}
+        class={`lang-switcher-link ${locale === lang ? 'is-active' : ''}`}
+      >
+        {locale.toUpperCase()}
+      </a>
+    </li>
+  ))}
+</ul>
+
+<style>
+  .lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-family-mono);
+    font-size: 0.7rem;
+  }
+
+  .lang-switcher-link {
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    transition: color 150ms ease;
+  }
+
+  .lang-switcher-link:hover {
+    color: var(--color-text);
+  }
+
+  .lang-switcher-link.is-active {
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+</style>

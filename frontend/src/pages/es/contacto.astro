@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactContent from '../../components/pages/ContactContent.astro';
+import { getDictionary } from '../../i18n/translations';
+
+const lang = 'es' as const;
+const t = getDictionary(lang).contact.meta;
+---
+
+<BaseLayout title={t.title} description={t.description} lang={lang} routeKey="contact">
+  <ContactContent lang={lang} />
+</BaseLayout>

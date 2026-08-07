@@ -3,6 +3,8 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_URL, SITE_NAME, SITE_DESCRIPTION, DEFAULT_OG_IMAGE, absoluteUrl } from '../lib/seo/site';
 import { buildGraph, type BreadcrumbItem } from '../lib/seo/schema';
+import { htmlLang, ogLocale, defaultLocale, locales, type Locale } from '../i18n/ui';
+import { routes, type RouteKey } from '../i18n/routes';
 import '../styles/global.css';
 import '../styles/worlds.css';
 
@@ -20,6 +22,10 @@ interface Props {
   noindex?: boolean;
   /** URL of a markdown alternate of this page, if one exists. */
   markdownUrl?: string;
+  /** Current page locale. Defaults to Portuguese. */
+  lang?: Locale;
+  /** Set only on pages that have a translated counterpart in every locale — drives hreflang. */
+  routeKey?: RouteKey;
 }
 
 const {
@@ -35,6 +41,8 @@ const {
   breadcrumbs,
   noindex = false,
   markdownUrl,
+  lang = defaultLocale,
+  routeKey,
 } = Astro.props;
 
 // Canonical derived from site origin, tracking params never included
@@ -57,11 +65,22 @@ const jsonLd = buildGraph({
   updatedDate,
   tags,
   breadcrumbs,
+  inLanguage: htmlLang[lang],
 });
+
+const alternateLinks = routeKey
+  ? [
+      ...locales.map((locale) => ({
+        hreflang: htmlLang[locale],
+        href: absoluteUrl(routes[routeKey][locale]),
+      })),
+      { hreflang: 'x-default', href: absoluteUrl(routes[routeKey][defaultLocale]) },
+    ]
+  : [];
 ---
 
 <!doctype html>
-<html lang="pt-BR">
+<html lang={htmlLang[lang]}>
   <head>
   <!-- Google Tag Manager -->
   <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -72,8 +91,24 @@ const jsonLd = buildGraph({
 <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#14171a" />
+    <meta name="msapplication-TileColor" content="#14171a" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
     <meta name="generator" content={Astro.generator} />
 
     <title>{fullTitle}</title>
@@ -90,7 +125,7 @@ const jsonLd = buildGraph({
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="675" />
     {imageAlt && <meta property="og:image:alt" content={imageAlt} />}
-    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:locale" content={ogLocale[lang]} />
     <meta property="og:site_name" content={SITE_NAME} />
 
     {type === 'article' && publishDate && (
@@ -112,6 +147,9 @@ const jsonLd = buildGraph({
       href={new URL('/rss.xml', SITE_URL).href}
     />
     {markdownUrl && <link rel="alternate" type="text/markdown" href={markdownUrl} />}
+    {alternateLinks.map((alt) => (
+      <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
+    ))}
 
     <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
@@ -127,10 +165,10 @@ const jsonLd = buildGraph({
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WGMRLNKZ"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-    <Navbar />
+    <Navbar lang={lang} routeKey={routeKey} />
     <main>
       <slot />
     </main>
-    <Footer />
+    <Footer lang={lang} />
   </body>
 </html>

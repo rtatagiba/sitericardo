@@ -14,33 +14,33 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <section id="auth" class="hidden mb-8 rounded-lg border border-amber-400/50 bg-amber-50 dark:bg-amber-950/30 p-4">
       <label for="api-key" class="block font-medium mb-2">Chave de API</label>
       <div class="flex gap-2">
-        <input type="password" id="api-key" class="flex-1 rounded border px-3 py-2 bg-white dark:bg-neutral-900" placeholder="Cole a chave secreta" />
-        <button id="save-key" class="rounded bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 px-4 py-2 font-medium">Entrar</button>
+        <input type="password" id="api-key" class="flex-1 rounded border px-3 py-2 bg-white dark:bg-surface" placeholder="Cole a chave secreta" />
+        <button id="save-key" class="rounded bg-surface text-white dark:bg-white dark:text-neutral-900 px-4 py-2 font-medium">Entrar</button>
       </div>
     </section>
 
     <form id="post-form" class="space-y-5">
       <div>
         <label for="title" class="block font-medium mb-1">Título *</label>
-        <input type="text" id="title" required class="w-full rounded border px-3 py-2 bg-white dark:bg-neutral-900" />
+        <input type="text" id="title" required class="w-full rounded border px-3 py-2 bg-white dark:bg-surface" />
       </div>
       <div>
         <label for="slug" class="block font-medium mb-1">Slug (URL)</label>
-        <input type="text" id="slug" class="w-full rounded border px-3 py-2 bg-white dark:bg-neutral-900 font-mono text-sm" placeholder="gerado-a-partir-do-titulo" />
+        <input type="text" id="slug" class="w-full rounded border px-3 py-2 bg-white dark:bg-surface font-mono text-sm" placeholder="gerado-a-partir-do-titulo" />
       </div>
       <div>
         <label for="description" class="block font-medium mb-1">Descrição (SEO) *</label>
-        <textarea id="description" required rows="2" class="w-full rounded border px-3 py-2 bg-white dark:bg-neutral-900"></textarea>
+        <textarea id="description" required rows="2" class="w-full rounded border px-3 py-2 bg-white dark:bg-surface"></textarea>
       </div>
       <div class="grid gap-5 sm:grid-cols-2">
         <div>
           <label for="date" class="block font-medium mb-1">Data</label>
-          <input type="date" id="date" class="w-full rounded border px-3 py-2 bg-white dark:bg-neutral-900" />
+          <input type="date" id="date" class="w-full rounded border px-3 py-2 bg-white dark:bg-surface" />
         </div>
         <div>
           <label for="image" class="block font-medium mb-1">Imagem de destaque (opcional)</label>
           <div class="flex gap-2">
-            <input type="text" id="image" class="flex-1 rounded border px-3 py-2 bg-white dark:bg-neutral-900 font-mono text-sm" placeholder="/images/exemplo.webp" />
+            <input type="text" id="image" class="flex-1 rounded border px-3 py-2 bg-white dark:bg-surface font-mono text-sm" placeholder="/images/exemplo.webp" />
             <button type="button" id="pick-image" class="shrink-0 rounded border px-3 py-2 text-sm font-medium">Subir…</button>
           </div>
           <input type="file" id="image-file" accept="image/*" class="hidden" />
@@ -50,7 +50,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       </div>
       <div>
         <label class="block font-medium mb-1">Conteúdo *</label>
-        <div id="content-editor" class="rounded border bg-white dark:bg-neutral-900"></div>
+        <div id="content-editor" class="rounded border bg-white dark:bg-surface"></div>
         <p class="mt-1 text-xs opacity-60">
           Use a barra de ferramentas para formatar, inserir links, tabelas e imagens (a imagem também pode ser
           colada ou arrastada para o editor). O botão "Markdown" no rodapé alterna para edição em código.

@@ -2,6 +2,8 @@
 dist/
 # generated types
 .astro/
+# astro-related-content cache (embeddings, regenerated on build)
+.astro-related-content/
 
 # dependencies
 node_modules/

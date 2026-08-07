@@ -5,7 +5,7 @@ function suggest(query: string, lang: string): Promise<string[]> {
     const cbName = `__wta_${Date.now()}_${Math.random().toString(36).slice(2)}`;
 
     const cleanup = () => {
-      delete (window as Record<string, unknown>)[cbName];
+      delete (window as unknown as Record<string, unknown>)[cbName];
       script.remove();
     };
 
@@ -14,7 +14,7 @@ function suggest(query: string, lang: string): Promise<string[]> {
       resolve([]);
     }, 3000);
 
-    (window as Record<string, unknown>)[cbName] = (data: unknown[]) => {
+    (window as unknown as Record<string, unknown>)[cbName] = (data: unknown[]) => {
       clearTimeout(timeout);
       cleanup();
       try {

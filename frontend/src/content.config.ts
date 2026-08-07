@@ -11,6 +11,9 @@ const blog = defineCollection({
     updatedDate: z.coerce.date().optional(),
     author: z.string().optional(),
     image: z.string().optional(),
+    // Legenda e crédito da imagem de topo, sobrepostos ao rodapé dela.
+    imageCaption: z.string().optional(),
+    imageCredit: z.string().optional(),
     category: z.string().optional(),
     tags: z.array(z.string()).optional(),
     draft: z.boolean().optional(),
