@@ -1,0 +1,190 @@
+---
+import HeroServices from '../sections/HeroServices.astro';
+import { defaultLocale, type Locale } from '../../i18n/ui';
+import { routes } from '../../i18n/routes';
+import { getDictionary } from '../../i18n/translations';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  lang?: Locale;
+  posts: CollectionEntry<'blog'>[];
+}
+
+const { lang = defaultLocale, posts } = Astro.props;
+const t = getDictionary(lang).home;
+---
+
+<HeroServices lang={lang} />
+
+<!-- Sobre mim -->
+<section class="py-24 px-4 border-t border-line">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-start">
+    <div>
+      <p class="font-mono text-sm text-accent mb-3">{t.about.eyebrow}</p>
+      <h2 class="font-display text-4xl md:text-5xl font-semibold text-primary mb-6 leading-tight">
+        {t.about.title}
+      </h2>
+      <div class="space-y-5 text-text-muted text-lg leading-relaxed max-w-xl">
+        {t.about.paragraphs.map((p) => <p>{p}</p>)}
+      </div>
+      <a
+        href={routes.about[lang]}
+        class="inline-flex items-center gap-2 mt-8 font-semibold text-accent hover:text-accent-dark transition-colors"
+      >
+        {t.about.link} <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <dl class="grid grid-cols-2 gap-6">
+      {t.about.stats.map((item) => (
+        <div class="border border-line rounded-lg p-6 bg-surface">
+          <dd class="font-display text-3xl font-semibold text-accent mb-2">
+            {item.value}
+          </dd>
+          <dt class="font-mono text-xs text-text-muted uppercase tracking-wide leading-relaxed">
+            {item.label}
+          </dt>
+        </div>
+      ))}
+    </dl>
+  </div>
+</section>
+
+<!-- Perguntas sobre consultoria de SEO -->
+<section class="py-24 px-4 border-t border-line">
+  <div class="max-w-6xl mx-auto space-y-20 md:space-y-28">
+    <div>
+      <p class="font-mono text-sm text-accent mb-3">{t.faq.eyebrow}</p>
+      <h2 class="font-display text-4xl md:text-5xl font-semibold text-primary mb-16 leading-tight max-w-2xl">
+        {t.faq.title}
+      </h2>
+
+      <!-- Bloco 1: título ao lado do texto, sem foto -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+        <h3 class="font-display text-2xl md:text-3xl font-semibold text-primary leading-snug">
+          {t.faq.q1.question}
+        </h3>
+        <div class="space-y-4 text-text-muted text-lg leading-relaxed">
+          {t.faq.q1.paragraphs.map((p) => <p>{p}</p>)}
+        </div>
+      </div>
+    </div>
+
+    <!-- Bloco 2: foto ao lado do texto -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <img
+        src="/images/faq/o-que-um-consultor-faz.webp"
+        alt=""
+        class="w-full h-auto rounded-lg border border-line order-1"
+        loading="lazy"
+      />
+      <div class="order-2">
+        <h3 class="font-display text-2xl md:text-3xl font-semibold text-primary mb-4 leading-snug">
+          {t.faq.q2.question}
+        </h3>
+        <div class="space-y-4 text-text-muted text-lg leading-relaxed">
+          {t.faq.q2.paragraphs.map((p) => <p>{p}</p>)}
+        </div>
+      </div>
+    </div>
+
+    <!-- Bloco 3: título em cima, dois textos lado a lado, sem foto -->
+    <div>
+      <h3 class="font-display text-2xl md:text-3xl font-semibold text-primary mb-8 leading-snug max-w-2xl">
+        {t.faq.q3.question}
+      </h3>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+        <div>
+          <p class="font-mono text-sm text-accent mb-3">{t.faq.q3.subA.heading}</p>
+          <div class="space-y-4 text-text-muted text-lg leading-relaxed">
+            {t.faq.q3.subA.paragraphs.map((p) => <p>{p}</p>)}
+          </div>
+        </div>
+        <div>
+          <p class="font-mono text-sm text-accent mb-3">{t.faq.q3.subB.heading}</p>
+          <div class="space-y-4 text-text-muted text-lg leading-relaxed">
+            {t.faq.q3.subB.paragraphs.map((p) => <p>{p}</p>)}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Blog recente -->
+{
+  posts.length > 0 && (
+    <section class="py-24 px-4">
+      <div class="max-w-6xl mx-auto">
+        <p class="font-mono text-sm text-accent mb-3">{t.blogTeaser.eyebrow}</p>
+        <h2 class="font-display text-4xl md:text-5xl font-semibold text-primary mb-4 leading-tight">
+          {t.blogTeaser.title}
+        </h2>
+        <p class="text-text-muted mb-14 max-w-xl">
+          {t.blogTeaser.subtitle}
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {posts.map((post: CollectionEntry<'blog'>) => (
+            <article class="border border-line rounded-lg overflow-hidden hover:border-accent transition-colors">
+              {post.data.image && (
+                <img
+                  src={post.data.image}
+                  alt={post.data.title}
+                  class="w-full h-48 object-cover"
+                  loading="lazy"
+                />
+              )}
+              <div class="p-6">
+                <time class="font-mono text-xs text-text-muted mb-2 block">
+                  {(post.data.date ?? post.data.pubDate ?? new Date(0)).toLocaleDateString('pt-BR', {
+                    day: '2-digit',
+                    month: 'long',
+                    year: 'numeric',
+                  })}
+                </time>
+                <h3 class="font-display font-semibold text-xl mb-2 text-primary leading-snug">
+                  <a
+                    href={`/blog/${post.id}`}
+                    class="hover:text-accent transition-colors"
+                  >
+                    {post.data.title}
+                  </a>
+                </h3>
+                <p class="text-text-muted text-sm leading-relaxed line-clamp-3">
+                  {post.data.description}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div class="mt-12">
+          <a
+            href="/blog"
+            class="inline-flex items-center gap-2 bg-accent text-ink font-semibold px-8 py-3.5 rounded-md hover:bg-accent-dark transition-colors"
+          >
+            {t.blogTeaser.viewAll} <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+<!-- CTA -->
+<section class="py-24 px-4">
+  <div class="max-w-4xl mx-auto border border-line rounded-lg px-8 py-16 md:py-20 bg-surface">
+    <p class="font-mono text-sm text-accent mb-3">{t.cta.eyebrow}</p>
+    <h2 class="font-display text-4xl md:text-5xl font-semibold text-primary mb-5 leading-tight max-w-2xl">
+      {t.cta.title}
+    </h2>
+    <p class="text-text-muted mb-10 max-w-xl text-lg">
+      {t.cta.subtitle}
+    </p>
+    <a
+      href={routes.contact[lang]}
+      class="inline-flex items-center gap-2 bg-accent text-ink font-semibold px-10 py-4 rounded-md hover:bg-accent-dark transition-colors"
+    >
+      {t.cta.link} <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</section>

@@ -1,11 +1,11 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import HomeContent from '../components/pages/HomeContent.astro';
-import { getDictionary } from '../i18n/translations';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HomeContent from '../../components/pages/HomeContent.astro';
+import { getDictionary } from '../../i18n/translations';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 
-const lang = 'pt' as const;
+const lang = 'es' as const;
 const t = getDictionary(lang).home.meta;
 
 const posts = (await getCollection('blog'))

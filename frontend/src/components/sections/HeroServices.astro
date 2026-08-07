@@ -1,12 +1,22 @@
 ---
 // Hero da home: ficha técnica do consultor (esquerda) + visual que troca
 // conforme o serviço escolhido (direita).
-import { services, defaultServiceId, type ServiceId } from "../../data/services";
+import { getServices, defaultServiceId, type ServiceId } from "../../data/services";
 import { bookingUrl } from "../../lib/booking";
+import { defaultLocale, type Locale } from "../../i18n/ui";
+import { getDictionary } from "../../i18n/translations";
 import SiteVisual from "./hero-visuals/SiteVisual.astro";
 import AiVisual from "./hero-visuals/AiVisual.astro";
 import SeoVisual from "./hero-visuals/SeoVisual.astro";
 import AuditoriaVisual from "./hero-visuals/AuditoriaVisual.astro";
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = defaultLocale } = Astro.props;
+const t = getDictionary(lang).home.hero;
+const services = getServices(lang);
 
 const visualComponents: Record<ServiceId, any> = {
   sites: SiteVisual,
@@ -16,25 +26,19 @@ const visualComponents: Record<ServiceId, any> = {
 };
 
 const defaultService = services.find((s) => s.id === defaultServiceId)!;
-
-const stats = [
-  { value: "300+", label: "Sites entregues" },
-  { value: "12+", label: "Anos de experiência" },
-  { value: "5", label: "Frentes integradas" },
-];
+const stats = t.stats;
 ---
 
 <section class="hero-doc" aria-labelledby="hero-doc-title">
   <div class="hero-doc-inner">
     <div class="doc-panel">
-      <p class="doc-eyebrow">// O que faço</p>
+      <p class="doc-eyebrow">{t.eyebrow}</p>
 
       <h1 id="hero-doc-title" class="doc-title">
-        Seja a marca que seus clientes encontram primeiro
+        {t.title}
       </h1>
       <p class="doc-sub">
-        Consultor de SEO, 12 anos de experiência, ajudando empresas a
-        ranquear no Google e nas IAs.
+        {t.subtitle}
       </p>
 
       <dl class="doc-stats">
@@ -48,7 +52,7 @@ const stats = [
         }
       </dl>
 
-      <p id="doc-index-label" class="doc-index-label">O que gostarias de fazer?</p>
+      <p id="doc-index-label" class="doc-index-label">{t.pillLabel}</p>
       <div class="pill-tabs" role="radiogroup" aria-labelledby="doc-index-label">
         {
           services.map((service, i) => {
@@ -74,12 +78,13 @@ const stats = [
 
       <a
         id="hero-cta"
-        href={bookingUrl(defaultService.label)}
+        href={bookingUrl(defaultService.label, lang)}
+        data-lang={lang}
         target="_blank"
         rel="noopener noreferrer"
         class="doc-cta"
       >
-        Agendar reunião <span aria-hidden="true">→</span>
+        {t.cta} <span aria-hidden="true">→</span>
       </a>
     </div>
 
@@ -472,6 +477,7 @@ const stats = [
 
 <script>
   import { bookingUrl } from "../../lib/booking";
+  import type { Locale } from "../../i18n/ui";
 
   // Componente é único na página (hero da home), por isso consulta o documento inteiro.
   const radios = Array.from(
@@ -481,6 +487,7 @@ const stats = [
     document.querySelectorAll<HTMLElement>("[data-panel]"),
   );
   const cta = document.querySelector<HTMLAnchorElement>("#hero-cta");
+  const lang = (cta?.dataset.lang as Locale | undefined) ?? "pt";
 
   declare global {
     interface Window {
@@ -506,7 +513,7 @@ const stats = [
       p.hidden = p.dataset.panel !== id;
     });
 
-    if (cta) cta.href = bookingUrl(labelFor(id));
+    if (cta) cta.href = bookingUrl(labelFor(id), lang);
 
     window.dataLayer = window.dataLayer ?? [];
     window.dataLayer.push({ event: "hero_service_select", service_id: id });
