@@ -611,6 +611,60 @@
   color: inherit;
 }
 
+/* ── Tabelas ──────────────────────────────────────────── */
+
+/* `display: block` no próprio <table> (em vez de um wrapper) já basta para
+   o scroll horizontal no mobile — thead/tbody/tr/td mantêm o layout de
+   tabela via caixa anónima gerada pelo motor de CSS. */
+.post-body .prose table {
+  display: block;
+  max-width: 100%;
+  margin: 2rem 0;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.post-body .prose thead {
+  border-bottom: 2px solid var(--color-accent);
+}
+
+.post-body .prose th {
+  padding: 0 1.25rem 0.75rem 0;
+  font-family: var(--font-family-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  text-align: left;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.post-body .prose td {
+  padding: 0.9rem 1.25rem 0.9rem 0;
+  border-bottom: 1px solid var(--color-line);
+  color: var(--color-text);
+  vertical-align: top;
+}
+
+.post-body .prose tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.post-body .prose tbody tr:hover td {
+  background-color: rgba(239, 234, 224, 0.035);
+}
+
+.post-body .prose :is(th, td):first-child {
+  padding-left: 0;
+}
+
+.post-body .prose :is(th, td):last-child {
+  padding-right: 0;
+}
+
 /* ── Relacionados e rodapé do artigo ──────────────────── */
 
 .post-footer {
