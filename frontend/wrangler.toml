@@ -1,13 +1,20 @@
 # Config lida tanto pelo build de produção do Cloudflare Pages quanto por
-# `wrangler pages dev` local. Os bindings MYBROWSER (Browser Rendering) e
-# AX_TOOL_KV (KV) NÃO são declarados aqui de propósito: o build de produção
-# do Pages resolve o id de kv_namespaces contra a conta que hospeda o
-# projeto, e essa conta é diferente da usada pra testar localmente — um id
-# fixo aqui quebra o deploy ("KV namespace 'xxx' not found"). Os bindings de
-# produção são configurados manualmente no dashboard do projeto Pages:
-# Settings → Functions → Bindings (mesmo lugar onde já existe o SITE_KV).
-# Pra testar local com bindings remotos reais, veja a seção abaixo.
+# `wrangler pages dev` local. O Pages sincroniza os bindings de Functions a
+# partir deste arquivo a cada build — bindings setados só pelo dashboard são
+# sobrescritos (apagados) no próximo deploy, porque o build re-sincroniza a
+# partir daqui. Por isso MYBROWSER e AX_TOOL_KV precisam estar declarados
+# aqui, com o id do KV da MESMA conta que hospeda o projeto Pages
+# (a301ff29a1dd05180bcb64a36494d77a) — um id de outra conta quebra o deploy
+# ("KV namespace 'xxx' not found"), como já aconteceu ao testar com o id da
+# conta de teste local.
 name = "sitericardo-frontend"
 pages_build_output_dir = "dist"
 compatibility_date = "2026-08-06"
 compatibility_flags = ["nodejs_compat"]
+
+[browser]
+binding = "MYBROWSER"
+
+[[kv_namespaces]]
+binding = "AX_TOOL_KV"
+id = "bcb7fab9795d4ee3a5af01cad24a6f94"

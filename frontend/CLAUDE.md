@@ -86,8 +86,21 @@ arquivo de config (erro visto: `Pages does not support custom paths for the Wran
 configuration file`) — então não dá pra manter um `wrangler.toml` separado só pra teste local
 com bindings remotos.
 
-Pra testar a captura de verdade (browser remoto real), edite `wrangler.toml` **temporariamente**,
-adicionando:
+`MYBROWSER` e `AX_TOOL_KV` **são declarados no `wrangler.toml` versionado** (não só no dashboard):
+o build de produção do Cloudflare Pages sincroniza os bindings de Functions a partir deste
+arquivo a cada deploy — bindings configurados só pelo dashboard (Settings → Functions →
+Bindings) são **apagados** no próximo build, porque a sincronização parte do `wrangler.toml` e
+não sabe deles. Isso já causou um 500 em produção (bug real: dashboard mostrava os bindings como
+"ativos", mas a API do Cloudflare confirmava que `deployment_configs.production` não tinha
+`kv_namespaces`/`browsers` nenhum — o rebuild seguinte tinha apagado o que fora salvo manualmente).
+
+O id do KV em `wrangler.toml` precisa ser da **mesma conta que hospeda o projeto Pages**
+(`a301ff29a1dd05180bcb64a36494d77a`, namespace `ax-tool-kv` = `bcb7fab9795d4ee3a5af01cad24a6f94`) —
+um id de outra conta quebra o deploy (`KV namespace 'xxx' not found`, já visto ao usar por engano
+o id da conta de teste local).
+
+Pra testar local com bindings **remotos** de verdade (a conta de teste, não a de produção), edite
+`wrangler.toml` **temporariamente** trocando o id e adicionando `remote = true` e `account_id`:
 
 ```toml
 account_id = "8c908063ae111ab2da3236363710ff35"
@@ -102,15 +115,12 @@ id = "8fe76921e8e74281956febf322f0f42b"
 remote = true
 ```
 
-(`account_id` e o id do KV são da conta de teste, não da conta de produção — servem só pra rodar
-`Accessibility.getFullAXTree` local de verdade.) Rode `wrangler pages dev dist`, e **reverta antes
-de commitar**: o build de produção do Cloudflare Pages não só rejeita `account_id`/`remote` como
-campos desconhecidos, como também tenta resolver o `id` do KV contra a conta que hospeda o
-projeto — um id de outra conta quebra o deploy (`KV namespace 'xxx' not found`). Por isso
-`MYBROWSER` e `AX_TOOL_KV` não ficam declarados no `wrangler.toml` versionado: são configurados
-manualmente no dashboard do projeto Pages (Settings → Functions → Bindings — mesmo lugar onde já
-existe o `SITE_KV`), não pelo `wrangler pages dev`/`--remote`/`--config`, que não existem como
-flags nessa versão do wrangler.
+Rode `wrangler pages dev dist`, e **reverta antes de commitar**: `account_id`/`remote` são campos
+desconhecidos pro build de produção do Pages, e o id acima é da conta de teste — não existe na
+conta de produção. `wrangler pages dev` não aceita `--remote` nem `--account-id` como flags, e
+também não aceita `-c`/`--config` pra apontar outro arquivo de config (erro visto: `Pages does
+not support custom paths for the Wrangler configuration file`) — então não dá pra manter um
+`wrangler.toml` separado só pra teste local com bindings remotos.
 
 ## WhatTheyAsk (`/ferramentas/whattheyask`)
 
