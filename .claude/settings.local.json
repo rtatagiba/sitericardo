@@ -12,7 +12,10 @@
       "Bash(npm run *)",
       "WebSearch",
       "WebFetch(domain:developers.cloudflare.com)",
-      "Bash(git checkout *)"
+      "Bash(git checkout *)",
+      "Bash(grep -n *)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(echo \"conflitos restantes: $?\")"
     ]
   }
 }
