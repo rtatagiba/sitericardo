@@ -12,6 +12,7 @@ titulos_alternativos:
   - "5 passos para sua marca ser citada por ChatGPT, Gemini e Perplexity"
   - "GEO vs SEO: o que muda quando quem lê seu site é uma IA"
 description: "AEO é o conjunto de práticas para um site ser lido e citado por ChatGPT, Gemini e Perplexity. Veja como schema, JSON-LD, crawlers e llms.txt entram nisso."
+image: "/images/capas/como-aparecer-no-chatgpt-guia-aeo-geo.webp"
 category: ""
 slug: como-aparecer-no-chatgpt-guia-aeo-geo
 keyword_principal: "como aparecer no ChatGPT"
