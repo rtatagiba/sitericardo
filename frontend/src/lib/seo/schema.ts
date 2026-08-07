@@ -18,6 +18,8 @@ export interface GraphOptions {
   updatedDate?: Date;
   tags?: string[];
   breadcrumbs?: BreadcrumbItem[];
+  /** BCP-47 language of the page content. Defaults to 'pt-BR'. */
+  inLanguage?: string;
 }
 
 const WEBSITE_ID = `${SITE_URL}/#website`;
@@ -39,6 +41,7 @@ export function buildGraph(opts: GraphOptions) {
     updatedDate,
     tags,
     breadcrumbs,
+    inLanguage = 'pt-BR',
   } = opts;
 
   const pageId = `${url}#webpage`;
@@ -61,7 +64,7 @@ export function buildGraph(opts: GraphOptions) {
     url: SITE_URL,
     name: SITE_NAME,
     description: SITE_DESCRIPTION,
-    inLanguage: 'pt-BR',
+    inLanguage,
     publisher: { '@id': PERSON_ID },
     copyrightHolder: { '@id': PERSON_ID },
     copyrightYear: new Date().getFullYear(),
@@ -73,7 +76,7 @@ export function buildGraph(opts: GraphOptions) {
     url,
     name: title,
     description,
-    inLanguage: 'pt-BR',
+    inLanguage,
     isPartOf: { '@id': WEBSITE_ID },
     author: { '@id': PERSON_ID },
   };
@@ -120,7 +123,7 @@ export function buildGraph(opts: GraphOptions) {
       mainEntityOfPage: { '@id': pageId },
       author: { '@id': PERSON_ID },
       publisher: { '@id': PERSON_ID },
-      inLanguage: 'pt-BR',
+      inLanguage,
       ...(publishDate ? { datePublished: publishDate.toISOString() } : {}),
       ...(updatedDate || publishDate
         ? { dateModified: (updatedDate ?? publishDate)!.toISOString() }

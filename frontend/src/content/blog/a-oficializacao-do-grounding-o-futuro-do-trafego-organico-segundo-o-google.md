@@ -61,25 +61,12 @@ Em termos simples: **os LLMs precisam de sites como os seus para não mentir**. 
 
 Isso representa uma mudança fundamental na lógica da otimização:
 
-Antes (SEO clássico)
-
-Agora (GEO)
-
-Indexar palavras-chave
-
-Fornecer camadas factuais
-
-Ranquear páginas
-
-Ser citado em respostas
-
-Atrair cliques
-
-Ser a fonte que a IA usa
-
-Aparecer em SERPs
-
-Ancorar respostas generativas
+| Antes (SEO clássico) | Agora (GEO) |
+|---|---|
+| Indexar palavras-chave | Fornecer camadas factuais |
+| Ranquear páginas | Ser citado em respostas |
+| Atrair cliques | Ser a fonte que a IA usa |
+| Aparecer em SERPs | Ancorar respostas generativas |
 
 * * *
 

@@ -141,6 +141,11 @@ const manualRedirects = {
 // https://astro.build/config
 export default defineConfig({
   site: SITE_URL,
+  i18n: {
+    defaultLocale: 'pt',
+    locales: ['pt', 'en', 'es'],
+    routing: { prefixDefaultLocale: false },
+  },
   redirects: { ...legacyRedirects, ...manualRedirects },
   markdown: {
     processor: satteri({
