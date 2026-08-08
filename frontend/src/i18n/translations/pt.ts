@@ -43,15 +43,15 @@ export const pt = {
       eyebrow: '// Quem sou eu',
       title: 'Ricardo Tatagiba',
       paragraphs: [
-        'Consultor freelancer com mais de 12 anos de experiência, a trabalhar com empresas brasileiras que querem crescer no Google — e agora também nas respostas das IAs — sem depender só de anúncios pagos.',
-        'Combino SEO técnico com desenvolvimento full stack e automações, o que significa que não só identifico o problema: implemento a solução. Sem intermediários, sem relatórios genéricos — cada projeto tem atenção direta e estratégia pensada para o seu negócio.',
+        'Consultor de SEO com mais de 12 anos de experiência, a trabalhar com empresas brasileiras e da Europa que querem crescer no Google e agora também nas respostas das IAs, sem depender só de anúncios pagos.',
+        'Combino SEO técnico com SEO estratégico, o que significa que não só identifico o problema: implemento a solução. Sem intermediários, sem relatórios genéricos da projeto tem atenção direta e estratégia pensada para o seu negócio.',
       ],
       link: 'Conhecer minha trajetória',
       stats: [
         { value: '12+', label: 'Anos de experiência' },
         { value: '300+', label: 'Sites entregues' },
         { value: '100%', label: 'Direto comigo, sem intermediários' },
-        { value: '5', label: 'Frentes integradas: site, SEO, IA, automações e ads' },
+        { value: '3', label: 'Frentes integradas: site, SEO, IA' },
       ],
     },
     faq: {
@@ -68,23 +68,23 @@ export const pt = {
         question: 'O que um consultor de SEO faz?',
         paragraphs: [
           'Audita o site à procura de erros técnicos que travam o rastreio do Google, define a estrutura de conteúdo em torno das perguntas que os clientes realmente fazem, e acompanha os concorrentes para saber onde estão a ganhar terreno.',
-          'Também mede resultados com dados reais — tráfego orgânico, posições, cliques — em vez de relatórios genéricos que não dizem nada sobre o negócio. No final, entrega ações concretas: o que mudar no site, que conteúdo publicar, que problema técnico corrigir primeiro.',
+          'Também mede resultados com dados reais de tráfego orgânico, posições, cliques em vez de relatórios genéricos que não dizem nada sobre o negócio. No final, entrega ações concretas: o que mudar no site, que conteúdo publicar, que problema técnico corrigir primeiro.',
         ],
       },
       q3: {
-        question: 'Consultor freelancer ou agência de SEO?',
+        question: 'Consultor de SEO ou agência de SEO?',
         subA: {
-          heading: 'Por que um consultor',
+          heading: 'Por que um consultor?',
           paragraphs: [
             'Uma agência normalmente distribui a sua conta por vários analistas juniores, geridos por um gestor de contas que nunca mexe no código nem no conteúdo diretamente.',
-            'Com um consultor freelancer a trabalhar sozinho, é a mesma pessoa que analisa o problema, escreve o conteúdo e implementa a correção técnica — sem passar por três camadas de comunicação até a mudança acontecer.',
+            'Com um consultor de SEO quando trabalha sozinho, é a mesma pessoa que analisa o problema, direciona o conteúdo e implementa a correção técnica e estratégicas sem passar por outras camadas de comunicação até a mudança acontecer.Isso se traduz em agilidade e resultados',
           ],
         },
         subB: {
           heading: 'Vantagens em relação a uma agência',
           paragraphs: [
-            'Custo mais baixo, porque não paga a estrutura de escritório, comercial e gestores de conta que uma agência tem de embutir no preço.',
-            'Comunicação direta — fala sempre com quem faz o trabalho, nunca com um intermediário que repassa a mensagem. E flexibilidade: ajusta prioridades numa conversa, sem reunião marcada nem aprovação de escopo.',
+            'Custo mais baixo, porque não paga a estrutura de escritório, comercial e gestores de conta que uma agência tem de embutir todo esse custo no preço.',
+            'Comunicação direta, fala sempre com quem faz o trabalho, nunca com um intermediário que repassa a mensagem. E flexibilidade: ajusta prioridades numa conversa, sem reunião marcada nem aprovação de escopo.',
           ],
         },
       },
