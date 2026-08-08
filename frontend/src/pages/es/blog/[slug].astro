@@ -1,0 +1,49 @@
+---
+import { render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import { getRelatedContent } from 'virtual:astro-related-content';
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+import { getPublishedPosts, getTranslationLinks } from '../../../lib/seo/posts';
+import { readingTime } from '../../../lib/reading-time';
+
+export async function getStaticPaths() {
+  const posts = await getPublishedPosts('blogEs');
+  return posts.map((post: CollectionEntry<'blogEs'>) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props as { post: CollectionEntry<'blogEs'> };
+const { Content, headings } = await render(post);
+const relatedContent = await getRelatedContent('blogEs', post.id);
+const relatedPosts = relatedContent.map((match) => match.entry).filter((entry) => !entry.data.draft);
+const postDate = post.data.date ?? post.data.pubDate ?? new Date();
+const updatedDate =
+  post.data.updatedDate && post.data.updatedDate.getTime() !== postDate.getTime()
+    ? post.data.updatedDate
+    : undefined;
+const readingMinutes = readingTime(post.body);
+const translations = await getTranslationLinks(post.id);
+---
+
+<BlogLayout
+  title={post.data.title}
+  description={post.data.description}
+  date={postDate}
+  updatedDate={updatedDate}
+  image={post.data.image}
+  imageCaption={post.data.imageCaption}
+  imageCredit={post.data.imageCredit}
+  category={post.data.category}
+  author={post.data.author}
+  readingMinutes={readingMinutes}
+  headings={headings}
+  tags={post.data.tags}
+  slug={post.id}
+  relatedPosts={relatedPosts}
+  lang="es"
+  translations={translations}
+>
+  <Content />
+</BlogLayout>

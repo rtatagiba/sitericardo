@@ -211,4 +211,20 @@ export const en = {
     whatsappCta: 'Chat on WhatsApp',
     whatsappMessage: "Hi, I'd like to know more about SEO and website creation",
   },
+  blogIndex: {
+    title: 'Blog',
+    subtitle: 'Practical content on SEO, digital marketing, and strategies to grow on Google.',
+    readArticle: 'Read article',
+  },
+  blogPost: {
+    by: 'By',
+    category: 'Category',
+    published: 'Published',
+    updated: 'Updated',
+    readingTime: 'Reading time',
+    readNext: 'Read next',
+    backToBlog: 'Back to Blog',
+    toc: 'Contents',
+    articleInfo: 'Article info',
+  },
 } satisfies Dictionary;

@@ -99,4 +99,20 @@ export interface Dictionary {
     whatsappCta: string;
     whatsappMessage: string;
   };
+  blogIndex: {
+    title: string;
+    subtitle: string;
+    readArticle: string;
+  };
+  blogPost: {
+    by: string;
+    category: string;
+    published: string;
+    updated: string;
+    readingTime: string;
+    readNext: string;
+    backToBlog: string;
+    toc: string;
+    articleInfo: string;
+  };
 }

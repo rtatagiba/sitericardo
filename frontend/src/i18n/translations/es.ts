@@ -211,4 +211,20 @@ export const es = {
     whatsappCta: 'Hablar por WhatsApp',
     whatsappMessage: 'Hola, quería saber más información sobre SEO y creación de sitios web',
   },
+  blogIndex: {
+    title: 'Blog',
+    subtitle: 'Contenido práctico sobre SEO, marketing digital y estrategias para crecer en Google.',
+    readArticle: 'Leer artículo',
+  },
+  blogPost: {
+    by: 'Por',
+    category: 'Categoría',
+    published: 'Publicado',
+    updated: 'Actualizado',
+    readingTime: 'Lectura',
+    readNext: 'Sigue leyendo',
+    backToBlog: 'Volver al Blog',
+    toc: 'Sumario',
+    articleInfo: 'Ficha del artículo',
+  },
 } satisfies Dictionary;

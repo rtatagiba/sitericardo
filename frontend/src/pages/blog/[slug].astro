@@ -3,7 +3,7 @@ import { render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import { getRelatedContent } from 'virtual:astro-related-content';
 import BlogLayout from '../../layouts/BlogLayout.astro';
-import { getPublishedPosts } from '../../lib/seo/posts';
+import { getPublishedPosts, getTranslationLinks } from '../../lib/seo/posts';
 import { readingTime } from '../../lib/reading-time';
 
 export async function getStaticPaths() {
@@ -24,6 +24,7 @@ const updatedDate =
     ? post.data.updatedDate
     : undefined;
 const readingMinutes = readingTime(post.body);
+const translations = await getTranslationLinks(post.id);
 ---
 
 <BlogLayout
@@ -41,6 +42,8 @@ const readingMinutes = readingTime(post.body);
   tags={post.data.tags}
   slug={post.id}
   relatedPosts={relatedPosts}
+  lang="pt"
+  translations={translations}
 >
   <Content />
 </BlogLayout>
