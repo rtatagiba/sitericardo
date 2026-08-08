@@ -22,9 +22,9 @@ export const pt = {
   },
   home: {
     meta: {
-      title: 'Ricardo Tatagiba — Sites, IA, Automações e SEO',
+      title: 'Ricardo Tatagiba — Sites, IA, e SEO',
       description:
-        'Consultor freelancer com mais de 12 anos de experiência: criação de sites, implementação de IA, automações e SEO para o teu negócio crescer no Google.',
+        'Consultor freelancer com mais de 12 anos de experiência: Criação de sites, Implementação de IA, SEO para o teu negócio crescer no Google.',
     },
     hero: {
       eyebrow: '// O que faço',
@@ -34,7 +34,7 @@ export const pt = {
       stats: [
         { value: '300+', label: 'Sites entregues' },
         { value: '12+', label: 'Anos de experiência' },
-        { value: '5', label: 'Frentes integradas' },
+        { value: '3', label: 'Frentes integradas' },
       ],
       pillLabel: 'O que gostarias de fazer?',
       cta: 'Agendar reunião',
