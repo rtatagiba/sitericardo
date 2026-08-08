@@ -14,6 +14,7 @@ export function checkForms(snapshot: AxSnapshot): Finding[] {
       category: 'forms',
       message: `${unnamed.length} campo(s) de formulário sem label associado.`,
       evidence: unnamed.slice(0, 3).map((n) => `role "${n.role}" (nodeId ${n.nodeId}), sem label`),
+      nodeIds: unnamed.slice(0, 20).map((n) => n.nodeId),
     },
   ];
 }

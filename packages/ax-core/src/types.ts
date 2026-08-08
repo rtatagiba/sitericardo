@@ -43,6 +43,10 @@ export interface AxSnapshot {
     pageMeta: AxPageMeta;
     divSoup: AxDivSoupProbe;
   };
+  /** JPEG da viewport no momento da captura, como data URL. Ausente em snapshots antigos (schema é o mesmo, campo é opcional pra manter compatibilidade). */
+  screenshot?: string;
+  /** Bounding box (coordenadas de viewport) por nodeId, só pros nós referenciados por algum finding — pra overlay sobre o screenshot. */
+  boxes?: Record<string, { x: number; y: number; width: number; height: number }>;
 }
 
 export type Severity = 'critical' | 'serious' | 'moderate' | 'minor';
@@ -56,6 +60,8 @@ export interface Finding {
   message: string;
   /** Exemplos concretos (até 3) por trás do finding — pra evidência colapsável na UI. */
   evidence?: string[];
+  /** nodeIds dos nós por trás do finding, quando aplicável — pra desenhar o overlay sobre o screenshot. */
+  nodeIds?: string[];
 }
 
 export interface AxFindings {
