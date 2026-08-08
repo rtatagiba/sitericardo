@@ -26,6 +26,13 @@ interface Props {
   lang?: Locale;
   /** Set only on pages that have a translated counterpart in every locale — drives hreflang. */
   routeKey?: RouteKey;
+  /**
+   * Explicit per-locale paths for hreflang, used where the URL isn't in the
+   * static `routes` map (e.g. blog posts, keyed by slug). Only the locales
+   * that actually have a translation need to be present. Takes priority over
+   * `routeKey` when both are set.
+   */
+  translations?: Partial<Record<Locale, string>>;
 }
 
 const {
@@ -43,6 +50,7 @@ const {
   markdownUrl,
   lang = defaultLocale,
   routeKey,
+  translations,
 } = Astro.props;
 
 // Canonical derived from site origin, tracking params never included
@@ -68,15 +76,27 @@ const jsonLd = buildGraph({
   inLanguage: htmlLang[lang],
 });
 
-const alternateLinks = routeKey
+const alternateLinks = translations
   ? [
-      ...locales.map((locale) => ({
-        hreflang: htmlLang[locale],
-        href: absoluteUrl(routes[routeKey][locale]),
-      })),
-      { hreflang: 'x-default', href: absoluteUrl(routes[routeKey][defaultLocale]) },
+      ...locales
+        .filter((locale) => translations[locale])
+        .map((locale) => ({
+          hreflang: htmlLang[locale],
+          href: absoluteUrl(translations[locale]!),
+        })),
+      ...(translations[defaultLocale]
+        ? [{ hreflang: 'x-default', href: absoluteUrl(translations[defaultLocale]!) }]
+        : []),
     ]
-  : [];
+  : routeKey
+    ? [
+        ...locales.map((locale) => ({
+          hreflang: htmlLang[locale],
+          href: absoluteUrl(routes[routeKey][locale]),
+        })),
+        { hreflang: 'x-default', href: absoluteUrl(routes[routeKey][defaultLocale]) },
+      ]
+    : [];
 ---
 
 <!doctype html>
@@ -165,7 +185,7 @@ const alternateLinks = routeKey
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WGMRLNKZ"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-    <Navbar lang={lang} routeKey={routeKey} />
+    <Navbar lang={lang} routeKey={routeKey} translations={translations} />
     <main>
       <slot />
     </main>

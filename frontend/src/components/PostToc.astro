@@ -1,11 +1,15 @@
 ---
 import type { MarkdownHeading } from 'astro';
+import { defaultLocale, type Locale } from '../i18n/ui';
+import { getDictionary } from '../i18n/translations';
 
 interface Props {
   headings: MarkdownHeading[];
+  lang?: Locale;
 }
 
-const { headings } = Astro.props;
+const { headings, lang = defaultLocale } = Astro.props;
+const tocLabel = getDictionary(lang).blogPost.toc;
 
 // h1 é o título do artigo e h4+ fragmenta demais uma lista que vive numa
 // coluna estreita — o sumário fica só com as duas profundidades úteis.
@@ -13,10 +17,10 @@ const items = headings.filter((h) => (h.depth === 2 || h.depth === 3) && Boolean
 ---
 
 {items.length > 1 && (
-  <aside class="toc" aria-label="Sumário" data-open="true">
+  <aside class="toc" aria-label={tocLabel} data-open="true">
     <button type="button" class="toc-toggle" aria-expanded="true" aria-controls="toc-list">
       <span class="toc-toggle-icon" aria-hidden="true">≡</span>
-      <span class="toc-toggle-label">Sumário</span>
+      <span class="toc-toggle-label">{tocLabel}</span>
       <span class="toc-toggle-count">{items.length}</span>
     </button>
     <nav class="toc-nav" id="toc-list">

@@ -6,15 +6,19 @@ import { getDictionary } from '../i18n/translations';
 interface Props {
   lang?: Locale;
   routeKey?: RouteKey;
+  /** Explicit per-locale hrefs, for pages not in the static `routes` map (e.g. blog posts). Only locales with a translation need to be present. */
+  translations?: Partial<Record<Locale, string>>;
 }
 
-const { lang = defaultLocale, routeKey } = Astro.props;
+const { lang = defaultLocale, routeKey, translations } = Astro.props;
 const label = getDictionary(lang).languageSwitcher.label;
 
-const options = locales.map((locale) => ({
-  locale,
-  href: routeKey ? routes[routeKey][locale] : routes.home[locale],
-}));
+const options = locales
+  .filter((locale) => !translations || translations[locale])
+  .map((locale) => ({
+    locale,
+    href: translations ? translations[locale]! : routeKey ? routes[routeKey][locale] : routes.home[locale],
+  }));
 ---
 
 <ul class="lang-switcher" aria-label={label}>

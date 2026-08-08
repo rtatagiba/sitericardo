@@ -34,9 +34,15 @@ function gitLastmod(filePath) {
  */
 function sourceFileFor(pathname) {
   const clean = pathname.replace(/^\/|\/$/g, '');
-  if (clean.startsWith('blog/') && clean !== 'blog') {
-    const md = `src/content/blog/${clean.slice('blog/'.length)}.md`;
-    return existsSync(md) ? md : null;
+  for (const [prefix, dir] of [
+    ['blog/', 'src/content/blog'],
+    ['en/blog/', 'src/content/blog-en'],
+    ['es/blog/', 'src/content/blog-es'],
+  ]) {
+    if (clean.startsWith(prefix) && clean !== prefix.replace(/\/$/, '')) {
+      const md = `${dir}/${clean.slice(prefix.length)}.md`;
+      return existsSync(md) ? md : null;
+    }
   }
   const page = clean === '' ? 'index' : clean;
   for (const candidate of [`src/pages/${page}.astro`, `src/pages/${page}/index.astro`]) {
@@ -103,14 +109,19 @@ const blogFilenames = readdirSync('src/content/blog')
 // field, so Zod silently drops it). A stray `slug:` that disagrees with the
 // filename is therefore not just dead weight — every internal link written
 // against it 404s. Fail the build instead of letting that drift back in.
-for (const filename of blogFilenames) {
-  const raw = readFileSync(`src/content/blog/${filename}.md`, 'utf-8');
-  const match = raw.match(/^slug:\s*['"]?([^'"\n]+?)['"]?\s*$/m);
-  if (match && match[1].trim() !== filename) {
-    throw new Error(
-      `src/content/blog/${filename}.md declares slug: "${match[1].trim()}" but the file is named "${filename}.md". ` +
-        `The route is derived from the filename — rename the file (or remove the slug: field) so they match.`,
-    );
+// Checked for pt, en and es — same rule, same three folders.
+for (const dir of ['src/content/blog', 'src/content/blog-en', 'src/content/blog-es']) {
+  if (!existsSync(dir)) continue;
+  for (const file of readdirSync(dir).filter((f) => f.endsWith('.md'))) {
+    const filename = file.replace(/\.md$/, '');
+    const raw = readFileSync(`${dir}/${file}`, 'utf-8');
+    const match = raw.match(/^slug:\s*['"]?([^'"\n]+?)['"]?\s*$/m);
+    if (match && match[1].trim() !== filename) {
+      throw new Error(
+        `${dir}/${file} declares slug: "${match[1].trim()}" but the file is named "${filename}.md". ` +
+          `The route is derived from the filename — rename the file (or remove the slug: field) so they match.`,
+      );
+    }
   }
 }
 
@@ -179,7 +190,7 @@ export default defineConfig({
     }),
     indexNow({ key: INDEXNOW_KEY, siteUrl: SITE_URL }),
     astroRelatedContent({
-      collections: [{ collection: 'blog' }],
+      collections: [{ collection: 'blog' }, { collection: 'blogEn' }, { collection: 'blogEs' }],
     }),
   ],
 });

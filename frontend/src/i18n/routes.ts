@@ -12,3 +12,10 @@ export const routes = {
 } as const satisfies Record<string, Record<Locale, string>>;
 
 export type RouteKey = keyof typeof routes;
+
+/** Blog index base path per locale. Individual posts append `/{slug}`. */
+export const blogBasePath = {
+  pt: '/blog',
+  en: '/en/blog',
+  es: '/es/blog',
+} as const satisfies Record<Locale, string>;

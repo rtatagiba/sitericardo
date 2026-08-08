@@ -1,15 +1,17 @@
 ---
 import { defaultLocale, type Locale } from '../i18n/ui';
-import { routes, type RouteKey } from '../i18n/routes';
+import { routes, blogBasePath, type RouteKey } from '../i18n/routes';
 import { getDictionary } from '../i18n/translations';
 import LanguageSwitcher from './LanguageSwitcher.astro';
 
 interface Props {
   lang?: Locale;
   routeKey?: RouteKey;
+  /** Explicit per-locale hrefs for the language switcher, for pages outside the static `routes` map (e.g. blog posts). */
+  translations?: Partial<Record<Locale, string>>;
 }
 
-const { lang = defaultLocale, routeKey } = Astro.props;
+const { lang = defaultLocale, routeKey, translations } = Astro.props;
 const t = getDictionary(lang).nav;
 const { pathname } = Astro.url;
 const homeHref = routes.home[lang];
@@ -18,7 +20,7 @@ const navLinks = [
   { href: homeHref, label: t.home },
   { href: routes.services[lang], label: t.services },
   { href: '/portfolio', label: t.portfolio },
-  { href: '/blog', label: t.blog },
+  { href: blogBasePath[lang], label: t.blog },
   { href: '/ferramentas', label: t.tools },
   { href: routes.about[lang], label: t.about },
   { href: routes.contact[lang], label: t.contact },
@@ -55,7 +57,7 @@ const navLinks = [
             </li>
           ))}
         </ul>
-        <LanguageSwitcher lang={lang} routeKey={routeKey} />
+        <LanguageSwitcher lang={lang} routeKey={routeKey} translations={translations} />
       </div>
     </div>
 
@@ -73,7 +75,7 @@ const navLinks = [
         </li>
       ))}
       <li class="pt-2 border-t border-line mt-1">
-        <LanguageSwitcher lang={lang} routeKey={routeKey} />
+        <LanguageSwitcher lang={lang} routeKey={routeKey} translations={translations} />
       </li>
     </ul>
   </nav>

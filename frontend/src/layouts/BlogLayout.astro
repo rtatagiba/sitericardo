@@ -2,9 +2,14 @@
 import BaseLayout from './BaseLayout.astro';
 import PostToc from '../components/PostToc.astro';
 import { SITE_URL, AUTHOR } from '../lib/seo/site';
+import { defaultLocale, htmlLang, type Locale } from '../i18n/ui';
+import { blogBasePath } from '../i18n/routes';
+import { getDictionary } from '../i18n/translations';
 import type { MarkdownHeading } from 'astro';
 import type { CollectionEntry } from 'astro:content';
 import '../styles/post.css';
+
+type BlogEntry = CollectionEntry<'blog'> | CollectionEntry<'blogEn'> | CollectionEntry<'blogEs'>;
 
 interface Props {
   title: string;
@@ -20,7 +25,11 @@ interface Props {
   headings?: MarkdownHeading[];
   tags?: string[];
   slug: string; // post.id in Astro v6
-  relatedPosts?: CollectionEntry<'blog'>[];
+  relatedPosts?: BlogEntry[];
+  /** Current post locale. Defaults to Portuguese. */
+  lang?: Locale;
+  /** Per-locale URLs of this post's translations, for hreflang and the language switcher. */
+  translations?: Partial<Record<Locale, string>>;
 }
 
 const {
@@ -38,13 +47,17 @@ const {
   tags,
   slug,
   relatedPosts = [],
+  lang = defaultLocale,
+  translations,
 } = Astro.props;
 
-const postUrl = `${SITE_URL}/blog/${slug}/`;
+const t = getDictionary(lang);
+const basePath = blogBasePath[lang];
+const postUrl = `${SITE_URL}${basePath}/${slug}/`;
 const dateIso = date.toISOString();
 
 const formatDate = (value: Date) =>
-  value.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' });
+  value.toLocaleDateString(htmlLang[lang], { day: '2-digit', month: 'short', year: 'numeric' });
 
 const dateFormatted = formatDate(date);
 // A data de atualização só interessa quando cai noutro dia — vários posts
@@ -54,8 +67,8 @@ const updatedRaw = updatedDate ? formatDate(updatedDate) : undefined;
 const updatedFormatted = updatedRaw === dateFormatted ? undefined : updatedRaw;
 
 const breadcrumbs = [
-  { name: 'Home', url: '/' },
-  { name: 'Blog', url: '/blog' },
+  { name: t.nav.home, url: '/' },
+  { name: t.nav.blog, url: basePath },
   { name: title },
 ];
 ---
@@ -71,15 +84,17 @@ const breadcrumbs = [
   updatedDate={updatedDate}
   tags={tags}
   breadcrumbs={breadcrumbs}
-  markdownUrl={`${SITE_URL}/blog/${slug}.md`}
+  markdownUrl={`${SITE_URL}${basePath}/${slug}.md`}
+  lang={lang}
+  translations={translations}
 >
   <article>
     <div class="post-shell">
       <nav class="post-breadcrumb" aria-label="Breadcrumb">
         <ol>
-          <li><a href="/">Home</a></li>
+          <li><a href="/">{t.nav.home}</a></li>
           <li aria-hidden="true">/</li>
-          <li><a href="/blog">Blog</a></li>
+          <li><a href={basePath}>{t.nav.blog}</a></li>
           <li aria-hidden="true">/</li>
           <li aria-current="page">{title}</li>
         </ol>
@@ -105,38 +120,38 @@ const breadcrumbs = [
           <p class="post-dek">{description}</p>
         </header>
 
-        <aside class="post-aside" aria-label="Ficha do artigo">
+        <aside class="post-aside" aria-label={t.blogPost.articleInfo}>
           <div class="author-byline">
-            <span class="author-byline-label">Por</span>
+            <span class="author-byline-label">{t.blogPost.by}</span>
             <strong class="author-byline-name">{author}</strong>
           </div>
 
           <dl class="post-meta">
             {category && (
               <div>
-                <dt>Categoria</dt>
+                <dt>{t.blogPost.category}</dt>
                 <dd><span class="post-meta-cat">{category}</span></dd>
               </div>
             )}
             <div class="post-meta-half">
-              <dt>Publicado</dt>
+              <dt>{t.blogPost.published}</dt>
               <dd><time datetime={dateIso}>{dateFormatted}</time></dd>
             </div>
             {updatedFormatted && (
               <div class="post-meta-half">
-                <dt>Atualizado</dt>
+                <dt>{t.blogPost.updated}</dt>
                 <dd class="post-meta-updated">
                   <time datetime={updatedDate!.toISOString()}>{updatedFormatted}</time>
                 </dd>
               </div>
             )}
             <div class="post-meta-half">
-              <dt>Leitura</dt>
+              <dt>{t.blogPost.readingTime}</dt>
               <dd>{readingMinutes ?? 1} min</dd>
             </div>
           </dl>
 
-          <PostToc headings={headings} />
+          <PostToc headings={headings} lang={lang} />
         </aside>
 
         <div class="post-body">
@@ -148,10 +163,10 @@ const breadcrumbs = [
 
       {relatedPosts.length > 0 && (
         <section class="post-footer" aria-labelledby="related-posts-heading">
-          <h2 id="related-posts-heading" class="post-footer-title">Leia a seguir</h2>
+          <h2 id="related-posts-heading" class="post-footer-title">{t.blogPost.readNext}</h2>
           <div class="related-grid">
             {relatedPosts.slice(0, 3).map((related) => (
-              <a href={`/blog/${related.id}/`} class="related-card">
+              <a href={`${basePath}/${related.id}/`} class="related-card">
                 {related.data.image && (
                   <img
                     src={related.data.image}
@@ -168,11 +183,11 @@ const breadcrumbs = [
         </section>
       )}
 
-      <a href="/blog" class="post-back">
+      <a href={basePath} class="post-back">
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
         </svg>
-        Voltar ao Blog
+        {t.blogPost.backToBlog}
       </a>
     </div>
   </article>
